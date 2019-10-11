@@ -1,0 +1,19 @@
+python版本：3.7
+django版本：
+
+
+pip install：
+    pymysql
+    djangorestframework
+    markdown
+    django-filter
+    coreapi             drf的文档支持
+    django-guardian     drf对象级别的权限支持
+
+pip install django-cors-headers   后端跨域
+
+Django REST Framework extensions 配合redis进行缓存
+pip install drf-extensions
+pip install django-redis
+pip install django-redis-cache
+https://blog.csdn.net/ros_donggua/article/details/81007919
