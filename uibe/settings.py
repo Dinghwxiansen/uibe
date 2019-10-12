@@ -25,7 +25,7 @@ sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
 SECRET_KEY = 'c^e18lezktj$i(bulhk%e9jxcxagbb@tw$1b806b(4v4hoyp94'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 # ALLOWED_HOSTS = ['*','localhost','192.168.3.92','127.0.0.1','[::1]']
 ALLOWED_HOSTS = ['*']
