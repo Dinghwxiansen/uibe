@@ -18,6 +18,8 @@ urlpatterns = [
     re_path(r'^(?P<version>[v1|v2]+)/bqwd/(?P<pk>\d+)/$', views.BqwdView.as_view()),
 
     re_path(r'^(?P<version>[v1|v2]+)/hxbqsz/$', views.HxbqszView.as_view()),
+    re_path(r'^(?P<version>[v1|v2]+)/hxbqszfz/$', views.HxbqszfzView.as_view()),
+
     re_path(r'^(?P<version>[v1|v2]+)/hxbqsz/(?P<pk>\d+)/$', views.HxbqszView.as_view()),
     re_path(r'^(?P<version>[v1|v2]+)/hxbqszzbx/$', views.HxbqszZbxView.as_view()),
 
