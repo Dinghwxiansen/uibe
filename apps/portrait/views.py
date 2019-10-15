@@ -1,5 +1,7 @@
 # Create your views here.
 
+from datetime import datetime
+
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import filters, status, viewsets
 from rest_framework import generics
@@ -193,6 +195,30 @@ class BqwdView(mixins.ListModelMixin, mixins.CreateModelMixin,
             return restful.result2(message=e.detail)
 
 
+class HxbqszfzView(mixins.ListModelMixin, mixins.CreateModelMixin, generics.GenericAPIView, ):
+    """系统管理之画像标签设置之复制标签"""
+    queryset = pm.XtglBqsz.objects.all().order_by("-update_time")
+    # 序列化
+    serializer_class = serialiser.BqszSerializer
+
+    filter_backends = (DjangoFilterBackend, filters.SearchFilter)
+    # 过滤
+    filter_class = filter.HxbqszFilter
+    """复制标签"""
+
+    def put(self, request, *args, **kwargs):
+        try:
+            ret = pm.XtglBqsz.objects.get(id=request.data['id'])
+
+            xtglbqsz = pm.XtglBqsz(bqmc=ret.bqmc + "_副本", zbfl=ret.zbfl, zbwd=ret.zbwd, zbx=ret.zbx, bqgz=ret.bqgz,
+                                   bqms=ret.bqms
+                                   , kfqx=ret.kfqx, create_time=ret.create_time, update_time=datetime.now())
+            xtglbqsz.save()
+            return restful.ok()
+        except Exception:
+            return restful.result2(message="操作失败")
+
+
 class HxbqszView(mixins.ListModelMixin, mixins.CreateModelMixin,
                  mixins.DestroyModelMixin, mixins.UpdateModelMixin, mixins.RetrieveModelMixin,
                  generics.GenericAPIView, ):
@@ -231,7 +257,7 @@ class HxbqszView(mixins.ListModelMixin, mixins.CreateModelMixin,
                 ret = self.create(request, *args, **kwargs)
                 return restful.result(message="保存成功")
         except Exception as e:
-            return restful.result2(message=e.detail)
+            return restful.result2(message="操作失败")
 
     """更新数据"""
 
@@ -245,7 +271,7 @@ class HxbqszView(mixins.ListModelMixin, mixins.CreateModelMixin,
                 ser.save()
             return restful.ok()
         except Exception as e:
-            return restful.result2(message=e.detail)
+            return restful.result2(message="操作失败")
 
     """更新状态"""
 
@@ -271,7 +297,7 @@ class HxbqszView(mixins.ListModelMixin, mixins.CreateModelMixin,
                 else:
                     return restful.result(message="操作成功，状态开启")
         except Exception as e:
-            return restful.result2(message=e.detail)
+            return restful.result2(message="操作失败")
 
     """删除"""
 
@@ -286,6 +312,7 @@ class HxbqszView(mixins.ListModelMixin, mixins.CreateModelMixin,
 
 class HxbqszZbxView(mixins.ListModelMixin, generics.GenericAPIView):
     """画像标签设置新增之指标项选择"""
+
     # authentication_classes = []
 
     # 查询出来所有数据按照创建时间进行排序
@@ -353,7 +380,7 @@ class ZbxView(mixins.ListModelMixin, mixins.CreateModelMixin,
                 ret = self.create(request, *args, **kwargs)
                 return restful.result(message="保存成功")
         except Exception as e:
-            return restful.result2(message=e.detail)
+            return restful.result2(message="操作失败")
 
     """更新数据"""
 
@@ -366,7 +393,7 @@ class ZbxView(mixins.ListModelMixin, mixins.CreateModelMixin,
                 ser.save()
             return restful.ok()
         except Exception as e:
-            return restful.result2(message=e.detail)
+            return restful.result2(message="操作失败")
 
     """更新状态"""
 
@@ -392,7 +419,7 @@ class ZbxView(mixins.ListModelMixin, mixins.CreateModelMixin,
                 else:
                     return restful.result(message="操作成功，状态开启")
         except Exception as e:
-            return restful.result2(message=e.detail)
+            return restful.result2(message="操作失败")
 
     """删除"""
 
@@ -441,7 +468,7 @@ class SjbxzView(mixins.ListModelMixin, generics.GenericAPIView, ):
 
 class SjbxzzdView(viewsets.ModelViewSet):
     """数据表字段选择"""
-    # authentication_classes = []
+    authentication_classes = []
     # 分页
     pagination_class = Pagination
 
@@ -472,7 +499,7 @@ class SjbxzzdView(viewsets.ModelViewSet):
             ret = self.list(request, *args, **kwargs)
             return restful.result(message="操作成功", data=ret.data)
         except Exception as e:
-            return restful.result2(message=e.detail)
+            return restful.result2(message="操作失败")
 
     # 获取数据
     # def get(self, request, *args, **kwargs):
@@ -492,7 +519,7 @@ class SjbxzzdView(viewsets.ModelViewSet):
             ret = self.list(request, *args, **kwargs)
             return restful.result(message="操作成功", data=ret.data)
         except Exception as e:
-            return restful.result2(message=e.detail)
+            return restful.result2(message="操作失败")
 
 
 class JshxView(mixins.ListModelMixin, generics.GenericAPIView, ):
@@ -518,6 +545,7 @@ class JshxView(mixins.ListModelMixin, generics.GenericAPIView, ):
 
 class JshxxqView(mixins.ListModelMixin, generics.GenericAPIView, ):
     """教师画像详情"""
+
     # authentication_classes = []
 
     # 查询出来所有数据按照创建时间进行排序
@@ -563,9 +591,7 @@ class JshxzcxqView(mixins.ListModelMixin, mixins.CreateModelMixin, generics.Gene
             # print(connection.queries[-1:])
             return restful.result(message="操作成功", data=rets.data, kwargs=ret)
         except Exception as e:
-            return restful.result2(message=e.detail)
-
-
+            return restful.result2(message="操作失败")
 
 
 class XshxJsdVIew(mixins.ListModelMixin, generics.GenericAPIView, ):
@@ -590,7 +616,8 @@ class XshxJsdVIew(mixins.ListModelMixin, generics.GenericAPIView, ):
 
 class XshxXsdVIew(mixins.ListModelMixin, generics.GenericAPIView, ):
     """用户画像之学生画像学生端"""
-   #  authentication_classes = []
+
+    #  authentication_classes = []
 
     # 查询出来所有数据按照创建时间进行排序
     def get_queryset(self):
