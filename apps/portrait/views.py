@@ -14,6 +14,7 @@ from apps.portrait import models as pm
 from apps.utils import restful
 from apps.utils import serialiser
 from apps.utils.pagination import Pagination
+from apps.warning.views import BqjmToSQL, search
 
 
 class JqszView(mixins.ListModelMixin, mixins.CreateModelMixin,
@@ -204,7 +205,7 @@ class HxbqszfzView(mixins.ListModelMixin, mixins.CreateModelMixin, generics.Gene
     filter_backends = (DjangoFilterBackend, filters.SearchFilter)
     # 过滤
     filter_class = filter.HxbqszFilter
-    """复制标签"""
+    """点击复制标签"""
 
     def put(self, request, *args, **kwargs):
         try:
@@ -214,6 +215,8 @@ class HxbqszfzView(mixins.ListModelMixin, mixins.CreateModelMixin, generics.Gene
                                    bqms=ret.bqms
                                    , kfqx=ret.kfqx, create_time=ret.create_time, update_time=datetime.now())
             xtglbqsz.save()
+            BqjmToSQL()
+            search()
             return restful.ok()
         except Exception:
             return restful.result2(message="操作失败")
@@ -255,6 +258,8 @@ class HxbqszView(mixins.ListModelMixin, mixins.CreateModelMixin,
                 return restful.result2(message="请勿重复保存操作")
             except IndexError:
                 ret = self.create(request, *args, **kwargs)
+                BqjmToSQL()
+                search()
                 return restful.result(message="保存成功")
         except Exception as e:
             return restful.result2(message="操作失败")
@@ -269,6 +274,8 @@ class HxbqszView(mixins.ListModelMixin, mixins.CreateModelMixin,
             ser = serialiser.BqszSerializer(instance=ret, data=request.data, partial=True)
             if ser.is_valid():
                 ser.save()
+            BqjmToSQL()
+            search()
             return restful.ok()
         except Exception as e:
             return restful.result2(message="操作失败")
@@ -522,6 +529,19 @@ class SjbxzzdView(viewsets.ModelViewSet):
             return restful.result2(message="操作失败")
 
 
+class BmVIew(mixins.ListModelMixin, generics.GenericAPIView):
+    "教师画像管理员下拉列表"
+    # 查询
+    queryset = pm.JzgBm.objects.all().order_by("bmdm")
+    # 序列化
+    serializer_class = serialiser.UibeJzgBmSerializer
+
+    def get(self, request, *args, **kwargs):
+        ret = self.list(request, *args, **kwargs)
+        # print(connection.queries[-1:])
+        return restful.result(message="操作成功", data=ret.data)
+
+
 class JshxView(mixins.ListModelMixin, generics.GenericAPIView, ):
     """教师画像管理员"""
     # authentication_classes = []
@@ -567,29 +587,50 @@ class JshxzcxqView(mixins.ListModelMixin, mixins.CreateModelMixin, generics.Gene
     """教师画像职称详情"""
     # authentication_classes = []
 
-    queryset = pm.Zcdj.objects.all()
+    queryset = pm.JzgZcxx.objects.all()
     # 序列化
     serializer_class = serialiser.UibeJzgZcXqSerializer
 
     def post(self, request, *args, **kwargs):
+
         try:
-            qxrs = pm.UibeJzg.objects.filter(zcjb=request.data['zcjb']).count()
-            co = list(pm.Zcdj.objects.filter(zcjb=request.data['zcjb']).values('code'))
-            mbjb = list(pm.Zcdj.objects.filter(code=str(int(co[0]['code']) + 1)).values('zcjb'))
-            bmrs = pm.UibeJzg.objects.filter(zcjb=request.data['zcjb']).filter(bm=request.data['bm']).count()
-            bdrq = list(pm.UibeJzg.objects.filter(zgh=request.data['zgh']).extra(
-                select={"zcjbbdrq": "DATE_FORMAT(zcjbbdrq, '%%Y-%%m-%%d')"}).values('zcjbbdrq'))
+            bdrq = request.data['zcbdrq']
+            if bdrq:
+                zcbdrq=datetime.strptime(request.data['zcbdrq'],'%Y%m%d').date()
+            else:
+                zcbdrq = ''
+            dqzc = list(pm.JzgZcxx.objects.filter(zwdm=request.data['zcxxdm']).values('zwmc','zwjb'))
+            qxrs = pm.UibeJzg.objects.filter(zcxxdm=request.data['zcxxdm']).count()
+            bmrs = pm.UibeJzg.objects.filter(zcxxdm=request.data['zcxxdm']).filter(bmdm=request.data['bmdm']).count()
+
+            mb = list(pm.JzgZcxx.objects.filter(zwdm=str(int(request.data['zcxxdm']) - 1)).values('zwmc'))
+
+           # co = list(pm.JzgZcxx.objects.filter(zcjb=request.data['zcjb']).values('code'))
+            #mbjb = list(pm.Zcdj.objects.filter(code=str(int(co[0]['code']) + 1)).values('zcjb'))
+
+            # bdrq = list(pm.UibeJzg.objects.filter(zgh=request.data['zgh']).extra(
+            #    select={"zcjbbdrq": "DATE_FORMAT(zcjbbdrq, '%%Y-%%m-%%d')"}).values('zcjbbdrq'))
             # DateTime类型extra(select={"zcjbbdrq": "DATE_FORMAT(zcjbbdrq, '%%Y-%%m-%%d %%H:%%i:%%s')"}).values('zcjbbdrq')
             # Date类型extra(select={"zcjbbdrq": "DATE_FORMAT(zcjbbdrq, '%%Y-%%m-%%d')"}).values('zcjbbdrq')
             ret = {}
+            ret['zcbdrq'] =zcbdrq
+            ret['dqzc'] = dqzc
             ret['qxrs'] = qxrs
-            ret['zcjb'] = request.data['zcjb']
             ret['bmrs'] = bmrs
-            ret['bdrq'] = bdrq[0]['zcjbbdrq']
-            ret['xymb'] = mbjb[0]['zcjb']
+            if mb:
+                ret['mb'] = mb
+            else:
+                ret['mb'] = '最顶级'
+
+            #ret['zcjb'] = request.data['zcjb']
+
+            # ret['bdrq'] = bdrq[0]['zcjbbdrq']
+            #ret['xymb'] = mbjb[0]['zcjb']
             rets = self.list(request, *args, **kwargs)
+            print(list(rets.data))
             # print(connection.queries[-1:])
-            return restful.result(message="操作成功", data=rets.data, kwargs=ret)
+            return restful.result(message="操作成功", kwargs=ret)
+
         except Exception as e:
             return restful.result2(message="操作失败")
 
@@ -600,7 +641,7 @@ class XshxJsdVIew(mixins.ListModelMixin, generics.GenericAPIView, ):
     # 分页
     pagination_class = Pagination
     # 查询出来所有数据按照创建时间进行排序
-    queryset = pm.UibeBzks.objects.all()
+    queryset = pm.UibeBzks.objects.all().filter(sfyx=1)
     # 序列化
     serializer_class = serialiser.XshxJstSerializer
 
@@ -622,7 +663,7 @@ class XshxXsdVIew(mixins.ListModelMixin, generics.GenericAPIView, ):
     # 查询出来所有数据按照创建时间进行排序
     def get_queryset(self):
         xhs = self.request.query_params.get('xh')
-        ret = pm.XshxBq.objects.filter(bqqx=1).filter(xh=xhs)
+        ret = pm.XshxBq.objects.filter(bqqx=1).filter(xh=xhs,sfyx=1)
         return ret
 
     # queryset = pm.XshxBq.objects.filter(bqqx=1).filter()
@@ -641,6 +682,7 @@ class XshxXsdVIew(mixins.ListModelMixin, generics.GenericAPIView, ):
 
 class XshxJsdXqVIew(mixins.ListModelMixin, generics.GenericAPIView, ):
     """用户画像之学生画像教师端详情"""
+    # token认证
     # authentication_classes = []
     # 分页
     pagination_class = Pagination
@@ -648,10 +690,9 @@ class XshxJsdXqVIew(mixins.ListModelMixin, generics.GenericAPIView, ):
     # 查询出来所有数据按照创建时间进行排序
     def get_queryset(self):
         xhs = self.request.query_params.get('xh')
-        ret = pm.XshxBq.objects.filter(xh=xhs)
+        ret = pm.XshxBq.objects.filter(xh=xhs,sfyx=1)
         return ret
 
-    # queryset = pm.XshxBq.objects.filter()
     # 序列化
     serializer_class = serialiser.XshxJstXqSerializer
 
