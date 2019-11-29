@@ -5,6 +5,7 @@
       <option name="ignoredIdentifiers">
         <list>
           <option value="Exception.detail" />
+          <option value="django.db.transaction.commit_unless_managed" />
         </list>
       </option>
     </inspection_tool>

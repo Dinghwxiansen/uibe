@@ -250,7 +250,7 @@ class YjyzszSerializer(serializers.ModelSerializer):
 class YjyzlsszSerializer(serializers.ModelSerializer):
     class Meta:
         model = wm.XtglYjyzsz
-        fields = ['id', 'code', 'yjmc', 'red', 'yellow', 'orange', 'yjgz', 'yjms', 'update_time']
+        fields = ['id', 'code', 'yjmc', 'yjgz', 'yjms', 'update_time']
 
 
 """指标项管理之数据库选择"""
@@ -287,7 +287,16 @@ class SjzbzdSerializer2(serializers.Serializer):
 class UibeJzgSerializer(serializers.ModelSerializer):
     class Meta:
         model = pm.UibeJzg
-        fields = ['id', 'zgh', 'xm', 'yx']
+        fields = ['id', 'zgh', 'xm', 'bm']
+
+
+"""教师画像管理员下拉列表bm"""
+
+
+class UibeJzgBmSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = pm.JzgBm
+        fields = ['bmdm', 'bm']
 
 
 """教师画像详情"""
@@ -296,13 +305,11 @@ class UibeJzgSerializer(serializers.ModelSerializer):
 class UibeJzgXqSerializer(serializers.ModelSerializer):
     class Meta:
         model = pm.UibeJzg
-        fields = ['id', 'zgh', 'xm', 'xb', 'csrq', 'xl', 'zzmm', 'xw', 'lxrq', 'yyzs', 'jsjzs', 'gqpxzs', 'pthzs',
-                  'qtzs',
-                  'yjfx', 'cxxmsl', 'hxxmsl', 'lwcgsl', 'zzcgsl', 'yjbgsl', 'cgjlsl', 'bm', 'rylb', 'gwzj', 'zcjb',
-                  'xngw',
-                  'zxsf', 'bkkcskms', 'bkkcshjc', 'bkkcxss', 'bkkcxsrc', 'yjskcshms', 'yjskcskjc', 'yjskcxss',
-                  'yjskcxsrc',
-                  'ekxf', 'wlsh', 'jl', 'ccxx', 'rych', 'tsjy', ]
+        fields = ['id', 'zgh', 'xm', 'xb', 'csrq', 'xw', 'xl', 'lxrq', 'zzmm', 'jsjzs', 'jszgz', 'gqpxzs', 'qtzs',
+                  'yjfx',
+                  'zxxmsl', 'hxxmsl', 'cgjlsl', 'yjbgsl', 'zzcgsl', 'lwcgsl', 'bm', 'rylb', 'gwzj', 'zcjb', 'xngw',
+                  'zxsf', 'jl', 'yjskcxsrc', 'yjskcskjc', 'yjskcxss', 'yjskcskms', 'bkkcxsrc', 'bkkcskjc', 'bkkcxss',
+                  'bkkcskms', 'tsjycs', 'ekxf', 'wlsyll', 'wlsysc']
 
 
 """教师画像职称详情"""
@@ -313,8 +320,8 @@ class UibeJzgZcXqSerializer(serializers.ModelSerializer):
     # bbmzc_nums = serializers.SerializerMethodField()
 
     class Meta:
-        model = pm.Zcdj
-        fields = ['zcjb', 'code', ]
+        model = pm.JzgZcxx
+        fields = ['zwdm', 'zwmc','zwjb' ]
 
 
 """用户画像之学生画像教师端"""
