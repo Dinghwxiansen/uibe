@@ -1,8 +1,11 @@
 # Create your views here.
+
 import datetime
 
+from dateutil.relativedelta import relativedelta
 from django.db import connection
 from django.db.models import Count, Q, Sum
+from django.db.models.functions import ExtractYear, ExtractMonth
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import filters
 from rest_framework import mixins, generics
@@ -190,7 +193,7 @@ class XxtxblxmxView(viewsets.ModelViewSet):
             return restful.result(message="操作成功", data=ret.data)
         except Exception as e:
             return restful.result(message=e.detail)
-
+    """
     # def patch(self, request, *args, **kwargs):
     #     #     ids = request.data['id'].split(',')
     #     #     # print(ids)
@@ -202,7 +205,7 @@ class XxtxblxmxView(viewsets.ModelViewSet):
     #     #                 ser.save()
     #     #         return restful.ok()
     #     #     except Exception as e:
-    #     #         return restful.result(message=e.detail)
+    #     #         return restful.result(message=e.detail)"""
     def patch(self, request, *args, **kwargs):
         try:
             if not request.data['id']:
@@ -910,19 +913,19 @@ class TkxwxgView(mixins.CreateModelMixin, generics.GenericAPIView, ):
         except Exception as e:
             return restful.result2(message=e.detail)
 
-    # """更新"""
-    #
-    # def put(self, request, *args, **kwargs):
-    #     print(request.data)
-    #     try:
-    #         # self.partial_update(request, *args, **kwargs)
-    #         ret = wm.XtglYjyzsz.objects.filter(id=request.data['id']).first()
-    #         ser = serialiser.TkxwxgSerializer(instance=ret, data=request.data, partial=True)
-    #         if ser.is_valid():
-    #             ser.save()
-    #         return restful.ok()
-    #     except Exception as e:
-    #         return restful.result(message=e.detail)
+    """更新
+
+    def put(self, request, *args, **kwargs):
+        print(request.data)
+        try:
+            # self.partial_update(request, *args, **kwargs)
+            ret = wm.XtglYjyzsz.objects.filter(id=request.data['id']).first()
+            ser = serialiser.TkxwxgSerializer(instance=ret, data=request.data, partial=True)
+            if ser.is_valid():
+                ser.save()
+            return restful.ok()
+        except Exception as e:
+            return restful.result(message=e.detail)"""
 
 
 """预警阈值之晚归预警修改"""
@@ -935,11 +938,12 @@ class WgxgView(mixins.CreateModelMixin, generics.GenericAPIView, ):
     queryset = wm.XtglYjyzsz.objects.all().order_by("-update_time")
     # 序列化
     serializer_class = serialiser.WgxgSerializer
-    #
+
+    """
     # def patch(self, request, id):
     #     ret = wm.XtglYjyzsz.objects.filter(id=request.data['id']).first()
     #     ser = serialiser.WgxgSerializer(instance=ret, many=False)
-    #     return restful.result(message="查询成功", data=ser.data)
+    #     return restful.result(message="查询成功", data=ser.data)"""
 
     def post(self, request, *args, **kwargs):
         # print(request.data)
@@ -950,19 +954,19 @@ class WgxgView(mixins.CreateModelMixin, generics.GenericAPIView, ):
         except Exception as e:
             return restful.result2(message=e.detail)
 
-    # """更新"""
-    #
-    # def put(self, request, *args, **kwargs):
-    #     print(request.data)
-    #     try:
-    #         # self.partial_update(request, *args, **kwargs)
-    #         ret = wm.XtglYjyzsz.objects.filter(id=request.data['id']).first()
-    #         ser = serialiser.WgxgSerializer(instance=ret, data=request.data, partial=True)
-    #         if ser.is_valid():
-    #             ser.save()
-    #         return restful.ok()
-    #     except Exception as e:
-    #         return restful.result(message=e.detail)
+    """更新
+
+    def put(self, request, *args, **kwargs):
+        print(request.data)
+        try:
+            # self.partial_update(request, *args, **kwargs)
+            ret = wm.XtglYjyzsz.objects.filter(id=request.data['id']).first()
+            ser = serialiser.WgxgSerializer(instance=ret, data=request.data, partial=True)
+            if ser.is_valid():
+                ser.save()
+            return restful.ok()
+        except Exception as e:
+            return restful.result(message=e.detail)"""
 
 
 """预警阈值之休学退学不离校预警修改"""
@@ -975,11 +979,11 @@ class XxtxblxxgView(mixins.CreateModelMixin, generics.GenericAPIView, ):
     queryset = wm.XtglYjyzsz.objects.all().order_by("-update_time")
     # 序列化
     serializer_class = serialiser.XxtxblxxgSerializer
-
+    """
     # def patch(self, request, id):
     #     ret = wm.XtglYjyzsz.objects.filter(id=request.data['id']).first()
     #     ser = serialiser.XxtxblxxgSerializer(instance=ret, many=False)
-    #     return restful.result(message="查询成功", data=ser.data)
+    #     return restful.result(message="查询成功", data=ser.data)"""
 
     def post(self, request, *args, **kwargs):
         # print(request.data)
@@ -990,19 +994,19 @@ class XxtxblxxgView(mixins.CreateModelMixin, generics.GenericAPIView, ):
         except Exception as e:
             return restful.result2(message=e.detail)
 
-    # """更新"""
-    #
-    # def put(self, request, *args, **kwargs):
-    #     print(request.data)
-    #     try:
-    #         # self.partial_update(request, *args, **kwargs)
-    #         ret = wm.XtglYjyzsz.objects.filter(id=request.data['id']).first()
-    #         ser = serialiser.XxtxblxxgSerializer(instance=ret, data=request.data, partial=True)
-    #         if ser.is_valid():
-    #             ser.save()
-    #         return restful.ok()
-    #     except Exception as e:
-    #         return restful.result(message=e.detail)
+    """更新
+
+    def put(self, request, *args, **kwargs):
+        print(request.data)
+        try:
+            # self.partial_update(request, *args, **kwargs)
+            ret = wm.XtglYjyzsz.objects.filter(id=request.data['id']).first()
+            ser = serialiser.XxtxblxxgSerializer(instance=ret, data=request.data, partial=True)
+            if ser.is_valid():
+                ser.save()
+            return restful.ok()
+        except Exception as e:
+            return restful.result(message=e.detail)"""
 
 
 """预警阈值之休学校外住宿预警修改"""
@@ -1030,20 +1034,20 @@ class XwzsxgView(mixins.CreateModelMixin, generics.GenericAPIView, ):
         except Exception as e:
             return restful.result2(message=e.detail)
 
-    # """更新"""
-    #
-    # def put(self, request, *args, **kwargs):
-    #     print(request.data)
-    #     try:
-    #
-    #         # self.partial_update(request, *args, **kwargs)
-    #         ret = wm.XtglYjyzsz.objects.filter(id=request.data['id']).first()
-    #         ser = serialiser.XwzsxgSerializer(instance=ret, data=request.data, partial=True)
-    #         if ser.is_valid():
-    #             ser.save()
-    #         return restful.ok()
-    #     except Exception as e:
-    #         return restful.result(message=e.detail)
+    """更新
+
+    def put(self, request, *args, **kwargs):
+        print(request.data)
+        try:
+
+            # self.partial_update(request, *args, **kwargs)
+            ret = wm.XtglYjyzsz.objects.filter(id=request.data['id']).first()
+            ser = serialiser.XwzsxgSerializer(instance=ret, data=request.data, partial=True)
+            if ser.is_valid():
+                ser.save()
+            return restful.ok()
+        except Exception as e:
+            return restful.result(message=e.detail)"""
 
 
 """预警阈值之不在校预警修改"""
@@ -1089,11 +1093,6 @@ class BzxxgView(mixins.CreateModelMixin, generics.GenericAPIView, ):
 """预警阈值设置"""
 
 
-# from django.core import serializers as serializ
-# import json
-# from django.http import JsonResponse
-
-
 class YjyzszView(mixins.ListModelMixin, generics.GenericAPIView):
     # authentication_classes = []
 
@@ -1124,6 +1123,9 @@ class YjyzszView(mixins.ListModelMixin, generics.GenericAPIView):
         # loads = json.loads(data)
         # # return JsonResponse(loads, safe=False)
         # # print(connection.queries[-1:])
+        # todo 加载函数，放在标签建模设置中指定运行，
+
+
         return restful.result(message="操作成功", data=ret1.data)
 
     """更新状态"""
@@ -1157,7 +1159,7 @@ class YjyzszView(mixins.ListModelMixin, generics.GenericAPIView):
 
 
 class YjyzlsszView(mixins.ListModelMixin, generics.GenericAPIView):
-    # authentication_classes = []
+    authentication_classes = []
 
     def get_queryset(self):
         all_queryset = wm.XtglYjyzsz.objects.none()
@@ -1175,4 +1177,281 @@ class YjyzlsszView(mixins.ListModelMixin, generics.GenericAPIView):
 
     def get(self, request, *args, **kwargs):
         resoult = self.list(request, *args, **kwargs)
+        print(resoult.data)
+
         return restful.result(message="操作成功", data=resoult.data)
+
+
+class WaringTableView(mixins.ListModelMixin, generics.GenericAPIView):
+    # todo 认证
+    authentication_classes = []
+
+    def get(self, request, *args, **kwargs):
+        yesterday = datetime.date.today() + datetime.timedelta(-1)
+
+        mong = datetime.datetime.now().month
+        year = datetime.datetime.now().year
+        # month = datetime.datetime.now().strftime('%Y-%m')
+        # aaa = wm.ZnyjZjzxbxk.objects.filter(update_time__month=mong).count()
+        month = wm.ZnyjZjzxbxk.objects.filter(update_time__year=year, update_time__month=mong).count()
+        # print(aaa)
+        # print(month)
+
+        # list = [wm.ZnyjZjzxbxk, wm.ZnyjXxtxblx, wm.ZnyjXwzsyj, wm.ZnyjBzx, wm.ZnyjTkxw, wm.ZnyjWgyj, wm.ZnyjSwxw]
+        # list2 = [zjzxbxkqxcs, xxtxblxqxcs, xwzsqxcs, bzxqxcs, tkxwqxcs, wgqxcs, swxwqxcs]
+        # list3 = [zjzxbxkqrcs, xxtxblxqrcs, xwzsqrcs, bzxqrcs]
+        # todo 在籍在校不选课
+        zjzxbxkqxcs = wm.ZnyjZjzxbxk.objects.filter(clzt=2).filter(update_time__contains=yesterday).count()
+        zjzxbxkqrcs = wm.ZnyjZjzxbxk.objects.filter(clzt=1).filter(update_time__contains=yesterday).count()
+        zjzxbxkcs = zjzxbxkqrcs + zjzxbxkqxcs
+
+        # todo 休学退学不离校
+        xxtxblxqxcs = wm.ZnyjXxtxblx.objects.filter(clzt=2).filter(update_time__contains=yesterday).count()
+        xxtxblxqrcs = wm.ZnyjXxtxblx.objects.filter(clzt=1).filter(update_time__contains=yesterday).count()
+        xxtxbxlyjcs = xxtxblxqxcs + xxtxblxqrcs
+        # todo 校外住宿
+        xwzsqxcs = wm.ZnyjXwzsyj.objects.filter(clzt=2).filter(update_time__contains=yesterday).count()
+        xwzsqrcs = wm.ZnyjXwzsyj.objects.filter(clzt=1).filter(update_time__contains=yesterday).count()
+        xwzsqrcs = xwzsqxcs + xwzsqrcs
+        # todo 不在校
+        bzxqxcs = wm.ZnyjBzx.objects.filter(clzt=2).filter(update_time__contains=yesterday).count()
+        bzxqrcs = wm.ZnyjBzx.objects.filter(clzt=1).filter(update_time__contains=yesterday).count()
+        bzxyjcs = bzxqxcs + bzxqrcs
+        # todo 逃课行为
+        tkxwqxcs = wm.ZnyjTkxw.objects.filter(clzt=2).filter(update_time__contains=yesterday).count()
+        tkxwqrcs = wm.ZnyjTkxw.objects.filter(clzt=1).filter(update_time__contains=yesterday).count()
+        tkxwyjcs = tkxwqxcs + tkxwqrcs
+        # todo 晚归
+        wgqxcs = wm.ZnyjWgyj.objects.filter(clzt=2).filter(update_time__contains=yesterday).count()
+        wgqrcs = wm.ZnyjWgyj.objects.filter(clzt=1).filter(update_time__contains=yesterday).count()
+        wgyjcs = wgqxcs + wgqrcs
+
+        # todo 上网行为
+        # swxwqxcs = wm.ZnyjSwxw.objects.filter(clzt=2).filter(update_time__contains=yesterday).count()
+        # swxwqrcs = wm.ZnyjSwxw.objects.filter(clzt=1).filter(update_time__contains=yesterday).count()
+        # swxwyjcs = swxwqxcs + swxwqrcs
+
+        ret = {}
+        ret['zjzxbxkcs'] = zjzxbxkcs
+        ret['zjzxbxkqrcs'] = zjzxbxkqrcs
+        ret['zjzxbxkqxcs'] = zjzxbxkqxcs
+
+        ret['xxtxblxqxcs'] = xxtxblxqxcs
+        ret['xxtxblxqrcs'] = xxtxblxqrcs
+        ret['xxtxbxlyjcs'] = xxtxbxlyjcs
+
+        ret['xwzsqxcs'] = xwzsqxcs
+        ret['xwzsqrcs'] = xwzsqrcs
+        ret['xwzsqrcs'] = xwzsqrcs
+
+        ret['bzxqxcs'] = bzxqxcs
+        ret['bzxqrcs'] = bzxqrcs
+        ret['bzxyjcs'] = bzxyjcs
+
+        ret['tkxwqxcs'] = tkxwqxcs
+        ret['tkxwqrcs'] = tkxwqrcs
+        ret['tkxwyjcs'] = tkxwyjcs
+
+        ret['wgqxcs'] = wgqxcs
+        ret['wgqrcs'] = wgqrcs
+        ret['wgyjcs'] = wgyjcs
+
+        # ret['swxwqxcs'] = swxwqxcs
+        # ret['swxwqrcs'] = swxwqrcs
+        # ret['swxwyjcs'] = swxwyjcs
+
+        # # 一年前的今天
+        # start = datetime.datetime.now() - relativedelta(month=12)
+        # print(start)
+        # # 当前时间
+        # now = datetime.datetime.now()
+        # print(now)
+        # # 获取近一年数据
+        # data= wm.ZnyjZjzxbxk.objects.filter(create_time__range=(start, now))
+        # print(data)
+        # # 利用年月日进行分组查询
+        # from django.db.models import Count
+        #
+        # res = data.extra(select={'year': 'year(create_time)', 'month': 'month(create_time)'}).values('year',
+        #                                                                                              'month').annotate(
+        #     count=Count('id')).order_by()
+        # print(res)
+
+        # 计算时间
+        time = datetime.datetime.now() - relativedelta(years=1)
+        # list集合
+        # rett = ['ZnyjZjzxbxk', 'ZnyjXxtxblx', 'ZnyjBzx', 'ZnyjXwzsyj', 'ZnyjWgyj', 'ZnyjTkxw']
+        # for i in range(len(rett)):
+        # 获取近一年数据
+        one_year_data1 = wm.ZnyjZjzxbxk.objects.filter(create_time__gte=time)
+        one_year_data2 = wm.ZnyjXxtxblx.objects.filter(create_time__gte=time)
+        one_year_data3 = wm.ZnyjBzx.objects.filter(create_time__gte=time)
+        one_year_data4 = wm.ZnyjXwzsyj.objects.filter(create_time__gte=time)
+        one_year_data5 = wm.ZnyjWgyj.objects.filter(create_time__gte=time)
+        one_year_data6 = wm.ZnyjTkxw.objects.filter(create_time__gte=time)
+
+        # 分组统计每个月的数据
+        zxzxbxk_year_month = one_year_data1 \
+            .annotate(year=ExtractYear('create_time'), month=ExtractMonth('create_time')) \
+            .values('year', 'month').order_by('year', 'month').annotate(count=Count('create_time'))
+        xxtxblx_year_month = one_year_data2 \
+            .annotate(year=ExtractYear('create_time'), month=ExtractMonth('create_time')) \
+            .values('year', 'month').order_by('year', 'month').annotate(count=Count('create_time'))
+        bzx_year_month = one_year_data3 \
+            .annotate(year=ExtractYear('create_time'), month=ExtractMonth('create_time')) \
+            .values('year', 'month').order_by('year', 'month').annotate(count=Count('create_time'))
+        xwzs_year_month = one_year_data4 \
+            .annotate(year=ExtractYear('create_time'), month=ExtractMonth('create_time')) \
+            .values('year', 'month').order_by('year', 'month').annotate(count=Count('create_time'))
+        wg_year_month = one_year_data5 \
+            .annotate(year=ExtractYear('create_time'), month=ExtractMonth('create_time')) \
+            .values('year', 'month').order_by('year', 'month').annotate(count=Count('create_time'))
+        tkxw_year_month = one_year_data6 \
+            .annotate(year=ExtractYear('create_time'), month=ExtractMonth('create_time')) \
+            .values('year', 'month').order_by('year', 'month').annotate(count=Count('create_time'))
+
+        print("**************************")
+        ret['zxzxbxk_year_month'] = list(zxzxbxk_year_month)
+        ret['xxtxblx_year_month'] = list(xxtxblx_year_month)
+        ret['bzx_year_month'] = list(bzx_year_month)
+        ret['xwzs_year_month'] = list(xwzs_year_month)
+        ret['wg_year_month'] = list(wg_year_month)
+        ret['tkxw_year_month'] = list(tkxw_year_month)
+        # query = pickle.loads()
+        # zxzxbxk_year_month.query = query
+        # print(query)
+
+        return restful.result(message="操作成功", data=ret)
+
+
+""" 自定义函数，读取标签建模中设定规则，函数规则拼接SQL，并写入到数据库中"""
+import json
+from datetime import datetime
+
+def BqjmToSQL():
+
+    yjyzs = pm.XtglBqsz.objects.all().order_by("-update_time").values('bqgz', 'zbfl').first()
+    aa = yjyzs['bqgz']
+    # 将str转化为dict
+    print("aa:" + aa)
+    if yjyzs['zbfl'] == 1:
+        bb = json.loads(aa)['domlist']
+        ret = []
+        # todo 1.遍历列表获取索引值
+        for i in bb:
+            index = bb.index(i)
+            ywbm = \
+                json.loads(list(pm.XtglZbx.objects.filter(id=bb[index]['id']).values('zdxz'))[0]['zdxz'])['dataSelect'][
+                    0][
+                    'ywbm']
+            zdxz = \
+                json.loads(list(pm.XtglZbx.objects.filter(id=bb[index]['id']).values('zdxz'))[0]['zdxz'])['dataSelect'][
+                    0][
+                    'zdsjbbs']
+
+            jsf = bb[index]['arrName'][0]['jsf']
+            ysf = bb[index]['arrName'][0]['ysf']
+            yz_val = bb[index]['arrName'][0]['yz_val']
+            SQL = "SELECT " + 'xh, ' + jsf + "(" + zdxz + ")" + "FROM " + ywbm + " WHERE " + zdxz + ysf + yz_val
+            ret.append(SQL)
+        # todo 2列表中拼接字符串
+        list_join = ' UNION ALL '.join(ret)
+        SQL_parameters = len(ret) - 1
+        SQL_result = "SELECT  xh, COUNT(*) FROM (" + list_join + ") a GROUP BY xh HAVING COUNT(*) > " + str(
+            SQL_parameters)
+
+        xsbq = pm.XtglBqsz.objects.all().order_by("-update_time").first()
+        xsbq.bqSQL = SQL_result
+        xsbq.create_time = datetime.now()
+        xsbq.save()
+
+    elif yjyzs['zbfl'] == 0:
+        ret = []
+        ysf = json.loads(aa)['ysf']
+        yz_val = json.loads(aa)['yz_val']
+        qzxs = json.loads(aa)['zbxmcarry'][0]['qzxs']
+        ywbm = \
+            json.loads(
+                list(pm.XtglZbx.objects.filter(id=json.loads(aa)['zbxmcarry'][0]['id']).values('zdxz'))[0]['zdxz'])[
+                'dataSelect'][0]['ywbm']
+        zdxz = \
+            json.loads(
+                list(pm.XtglZbx.objects.filter(id=json.loads(aa)['zbxmcarry'][0]['id']).values('zdxz'))[0]['zdxz'])[
+                'dataSelect'][
+                0][
+                'zdsjbbs']
+        SQL = "SELECT " + 'xh, ' + zdxz + " * " + qzxs + " FROM " + ywbm + " WHERE " + zdxz + ysf + yz_val
+        ret.append(SQL)
+        # todo 3列表中拼接字符串
+        list_join = ' UNION ALL '.join(ret)
+        SQL_parameters = len(ret) - 1
+        SQL_result = "SELECT  xh, COUNT(*) FROM (" + list_join + ") a GROUP BY zgh HAVING COUNT(*) > " + str(
+            SQL_parameters)
+
+        xsbq = pm.XtglBqsz.objects.all().order_by("-update_time").first()
+        xsbq.bqSQL = SQL_result
+        xsbq.update_time = datetime.now()
+        xsbq.save()
+    else:
+        print("指标项缺少")
+
+    # 2 获取索引和值
+    # for index, value in enumerate(bb):
+    #     print(index, value)
+
+
+"""函数:查询标签建模SQL语句，为本专科生打标签"""
+def search():
+    # todo 1. 导入包 DB 连接
+    from django.db import connection, transaction
+    cursor = connection.cursor()
+    # todo 2.数据修改操作--提交要求
+    # todo 2.按照系统管理标签设置更新时间字段取出最新的值
+    sqlResult = pm.XtglBqsz.objects.all().order_by("-update_time").values('bqmc', 'bqSQL', 'bqms', 'kfqx').first()
+    # todo 4.获取插入学生画像标签数据
+    bqmss = sqlResult['bqms']
+    kfqxs = sqlResult['kfqx']
+    bqs = sqlResult['bqmc']
+    sql = sqlResult['bqSQL']
+    # todo 5.执行sql
+    cursor.execute(sql)
+    # todo 6.获取值（tupbo）
+    return_arr = cursor.fetchall()
+    try:
+        # todo 3.按照学生画像更新字段来取出最新的值
+        bq = list(pm.XshxBq.objects.all().order_by("-update_time").values('bq'))[0]['bq']
+        # todo 7.循环插入mysql数据库
+        if bq == bqs:
+            print("修改标签有效状态为0 ，再次插入有效状态标签")
+            pm.XshxBq.objects.filter(bq=bqs).update(sfyx=0)
+
+            for item in return_arr:
+                pm.XshxBq.objects.create(xh=item[0], bq=bqs, bqsm=bqmss, bqqx=kfqxs)
+            # 遍历保存修改的结果，源数据（未删除）
+            # for i in ret:
+            #     bqsfyx = pm.XshxBq(bq=i.bq,sfyx=0,xh=i.xh,bqsm=i.bqsm,bqqx=i.bqqx,create_time=i.create_time)
+            #     bqsfyx.save()
+        else:
+            for item in return_arr:
+                pm.XshxBq.objects.create(xh=item[0], bq=bqs, bqsm=bqmss, bqqx=kfqxs)
+            print("操作成功")
+    except IndexError:
+        print("插入数据")
+        for item in return_arr:
+            pm.XshxBq.objects.create(xh=item[0], bq=bqs, bqsm=bqmss, bqqx=kfqxs)
+
+
+
+
+
+
+
+
+
+
+
+
+
+    # # todo 3 str类型的列表转化为Python中真正的列表，借用第三方工具实现
+    # from ast import literal_eval
+    # new_list = literal_eval(sql)
