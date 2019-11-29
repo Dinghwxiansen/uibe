@@ -40,6 +40,6 @@ urlpatterns = [
     re_path(r'^(?P<version>[v1|v2]+)/xshxxsd/$', views.XshxXsdVIew.as_view()),
     re_path(r'^(?P<version>[v1|v2]+)/xshxjstxq/$', views.XshxJsdXqVIew.as_view()),
 
-
+    re_path(r'^(?P<version>[v1|v2]+)/bm/$', views.BmVIew.as_view()),
 
 ]
