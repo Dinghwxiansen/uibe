@@ -231,7 +231,7 @@ class UibeJzgFilter(django_filters.FilterSet):
 
     class Meta():
         model = pm.UibeJzg
-        fields = ['xm', 'zgh', 'yx', 'xznj']
+        fields = ['xm', 'zgh', 'bm']
 
 
 """用户画像之学生画像教师端"""
