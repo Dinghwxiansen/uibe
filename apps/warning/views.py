@@ -1,9 +1,10 @@
 # Create your views here.
 
-import datetime
+import json
+# todo import datetime直接导入 报错 nomodule min
+from datetime import *
 
 from dateutil.relativedelta import relativedelta
-from django.db import connection
 from django.db.models import Count, Q, Sum
 from django.db.models.functions import ExtractYear, ExtractMonth
 from django_filters.rest_framework import DjangoFilterBackend
@@ -28,8 +29,8 @@ class ZjzxbxkView(mixins.ListModelMixin, mixins.CreateModelMixin,
 
     def get_queryset(self):
 
-        kssj = self.request.query_params.get("kssj", datetime.date.min)
-        jssj = self.request.query_params.get("jssj", datetime.date.today() + datetime.timedelta(days=1))
+        kssj = self.request.query_params.get("kssj", date.min)
+        jssj = self.request.query_params.get("jssj", date.today() + timedelta(days=1))
 
         xhxm = self.request.query_params.get('xhxm', None)
         myfilter = Q(zjzxbxk__create_time__gt=kssj) & Q(zjzxbxk__create_time__lt=jssj)
@@ -46,7 +47,6 @@ class ZjzxbxkView(mixins.ListModelMixin, mixins.CreateModelMixin,
                 ret = pm.UibeBzks.objects.filter(xm=xhxm).annotate(
                     yjcs=Count("zjzxbxk", filter=myfilter)).filter(
                     yjcs__gte=1).order_by("-update_time")
-
         return ret
 
     # 序列化
@@ -57,14 +57,17 @@ class ZjzxbxkView(mixins.ListModelMixin, mixins.CreateModelMixin,
     filter_class = filter.BzksFilter
 
     def post(self, request, *args, **kwargs):
+        try:
 
-        ret = self.list(request, *args, **kwargs)
+            ret = self.list(request, *args, **kwargs)
 
-        d = {"kssj": self.request.query_params.get("kssj", datetime.date.min),
-             "jssj": self.request.query_params.get("jssj", datetime.date.today())}
+            d = {"kssj": self.request.query_params.get("kssj", date.min),
+                 "jssj": self.request.query_params.get("jssj", date.today())}
 
-        # print(connection.queries[-1:])
-        return restful.result(message="操作成功", data=ret.data, kwargs=d)
+            # print(connection.queries[-1:])
+            return restful.result(message="操作成功", data=ret.data, kwargs=d)
+        except Exception as e:
+            return restful.result2(message="操作失败", data=e.args)
 
 
 """智能预警之在籍在校不选课预警明细"""
@@ -83,10 +86,10 @@ class ZjzxbxkmxView(viewsets.ModelViewSet):
     def retrieve(self, request, *args, **kwargs):
         try:
             ret = self.list(request, *args, **kwargs)
-            print(connection.queries)
+            # print(connection.queries)
             return restful.result(message="操作成功", data=ret.data)
         except Exception as e:
-            return restful.result(message=e.detail)
+            return restful.result2(message="操作失败", data=e.args)
 
     # 更新状态
     # def patch(self, request, *args, **kwargs):
@@ -123,7 +126,7 @@ class ZjzxbxkmxView(viewsets.ModelViewSet):
                 else:
                     return restful.result(message="操作成功，状态开启")
         except Exception as e:
-            return restful.result(message=e.detail)
+            return restful.result2(message="操作失败", data=e.args)
 
 
 """*****************************智能预警之休学退学不离校预警*********************************"""
@@ -138,8 +141,10 @@ class XxtxblxView(mixins.ListModelMixin, mixins.CreateModelMixin,
     pagination_class = Pagination
 
     def get_queryset(self):
-        kssj = self.request.query_params.get("kssj", datetime.date.min)
-        jssj = self.request.query_params.get("jssj", datetime.date.today() + datetime.timedelta(days=1))
+        # todo kssj = self.request.query_params.get("kssj", datetime.date.min)
+        # todo jssj = self.request.query_params.get("jssj", datetime.date.today() + datetime.timedelta(days=1))
+        kssj = self.request.query_params.get("kssj", date.min)
+        jssj = self.request.query_params.get("jssj", date.today() + timedelta(days=1))
 
         xhxm = self.request.query_params.get('xhxm', None)
         myfilter = Q(xxtxblx__create_time__gt=kssj) & Q(xxtxblx__create_time__lt=jssj)
@@ -165,12 +170,15 @@ class XxtxblxView(mixins.ListModelMixin, mixins.CreateModelMixin,
     filter_class = filter.BzksFilter
 
     def post(self, request, *args, **kwargs):
-        ret = self.list(request, *args, **kwargs)
-        d = {"kssj": self.request.query_params.get("kssj", datetime.date.min),
-             "jssj": self.request.query_params.get("jssj", datetime.date.today())}
-        # <class 'rest_framework.response.Response'>
-        # <class 'collections.OrderedDict'>
-        return restful.result(message="操作成功", data=ret.data, kwargs=d)
+        try:
+            ret = self.list(request, *args, **kwargs)
+            d = {"kssj": self.request.query_params.get("kssj", date.min),
+                 "jssj": self.request.query_params.get("jssj", date.today())}
+            # <class 'rest_framework.response.Response'>
+            # <class 'collections.OrderedDict'>
+            return restful.result(message="操作成功", data=ret.data, kwargs=d)
+        except Exception as e:
+            return restful.result2(message="操作失败", data=e.args)
 
 
 """智能预警之休学退学不离校预警明细"""
@@ -192,7 +200,8 @@ class XxtxblxmxView(viewsets.ModelViewSet):
             ret = self.list(request, *args, **kwargs)
             return restful.result(message="操作成功", data=ret.data)
         except Exception as e:
-            return restful.result(message=e.detail)
+            return restful.result2(message="操作失败", data=e.args)
+
     """
     # def patch(self, request, *args, **kwargs):
     #     #     ids = request.data['id'].split(',')
@@ -206,6 +215,7 @@ class XxtxblxmxView(viewsets.ModelViewSet):
     #     #         return restful.ok()
     #     #     except Exception as e:
     #     #         return restful.result(message=e.detail)"""
+
     def patch(self, request, *args, **kwargs):
         try:
             if not request.data['id']:
@@ -228,7 +238,7 @@ class XxtxblxmxView(viewsets.ModelViewSet):
                 else:
                     return restful.result(message="操作成功，状态开启")
         except Exception as e:
-            return restful.result(message=e.detail)
+            return restful.result2(message="操作失败", data=e.args)
 
 
 """*****************************智能预警之校外住宿预警*******************************"""
@@ -243,8 +253,8 @@ class XwzsView(mixins.ListModelMixin, mixins.CreateModelMixin,
     pagination_class = Pagination
 
     def get_queryset(self):
-        kssj = self.request.query_params.get("kssj", datetime.date.min)
-        jssj = self.request.query_params.get("jssj", datetime.date.today() + datetime.timedelta(days=1))
+        kssj = self.request.query_params.get("kssj", date.min)
+        jssj = self.request.query_params.get("jssj", date.today() + timedelta(days=1))
         xhxm = self.request.query_params.get('xhxm', None)
         myfilter = Q(xwzs__create_time__gt=kssj) & Q(xwzs__create_time__lt=jssj)
 
@@ -270,10 +280,13 @@ class XwzsView(mixins.ListModelMixin, mixins.CreateModelMixin,
     search_fields = ('xm', 'xh', 'yx', 'xznj', 'bj', '=kssj', '=jssj')  # 在这里添加可以搜索的字段，=表示等， 还可使用正则
 
     def post(self, request, *args, **kwargs):
-        ret = self.list(request, *args, **kwargs)
-        d = {"kssj": self.request.query_params.get("kssj", datetime.date.min),
-             "jssj": self.request.query_params.get("jssj", datetime.date.today())}
-        return restful.result(message="操作成功", data=ret.data, kwargs=d)
+        try:
+            ret = self.list(request, *args, **kwargs)
+            d = {"kssj": self.request.query_params.get("kssj", date.min),
+                 "jssj": self.request.query_params.get("jssj", date.today())}
+            return restful.result(message="操作成功", data=ret.data, kwargs=d)
+        except Exception as e:
+            return restful.result2(message="操作失败", data=e.args)
 
 
 '''校外住宿预警明细'''
@@ -295,7 +308,7 @@ class XwzsmxView(viewsets.ModelViewSet):
             ret = self.list(request, *args, **kwargs)
             return restful.result(message="操作成功", data=ret.data)
         except Exception as e:
-            return restful.result(message=e.detail)
+            return restful.result2(message="操作失败", data=e.args)
 
     # def patch(self, request, *args, **kwargs):
     #     ids = request.data['id'].split(',')
@@ -331,7 +344,7 @@ class XwzsmxView(viewsets.ModelViewSet):
                 else:
                     return restful.result(message="操作成功，状态开启")
         except Exception as e:
-            return restful.result(message=e.detail)
+            return restful.result2(message="操作失败", data=e.args)
 
 
 """******************************智能预警之不在校预警***********************************"""
@@ -346,8 +359,8 @@ class BzxView(mixins.ListModelMixin, mixins.CreateModelMixin,
     pagination_class = Pagination
 
     def get_queryset(self):
-        kssj = self.request.query_params.get("kssj", datetime.date.min)
-        jssj = self.request.query_params.get("jssj", datetime.date.today() + datetime.timedelta(days=1))
+        kssj = self.request.query_params.get("kssj", date.min)
+        jssj = self.request.query_params.get("jssj", date.today() + timedelta(days=1))
 
         xhxm = self.request.query_params.get('xhxm', None)
         myfilter = Q(bzx__create_time__gt=kssj) & Q(bzx__create_time__lt=jssj)
@@ -374,10 +387,13 @@ class BzxView(mixins.ListModelMixin, mixins.CreateModelMixin,
     search_fields = ('xm', 'xh', 'yx', 'xznj', 'bj', '=kssj', '=jssj')  # 在这里添加可以搜索的字段，=表示等， 还可使用正则
 
     def post(self, request, *args, **kwargs):
-        ret = self.list(request, *args, **kwargs)
-        d = {"kssj": self.request.query_params.get("kssj", datetime.date.min),
-             "jssj": self.request.query_params.get("jssj", datetime.date.today())}
-        return restful.result(message="操作成功", data=ret.data, kwargs=d)
+        try:
+            ret = self.list(request, *args, **kwargs)
+            d = {"kssj": self.request.query_params.get("kssj", date.min),
+                 "jssj": self.request.query_params.get("jssj", date.today())}
+            return restful.result(message="操作成功", data=ret.data, kwargs=d)
+        except Exception as e:
+            return restful.result2(message="操作失败", data=e.args)
 
 
 '''不在校预警明细'''
@@ -399,7 +415,7 @@ class BzxmxView(viewsets.ModelViewSet):
             ret = self.list(request, *args, **kwargs)
             return restful.result(message="操作成功", data=ret.data)
         except Exception as e:
-            return restful.result(message=e.detail)
+            return restful.result2(message="操作失败", data=e.args)
 
     # def patch(self, request, *args, **kwargs):
     #     ids = request.data['id'].split(',')
@@ -434,7 +450,7 @@ class BzxmxView(viewsets.ModelViewSet):
                 else:
                     return restful.result(message="操作成功，状态开启")
         except Exception as e:
-            return restful.result(message=e.detail)
+            return restful.result2(message="操作失败", data=e.args)
 
 
 """*****************************智能预警之逃课行为预警*****************************"""
@@ -449,8 +465,8 @@ class TkxwView(mixins.ListModelMixin, mixins.CreateModelMixin,
     pagination_class = Pagination
 
     def get_queryset(self):
-        kssj = self.request.query_params.get("kssj", datetime.date.min)
-        jssj = self.request.query_params.get("jssj", datetime.date.today() + datetime.timedelta(days=1))
+        kssj = self.request.query_params.get("kssj", date.min)
+        jssj = self.request.query_params.get("jssj", date.today() + timedelta(days=1))
 
         xhxm = self.request.query_params.get('xhxm', None)
         myfilter = Q(tkxw__create_time__gt=kssj) & Q(tkxw__create_time__lt=jssj)
@@ -476,10 +492,13 @@ class TkxwView(mixins.ListModelMixin, mixins.CreateModelMixin,
     search_fields = ('xm', 'xh', 'yx', 'xznj', 'bj', '=kssj', '=jssj')  # 在这里添加可以搜索的字段，=表示等， 还可使用正则
 
     def post(self, request, *args, **kwargs):
-        ret = self.list(request, *args, **kwargs)
-        d = {"kssj": self.request.query_params.get("kssj", datetime.date.min),
-             "jssj": self.request.query_params.get("jssj", datetime.date.today())}
-        return restful.result(message="操作成功", data=ret.data, kwargs=d)
+        try:
+            ret = self.list(request, *args, **kwargs)
+            d = {"kssj": self.request.query_params.get("kssj", date.min),
+                 "jssj": self.request.query_params.get("jssj", date.today())}
+            return restful.result(message="操作成功", data=ret.data, kwargs=d)
+        except Exception as e:
+            return restful.result2(message="操作失败", data=e.args)
 
 
 '''逃课行为预警明细'''
@@ -501,7 +520,7 @@ class TkxwmxView(viewsets.ModelViewSet):
             ret = self.list(request, *args, **kwargs)
             return restful.result(message="操作成功", data=ret.data)
         except Exception as e:
-            return restful.result(message=e.detail)
+            return restful.result2(message="操作失败", data=e.args)
 
     # def patch(self, request, *args, **kwargs):
     #     #     ids = request.data['id'].split(',')
@@ -537,7 +556,7 @@ class TkxwmxView(viewsets.ModelViewSet):
                 else:
                     return restful.result(message="操作成功，状态开启")
         except Exception as e:
-            return restful.result(message=e.detail)
+            return restful.result2(message="操作失败", data=e.args)
 
 
 """***********************************智能预警之晚归预警************************************"""
@@ -552,8 +571,8 @@ class WgView(mixins.ListModelMixin, mixins.CreateModelMixin,
     pagination_class = Pagination
 
     def get_queryset(self):
-        kssj = self.request.query_params.get("kssj", datetime.date.min)
-        jssj = self.request.query_params.get("jssj", datetime.date.today() + datetime.timedelta(days=1))
+        kssj = self.request.query_params.get("kssj", date.min)
+        jssj = self.request.query_params.get("jssj", date.today() + timedelta(days=1))
 
         xhxm = self.request.query_params.get('xhxm', None)
         myfilter = Q(wg__create_time__gt=kssj) & Q(wg__create_time__lt=jssj)
@@ -579,11 +598,14 @@ class WgView(mixins.ListModelMixin, mixins.CreateModelMixin,
     search_fields = ('xm', 'xh', 'yx', 'xznj', 'bj', '=kssj', '=jssj')  # 在这里添加可以搜索的字段，=表示等， 还可使用正则
 
     def post(self, request, *args, **kwargs):
-        ret = self.list(request, *args, **kwargs)
-        d = {"kssj": self.request.query_params.get("kssj", datetime.date.min),
-             "jssj": self.request.query_params.get("jssj", datetime.date.today())}
+        try:
+            ret = self.list(request, *args, **kwargs)
+            d = {"kssj": self.request.query_params.get("kssj", date.min),
+                 "jssj": self.request.query_params.get("jssj", date.today())}
 
-        return restful.result(message="操作成功", data=ret.data, kwargs=d)
+            return restful.result(message="操作成功", data=ret.data, kwargs=d)
+        except Exception as e:
+            return restful.result2(message="操作失败", data=e.args)
 
 
 '''晚归预警明细'''
@@ -605,7 +627,7 @@ class WgmxView(viewsets.ModelViewSet):
             ret = self.list(request, *args, **kwargs)
             return restful.result(message="操作成功", data=ret.data)
         except Exception as e:
-            return restful.result(message=e.detail)
+            return restful.result2(message="操作失败", data=e.args)
 
     # def patch(self, request, *args, **kwargs):
     #     ids = request.data['id'].split(',')
@@ -640,7 +662,7 @@ class WgmxView(viewsets.ModelViewSet):
                 else:
                     return restful.result(message="操作成功，状态开启")
         except Exception as e:
-            return restful.result(message=e.detail)
+            return restful.result2(message="操作失败", data=e.args)
 
 
 """*****************************智能预警之上网行为预警*****************************"""
@@ -655,8 +677,8 @@ class SwxwView(mixins.ListModelMixin, mixins.CreateModelMixin,
     pagination_class = Pagination
 
     def get_queryset(self):
-        kssj = self.request.query_params.get("kssj", datetime.date.min)
-        jssj = self.request.query_params.get("jssj", datetime.date.today() + datetime.timedelta(days=1))
+        kssj = self.request.query_params.get("kssj", date.min)
+        jssj = self.request.query_params.get("jssj", date.today() + timedelta(days=1))
         xhxm = self.request.query_params.get('xhxm', None)
         syll = self.request.query_params.get('syll', "0~2**20")
         # print(syll.split("~"))
@@ -688,10 +710,13 @@ class SwxwView(mixins.ListModelMixin, mixins.CreateModelMixin,
     search_fields = ('xm', 'xh', 'yx', 'xznj', 'bj', '=kssj', '=jssj')  # 在这里添加可以搜索的字段，=表示等， 还可使用正则
 
     def post(self, request, *args, **kwargs):
-        ret = self.list(request, *args, **kwargs)
-        d = {"kssj": self.request.query_params.get("kssj", datetime.date.min),
-             "jssj": self.request.query_params.get("jssj", datetime.date.today())}
-        return restful.result(message="操作成功", data=ret.data, kwargs=d)
+        try:
+            ret = self.list(request, *args, **kwargs)
+            d = {"kssj": self.request.query_params.get("kssj", date.min),
+                 "jssj": self.request.query_params.get("jssj", date.today())}
+            return restful.result(message="操作成功", data=ret.data, kwargs=d)
+        except Exception as e:
+            return restful.result2(message="操作失败", data=e.args)
 
 
 """智能预警之上网行为预警明细"""
@@ -713,7 +738,7 @@ class SwxwmxView(viewsets.ModelViewSet):
             ret = self.list(request, *args, **kwargs)
             return restful.result(message="操作成功", data=ret.data)
         except Exception as e:
-            return restful.result(message=e.detail)
+            return restful.result2(message="操作失败", data=e.args)
 
 
 """******************************行为轨迹分析-**************************"""
@@ -727,8 +752,8 @@ class XwgjView(mixins.ListModelMixin, mixins.CreateModelMixin,
     pagination_class = Pagination
 
     def get_queryset(self):
-        kssj = self.request.query_params.get("kssj", datetime.date.min)
-        jssj = self.request.query_params.get("jssj", datetime.date.today() + datetime.timedelta(days=1))
+        kssj = self.request.query_params.get("kssj", date.min)
+        jssj = self.request.query_params.get("jssj", date.today() + timedelta(days=1))
         xhxm = self.request.query_params.get('xhxm', None)
         print(xhxm)
 
@@ -753,10 +778,13 @@ class XwgjView(mixins.ListModelMixin, mixins.CreateModelMixin,
     search_fields = ('xm', 'xh', 'yx', 'xznj', 'bj', '=kssj', '=jssj')  # 在这里添加可以搜索的字段，=表示等， 还可使用正则
 
     def post(self, request, *args, **kwargs):
-        ret = self.list(request, *args, **kwargs)
-        d = {"kssj": self.request.query_params.get("kssj", datetime.date.min),
-             "jssj": self.request.query_params.get("jssj", datetime.date.today())}
-        return restful.result(message="操作成功", data=ret.data, kwargs=d)
+        try:
+            ret = self.list(request, *args, **kwargs)
+            d = {"kssj": self.request.query_params.get("kssj", date.min),
+                 "jssj": self.request.query_params.get("jssj", date.today())}
+            return restful.result(message="操作成功", data=ret.data, kwargs=d)
+        except Exception as e:
+            return restful.result2(message="操作失败", data=e.args)
 
 
 """******************************行为轨迹个人分析-**************************"""
@@ -778,7 +806,7 @@ class XwgjmxView(viewsets.ModelViewSet):
             ret = self.list(request, *args, **kwargs)
             return restful.result(message="操作成功", data=ret.data)
         except Exception as e:
-            return restful.result(message=e.detail)
+            return restful.result2(message="操作失败", data=e.args)
 
 
 # class XwgjView(mixins.ListModelMixin, mixins.CreateModelMixin,
@@ -804,6 +832,7 @@ class XwgjmxView(viewsets.ModelViewSet):
 """下拉列表"""
 
 
+# todo 删除修改
 class SpinnerView(ReadOnlyModelViewSet):
     # authentication_classes = []
     # permission_classes = []
@@ -852,7 +881,7 @@ class ZjzxbxkxgView(mixins.CreateModelMixin, generics.GenericAPIView, ):
             # print(connection.queries)
             return restful.result(message="保存成功")
         except Exception as e:
-            return restful.result2(message=e.detail)
+            return restful.result2(message="操作失败", data=e.args)
 
     # def post(self, request, *args, **kwargs):
     #     # print(request.data)
@@ -911,7 +940,7 @@ class TkxwxgView(mixins.CreateModelMixin, generics.GenericAPIView, ):
             # print(connection.queries)
             return restful.result(message="保存成功")
         except Exception as e:
-            return restful.result2(message=e.detail)
+            return restful.result2(message="操作失败", data=e.args)
 
     """更新
 
@@ -952,7 +981,7 @@ class WgxgView(mixins.CreateModelMixin, generics.GenericAPIView, ):
             # print(connection.queries)
             return restful.result(message="保存成功")
         except Exception as e:
-            return restful.result2(message=e.detail)
+            return restful.result2(message="操作失败", data=e.args)
 
     """更新
 
@@ -992,7 +1021,7 @@ class XxtxblxxgView(mixins.CreateModelMixin, generics.GenericAPIView, ):
             # print(connection.queries)
             return restful.result(message="保存成功")
         except Exception as e:
-            return restful.result2(message=e.detail)
+            return restful.result2(message="操作失败", data=e.args)
 
     """更新
 
@@ -1032,7 +1061,7 @@ class XwzsxgView(mixins.CreateModelMixin, generics.GenericAPIView, ):
             # print(connection.queries)
             return restful.result(message="保存成功")
         except Exception as e:
-            return restful.result2(message=e.detail)
+            return restful.result2(message="操作失败", data=e.args)
 
     """更新
 
@@ -1075,7 +1104,7 @@ class BzxxgView(mixins.CreateModelMixin, generics.GenericAPIView, ):
             # print(connection.queries)
             return restful.result(message="保存成功")
         except Exception as e:
-            return restful.result2(message=e.detail)
+            return restful.result2(message="操作失败", data=e.args)
 
     # def put(self, request, *args, **kwargs):
     #     print(request.data)
@@ -1116,17 +1145,18 @@ class YjyzszView(mixins.ListModelMixin, generics.GenericAPIView):
     filter_class = filter.YjyzsjFilter
 
     def get(self, request, *args, **kwargs):
-        ret1 = self.list(request, *args, **kwargs)
+        try:
+            ret1 = self.list(request, *args, **kwargs)
 
-        # bzx = wm.XtglYjyzsz.objects.filter(code='bzxxg').order_by("-update_time")[0:1]
-        # data = serializ.serialize("json", bzx)
-        # loads = json.loads(data)
-        # # return JsonResponse(loads, safe=False)
-        # # print(connection.queries[-1:])
-        # todo 加载函数，放在标签建模设置中指定运行，
-
-
-        return restful.result(message="操作成功", data=ret1.data)
+            # bzx = wm.XtglYjyzsz.objects.filter(code='bzxxg').order_by("-update_time")[0:1]
+            # data = serializ.serialize("json", bzx)
+            # loads = json.loads(data)
+            # # return JsonResponse(loads, safe=False)
+            # # print(connection.queries[-1:])
+            # todo 加载函数，放在标签建模设置中指定运行，
+            return restful.result(message="操作成功", data=ret1.data)
+        except Exception as e:
+            return restful.result2(message="操作失败", data=e.args)
 
     """更新状态"""
 
@@ -1152,7 +1182,7 @@ class YjyzszView(mixins.ListModelMixin, generics.GenericAPIView):
                 else:
                     return restful.result(message="操作成功，状态开启")
         except Exception as e:
-            return restful.result2(message=e.detail)
+            return restful.result2(message="操作失败", data=e.args)
 
 
 """预警阈值历史设置查询"""
@@ -1176,160 +1206,161 @@ class YjyzlsszView(mixins.ListModelMixin, generics.GenericAPIView):
     serializer_class = serialiser.YjyzlsszSerializer
 
     def get(self, request, *args, **kwargs):
-        resoult = self.list(request, *args, **kwargs)
-        print(resoult.data)
+        try:
+            resoult = self.list(request, *args, **kwargs)
+            print(resoult.data)
 
-        return restful.result(message="操作成功", data=resoult.data)
+            return restful.result(message="操作成功", data=resoult.data)
+        except Exception as e:
+            return restful.result2(message="操作失败", data=e.args)
 
 
 class WaringTableView(mixins.ListModelMixin, generics.GenericAPIView):
     # todo 认证
+
     authentication_classes = []
 
     def get(self, request, *args, **kwargs):
-        yesterday = datetime.date.today() + datetime.timedelta(-1)
+        try:
+            import datetime as dt
+            # yesterday = '2019-11-14'
+            yesterday = dt.date.today() + dt.timedelta(-1)
+            print(yesterday)
+            # mong = datetime.datetime.now().month
+            # year = datetime.datetime.now().year
 
-        mong = datetime.datetime.now().month
-        year = datetime.datetime.now().year
-        # month = datetime.datetime.now().strftime('%Y-%m')
-        # aaa = wm.ZnyjZjzxbxk.objects.filter(update_time__month=mong).count()
-        month = wm.ZnyjZjzxbxk.objects.filter(update_time__year=year, update_time__month=mong).count()
-        # print(aaa)
-        # print(month)
+            # todo 在籍在校不选课
+            zjzxbxkqxcs = wm.ZnyjZjzxbxk.objects.filter(clzt=2).filter(update_time__contains=yesterday).count()
+            zjzxbxkqrcs = wm.ZnyjZjzxbxk.objects.filter(clzt=1).filter(update_time__contains=yesterday).count()
+            zjzxbxkcs = zjzxbxkqrcs + zjzxbxkqxcs
 
-        # list = [wm.ZnyjZjzxbxk, wm.ZnyjXxtxblx, wm.ZnyjXwzsyj, wm.ZnyjBzx, wm.ZnyjTkxw, wm.ZnyjWgyj, wm.ZnyjSwxw]
-        # list2 = [zjzxbxkqxcs, xxtxblxqxcs, xwzsqxcs, bzxqxcs, tkxwqxcs, wgqxcs, swxwqxcs]
-        # list3 = [zjzxbxkqrcs, xxtxblxqrcs, xwzsqrcs, bzxqrcs]
-        # todo 在籍在校不选课
-        zjzxbxkqxcs = wm.ZnyjZjzxbxk.objects.filter(clzt=2).filter(update_time__contains=yesterday).count()
-        zjzxbxkqrcs = wm.ZnyjZjzxbxk.objects.filter(clzt=1).filter(update_time__contains=yesterday).count()
-        zjzxbxkcs = zjzxbxkqrcs + zjzxbxkqxcs
+            # todo 休学退学不离校
+            xxtxblxqxcs = wm.ZnyjXxtxblx.objects.filter(clzt=2).filter(update_time__contains=yesterday).count()
+            xxtxblxqrcs = wm.ZnyjXxtxblx.objects.filter(clzt=1).filter(update_time__contains=yesterday).count()
+            xxtxbxlyjcs = xxtxblxqxcs + xxtxblxqrcs
+            # todo 校外住宿
+            xwzsqxcs = wm.ZnyjXwzsyj.objects.filter(clzt=2).filter(update_time__contains=yesterday).count()
+            xwzsqrcs = wm.ZnyjXwzsyj.objects.filter(clzt=1).filter(update_time__contains=yesterday).count()
+            xwzsyjcs = xwzsqxcs + xwzsqrcs
+            # todo 不在校
+            bzxqxcs = wm.ZnyjBzx.objects.filter(clzt=2).filter(update_time__contains=yesterday).count()
+            bzxqrcs = wm.ZnyjBzx.objects.filter(clzt=1).filter(update_time__contains=yesterday).count()
+            bzxyjcs = bzxqxcs + bzxqrcs
+            # todo 逃课行为
+            tkxwqxcs = wm.ZnyjTkxw.objects.filter(clzt=2).filter(update_time__contains=yesterday).count()
+            tkxwqrcs = wm.ZnyjTkxw.objects.filter(clzt=1).filter(update_time__contains=yesterday).count()
+            tkxwyjcs = tkxwqxcs + tkxwqrcs
+            # todo 晚归
+            wgqxcs = wm.ZnyjWgyj.objects.filter(clzt=2).filter(update_time__contains=yesterday).count()
+            wgqrcs = wm.ZnyjWgyj.objects.filter(clzt=1).filter(update_time__contains=yesterday).count()
+            wgyjcs = wgqxcs + wgqrcs
 
-        # todo 休学退学不离校
-        xxtxblxqxcs = wm.ZnyjXxtxblx.objects.filter(clzt=2).filter(update_time__contains=yesterday).count()
-        xxtxblxqrcs = wm.ZnyjXxtxblx.objects.filter(clzt=1).filter(update_time__contains=yesterday).count()
-        xxtxbxlyjcs = xxtxblxqxcs + xxtxblxqrcs
-        # todo 校外住宿
-        xwzsqxcs = wm.ZnyjXwzsyj.objects.filter(clzt=2).filter(update_time__contains=yesterday).count()
-        xwzsqrcs = wm.ZnyjXwzsyj.objects.filter(clzt=1).filter(update_time__contains=yesterday).count()
-        xwzsqrcs = xwzsqxcs + xwzsqrcs
-        # todo 不在校
-        bzxqxcs = wm.ZnyjBzx.objects.filter(clzt=2).filter(update_time__contains=yesterday).count()
-        bzxqrcs = wm.ZnyjBzx.objects.filter(clzt=1).filter(update_time__contains=yesterday).count()
-        bzxyjcs = bzxqxcs + bzxqrcs
-        # todo 逃课行为
-        tkxwqxcs = wm.ZnyjTkxw.objects.filter(clzt=2).filter(update_time__contains=yesterday).count()
-        tkxwqrcs = wm.ZnyjTkxw.objects.filter(clzt=1).filter(update_time__contains=yesterday).count()
-        tkxwyjcs = tkxwqxcs + tkxwqrcs
-        # todo 晚归
-        wgqxcs = wm.ZnyjWgyj.objects.filter(clzt=2).filter(update_time__contains=yesterday).count()
-        wgqrcs = wm.ZnyjWgyj.objects.filter(clzt=1).filter(update_time__contains=yesterday).count()
-        wgyjcs = wgqxcs + wgqrcs
+            # todo 上网行为
+            # swxwqxcs = wm.ZnyjSwxw.objects.filter(clzt=2).filter(update_time__contains=yesterday).count()
+            # swxwqrcs = wm.ZnyjSwxw.objects.filter(clzt=1).filter(update_time__contains=yesterday).count()
+            # swxwyjcs = swxwqxcs + swxwqrcs
 
-        # todo 上网行为
-        # swxwqxcs = wm.ZnyjSwxw.objects.filter(clzt=2).filter(update_time__contains=yesterday).count()
-        # swxwqrcs = wm.ZnyjSwxw.objects.filter(clzt=1).filter(update_time__contains=yesterday).count()
-        # swxwyjcs = swxwqxcs + swxwqrcs
+            ret = {}
+            ret['yesterday'] = yesterday
+            ret['zjzxbxkcs'] = zjzxbxkcs
+            ret['zjzxbxkqrcs'] = zjzxbxkqrcs
+            ret['zjzxbxkqxcs'] = zjzxbxkqxcs
 
-        ret = {}
-        ret['zjzxbxkcs'] = zjzxbxkcs
-        ret['zjzxbxkqrcs'] = zjzxbxkqrcs
-        ret['zjzxbxkqxcs'] = zjzxbxkqxcs
+            ret['xxtxblxqxcs'] = xxtxblxqxcs
+            ret['xxtxblxqrcs'] = xxtxblxqrcs
+            ret['xxtxbxlyjcs'] = xxtxbxlyjcs
 
-        ret['xxtxblxqxcs'] = xxtxblxqxcs
-        ret['xxtxblxqrcs'] = xxtxblxqrcs
-        ret['xxtxbxlyjcs'] = xxtxbxlyjcs
+            ret['xwzsqxcs'] = xwzsqxcs
+            ret['xwzsqrcs'] = xwzsqrcs
+            ret['xwzsqrcs'] = xwzsyjcs
 
-        ret['xwzsqxcs'] = xwzsqxcs
-        ret['xwzsqrcs'] = xwzsqrcs
-        ret['xwzsqrcs'] = xwzsqrcs
+            ret['bzxqxcs'] = bzxqxcs
+            ret['bzxqrcs'] = bzxqrcs
+            ret['bzxyjcs'] = bzxyjcs
 
-        ret['bzxqxcs'] = bzxqxcs
-        ret['bzxqrcs'] = bzxqrcs
-        ret['bzxyjcs'] = bzxyjcs
+            ret['tkxwqxcs'] = tkxwqxcs
+            ret['tkxwqrcs'] = tkxwqrcs
+            ret['tkxwyjcs'] = tkxwyjcs
 
-        ret['tkxwqxcs'] = tkxwqxcs
-        ret['tkxwqrcs'] = tkxwqrcs
-        ret['tkxwyjcs'] = tkxwyjcs
+            ret['wgqxcs'] = wgqxcs
+            ret['wgqrcs'] = wgqrcs
+            ret['wgyjcs'] = wgyjcs
 
-        ret['wgqxcs'] = wgqxcs
-        ret['wgqrcs'] = wgqrcs
-        ret['wgyjcs'] = wgyjcs
+            # ret['swxwqxcs'] = swxwqxcs
+            # ret['swxwqrcs'] = swxwqrcs
+            # ret['swxwyjcs'] = swxwyjcs
 
-        # ret['swxwqxcs'] = swxwqxcs
-        # ret['swxwqrcs'] = swxwqrcs
-        # ret['swxwyjcs'] = swxwyjcs
+            # # 一年前的今天
+            # start = datetime.datetime.now() - relativedelta(month=12)
+            # print(start)
+            # # 当前时间
+            # now = datetime.datetime.now()
+            # print(now)
+            # # 获取近一年数据
+            # data= wm.ZnyjZjzxbxk.objects.filter(create_time__range=(start, now))
+            # print(data)
+            # # 利用年月日进行分组查询
+            # from django.db.models import Count
+            #
+            # res = data.extra(select={'year': 'year(create_time)', 'month': 'month(create_time)'}).values('year',
+            #                                                                                              'month').annotate(
+            #     count=Count('id')).order_by()
+            # print(res)
 
-        # # 一年前的今天
-        # start = datetime.datetime.now() - relativedelta(month=12)
-        # print(start)
-        # # 当前时间
-        # now = datetime.datetime.now()
-        # print(now)
-        # # 获取近一年数据
-        # data= wm.ZnyjZjzxbxk.objects.filter(create_time__range=(start, now))
-        # print(data)
-        # # 利用年月日进行分组查询
-        # from django.db.models import Count
-        #
-        # res = data.extra(select={'year': 'year(create_time)', 'month': 'month(create_time)'}).values('year',
-        #                                                                                              'month').annotate(
-        #     count=Count('id')).order_by()
-        # print(res)
+            # 计算时间
+            time = datetime.now() - relativedelta(years=1)
+            # list集合
+            # rett = ['ZnyjZjzxbxk', 'ZnyjXxtxblx', 'ZnyjBzx', 'ZnyjXwzsyj', 'ZnyjWgyj', 'ZnyjTkxw']
+            # for i in range(len(rett)):
+            # 获取近一年数据
+            one_year_data1 = wm.ZnyjZjzxbxk.objects.filter(create_time__gte=time)
+            one_year_data2 = wm.ZnyjXxtxblx.objects.filter(create_time__gte=time)
+            one_year_data3 = wm.ZnyjBzx.objects.filter(create_time__gte=time)
+            one_year_data4 = wm.ZnyjXwzsyj.objects.filter(create_time__gte=time)
+            one_year_data5 = wm.ZnyjWgyj.objects.filter(create_time__gte=time)
+            one_year_data6 = wm.ZnyjTkxw.objects.filter(create_time__gte=time)
 
-        # 计算时间
-        time = datetime.datetime.now() - relativedelta(years=1)
-        # list集合
-        # rett = ['ZnyjZjzxbxk', 'ZnyjXxtxblx', 'ZnyjBzx', 'ZnyjXwzsyj', 'ZnyjWgyj', 'ZnyjTkxw']
-        # for i in range(len(rett)):
-        # 获取近一年数据
-        one_year_data1 = wm.ZnyjZjzxbxk.objects.filter(create_time__gte=time)
-        one_year_data2 = wm.ZnyjXxtxblx.objects.filter(create_time__gte=time)
-        one_year_data3 = wm.ZnyjBzx.objects.filter(create_time__gte=time)
-        one_year_data4 = wm.ZnyjXwzsyj.objects.filter(create_time__gte=time)
-        one_year_data5 = wm.ZnyjWgyj.objects.filter(create_time__gte=time)
-        one_year_data6 = wm.ZnyjTkxw.objects.filter(create_time__gte=time)
+            # 分组统计每个月的数据
+            zjzxbxk_year_month = one_year_data1 \
+                .annotate(year=ExtractYear('create_time'), month=ExtractMonth('create_time')) \
+                .values('year', 'month').order_by('year', 'month').annotate(count=Count('create_time'))
+            xxtxblx_year_month = one_year_data2 \
+                .annotate(year=ExtractYear('create_time'), month=ExtractMonth('create_time')) \
+                .values('year', 'month').order_by('year', 'month').annotate(count=Count('create_time'))
+            bzx_year_month = one_year_data3 \
+                .annotate(year=ExtractYear('create_time'), month=ExtractMonth('create_time')) \
+                .values('year', 'month').order_by('year', 'month').annotate(count=Count('create_time'))
+            xwzs_year_month = one_year_data4 \
+                .annotate(year=ExtractYear('create_time'), month=ExtractMonth('create_time')) \
+                .values('year', 'month').order_by('year', 'month').annotate(count=Count('create_time'))
+            wg_year_month = one_year_data5 \
+                .annotate(year=ExtractYear('create_time'), month=ExtractMonth('create_time')) \
+                .values('year', 'month').order_by('year', 'month').annotate(count=Count('create_time'))
+            tkxw_year_month = one_year_data6 \
+                .annotate(year=ExtractYear('create_time'), month=ExtractMonth('create_time')) \
+                .values('year', 'month').order_by('year', 'month').annotate(count=Count('create_time'))
 
-        # 分组统计每个月的数据
-        zxzxbxk_year_month = one_year_data1 \
-            .annotate(year=ExtractYear('create_time'), month=ExtractMonth('create_time')) \
-            .values('year', 'month').order_by('year', 'month').annotate(count=Count('create_time'))
-        xxtxblx_year_month = one_year_data2 \
-            .annotate(year=ExtractYear('create_time'), month=ExtractMonth('create_time')) \
-            .values('year', 'month').order_by('year', 'month').annotate(count=Count('create_time'))
-        bzx_year_month = one_year_data3 \
-            .annotate(year=ExtractYear('create_time'), month=ExtractMonth('create_time')) \
-            .values('year', 'month').order_by('year', 'month').annotate(count=Count('create_time'))
-        xwzs_year_month = one_year_data4 \
-            .annotate(year=ExtractYear('create_time'), month=ExtractMonth('create_time')) \
-            .values('year', 'month').order_by('year', 'month').annotate(count=Count('create_time'))
-        wg_year_month = one_year_data5 \
-            .annotate(year=ExtractYear('create_time'), month=ExtractMonth('create_time')) \
-            .values('year', 'month').order_by('year', 'month').annotate(count=Count('create_time'))
-        tkxw_year_month = one_year_data6 \
-            .annotate(year=ExtractYear('create_time'), month=ExtractMonth('create_time')) \
-            .values('year', 'month').order_by('year', 'month').annotate(count=Count('create_time'))
-
-        print("**************************")
-        ret['zxzxbxk_year_month'] = list(zxzxbxk_year_month)
-        ret['xxtxblx_year_month'] = list(xxtxblx_year_month)
-        ret['bzx_year_month'] = list(bzx_year_month)
-        ret['xwzs_year_month'] = list(xwzs_year_month)
-        ret['wg_year_month'] = list(wg_year_month)
-        ret['tkxw_year_month'] = list(tkxw_year_month)
-        # query = pickle.loads()
-        # zxzxbxk_year_month.query = query
-        # print(query)
-
-        return restful.result(message="操作成功", data=ret)
+            print("**************************")
+            ret['zxzxbxk_year_month'] = list(zjzxbxk_year_month)
+            ret['xxtxblx_year_month'] = list(xxtxblx_year_month)
+            ret['bzx_year_month'] = list(bzx_year_month)
+            ret['xwzs_year_month'] = list(xwzs_year_month)
+            ret['wg_year_month'] = list(wg_year_month)
+            ret['tkxw_year_month'] = list(tkxw_year_month)
+            # query = pickle.loads()
+            # zxzxbxk_year_month.query = query
+            # print(query)
+            return restful.result(message="操作成功", data=ret)
+        except Exception as e:
+            return restful.result2(message="操作失败", data=e.args)
 
 
 """ 自定义函数，读取标签建模中设定规则，函数规则拼接SQL，并写入到数据库中"""
-import json
+
 from datetime import datetime
 
-def BqjmToSQL():
 
+def BqjmToSQL():
     yjyzs = pm.XtglBqsz.objects.all().order_by("-update_time").values('bqgz', 'zbfl').first()
     aa = yjyzs['bqgz']
     # 将str转化为dict
@@ -1401,11 +1432,13 @@ def BqjmToSQL():
 
 
 """函数:查询标签建模SQL语句，为本专科生打标签"""
+
+
 def search():
     # todo 1. 导入包 DB 连接
-    from django.db import connection, transaction
+    from django.db import connection
     cursor = connection.cursor()
-    # todo 2.数据修改操作--提交要求
+
     # todo 2.按照系统管理标签设置更新时间字段取出最新的值
     sqlResult = pm.XtglBqsz.objects.all().order_by("-update_time").values('bqmc', 'bqSQL', 'bqms', 'kfqx').first()
     # todo 4.获取插入学生画像标签数据
@@ -1439,18 +1472,6 @@ def search():
         print("插入数据")
         for item in return_arr:
             pm.XshxBq.objects.create(xh=item[0], bq=bqs, bqsm=bqmss, bqqx=kfqxs)
-
-
-
-
-
-
-
-
-
-
-
-
 
     # # todo 3 str类型的列表转化为Python中真正的列表，借用第三方工具实现
     # from ast import literal_eval

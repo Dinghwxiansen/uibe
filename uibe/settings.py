@@ -119,12 +119,12 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         # 数据库的名字
         'NAME': 'uibe_2',
-        #'NAME': 'uibetwo',
+        # 'NAME': 'uibetwo',
         # 连接mysql数据库的用户名
         'USER': 'root',
         # 连接mysql数据库的密码
         'PASSWORD': 'Mysql123!',
-        #'PASSWORD': '123456',
+        # 'PASSWORD': '123456',
         # mysql数据库的主机地址
         # 'HOST': '127.0.0.1',
         'HOST': '10.77.210.88',

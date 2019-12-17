@@ -6,6 +6,8 @@
         <list>
           <option value="Exception.detail" />
           <option value="django.db.transaction.commit_unless_managed" />
+          <option value="datetime.datetime.timedelta" />
+          <option value="datetime.date.timedelta" />
         </list>
       </option>
     </inspection_tool>

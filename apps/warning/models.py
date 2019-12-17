@@ -152,13 +152,13 @@ Yjdj_Choices = (
 
 # 智能预警之在籍在校不选课预警
 class ZnyjZjzxbxk(models.Model):
+    id = models.CharField(primary_key=True, max_length=32,null=False)
     xh = models.CharField(max_length=32)
     yjrq = models.DateField('预警日期', )
     sjxf = models.IntegerField("实际学分", default=0, null=True, )
     yxxf = models.IntegerField("应修学分", default=0, null=True, )
     wxkxq = models.CharField("未选课学期", max_length=32, null=True, )
     clzt = models.IntegerField(choices=Clzt_Choices, default=0)
-    by1 = models.CharField("备用", max_length=32, null=True, )
     create_time = models.DateTimeField('创建时间', auto_now_add=True)
     update_time = models.DateTimeField('更新时间', auto_now=True)
     user = models.ForeignKey(UibeBzks, related_name="zjzxbxk", on_delete=models.CASCADE)

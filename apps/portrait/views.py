@@ -35,21 +35,27 @@ class JqszView(mixins.ListModelMixin, mixins.CreateModelMixin,
     """获取所有数据"""
 
     def get(self, request, *args, **kwargs):
-        # print(type(request.data))
-        ret = self.list(request, *args, **kwargs)
-        # print(connection.queries[-1:])
-        return restful.result(message="操作成功", data=ret.data)
+        try:
+            # print(type(request.data))
+            ret = self.list(request, *args, **kwargs)
+            # print(connection.queries[-1:])
+            return restful.result(message="操作成功", data=ret.data)
+        except Exception as e:
+            return restful.result2(message="操作失败",data=e.args)
 
     """删除"""
 
     # @action(methods=['delete'], detail=False)
     def delete(self, request, *args, **kwargs):
-        id = request.query_params.get('id', None)
-        if not id:
-            return Response(status=status.HTTP_404_NOT_FOUND)
-        for i in id.split(','):
-            get_object_or_404(pm.XtglJq, pk=int(i)).delete()
-        return restful.ok()
+        try:
+            id = request.query_params.get('id', None)
+            if not id:
+                return Response(status=status.HTTP_404_NOT_FOUND)
+            for i in id.split(','):
+                get_object_or_404(pm.XtglJq, pk=int(i)).delete()
+            return restful.ok()
+        except Exception as e:
+            return restful.result2(message="操作失败",data=e.args)
 
     """添加数据"""
 
@@ -64,7 +70,7 @@ class JqszView(mixins.ListModelMixin, mixins.CreateModelMixin,
                 ret = self.create(request, *args, **kwargs)
                 return restful.result(message="保存成功")
         except Exception as e:
-            return restful.result2(message=e.detail)
+            return restful.result2(message="操作失败", data=e.args)
 
     """更新数据"""
 
@@ -78,8 +84,7 @@ class JqszView(mixins.ListModelMixin, mixins.CreateModelMixin,
                 ser.save()
             return restful.ok()
         except Exception as e:
-            return restful.result2(message=e.detail)
-
+            return restful.result2(message="操作失败", data=e.args)
     """批量更新状态"""
 
     def patch(self, request, *args, **kwargs):
@@ -104,7 +109,7 @@ class JqszView(mixins.ListModelMixin, mixins.CreateModelMixin,
                 else:
                     return restful.result(message="操作成功，状态开启")
         except Exception as e:
-            return restful.result2(message=e.detail)
+            return restful.result2(message="操作失败", data=e.args)
 
 
 class BqwdView(mixins.ListModelMixin, mixins.CreateModelMixin,
@@ -126,20 +131,26 @@ class BqwdView(mixins.ListModelMixin, mixins.CreateModelMixin,
     """获取所有数据"""
 
     def get(self, request, *args, **kwargs):
-        # print(type(request.data))
-        ret = self.list(request, *args, **kwargs)
-        # print(connection.queries[-1:])
-        return restful.result(message="操作成功", data=ret.data)
+        try:
+            # print(type(request.data))
+            ret = self.list(request, *args, **kwargs)
+            # print(connection.queries[-1:])
+            return restful.result(message="操作成功", data=ret.data)
+        except Exception as e:
+            return restful.result2(message="操作失败", data=e.args)
 
     """删除"""
 
     def delete(self, request, *args, **kwargs):
-        id = request.query_params.get('id', None)
-        if not id:
-            return Response(status=status.HTTP_404_NOT_FOUND)
-        for i in id.split(','):
-            get_object_or_404(pm.XtglBqwd, pk=int(i)).delete()
-        return restful.ok()
+        try:
+            id = request.query_params.get('id', None)
+            if not id:
+                return Response(status=status.HTTP_404_NOT_FOUND)
+            for i in id.split(','):
+                get_object_or_404(pm.XtglBqwd, pk=int(i)).delete()
+            return restful.ok()
+        except Exception as e:
+            return restful.result2(message="操作失败",data=e.args)
 
     """添加数据"""
 
@@ -153,7 +164,7 @@ class BqwdView(mixins.ListModelMixin, mixins.CreateModelMixin,
                 ret = self.create(request, *args, **kwargs)
                 return restful.result(message="保存成功")
         except Exception as e:
-            return restful.result2(message=e.detail)
+            return restful.result2(message="操作失败",data=e.args)
 
     """更新数据"""
 
@@ -167,7 +178,7 @@ class BqwdView(mixins.ListModelMixin, mixins.CreateModelMixin,
                 ser.save()
             return restful.ok()
         except Exception as e:
-            return restful.result2(message=e.detail)
+            return restful.result2(message="操作失败",data=e.args)
 
     """更新状态"""
 
@@ -193,7 +204,7 @@ class BqwdView(mixins.ListModelMixin, mixins.CreateModelMixin,
                 else:
                     return restful.result(message="操作成功，状态开启")
         except Exception as e:
-            return restful.result2(message=e.detail)
+            return restful.result2(message="操作失败",data=e.args)
 
 
 class HxbqszfzView(mixins.ListModelMixin, mixins.CreateModelMixin, generics.GenericAPIView, ):
@@ -218,8 +229,8 @@ class HxbqszfzView(mixins.ListModelMixin, mixins.CreateModelMixin, generics.Gene
             BqjmToSQL()
             search()
             return restful.ok()
-        except Exception:
-            return restful.result2(message="操作失败")
+        except Exception as e:
+            return restful.result2(message="操作失败",data=e.args)
 
 
 class HxbqszView(mixins.ListModelMixin, mixins.CreateModelMixin,
@@ -242,10 +253,13 @@ class HxbqszView(mixins.ListModelMixin, mixins.CreateModelMixin,
     """获取所有数据"""
 
     def get(self, request, *args, **kwargs):
-        # print(type(request.data))
-        ret = self.list(request, *args, **kwargs)
-        # print(connection.queries[-1:])
-        return restful.result(message="操作成功", data=ret.data)
+        try:
+            # print(type(request.data))
+            ret = self.list(request, *args, **kwargs)
+            # print(connection.queries[-1:])
+            return restful.result(message="操作成功", data=ret.data)
+        except Exception as e:
+            return restful.result2(message="操作失败",data=e.args)
 
     """添加数据"""
 
@@ -262,7 +276,7 @@ class HxbqszView(mixins.ListModelMixin, mixins.CreateModelMixin,
                 search()
                 return restful.result(message="保存成功")
         except Exception as e:
-            return restful.result2(message="操作失败")
+            return restful.result2(message="操作失败",data=e.args)
 
     """更新数据"""
 
@@ -278,7 +292,7 @@ class HxbqszView(mixins.ListModelMixin, mixins.CreateModelMixin,
             search()
             return restful.ok()
         except Exception as e:
-            return restful.result2(message="操作失败")
+            return restful.result2(message="操作失败",data=e.args)
 
     """更新状态"""
 
@@ -304,17 +318,20 @@ class HxbqszView(mixins.ListModelMixin, mixins.CreateModelMixin,
                 else:
                     return restful.result(message="操作成功，状态开启")
         except Exception as e:
-            return restful.result2(message="操作失败")
+            return restful.result2(message="操作失败",data=e.args)
 
     """删除"""
 
     def delete(self, request, *args, **kwargs):
-        id = request.query_params.get('id', None)
-        if not id:
-            return Response(status=status.HTTP_404_NOT_FOUND)
-        for i in id.split(','):
-            get_object_or_404(pm.XtglBqsz, pk=int(i)).delete()
-        return restful.ok()
+        try:
+            id = request.query_params.get('id', None)
+            if not id:
+                return Response(status=status.HTTP_404_NOT_FOUND)
+            for i in id.split(','):
+                get_object_or_404(pm.XtglBqsz, pk=int(i)).delete()
+            return restful.ok()
+        except Exception as e:
+            return restful.result2(message="操作失败",data=e.args)
 
 
 class HxbqszZbxView(mixins.ListModelMixin, generics.GenericAPIView):
@@ -345,9 +362,12 @@ class HxbqszZbxView(mixins.ListModelMixin, generics.GenericAPIView):
     """获取所有数据"""
 
     def get(self, request, *args, **kwargs):
-        # print(type(request.data))
-        ret = self.list(request, *args, **kwargs)
-        return restful.result(message="操作成功", data=ret.data)
+        try:
+            # print(type(request.data))
+            ret = self.list(request, *args, **kwargs)
+            return restful.result(message="操作成功", data=ret.data)
+        except Exception as e:
+            return restful.result2(message="操作失败",data=e.args)
 
 
 class ZbxView(mixins.ListModelMixin, mixins.CreateModelMixin,
@@ -369,10 +389,13 @@ class ZbxView(mixins.ListModelMixin, mixins.CreateModelMixin,
     """获取所有数据"""
 
     def get(self, request, *args, **kwargs):
-        # print(type(request.data))
-        ret = self.list(request, *args, **kwargs)
-        # print(connection.queries[-1:])
-        return restful.result(message="操作成功", data=ret.data)
+        try:
+            # print(type(request.data))
+            ret = self.list(request, *args, **kwargs)
+            # print(connection.queries[-1:])
+            return restful.result(message="操作成功", data=ret.data)
+        except Exception as e:
+            return restful.result2(message="操作失败",data=e.args)
 
     """添加数据"""
 
@@ -387,7 +410,7 @@ class ZbxView(mixins.ListModelMixin, mixins.CreateModelMixin,
                 ret = self.create(request, *args, **kwargs)
                 return restful.result(message="保存成功")
         except Exception as e:
-            return restful.result2(message="操作失败")
+            return restful.result2(message="操作失败",data=e.args)
 
     """更新数据"""
 
@@ -400,7 +423,7 @@ class ZbxView(mixins.ListModelMixin, mixins.CreateModelMixin,
                 ser.save()
             return restful.ok()
         except Exception as e:
-            return restful.result2(message="操作失败")
+            return restful.result2(message="操作失败",data=e.args)
 
     """更新状态"""
 
@@ -426,17 +449,20 @@ class ZbxView(mixins.ListModelMixin, mixins.CreateModelMixin,
                 else:
                     return restful.result(message="操作成功，状态开启")
         except Exception as e:
-            return restful.result2(message="操作失败")
+            return restful.result2(message="操作失败",data=e.args)
 
     """删除"""
 
     def delete(self, request, *args, **kwargs):
-        id = request.query_params.get('id', None)
-        if not id:
-            return Response(status=status.HTTP_404_NOT_FOUND)
-        for i in id.split(','):
-            get_object_or_404(pm.XtglZbx, pk=int(i)).delete()
-        return restful.ok()
+        try:
+            id = request.query_params.get('id', None)
+            if not id:
+                return Response(status=status.HTTP_404_NOT_FOUND)
+            for i in id.split(','):
+                get_object_or_404(pm.XtglZbx, pk=int(i)).delete()
+            return restful.ok()
+        except Exception as e:
+            return restful.result2(message="操作失败",data=e.args)
 
 
 class SjbxzView(mixins.ListModelMixin, generics.GenericAPIView, ):
@@ -467,10 +493,13 @@ class SjbxzView(mixins.ListModelMixin, generics.GenericAPIView, ):
 
     # 获取数据
     def get(self, request, *args, **kwargs):
-        # print(type(request.data))
-        ret = self.list(request, *args, **kwargs)
-        # print(connection.queries[-1:])
-        return restful.result(message="操作成功", data=ret.data)
+        try:
+            # print(type(request.data))
+            ret = self.list(request, *args, **kwargs)
+            # print(connection.queries[-1:])
+            return restful.result(message="操作成功", data=ret.data)
+        except Exception as e:
+            return restful.result2(message="操作失败",data=e.args)
 
 
 class SjbxzzdView(viewsets.ModelViewSet):
@@ -506,7 +535,7 @@ class SjbxzzdView(viewsets.ModelViewSet):
             ret = self.list(request, *args, **kwargs)
             return restful.result(message="操作成功", data=ret.data)
         except Exception as e:
-            return restful.result2(message="操作失败")
+            return restful.result2(message="操作失败",data=e.args)
 
     # 获取数据
     # def get(self, request, *args, **kwargs):
@@ -526,7 +555,7 @@ class SjbxzzdView(viewsets.ModelViewSet):
             ret = self.list(request, *args, **kwargs)
             return restful.result(message="操作成功", data=ret.data)
         except Exception as e:
-            return restful.result2(message="操作失败")
+            return restful.result2(message="操作失败",data=e.args)
 
 
 class BmVIew(mixins.ListModelMixin, generics.GenericAPIView):
@@ -537,9 +566,12 @@ class BmVIew(mixins.ListModelMixin, generics.GenericAPIView):
     serializer_class = serialiser.UibeJzgBmSerializer
 
     def get(self, request, *args, **kwargs):
-        ret = self.list(request, *args, **kwargs)
-        # print(connection.queries[-1:])
-        return restful.result(message="操作成功", data=ret.data)
+        try:
+            ret = self.list(request, *args, **kwargs)
+            # print(connection.queries[-1:])
+            return restful.result(message="操作成功", data=ret.data)
+        except Exception as e:
+            return restful.result2(message="操作失败", data=e.args)
 
 
 class JshxView(mixins.ListModelMixin, generics.GenericAPIView, ):
@@ -558,9 +590,12 @@ class JshxView(mixins.ListModelMixin, generics.GenericAPIView, ):
     filter_class = filter.UibeJzgFilter
 
     def get(self, request, *args, **kwargs):
-        ret = self.list(request, *args, **kwargs)
-        # print(connection.queries[-1:])
-        return restful.result(message="操作成功", data=ret.data)
+        try:
+            ret = self.list(request, *args, **kwargs)
+            # print(connection.queries[-1:])
+            return restful.result(message="操作成功", data=ret.data)
+        except Exception as e:
+            return restful.result2(message="操作失败", data=e.args)
 
 
 class JshxxqView(mixins.ListModelMixin, generics.GenericAPIView, ):
@@ -578,9 +613,12 @@ class JshxxqView(mixins.ListModelMixin, generics.GenericAPIView, ):
     serializer_class = serialiser.UibeJzgXqSerializer
 
     def get(self, request, *args, **kwargs):
-        ret = self.list(request, *args, **kwargs)
-        # print(connection.queries[-1:])
-        return restful.result(message="操作成功", data=ret.data)
+        try:
+            ret = self.list(request, *args, **kwargs)
+            # print(connection.queries[-1:])
+            return restful.result(message="操作成功", data=ret.data)
+        except Exception as e:
+            return restful.result2(message="操作失败", data=e.args)
 
 
 class JshxzcxqView(mixins.ListModelMixin, mixins.CreateModelMixin, generics.GenericAPIView, ):
@@ -632,7 +670,7 @@ class JshxzcxqView(mixins.ListModelMixin, mixins.CreateModelMixin, generics.Gene
             return restful.result(message="操作成功", kwargs=ret)
 
         except Exception as e:
-            return restful.result2(message="操作失败")
+            return restful.result2(message="操作失败",data=e.args)
 
 
 class XshxJsdVIew(mixins.ListModelMixin, generics.GenericAPIView, ):
@@ -650,9 +688,12 @@ class XshxJsdVIew(mixins.ListModelMixin, generics.GenericAPIView, ):
     filter_class = filter.XshxJsdFilter
 
     def get(self, request, *args, **kwargs):
-        ret = self.list(request, *args, **kwargs)
-        # print(connection.queries[-1:])
-        return restful.result(message="操作成功", data=ret.data)
+        try:
+            ret = self.list(request, *args, **kwargs)
+            # print(connection.queries[-1:])
+            return restful.result(message="操作成功", data=ret.data)
+        except Exception as e:
+            return restful.result2(message="操作失败",data=e.args)
 
 
 class XshxXsdVIew(mixins.ListModelMixin, generics.GenericAPIView, ):
@@ -662,6 +703,7 @@ class XshxXsdVIew(mixins.ListModelMixin, generics.GenericAPIView, ):
 
     # 查询出来所有数据按照创建时间进行排序
     def get_queryset(self):
+
         xhs = self.request.query_params.get('xh')
         ret = pm.XshxBq.objects.filter(bqqx=1).filter(xh=xhs,sfyx=1)
         return ret
@@ -675,9 +717,12 @@ class XshxXsdVIew(mixins.ListModelMixin, generics.GenericAPIView, ):
     filter_class = filter.XshxJsdXqFilter
 
     def get(self, request, *args, **kwargs):
-        ret = self.list(request, *args, **kwargs)
-        # print(connection.queries[-1:])
-        return restful.result(message="操作成功", data=ret.data)
+        try:
+            ret = self.list(request, *args, **kwargs)
+            # print(connection.queries[-1:])
+            return restful.result(message="操作成功", data=ret.data)
+        except Exception as e:
+            return restful.result2(message="操作失败",data=e.args)
 
 
 class XshxJsdXqVIew(mixins.ListModelMixin, generics.GenericAPIView, ):
@@ -701,6 +746,9 @@ class XshxJsdXqVIew(mixins.ListModelMixin, generics.GenericAPIView, ):
     filter_class = filter.XshxJsdXqFilter
 
     def get(self, request, *args, **kwargs):
-        ret = self.list(request, *args, **kwargs)
-        # print(connection.queries[-1:])
-        return restful.result(message="操作成功", data=ret.data)
+        try:
+            ret = self.list(request, *args, **kwargs)
+            # print(connection.queries[-1:])
+            return restful.result(message="操作成功", data=ret.data)
+        except Exception as e:
+            return restful.result2(message="操作失败", data=e.args)

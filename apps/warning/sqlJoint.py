@@ -151,3 +151,8 @@ print("bbb"+aaa +str(bbb))
 #     list[index] +=" union all "
 #
 #     print(list[index])
+
+import datetime
+
+yesterday = datetime.date.today() + datetime.timedelta(-1)
+print(yesterday)
