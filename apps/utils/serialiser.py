@@ -5,6 +5,29 @@ from rest_framework import serializers
 from apps.portrait import models as pm
 from apps.warning import models as wm
 
+"""*********************下拉列表序列化*******************"""
+
+
+class YxSerialiser(serializers.ModelSerializer):
+    class Meta:
+        model = wm.Yx
+        fields = ['code', 'name']
+
+
+class NjSerialiser(serializers.ModelSerializer):
+    class Meta:
+        model = wm.Nj
+        fields = ['code', 'name', 'p_yx']
+
+
+class BjSerialiser(serializers.ModelSerializer):
+    class Meta:
+        model = wm.Bj
+        fields = ['code', 'name', 'p_nj']
+
+
+"""********************本专科生序列化******************"""
+
 
 class BzksSerialiser(serializers.ModelSerializer):
     yjcs = serializers.IntegerField()  # 自定义显示字段
@@ -321,7 +344,7 @@ class UibeJzgZcXqSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = pm.JzgZcxx
-        fields = ['zwdm', 'zwmc','zwjb' ]
+        fields = ['zwdm', 'zwmc', 'zwjb']
 
 
 """用户画像之学生画像教师端"""

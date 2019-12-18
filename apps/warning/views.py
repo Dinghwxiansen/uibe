@@ -832,7 +832,54 @@ class XwgjmxView(viewsets.ModelViewSet):
 """下拉列表"""
 
 
-# todo 删除修改
+# todo 院系
+class YxView(mixins.ListModelMixin, generics.GenericAPIView):
+    authentication_classes = []
+    queryset = wm.Yx.objects.all()
+    # 序列化
+    serializer_class = serialiser.YxSerialiser
+    filter_class = filter.YxFilter
+
+    def post(self, request, *args, **kwargs):
+        try:
+            ret = self.list(request, *args, **kwargs)
+            return restful.result(message="操作成功", data=ret.data)
+        except Exception as e:
+            return restful.result2(message="操作失败", data=e.args)
+
+
+# todo 年级
+class NjView(mixins.ListModelMixin, generics.GenericAPIView):
+    authentication_classes = []
+    queryset = wm.Nj.objects.all()
+    # 序列化
+    serializer_class = serialiser.NjSerialiser
+    filter_class = filter.NjFilter
+
+    def post(self, request, *args, **kwargs):
+        try:
+            ret = self.list(request, *args, **kwargs)
+            return restful.result(message="操作成功", data=ret.data)
+        except Exception as e:
+            return restful.result2(message="操作失败", data=e.args)
+
+
+# todo 班级
+class BjView(mixins.ListModelMixin, generics.GenericAPIView):
+    authentication_classes = []
+    queryset = wm.Bj.objects.all()
+    # 序列化
+    serializer_class = serialiser.BjSerialiser
+    filter_class = filter.BjFilter
+
+    def post(self, request, *args, **kwargs):
+        try:
+            ret = self.list(request, *args, **kwargs)
+            return restful.result(message="操作成功", data=ret.data)
+        except Exception as e:
+            return restful.result2(message="操作失败", data=e.args)
+
+
 class SpinnerView(ReadOnlyModelViewSet):
     # authentication_classes = []
     # permission_classes = []

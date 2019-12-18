@@ -220,7 +220,7 @@ class SjbxzFilter(django_filters.FilterSet):
 class SjbxzzdFilter(django_filters.FilterSet):
     class Meta():
         model = pm.Sjzbzd
-        fields = ['sjzb_id','zwzdmc']
+        fields = ['sjzb_id', 'zwzdmc']
 
 
 """用户画像之教师画像"""
@@ -264,3 +264,24 @@ class XwgjmxFilter(django_filters.FilterSet):
     class Meta():
         model = wm.XwgjGrgj
         fields = ['xh', 'kssj', 'jssj', ]
+
+
+"""下拉列表过滤"""
+
+
+class YxFilter(django_filters.FilterSet):
+    class Meta:
+        model = wm.Yx
+        fields = ['code']
+
+
+class NjFilter(django_filters.FilterSet):
+    class Meta:
+        model = wm.Nj
+        fields = ['code', 'p_yx']
+
+
+class BjFilter(django_filters.FilterSet):
+    class Meta:
+        model = wm.Bj
+        fields = ['code', 'p_nj']
