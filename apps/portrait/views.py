@@ -735,7 +735,7 @@ class XshxJsdXqVIew(mixins.ListModelMixin, generics.GenericAPIView, ):
     # 查询出来所有数据按照创建时间进行排序
     def get_queryset(self):
         xhs = self.request.query_params.get('xh')
-        ret = pm.XshxBq.objects.filter(xh=xhs,sfyx=1)
+        ret = pm.XshxBq.objects.filter(xh=xhs, sfyx=1)
         return ret
 
     # 序列化

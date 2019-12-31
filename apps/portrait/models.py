@@ -15,7 +15,10 @@ Sfyx_Choices = (
     (1, '有效'),
 
 )
-
+BQQX_CHOICES = (
+    (0, '全部'),
+    (1, '学生'),
+    (2, '教师'),)
 
 # Create your models here.
 # 数据表查询
@@ -114,7 +117,7 @@ class XtglBqsz(models.Model):
     bqgz = models.CharField('标签规则', max_length=512, null=False)
     bqSQL = models.CharField('标签规则SQL', max_length=512, null=True)
     bqms = models.CharField('标签描述', max_length=512, null=True)
-    kfqx = models.IntegerField('标签开放权限', default=0)
+    bqqx = models.IntegerField('标签权限', choices=BQQX_CHOICES, default=0)
     kqzt = models.IntegerField('标签开启状态', choices=kqzt_CHOICES, default=0)
     create_time = models.DateTimeField('创建时间', auto_now_add=True)
     update_time = models.DateTimeField('更新时间', auto_now=True)
@@ -188,7 +191,7 @@ class UibeJzg(models.Model):
         verbose_name_plural = verbose_name
 
 
-# todo 学生画像标签表
+# todo 删除
 class XshxBq(models.Model):
     BQQX_CHOICES = (
         (0, '全部'),
