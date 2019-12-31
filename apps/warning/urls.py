@@ -40,9 +40,14 @@ urlpatterns = [
 
     re_path(r'^(?P<version>[v1|v2]+)/warningtable/$', views.WaringTableView.as_view()),
 
-    re_path(r'^(?P<version>[v1|v2]+)/yx/$', views.YxView.as_view()),
-    re_path(r'^(?P<version>[v1|v2]+)/nj/$', views.NjView.as_view()),
-    re_path(r'^(?P<version>[v1|v2]+)/bj/$', views.BjView.as_view()),
+    re_path(r'^(?P<version>[v1|v2]+)/college/$', views.CollegeView.as_view()),
+    re_path(r'^(?P<version>[v1|v2]+)/college/(?P<pk>\d+)/$', views.CollegeView.as_view()),
+    re_path(r'^(?P<version>[v1|v2]+)/grade/$', views.GradeView.as_view()),
+    re_path(r'^(?P<version>[v1|v2]+)/class/$', views.ClassView.as_view()),
+
+    # re_path(r'^(?P<version>[v1|v2]+)/yx/$', views.YxView.as_view()),
+    # re_path(r'^(?P<version>[v1|v2]+)/nj/$', views.NjView.as_view()),
+    # re_path(r'^(?P<version>[v1|v2]+)/bj/$', views.BjView.as_view()),
 
 
 

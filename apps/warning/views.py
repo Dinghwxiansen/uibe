@@ -23,6 +23,7 @@ from apps.warning import models as wm
 
 class ZjzxbxkView(mixins.ListModelMixin, mixins.CreateModelMixin,
                   mixins.DestroyModelMixin, mixins.UpdateModelMixin, mixins.RetrieveModelMixin,
+
                   generics.GenericAPIView, ):
     """分页"""
     pagination_class = Pagination
@@ -111,20 +112,26 @@ class ZjzxbxkmxView(viewsets.ModelViewSet):
             else:
                 for i in request.data['id'].split(','):
                     zt = list(wm.ZnyjZjzxbxk.objects.filter(id=i).values('clzt'))[0]['clzt']
+                    print(zt)
                     it = int(request.data['clzt'])
+
                     if zt == it:
                         # return JsonResponse(rt)
                         return restful.result2(message="请勿重复操作")
                     else:
                         ret = wm.ZnyjZjzxbxk.objects.filter(id=i).first()
-                        print(ret)
-                        ser = serialiser.ZjzxbxkmxSerialiser(instance=ret, data=request.data, partial=True)
-                        if ser.is_valid():
-                            ser.save()
-                if int(request.data['clzt']) == 0:
-                    return restful.result(message="操作成功，状态关闭")
-                else:
-                    return restful.result(message="操作成功，状态开启")
+                        ret.clzt = int(request.data['clzt'])
+                        ret.update_time = datetime.now()
+                        ret.save()
+                        # ser = serialiser.ZjzxbxkmxSerialiser(instance=ret, data=request.data, partial=True)
+                        # if ser.is_valid():
+                        #     ser.save()
+
+                if int(request.data['clzt']) == 1:
+                    return restful.result(message="操作成功，已确认预警")
+                elif int(request.data['clzt']) == 2:
+                    return restful.result(message="操作成功，已取消预警")
+
         except Exception as e:
             return restful.result2(message="操作失败", data=e.args)
 
@@ -154,7 +161,7 @@ class XxtxblxView(mixins.ListModelMixin, mixins.CreateModelMixin,
                 yjcs__gte=1).order_by("-update_time")
         else:
             if xhxm.isdigit():
-                ret = pm.UibeBzks.objects.filter(xwzs__xh=xhxm).annotate(
+                ret = pm.UibeBzks.objects.filter(xxtxblx__xh=xhxm).annotate(
                     yjcs=Count("xxtxblx", filter=myfilter)).filter(
                     yjcs__gte=1).order_by("-update_time")
             else:
@@ -229,14 +236,16 @@ class XxtxblxmxView(viewsets.ModelViewSet):
                         return restful.result2(message="请勿重复操作")
                     else:
                         ret = wm.ZnyjXxtxblx.objects.filter(id=i).first()
-                        print(ret)
-                        ser = serialiser.XxtxblxMxSerialiser(instance=ret, data=request.data, partial=True)
-                        if ser.is_valid():
-                            ser.save()
-                if int(request.data['clzt']) == 0:
-                    return restful.result(message="操作成功，状态关闭")
-                else:
-                    return restful.result(message="操作成功，状态开启")
+                        ret.clzt = int(request.data['clzt'])
+                        ret.update_time = datetime.now()
+                        ret.save()
+                        # ser = serialiser.XxtxblxMxSerialiser(instance=ret, data=request.data, partial=True)
+                        # if ser.is_valid():
+                        #     ser.save()
+                if int(request.data['clzt']) == 1:
+                    return restful.result(message="操作成功，已确认预警")
+                elif int(request.data['clzt']) == 2:
+                    return restful.result(message="操作成功，已取消预警")
         except Exception as e:
             return restful.result2(message="操作失败", data=e.args)
 
@@ -257,19 +266,21 @@ class XwzsView(mixins.ListModelMixin, mixins.CreateModelMixin,
         jssj = self.request.query_params.get("jssj", date.today() + timedelta(days=1))
         xhxm = self.request.query_params.get('xhxm', None)
         myfilter = Q(xwzs__create_time__gt=kssj) & Q(xwzs__create_time__lt=jssj)
-
+        sfxx = self.request.query_params.get('sfxx', None)
+        sftx = self.request.query_params.get('sftx', None)
+        syd = self.request.query_params.get('syd', None)
         if not xhxm:
             ret = pm.UibeBzks.objects.annotate(yjcs=Count("xwzs", filter=myfilter)).filter(
-                yjcs__gte=1)
+                Q(yjcs__gte=1) & ~Q(xjzt=sfxx), ~Q(syd=syd), ~Q(xjzt=sftx))
         else:
             if xhxm.isdigit():
                 ret = pm.UibeBzks.objects.filter(xwzs__xh=xhxm).annotate(
-                    yjcs=Count("xwzs", filter=myfilter)).filter(
-                    yjcs__gte=1)
+                    yjcs=Count("xwzs", filter=myfilter)).filter(Q(yjcs__gte=1) & ~Q(xjzt=sfxx), ~Q(syd=syd),
+                                                                ~Q(xjzt=sftx))
             else:
                 ret = pm.UibeBzks.objects.filter(xm=xhxm).annotate(
-                    yjcs=Count("xwzs", filter=myfilter)).filter(
-                    yjcs__gte=1)
+                    yjcs=Count("xwzs", filter=myfilter)).filter(Q(yjcs__gte=1) & ~Q(xjzt=sfxx), ~Q(syd=syd),
+                                                                ~Q(xjzt=sftx))
 
         return ret
 
@@ -289,7 +300,7 @@ class XwzsView(mixins.ListModelMixin, mixins.CreateModelMixin,
             return restful.result2(message="操作失败", data=e.args)
 
 
-'''校外住宿预警明细'''
+"""*************校外住宿预警明细************"""
 
 
 class XwzsmxView(viewsets.ModelViewSet):
@@ -335,14 +346,16 @@ class XwzsmxView(viewsets.ModelViewSet):
                         return restful.result2(message="请勿重复操作")
                     else:
                         ret = wm.ZnyjXwzsyj.objects.filter(id=i).first()
-                        print(ret)
-                        ser = serialiser.XwzsMxSerialiser(instance=ret, data=request.data, partial=True)
-                        if ser.is_valid():
-                            ser.save()
-                if int(request.data['clzt']) == 0:
-                    return restful.result(message="操作成功，状态关闭")
-                else:
-                    return restful.result(message="操作成功，状态开启")
+                        ret.clzt = int(request.data['clzt'])
+                        ret.update_time = datetime.now()
+                        ret.save()
+                        # ser = serialiser.XwzsMxSerialiser(instance=ret, data=request.data, partial=True)
+                        # if ser.is_valid():
+                        #     ser.save()
+                if int(request.data['clzt']) == 1:
+                    return restful.result(message="操作成功，已确认预警")
+                elif int(request.data['clzt']) == 2:
+                    return restful.result(message="操作成功，已取消预警")
         except Exception as e:
             return restful.result2(message="操作失败", data=e.args)
 
@@ -364,19 +377,23 @@ class BzxView(mixins.ListModelMixin, mixins.CreateModelMixin,
 
         xhxm = self.request.query_params.get('xhxm', None)
         myfilter = Q(bzx__create_time__gt=kssj) & Q(bzx__create_time__lt=jssj)
+        sfxx = self.request.query_params.get('sfxx', None)
+        sftx = self.request.query_params.get('sftx', None)
+
+        syd = self.request.query_params.get('syd', None)
 
         if not xhxm:
-            ret = pm.UibeBzks.objects.annotate(yjcs=Count("bzx", filter=myfilter)).filter(
-                yjcs__gte=1)
+            ret = pm.UibeBzks.objects.annotate(yjcs=Count("bzx", filter=myfilter)).filter(Q(yjcs__gte=1) & ~Q(xjzt=sfxx)
+                                                                                          , ~Q(syd=syd), ~Q(xjzt=sftx))
         else:
             if xhxm.isdigit():
                 ret = pm.UibeBzks.objects.filter(bzx__xh=xhxm).annotate(
-                    yjcs=Count("bzx", filter=myfilter)).filter(
-                    yjcs__gte=1)
+                    yjcs=Count("bzx", filter=myfilter)).filter(Q(yjcs__gte=1) & ~Q(xjzt=sfxx), ~Q(syd=syd),
+                                                               ~Q(xjzt=sftx))
             else:
                 ret = pm.UibeBzks.objects.filter(xm=xhxm).annotate(
-                    yjcs=Count("bzx", filter=myfilter)).filter(
-                    yjcs__gte=1)
+                    yjcs=Count("bzx", filter=myfilter)).filter(Q(yjcs__gte=1) & ~Q(xjzt=sfxx), ~Q(syd=syd),
+                                                               ~Q(xjzt=sftx))
 
         return ret
 
@@ -384,7 +401,7 @@ class BzxView(mixins.ListModelMixin, mixins.CreateModelMixin,
     serializer_class = serialiser.BzksSerialiser
     filter_class = filter.BzksFilter
     # 搜索，前端通过search关键字传值，？search=''
-    search_fields = ('xm', 'xh', 'yx', 'xznj', 'bj', '=kssj', '=jssj')  # 在这里添加可以搜索的字段，=表示等， 还可使用正则
+    search_fields = ('xm', 'xh', 'yx', '=syd', '=xjzt', 'xznj', 'bj', '=kssj', '=jssj')  # 在这里添加可以搜索的字段，=表示等， 还可使用正则
 
     def post(self, request, *args, **kwargs):
         try:
@@ -441,14 +458,17 @@ class BzxmxView(viewsets.ModelViewSet):
                         return restful.result2(message="请勿重复操作")
                     else:
                         ret = wm.ZnyjBzx.objects.filter(id=i).first()
-                        print(ret)
-                        ser = serialiser.BzxMxSerialiser(instance=ret, data=request.data, partial=True)
-                        if ser.is_valid():
-                            ser.save()
-                if int(request.data['clzt']) == 0:
-                    return restful.result(message="操作成功，状态关闭")
-                else:
-                    return restful.result(message="操作成功，状态开启")
+                        ret.clzt = int(request.data['clzt'])
+                        ret.update_time = datetime.now()
+                        ret.save()
+                        # print(ret)
+                        # ser = serialiser.BzxMxSerialiser(instance=ret, data=request.data, partial=True)
+                        # if ser.is_valid():
+                        #     ser.save()
+                if int(request.data['clzt']) == 1:
+                    return restful.result(message="操作成功，已确认预警")
+                elif int(request.data['clzt']) == 2:
+                    return restful.result(message="操作成功，已取消预警")
         except Exception as e:
             return restful.result2(message="操作失败", data=e.args)
 
@@ -470,19 +490,18 @@ class TkxwView(mixins.ListModelMixin, mixins.CreateModelMixin,
 
         xhxm = self.request.query_params.get('xhxm', None)
         myfilter = Q(tkxw__create_time__gt=kssj) & Q(tkxw__create_time__lt=jssj)
-
+        sfxx = self.request.query_params.get('sfxx', None)
+        sftx = self.request.query_params.get('sftx', None)
         if not xhxm:
             ret = pm.UibeBzks.objects.annotate(yjcs=Count("tkxw", filter=myfilter)).filter(
-                yjcs__gte=1)
+                Q(yjcs__gte=1) & ~Q(xjzt=sfxx), ~Q(xjzt=sftx))
         else:
             if xhxm.isdigit():
                 ret = pm.UibeBzks.objects.filter(tkxw__xh=xhxm).annotate(
-                    yjcs=Count("tkxw", filter=myfilter)).filter(
-                    yjcs__gte=1)
+                    yjcs=Count("tkxw", filter=myfilter)).filter(Q(yjcs__gte=1) & ~Q(xjzt=sfxx), ~Q(xjzt=sftx))
             else:
                 ret = pm.UibeBzks.objects.filter(xm=xhxm).annotate(
-                    yjcs=Count("tkxw", filter=myfilter)).filter(
-                    yjcs__gte=1)
+                    yjcs=Count("tkxw", filter=myfilter)).filter(Q(yjcs__gte=1) & ~Q(xjzt=sfxx), ~Q(xjzt=sftx))
         return ret
 
     # 序列化
@@ -547,14 +566,17 @@ class TkxwmxView(viewsets.ModelViewSet):
                         return restful.result2(message="请勿重复操作")
                     else:
                         ret = wm.ZnyjTkxw.objects.filter(id=i).first()
-                        print(ret)
-                        ser = serialiser.TkxwMxSerialiser(instance=ret, data=request.data, partial=True)
-                        if ser.is_valid():
-                            ser.save()
-                if int(request.data['clzt']) == 0:
-                    return restful.result(message="操作成功，状态关闭")
-                else:
-                    return restful.result(message="操作成功，状态开启")
+                        ret.clzt = int(request.data['clzt'])
+                        ret.update_time = datetime.now()
+                        ret.save()
+                        # print(ret)
+                        # ser = serialiser.TkxwMxSerialiser(instance=ret, data=request.data, partial=True)
+                        # if ser.is_valid():
+                        #     ser.save()
+                if int(request.data['clzt']) == 1:
+                    return restful.result(message="操作成功，已确认预警")
+                elif int(request.data['clzt']) == 2:
+                    return restful.result(message="操作成功，已取消预警")
         except Exception as e:
             return restful.result2(message="操作失败", data=e.args)
 
@@ -654,13 +676,16 @@ class WgmxView(viewsets.ModelViewSet):
                         return restful.result2(message="请勿重复操作")
                     else:
                         ret = wm.ZnyjWgyj.objects.filter(id=i).first()
-                        ser = serialiser.WgMxSerialiser(instance=ret, data=request.data, partial=True)
-                        if ser.is_valid():
-                            ser.save()
-                if int(request.data['clzt']) == 0:
-                    return restful.result(message="操作成功，状态关闭")
-                else:
-                    return restful.result(message="操作成功，状态开启")
+                        ret.clzt = int(request.data['clzt'])
+                        ret.update_time = datetime.now()
+                        ret.save()
+                        # ser = serialiser.WgMxSerialiser(instance=ret, data=request.data, partial=True)
+                        # if ser.is_valid():
+                        #     ser.save()
+                if int(request.data['clzt']) == 1:
+                    return restful.result(message="操作成功，已确认预警")
+                elif int(request.data['clzt']) == 2:
+                    return restful.result(message="操作成功，已取消预警")
         except Exception as e:
             return restful.result2(message="操作失败", data=e.args)
 
@@ -829,7 +854,7 @@ class XwgjmxView(viewsets.ModelViewSet):
 #         return restful.result(message="操作成功", data=ret.data)
 
 
-"""下拉列表"""
+"""下拉列表
 
 
 # todo 院系
@@ -873,6 +898,70 @@ class BjView(mixins.ListModelMixin, generics.GenericAPIView):
     filter_class = filter.BjFilter
 
     def post(self, request, *args, **kwargs):
+        try:
+            ret = self.list(request, *args, **kwargs)
+            return restful.result(message="操作成功", data=ret.data)
+        except Exception as e:
+            return restful.result2(message="操作失败", data=e.args)
+
+"""
+
+"""预警下拉列表中院系数据"""
+
+
+class CollegeView(mixins.ListModelMixin, generics.GenericAPIView):
+    queryset = pm.UibeBzks.objects.filter(xjzt='01', xznj__isnull=False).values('yx').distinct()
+
+    serializer_class = serialiser.CollegeSerialiser
+
+    # filter_class = filter.BjFilter
+
+    def get(self, request, *args, **kwargs):
+        try:
+            ret = self.list(request, *args, **kwargs)
+            # 去重
+            # retsult = [dict(t) for t in set([tuple(d.items()) for d in ret.data])]
+
+            # print(connection.query)
+            return restful.result(message="操作成功", data=ret.data)
+        except Exception as e:
+            return restful.result2(message="操作失败", data=e.args)
+
+
+"""下拉列表中年级数据"""
+
+
+class GradeView(mixins.ListModelMixin, generics.GenericAPIView):
+    # def get_queryset(self):
+    #     yx = self.request.query_params.get('yxdm')
+    #     if yx:
+    #         ret = pm.UibeBzks.objects.filter(xjzt='01',xznj__isnull=False).values('xznj').distinct()
+    #         return ret
+    #     else:
+    #         ret = pm.UibeBzks.objects.filter(yxdm=yx, xznj__isnull=False).values('xznj').distinct()
+    #         return ret
+    queryset = pm.UibeBzks.objects.filter(xjzt='01', xznj__isnull=False).values('xznj').distinct()
+    serializer_class = serialiser.GradeSerialiser
+
+    filter_class = filter.GradeFilter
+
+    def get(self, request, *args, **kwargs):
+        try:
+            ret = self.list(request, *args, **kwargs)
+            return restful.result(message="操作成功", data=ret.data)
+        except Exception as e:
+            return restful.result2(message="操作失败", data=e.args)
+
+
+"""下拉列表班号数据"""
+
+
+class ClassView(generics.ListAPIView, generics.GenericAPIView):
+    queryset = pm.UibeBzks.objects.filter(xjzt='01', bj__isnull=False).values('bj').distinct()
+    serializer_class = serialiser.ClassSerialiser
+    filter_class = filter.ClassFilter
+
+    def get(self, request, *args, **kwargs):
         try:
             ret = self.list(request, *args, **kwargs)
             return restful.result(message="操作成功", data=ret.data)

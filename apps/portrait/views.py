@@ -679,7 +679,7 @@ class XshxJsdVIew(mixins.ListModelMixin, generics.GenericAPIView, ):
     # 分页
     pagination_class = Pagination
     # 查询出来所有数据按照创建时间进行排序
-    queryset = pm.UibeBzks.objects.all().filter(sfyx=1)
+    queryset = pm.UibeBzks.objects.all()#.filter(sfyx=1)
     # 序列化
     serializer_class = serialiser.XshxJstSerializer
 

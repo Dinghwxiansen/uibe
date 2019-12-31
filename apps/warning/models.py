@@ -152,7 +152,8 @@ Yjdj_Choices = (
 
 # 智能预警之在籍在校不选课预警
 class ZnyjZjzxbxk(models.Model):
-    id = models.CharField(primary_key=True, max_length=32,null=False)
+    # uuid设置为主键
+    id = models.CharField('UUID', max_length=32, null=False, primary_key=True)
     xh = models.CharField(max_length=32)
     yjrq = models.DateField('预警日期', )
     sjxf = models.IntegerField("实际学分", default=0, null=True, )
@@ -161,7 +162,7 @@ class ZnyjZjzxbxk(models.Model):
     clzt = models.IntegerField(choices=Clzt_Choices, default=0)
     create_time = models.DateTimeField('创建时间', auto_now_add=True)
     update_time = models.DateTimeField('更新时间', auto_now=True)
-    user = models.ForeignKey(UibeBzks, related_name="zjzxbxk", on_delete=models.CASCADE)
+    user = models.ForeignKey(UibeBzks, related_name="zjzxbxk",on_delete=models.CASCADE)
 
     class Meta:
         db_table = 'znyj_zjzxbxk'
@@ -171,13 +172,16 @@ class ZnyjZjzxbxk(models.Model):
 
 # 智能预警之退学休学不离校预警
 class ZnyjXxtxblx(models.Model):
+    # uuid设置为主键
+    id = models.CharField('UUID', max_length=32, null=False, primary_key=True)
     xh = models.CharField(max_length=32)
     yjrq = models.DateTimeField('预警日期', auto_now_add=True)
-    txxx = models.DateField('退学休学日期', auto_now_add=True, null=True, )
-    yjqk = models.CharField('预警情况', max_length=32, null=True, )
+    ydrq = models.DateField('异动日期', auto_now_add=True, null=True, )
+    yjqk = models.CharField('预警情况', max_length=256, null=True, )
+    blxsj = models.CharField('不离校时间', max_length=32,null=True)
+    blxsc = models.IntegerField('不离校时长', default=0)
     yjdj = models.IntegerField(choices=Yjdj_Choices, default=0, null=True, )
     clzt = models.IntegerField(choices=Clzt_Choices, default=0)
-    by1 = models.CharField("备用", max_length=32, null=True, )
     create_time = models.DateTimeField('创建时间', auto_now_add=True)
     update_time = models.DateTimeField('更新时间', auto_now=True)
     user = models.ForeignKey(UibeBzks, related_name="xxtxblx", on_delete=models.CASCADE)
@@ -190,14 +194,16 @@ class ZnyjXxtxblx(models.Model):
 
 # 智能预警之校外住宿预警
 class ZnyjXwzsyj(models.Model):
+    # uuid设置为主键
+    id = models.CharField('UUID', max_length=32, null=False, primary_key=True)
     # xh = models.ForeignKey('portrait.UibeBzks', max_length=32, on_delete=models.CASCADE, )
     xh = models.CharField(max_length=32)
     yjrq = models.DateTimeField('预警日期', auto_now_add=True)
+    xwzssj = models.CharField('校外住宿时长',max_length=32, null=True)
     xwzsts = models.IntegerField('校外住宿天数', default=0, null=True)
     yjqk = models.CharField('预警情况', max_length=32, null=True)
     yjdj = models.IntegerField(choices=Yjdj_Choices, default=0)
     clzt = models.IntegerField(choices=Clzt_Choices, default=0)
-    by1 = models.CharField('备用', max_length=32, null=True)
     create_time = models.DateTimeField('创建时间', auto_now_add=True)
     update_time = models.DateTimeField('更新时间', auto_now=True)
     user = models.ForeignKey(UibeBzks, related_name="xwzs", on_delete=models.CASCADE)
@@ -210,13 +216,14 @@ class ZnyjXwzsyj(models.Model):
 
 # 智能预警之不在校预警
 class ZnyjBzx(models.Model):
+    # uuid设置为主键
+    id = models.CharField('UUID', max_length=32, null=False, primary_key=True)
     xh = models.CharField(max_length=32)
     yjrq = models.DateTimeField('预警日期', auto_now_add=True)
     bzxsj = models.CharField('不在校时间', max_length=32)
     bzxsc = models.IntegerField('不在校时长', default=0)
     yjdj = models.IntegerField(choices=Yjdj_Choices, default=0, )
     clzt = models.IntegerField(choices=Clzt_Choices, default=0, )
-    by1 = models.CharField('备用', max_length=32, null=True)
     create_time = models.DateTimeField('创建时间', auto_now_add=True)
     update_time = models.DateTimeField('更新时间', auto_now=True)
     user = models.ForeignKey(UibeBzks, related_name="bzx", on_delete=models.CASCADE)
@@ -230,6 +237,8 @@ class ZnyjBzx(models.Model):
 # 智能预警之逃课行为预警
 
 class ZnyjTkxw(models.Model):
+    # uuid设置为主键
+    id = models.CharField('UUID', max_length=32, null=False, primary_key=True)
     xh = models.CharField(max_length=32)
     yjrq = models.DateTimeField('预警日期', auto_now_add=True)
     kcsd = models.CharField('课程时段', max_length=32)
@@ -237,7 +246,6 @@ class ZnyjTkxw(models.Model):
     yjqk = models.CharField('预警情况', max_length=64)
     yjdj = models.IntegerField(choices=Yjdj_Choices, default=0, )
     clzt = models.IntegerField(choices=Clzt_Choices, default=0, )
-    by1 = models.CharField('备用', max_length=32, null=True)
     create_time = models.DateTimeField('创建时间', auto_now_add=True)
     update_time = models.DateTimeField('更新时间', auto_now=True)
     user = models.ForeignKey(UibeBzks, related_name="tkxw", on_delete=models.CASCADE)
@@ -250,20 +258,14 @@ class ZnyjTkxw(models.Model):
 
 # 智能预警之晚归预警
 class ZnyjWgyj(models.Model):
-    yjqk_Choices = (
-        (1, '宿舍楼刷卡进入'),
-        (2, '宿舍楼刷卡出'),
-        (3, '网络连接'),
-        (4, '宿舍楼以外区域刷E卡'),
-
-    )
+    # uuid设置为主键
+    id = models.CharField('UUID', max_length=32, null=False, primary_key=True)
     xh = models.CharField(max_length=32)
     yjsj = models.DateTimeField('预警时间', null=True)
     wgsj = models.DateTimeField('晚归时间', null=True)
-    yjqk = models.IntegerField('预警情况', choices=yjqk_Choices, default=0, )
+    yjqk = models.CharField('预警情况', max_length=64)
     yjdj = models.IntegerField(choices=Yjdj_Choices, default=0, )
     clzt = models.IntegerField(choices=Clzt_Choices, default=0, )
-    by1 = models.CharField('备用', max_length=32, null=True)
     create_time = models.DateTimeField('创建时间', auto_now_add=True)
     update_time = models.DateTimeField('更新时间', auto_now=True)
     user = models.ForeignKey(UibeBzks, related_name="wg", on_delete=models.CASCADE)
@@ -276,9 +278,10 @@ class ZnyjWgyj(models.Model):
 
 # 智能预警之上网行为预警
 class ZnyjSwxw(models.Model):
+    # uuid设置为主键
+    id = models.CharField('UUID', max_length=32, null=False, primary_key=True)
     xh = models.CharField(max_length=32)
     syll = models.FloatField('使用流量', default=0.0, null=True, )
-    by1 = models.CharField('备用', max_length=32, null=True)
     swsj = models.DateField('上网时间')
     create_time = models.DateTimeField('创建时间', auto_now_add=True)
     update_time = models.DateTimeField('更新时间', auto_now=True)
@@ -298,7 +301,6 @@ class XwgjGrgj(models.Model):
     xwdd = models.CharField('行为地点', max_length=64, null=True, )
     jd = models.CharField('经度', max_length=64, null=True, )
     wd = models.CharField('纬度', max_length=64, null=True, )
-    by1 = models.CharField('备用', max_length=32, null=True)
     create_time = models.DateTimeField('创建时间', auto_now_add=True)
     update_time = models.DateTimeField('更新时间', auto_now=True)
     user = models.ForeignKey(UibeBzks, related_name="grgj", on_delete=models.CASCADE)
@@ -309,49 +311,50 @@ class XwgjGrgj(models.Model):
         verbose_name_plural = verbose_name
 
 
-# todo 新增 院系，年级，班级表
-'''院系表'''
+"""
+# 新增 院系，年级，班级表
+# '''院系表'''
+# 
+# 
+# class Yx(models.Model):
+#     code = models.CharField('院系代码', max_length=16, null=True)
+#     name = models.CharField('院系名称', max_length=32, null=True)
+# 
+#     class Meta:
+#         db_table = 'bzks_yx'
+#         verbose_name = "院系表"
+#         verbose_name_plural = verbose_name
 
 
-class Yx(models.Model):
-    code = models.CharField('院系代码', max_length=16, null=True)
-    name = models.CharField('院系名称', max_length=32, null=True)
-
-    class Meta:
-        db_table = 'bzks_yx'
-        verbose_name = "院系表"
-        verbose_name_plural = verbose_name
-
-
-'''年级表'''
-
-
-class Nj(models.Model):
-    code = models.CharField('年级代码', max_length=16, null=True)
-    name = models.CharField('年级名称', max_length=32, null=True)
-    p_yx = models.ForeignKey(Yx, related_name='nj', on_delete=models.CASCADE, )
-
-    class Meta:
-        db_table = 'bzks_nj'
-        verbose_name = "年级表"
-        verbose_name_plural = verbose_name
+# '''年级表'''
+# 
+# 
+# class Nj(models.Model):
+#     code = models.CharField('年级代码', max_length=16, null=True)
+#     name = models.CharField('年级名称', max_length=32, null=True)
+#     p_yx = models.ForeignKey(Yx, related_name='nj', on_delete=models.CASCADE, )
+# 
+#     class Meta:
+#         db_table = 'bzks_nj'
+#         verbose_name = "年级表"
+#         verbose_name_plural = verbose_name
 
 
 '''班级表'''
 
 
-class Bj(models.Model):
-    code = models.CharField('班级代码', max_length=16, null=True)
-    name = models.CharField('班级名称', max_length=16, null=True)
-    p_nj = models.ForeignKey(Nj, related_name='bj', on_delete=models.CASCADE, )
+# class Bj(models.Model):
+#     code = models.CharField('班级代码', max_length=16, null=True)
+#     name = models.CharField('班级名称', max_length=16, null=True)
+#     p_nj = models.ForeignKey(Nj, related_name='bj', on_delete=models.CASCADE, )
+# 
+#     class Meta:
+#         db_table = 'bzks_bj'
+#         verbose_name = "班级表"
+#         verbose_name_plural = verbose_name
+"""
 
-    class Meta:
-        db_table = 'bzks_bj'
-        verbose_name = "班级表"
-        verbose_name_plural = verbose_name
-
-
-"""下拉列表"""
+"""************************下拉列表**************************"""
 
 
 class Spinner(models.Model):

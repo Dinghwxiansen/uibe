@@ -15,6 +15,8 @@ Sfyx_Choices = (
     (1, '有效'),
 
 )
+
+
 # Create your models here.
 # 数据表查询
 class Sjzb(models.Model):
@@ -110,7 +112,7 @@ class XtglBqsz(models.Model):
     zbwd = models.CharField('指标维度', max_length=32, null=False)
     zbx = models.CharField('指标项', max_length=32, null=False)
     bqgz = models.CharField('标签规则', max_length=512, null=False)
-    bqSQL = models.CharField('标签规则SQL',max_length=512,null=True)
+    bqSQL = models.CharField('标签规则SQL', max_length=512, null=True)
     bqms = models.CharField('标签描述', max_length=512, null=True)
     kfqx = models.IntegerField('标签开放权限', default=0)
     kqzt = models.IntegerField('标签开启状态', choices=kqzt_CHOICES, default=0)
@@ -157,10 +159,10 @@ class UibeJzg(models.Model):
     bm = models.CharField('部门', max_length=64, null=True, )
     rylb = models.CharField('人员类别', max_length=64, null=True, )
     gwzj = models.CharField('岗位职级', max_length=64, null=True, )
-    zcxxdm = models.CharField('职称信息代码',max_length=32,null=True)
-    zcbdrq = models.CharField('职称变动日期',max_length=32,null=True)
+    zcxxdm = models.CharField('职称信息代码', max_length=32, null=True)
+    zcbdrq = models.CharField('职称变动日期', max_length=32, null=True)
     # zcdm = models.CharField('职称代码', max_length=16, null=True)
-    #zcjb = models.CharField('职称级别', max_length=512, null=True, )
+    # zcjb = models.CharField('职称级别', max_length=512, null=True, )
     # zcjbbdrq = models.DateField('职称级别变动日期', null=True)
     xngw = models.CharField('校内岗位', max_length=256, null=True, )
     zxsf = models.CharField('在校身份', max_length=512, null=True, )
@@ -186,7 +188,6 @@ class UibeJzg(models.Model):
         verbose_name_plural = verbose_name
 
 
-
 # todo 学生画像标签表
 class XshxBq(models.Model):
     BQQX_CHOICES = (
@@ -198,7 +199,7 @@ class XshxBq(models.Model):
     bq = models.CharField('标签', max_length=32, )
     bqsm = models.CharField('标签说明', max_length=32, null=True)
     bqqx = models.IntegerField('标签权限', choices=BQQX_CHOICES, default=0)
-    sfyx = models.IntegerField('是否有效',choices=Sfyx_Choices,default=1)
+    sfyx = models.IntegerField('是否有效', choices=Sfyx_Choices, default=1)
     create_time = models.DateTimeField('创建时间', auto_now_add=True)
     update_time = models.DateTimeField('更新时间', auto_now=True)
 
@@ -208,77 +209,54 @@ class XshxBq(models.Model):
         verbose_name_plural = verbose_name
 
 
-
-
 # 本专科生表
 class UibeBzks(models.Model):
     # 学号设置为主键
     # xh = models.CharField('学号', max_length=32, null=False, primary_key=True)
-    XSLB_CHOICES = (
-        (0, '默认'),
-        (1, '交流生'),
-    )
-
     XJZT_CHOICES = (
         (0, '在籍'),
         (1, '休学'),
         (2, '退学'),
     )
-    SFZX_CHOICES = (
-        (0, '在校'),
-        (1, '不在校'),
-    )
-    XXZT_CHOICES = (
-        (0, '默认'),
-        (1, '休学'),
-    )
-    TXZT_CHOICES = (
-        (0, '默认'),
-        (1, '退学'),
-    )
     JG_CHOICES = (
         (0, '默认'),
         (1, '北京'),
     )
-    Sfsq_Choices = (
-        (0, '未申请'),
-        (1, '已申请'),
-
-    )
-
     xh = models.CharField('学号', max_length=32, unique=True)
     xm = models.CharField('姓名', max_length=16, )
-    xb = models.IntegerField(choices=SEX_CHOICES, default=0)
-    yx = models.CharField('院系', max_length=64)
-    xznj = models.CharField('现在年级', max_length=64)
-    bj = models.CharField('班级', max_length=64)
+    syd = models.CharField('生源地', max_length=32, null=True)
+    xznj = models.CharField('现在年级', max_length=64, null=True)
+    xn = models.CharField('学年', max_length=32, null=True)
+    xq = models.CharField('学期', max_length=16, null=True)
     fdy = models.CharField('辅导员', max_length=16, null=True)
-    xslb = models.IntegerField('学生类别', choices=XSLB_CHOICES, default=0)
-    sfzx = models.IntegerField('是否在校', choices=SFZX_CHOICES, default=0)
-    xjzt = models.IntegerField('学籍状态', choices=XJZT_CHOICES, default=0)
-    sfxx = models.IntegerField('休学状态', choices=XXZT_CHOICES, default=0)
-    sftx = models.IntegerField('退学状态', choices=TXZT_CHOICES, default=0)
-    sfsqxwzs = models.IntegerField('是否申请校外住宿', choices=Sfsq_Choices, default=0)
-    jg = models.IntegerField('籍贯', choices=JG_CHOICES, default=0)
-    jd = models.IntegerField('绩点', default=0)
-    # kcdm = models.CharField("课程代码", max_length=32, null=True)
-    # kch = models.CharField("课程号", max_length=32, null=True)
-    # xkrq = models.DateTimeField(null=True)  # 做预处理的时候注意是否有效
-    sfyx = models.IntegerField('是否有效', choices=Sfyx_Choices, default=1)
-    # kcaph = models.CharField('课程安排号', max_length=32, null=True)
-    # xq = models.CharField(max_length=8, null=True)
-    # kkxq = models.CharField(max_length=16, null=True)
-    xf = models.CharField('学分', max_length=8, null=True)
-    # kcmc = models.CharField(max_length=16, null=True)
-    # ptmc = models.CharField(max_length=16, null=True)
-    zsmc = models.CharField('证书名称', max_length=16, null=True)
-    zfcj = models.IntegerField('总分成绩', default=0, null=True)
-    kssj = models.DateField('考试时间', null=True)
-    tlcj = models.IntegerField('听力成绩', default=0, null=True)
-    ydcj = models.IntegerField('阅读成绩', default=0, null=True)
-    xzcj = models.IntegerField('写作成绩', default=0, null=True)
-    by1 = models.CharField('备用1', max_length=32, null=True)
-    by2 = models.CharField('备用2', max_length=32, null=True)
+    bj = models.CharField('班级名称', max_length=32, null=True)
+    xjzt = models.CharField('学籍状态', max_length=32, null=True)
+    ydrq = models.CharField('异动日期', max_length=32, null=True)
+    yx = models.CharField('院系',max_length=16, null=True)
+    # yxdm = models.ForeignKey("DW", on_delete=models.DO_NOTHING,to_field="id")
+    zydm = models.CharField('专业代码', max_length=64, null=True)
+    tkcs = models.IntegerField('逃课次数', default=0, null=True)
+    jd = models.CharField('绩点', max_length=32, null=True)
+    sxqjd = models.CharField('上学期绩点', max_length=32, null=True)
+    jdpm = models.IntegerField('绩点排名', default=0, null=True)
+    jdzf = models.CharField('绩点增幅', max_length=32, null=True)
+    jdpercentile = models.CharField('绩点占百分比', max_length=32, null=True)
+    xkzxf = models.IntegerField('选课总学分', default=0, null=True)
+    xkzxfpm = models.IntegerField('选课总学分排名', default=0, null=True)
+    xkzxfpercentile = models.CharField('选课总学分占百分比', max_length=32, null=True)
+    sxydptxkcs = models.IntegerField('思想引导平台课程数', null=True, default=0)
+    tsjyptxkcs = models.IntegerField('通识教育平台课程数', null=True, default=0)
+    gjpyptxkcs = models.IntegerField('国际培养平台课程数', null=True, default=0)
+    xywhptxkcs = models.IntegerField('校园文化平台课程数', null=True, default=0)
+    sthdptxkcs = models.IntegerField('社团活动平台课程数', null=True, default=0)
+    sjyrptxkcs = models.IntegerField('实践育人平台课程数', null=True, default=0)
+    xskyptxkcs = models.IntegerField('学术科研平台课程数', null=True, default=0)
+    zyfwptxkcs = models.IntegerField('志愿服务平台课程数', null=True, default=0)
+    jycyptxkcs = models.IntegerField('就业创业平台课程数', null=True, default=0)
+    jyczptxkcs = models.IntegerField('箐英成长平台课程数', null=True, default=0)
+    xfpercentile = models.CharField('学分占百分比', max_length=32, null=True)
+    yxxf = models.CharField('已修学分', max_length=32, null=True)
+    zyzxf = models.CharField('专业总学分', max_length=32, null=True)
     create_time = models.DateTimeField('创建时间', auto_now_add=True)
     update_time = models.DateTimeField('更新时间', auto_now=True)
 
@@ -301,7 +279,7 @@ class Zcdj(models.Model):
 class JzgBm(models.Model):
     bmdm = models.CharField('部门代码', max_length=16)
     bm = models.CharField('部门', max_length=32)
-    bmjc = models.CharField('部门简称',max_length=32)
+    bmjc = models.CharField('部门简称', max_length=32)
 
     class Meta:
         db_table = 'jzg_Bm'
@@ -312,17 +290,23 @@ class JzgBm(models.Model):
 class JzgZcxx(models.Model):
     zwdm = models.CharField('职务代码', max_length=16)
     zwmc = models.CharField('职务名称', max_length=32)
-    zwjb = models.CharField('职务级别', max_length=32,null=True)
+    zwjb = models.CharField('职务级别', max_length=32, null=True)
 
     class Meta:
         db_table = 'jzg_Zc'
         verbose_name = "教职工职务分类"
         verbose_name_plural = verbose_name
 
+
 # todo 测试自定义规则表
 class BzksMiddle(models.Model):
-    xsh = models.CharField('学生号',max_length=128)
+    xsh = models.CharField('学生号', max_length=128)
     qkcs = models.IntegerField('翘课次数')
     cjpm = models.IntegerField('成绩排名')
     jdsf = models.IntegerField('绩点上浮')
 
+
+# 单位
+class DW(models.Model):
+    id = models.IntegerField('院系代码', null=False, primary_key=True)
+    yxmc = models.CharField('院系名称', max_length=32)

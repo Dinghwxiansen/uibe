@@ -225,6 +225,7 @@ class UserView(mixins.ListModelMixin, generics.GenericAPIView, ):
     """
 
     def get(self, request, *args, **kwargs):
+        #todo 创建用户
         User.objects.create_user("dading","1")
         try:
             ret = self.list(request, *args, **kwargs)

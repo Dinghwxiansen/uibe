@@ -6,7 +6,7 @@ from apps.warning import models as wm
 
 
 class RoleFilter(django_filters.FilterSet):
-    class Meta():
+    class Meta:
         model = Role
         fields = ["id", "code", "name"]
 
@@ -20,15 +20,17 @@ class RoleFilter(django_filters.FilterSet):
 
 
 class UserFilter(django_filters.FilterSet):
-    class Meta():
+    class Meta:
         model = User
         fields = ["username"]
 
 
 class BzksFilter(django_filters.FilterSet):
+    # xjzt = django_filters.CharFilter(field_name='xjzt', lookup_expr='gt')
+    # syd = django_filters.CharFilter(field_name='syd', lookup_expr='lt')
     class Meta:
         model = pm.UibeBzks
-        fields = ['yx', 'xznj', 'bj', 'xslb', 'xjzt', 'sfxx', 'sftx', 'jg', 'sfsqxwzs', ]
+        fields = ['yx', 'xznj', 'bj']
 
 
 """********************************在籍在校不选课明细*************************"""
@@ -74,7 +76,7 @@ class BzxmxFilter(django_filters.FilterSet):
     kssj = django_filters.DateFilter(field_name="create_time", lookup_expr='gte')
     jssj = django_filters.DateFilter(field_name="create_time", lookup_expr='lte')
 
-    class Meta():
+    class Meta:
         model = wm.ZnyjBzx
         fields = ['xh', 'yjdj', 'kssj', 'jssj', 'clzt']
 
@@ -169,7 +171,7 @@ class BqwdFilter(django_filters.FilterSet):
 
 
 class HxbqszFilter(django_filters.FilterSet):
-    class Meta():
+    class Meta:
         model = pm.XtglBqsz
         fields = ['bqmc']
 
@@ -180,7 +182,7 @@ class HxbqszFilter(django_filters.FilterSet):
 class HxbqszZbxFilter(django_filters.FilterSet):
     zbwd = django_filters.CharFilter(field_name="zbwd", lookup_expr='icontains')
 
-    class Meta():
+    class Meta:
         model = pm.XtglZbx
         fields = ['zbwd']
 
@@ -189,7 +191,7 @@ class HxbqszZbxFilter(django_filters.FilterSet):
 
 
 class ZbxglFilter(django_filters.FilterSet):
-    class Meta():
+    class Meta:
         model = pm.XtglZbx
         fields = ['zbxmc', 'zbfl']
 
@@ -200,7 +202,7 @@ class ZbxglFilter(django_filters.FilterSet):
 class YjyzsjFilter(django_filters.FilterSet):
     yjmc = django_filters.DateFilter(field_name="yjmc", lookup_expr='icontains')
 
-    class Meta():
+    class Meta:
         model = wm.XtglYjyzsz
         fields = ['yjmc', 'code']
 
@@ -209,7 +211,7 @@ class YjyzsjFilter(django_filters.FilterSet):
 
 
 class SjbxzFilter(django_filters.FilterSet):
-    class Meta():
+    class Meta:
         model = pm.Sjzb
         fields = ['zwbm', 'ywbm']
 
@@ -218,7 +220,7 @@ class SjbxzFilter(django_filters.FilterSet):
 
 
 class SjbxzzdFilter(django_filters.FilterSet):
-    class Meta():
+    class Meta:
         model = pm.Sjzbzd
         fields = ['sjzb_id', 'zwzdmc']
 
@@ -229,7 +231,7 @@ class SjbxzzdFilter(django_filters.FilterSet):
 class UibeJzgFilter(django_filters.FilterSet):
     xm = django_filters.CharFilter(field_name="xm", lookup_expr='icontains')
 
-    class Meta():
+    class Meta:
         model = pm.UibeJzg
         fields = ['xm', 'zgh', 'bm']
 
@@ -238,9 +240,9 @@ class UibeJzgFilter(django_filters.FilterSet):
 
 
 class XshxJsdFilter(django_filters.FilterSet):
-    xm = django_filters.DateFilter(field_name="xm", lookup_expr='icontains')
+    xm = django_filters.CharFilter(field_name="xm", lookup_expr='icontains')
 
-    class Meta():
+    class Meta:
         model = pm.UibeBzks
         fields = ['xm', 'xh', 'yx', 'xznj', 'bj']
 
@@ -249,7 +251,7 @@ class XshxJsdFilter(django_filters.FilterSet):
 
 
 class XshxJsdXqFilter(django_filters.FilterSet):
-    class Meta():
+    class Meta:
         model = pm.XshxBq
         fields = ['xh']
 
@@ -266,7 +268,7 @@ class XwgjmxFilter(django_filters.FilterSet):
         fields = ['xh', 'kssj', 'jssj', ]
 
 
-"""下拉列表过滤"""
+"""下拉列表过滤
 
 
 class YxFilter(django_filters.FilterSet):
@@ -284,4 +286,16 @@ class NjFilter(django_filters.FilterSet):
 class BjFilter(django_filters.FilterSet):
     class Meta:
         model = wm.Bj
-        fields = ['code', 'p_nj']
+        fields = ['code', 'p_nj']"""
+
+
+class GradeFilter(django_filters.FilterSet):
+    class Meta:
+        model = pm.UibeBzks
+        fields = ['yx']
+
+
+class ClassFilter(django_filters.FilterSet):
+    class Meta:
+        model = pm.UibeBzks
+        fields = ['yx', 'xznj']

@@ -5,7 +5,7 @@ from rest_framework import serializers
 from apps.portrait import models as pm
 from apps.warning import models as wm
 
-"""*********************下拉列表序列化*******************"""
+"""*********************下拉列表序列化*******************
 
 
 class YxSerialiser(serializers.ModelSerializer):
@@ -24,6 +24,34 @@ class BjSerialiser(serializers.ModelSerializer):
     class Meta:
         model = wm.Bj
         fields = ['code', 'name', 'p_nj']
+"""
+
+
+class CollegeSerialiser(serializers.ModelSerializer):
+    # yxmc = serializers.CharField(source="get_yxdm_display")
+
+    class Meta:
+        model = pm.UibeBzks
+        fields = ['yx']
+        # depth = 1
+
+
+class GradeSerialiser(serializers.ModelSerializer):
+    class Meta:
+        model = pm.UibeBzks
+        fields = ['xznj']
+
+
+class ClassSerialiser(serializers.ModelSerializer):
+    class Meta:
+        model = pm.UibeBzks
+        fields = ['bj']
+
+
+class DWSerialiser(serializers.ModelSerializer):
+    class Meta:
+        model = pm.DW
+        fields = ['id', 'yxmc']
 
 
 """********************本专科生序列化******************"""
@@ -37,7 +65,7 @@ class BzksSerialiser(serializers.ModelSerializer):
     class Meta:
         model = pm.UibeBzks
         # fields = '__all__'
-        fields = ['xh', 'xm', 'yx', 'xznj', 'bj', 'fdy', 'yjcs']
+        fields = ['xh', 'xm', 'yx', 'xznj', 'bj', 'xjzt', 'syd', 'fdy', 'yjcs']
     #
     # def get_yjcs(self, row):
     #     cs = row.yjcs.all()
@@ -62,7 +90,7 @@ class ZjzxbxkmxSerialiser(serializers.ModelSerializer):
 class XxtxblxMxSerialiser(serializers.ModelSerializer):
     class Meta:
         model = wm.ZnyjXxtxblx
-        fields = ['id', 'xh', 'yjrq', 'txxx', 'yjqk', 'yjdj', 'clzt', ]
+        fields = ['id', 'xh', 'yjrq', 'ydrq', 'yjqk', 'yjdj', 'clzt', ]
 
 
 """*******************************校外住宿序列化*******************************"""
@@ -96,11 +124,9 @@ class TkxwMxSerialiser(serializers.ModelSerializer):
 
 
 class WgMxSerialiser(serializers.ModelSerializer):
-    ycqk = serializers.CharField(source="get_yjqk_display")
-
     class Meta:
         model = wm.ZnyjWgyj
-        fields = ['id', 'xh', 'yjsj', 'wgsj', 'ycqk', 'yjdj', 'clzt', ]
+        fields = ['id', 'xh', 'yjsj', 'wgsj', 'yjqk', 'yjdj', 'clzt', ]
 
 
 """*******************************上网行为预警序列化*******************************"""
@@ -353,7 +379,7 @@ class UibeJzgZcXqSerializer(serializers.ModelSerializer):
 class XshxJstSerializer(serializers.ModelSerializer):
     class Meta:
         model = pm.UibeBzks
-        fields = ['xh', 'xm', 'yx', 'xznj', 'bj']
+        fields = ['id','xh', 'xm', 'yx', 'xznj', 'bj']
 
 
 """用户画像之学生画像教师端详情"""
@@ -362,7 +388,7 @@ class XshxJstSerializer(serializers.ModelSerializer):
 class XshxJstXqSerializer(serializers.ModelSerializer):
     class Meta:
         model = pm.XshxBq
-        fields = ['bq', 'bqsm', 'bqqx', ]
+        fields = ['bq', 'bqsm' ]
 
 
 """*******************************行为轨迹序列化*******************************"""

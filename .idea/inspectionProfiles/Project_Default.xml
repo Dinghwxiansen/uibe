@@ -8,6 +8,7 @@
           <option value="django.db.transaction.commit_unless_managed" />
           <option value="datetime.datetime.timedelta" />
           <option value="datetime.date.timedelta" />
+          <option value="apps.utils.serialiser.*" />
         </list>
       </option>
     </inspection_tool>
