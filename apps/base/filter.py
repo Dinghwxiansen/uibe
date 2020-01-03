@@ -88,7 +88,7 @@ class TkxwmxFilter(django_filters.FilterSet):
     kssj = django_filters.DateFilter(field_name="create_time", lookup_expr='gte')
     jssj = django_filters.DateFilter(field_name="create_time", lookup_expr='lte')
 
-    class Meta():
+    class Meta:
         model = wm.ZnyjTkxw
         fields = ['xh', 'kssj', 'jssj', 'clzt']
 
@@ -171,6 +171,8 @@ class BqwdFilter(django_filters.FilterSet):
 
 
 class HxbqszFilter(django_filters.FilterSet):
+    bqmc = django_filters.CharFilter(field_name="bqmc", lookup_expr='icontains')
+
     class Meta:
         model = pm.XtglBqsz
         fields = ['bqmc']
@@ -191,6 +193,8 @@ class HxbqszZbxFilter(django_filters.FilterSet):
 
 
 class ZbxglFilter(django_filters.FilterSet):
+    zbxmc = django_filters.CharFilter(field_name="zbxmc", lookup_expr='icontains')
+
     class Meta:
         model = pm.XtglZbx
         fields = ['zbxmc', 'zbfl']
@@ -200,7 +204,7 @@ class ZbxglFilter(django_filters.FilterSet):
 
 
 class YjyzsjFilter(django_filters.FilterSet):
-    yjmc = django_filters.DateFilter(field_name="yjmc", lookup_expr='icontains')
+    yjmc = django_filters.CharFilter(field_name="yjmc", lookup_expr='icontains')
 
     class Meta:
         model = wm.XtglYjyzsz
@@ -211,6 +215,9 @@ class YjyzsjFilter(django_filters.FilterSet):
 
 
 class SjbxzFilter(django_filters.FilterSet):
+    zwbm = django_filters.CharFilter(field_name="zwbm", lookup_expr='icontains')
+    ywbm = django_filters.CharFilter(field_name="ywbm", lookup_expr='icontains')
+
     class Meta:
         model = pm.Sjzb
         fields = ['zwbm', 'ywbm']

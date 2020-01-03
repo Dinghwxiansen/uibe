@@ -37,6 +37,7 @@ urlpatterns = [
     re_path(r'^(?P<version>[v1|v2]+)/bzxxg/$', views.BzxxgView.as_view()),
     re_path(r'^(?P<version>[v1|v2]+)/yjyzsz/$', views.YjyzszView.as_view()),
     re_path(r'^(?P<version>[v1|v2]+)/yjyzlssz/$', views.YjyzlsszView.as_view()),
+    re_path(r'^(?P<version>[v1|v2]+)/yjyzlssz2/$', views.YjyzlsszView2.as_view()),
 
     re_path(r'^(?P<version>[v1|v2]+)/warningtable/$', views.WaringTableView.as_view()),
 

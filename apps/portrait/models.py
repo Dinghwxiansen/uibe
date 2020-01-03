@@ -162,9 +162,11 @@ class UibeJzg(models.Model):
     bm = models.CharField('部门', max_length=64, null=True, )
     rylb = models.CharField('人员类别', max_length=64, null=True, )
     gwzj = models.CharField('岗位职级', max_length=64, null=True, )
+    # zcxx = models.ForeignKey("DW", on_delete=models.DO_NOTHING,to_field="id")
     zcxxdm = models.CharField('职称信息代码', max_length=32, null=True)
+    zcxx = models.CharField('职称信息', max_length=256, null=True)
     zcbdrq = models.CharField('职称变动日期', max_length=32, null=True)
-    # zcdm = models.CharField('职称代码', max_length=16, null=True)
+    # zcxx = models.CharField('职称信息', max_length=256, null=True)
     # zcjb = models.CharField('职称级别', max_length=512, null=True, )
     # zcjbbdrq = models.DateField('职称级别变动日期', null=True)
     xngw = models.CharField('校内岗位', max_length=256, null=True, )
@@ -191,7 +193,7 @@ class UibeJzg(models.Model):
         verbose_name_plural = verbose_name
 
 
-# todo 删除
+
 class XshxBq(models.Model):
     BQQX_CHOICES = (
         (0, '全部'),
@@ -276,17 +278,6 @@ class Zcdj(models.Model):
     class Meta:
         db_table = 'jzg_zcdj'
         verbose_name = "职称等级"
-        verbose_name_plural = verbose_name
-
-
-class JzgBm(models.Model):
-    bmdm = models.CharField('部门代码', max_length=16)
-    bm = models.CharField('部门', max_length=32)
-    bmjc = models.CharField('部门简称', max_length=32)
-
-    class Meta:
-        db_table = 'jzg_Bm'
-        verbose_name = "教职工院系分类"
         verbose_name_plural = verbose_name
 
 

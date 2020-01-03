@@ -1309,7 +1309,6 @@ class YjyzszView(mixins.ListModelMixin, generics.GenericAPIView):
                         return restful.result2(message="请勿重复操作")
                     else:
                         ret = wm.XtglYjyzsz.objects.filter(id=i).first()
-                        print(ret)
                         ser = serialiser.YjyzszSerializer(instance=ret, data=request.data, partial=True)
                         if ser.is_valid():
                             ser.save()
@@ -1322,8 +1321,6 @@ class YjyzszView(mixins.ListModelMixin, generics.GenericAPIView):
 
 
 """预警阈值历史设置查询"""
-
-
 class YjyzlsszView(mixins.ListModelMixin, generics.GenericAPIView):
     authentication_classes = []
 
@@ -1336,15 +1333,36 @@ class YjyzlsszView(mixins.ListModelMixin, generics.GenericAPIView):
         for i in querysetall:
             all_queryset = all_queryset | i
         return all_queryset
-
         # 序列化
+    serializer_class = serialiser.YjyzlsszSerializer2
 
+    def get(self, request, *args, **kwargs):
+        try:
+            resoult = self.list(request, *args, **kwargs)
+
+            return restful.result(message="操作成功", data=resoult.data)
+        except Exception as e:
+            return restful.result2(message="操作失败", data=e.args)
+
+
+class YjyzlsszView2(mixins.ListModelMixin, generics.GenericAPIView):
+    authentication_classes = []
+
+    def get_queryset(self):
+        all_queryset = wm.XtglYjyzsz.objects.none()
+
+        querysetall = []
+        query = wm.XtglYjyzsz.objects.filter(code=self.request.query_params.get("code"))
+        querysetall.append(query)
+        for i in querysetall:
+            all_queryset = all_queryset | i
+        return all_queryset
+        # 序列化
     serializer_class = serialiser.YjyzlsszSerializer
 
     def get(self, request, *args, **kwargs):
         try:
             resoult = self.list(request, *args, **kwargs)
-            print(resoult.data)
 
             return restful.result(message="操作成功", data=resoult.data)
         except Exception as e:

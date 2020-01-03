@@ -218,7 +218,7 @@ class ZbxglSerializer(serializers.ModelSerializer):
 class BqszSerializer(serializers.ModelSerializer):
     class Meta:
         model = pm.XtglBqsz
-        fields = ['id', 'bqmc', 'zbfl', 'zbwd', 'create_time', 'zbx', 'bqgz', 'bqms', 'kfqx', 'kqzt']
+        fields = ['id', 'bqmc', 'zbfl', 'zbwd', 'create_time', 'zbx', 'bqgz', 'bqms', 'bqqx', 'kqzt']
 
 
 """画像标签设置之新增选择指标项"""
@@ -302,6 +302,12 @@ class YjyzlsszSerializer(serializers.ModelSerializer):
         fields = ['id', 'code', 'yjmc', 'yjgz', 'yjms', 'update_time']
 
 
+class YjyzlsszSerializer2(serializers.ModelSerializer):
+    class Meta:
+        model = wm.XtglYjyzsz
+        fields = ['id', 'code', 'red', 'orange', 'yellow', 'yjgz', 'update_time']
+
+
 """指标项管理之数据库选择"""
 
 
@@ -344,8 +350,8 @@ class UibeJzgSerializer(serializers.ModelSerializer):
 
 class UibeJzgBmSerializer(serializers.ModelSerializer):
     class Meta:
-        model = pm.JzgBm
-        fields = ['bmdm', 'bm']
+        model = pm.UibeJzg
+        fields = ['bm']
 
 
 """教师画像详情"""
@@ -356,7 +362,8 @@ class UibeJzgXqSerializer(serializers.ModelSerializer):
         model = pm.UibeJzg
         fields = ['id', 'zgh', 'xm', 'xb', 'csrq', 'xw', 'xl', 'lxrq', 'zzmm', 'jsjzs', 'jszgz', 'gqpxzs', 'qtzs',
                   'yjfx',
-                  'zxxmsl', 'hxxmsl', 'cgjlsl', 'yjbgsl', 'zzcgsl', 'lwcgsl', 'bm', 'rylb', 'gwzj', 'zcjb', 'xngw',
+                  'zxxmsl', 'hxxmsl', 'cgjlsl', 'yjbgsl', 'zzcgsl', 'lwcgsl', 'bmdm', 'bm', 'rylb', 'gwzj', 'zcxxdm',
+                  'zcxx', 'zcbdrq', 'xngw',
                   'zxsf', 'jl', 'yjskcxsrc', 'yjskcskjc', 'yjskcxss', 'yjskcskms', 'bkkcxsrc', 'bkkcskjc', 'bkkcxss',
                   'bkkcskms', 'tsjycs', 'ekxf', 'wlsyll', 'wlsysc']
 
@@ -379,7 +386,7 @@ class UibeJzgZcXqSerializer(serializers.ModelSerializer):
 class XshxJstSerializer(serializers.ModelSerializer):
     class Meta:
         model = pm.UibeBzks
-        fields = ['id','xh', 'xm', 'yx', 'xznj', 'bj']
+        fields = ['id', 'xh', 'xm', 'yx', 'xznj', 'bj']
 
 
 """用户画像之学生画像教师端详情"""
@@ -388,7 +395,7 @@ class XshxJstSerializer(serializers.ModelSerializer):
 class XshxJstXqSerializer(serializers.ModelSerializer):
     class Meta:
         model = pm.XshxBq
-        fields = ['bq', 'bqsm' ]
+        fields = ['bq', 'bqsm']
 
 
 """*******************************行为轨迹序列化*******************************"""
