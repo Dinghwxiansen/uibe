@@ -1321,6 +1321,8 @@ class YjyzszView(mixins.ListModelMixin, generics.GenericAPIView):
 
 
 """预警阈值历史设置查询"""
+
+
 class YjyzlsszView(mixins.ListModelMixin, generics.GenericAPIView):
     authentication_classes = []
 
@@ -1329,20 +1331,39 @@ class YjyzlsszView(mixins.ListModelMixin, generics.GenericAPIView):
 
         querysetall = []
         query = wm.XtglYjyzsz.objects.filter(code=self.request.query_params.get("code"))
+
         querysetall.append(query)
         for i in querysetall:
             all_queryset = all_queryset | i
         return all_queryset
         # 序列化
-    serializer_class = serialiser.YjyzlsszSerializer2
+
+    def get_serializer_class(self):
+        code = self.request.query_params.get("code")
+        if code == "zjzxbxk":
+            return serialiser.ZjzxbxkYjyzlsszSerializer
+        elif code == "wgyjxg":
+            return serialiser.YjyzlsszSerializer2
+        elif code == "tkyjxg":
+            return serialiser.ZjzxbxkYjyzlsszSerializer
+        elif code == "xxtxblx":
+            return serialiser.YjyzlsszSerializer2
+        elif code == "xwzsxg":
+            return serialiser.YjyzlsszSerializer2
+        elif code == "bzxxg":
+            return serialiser.YjyzlsszSerializer2
+        else:
+            return serialiser.YjyzlsszSerializer2
 
     def get(self, request, *args, **kwargs):
         try:
             resoult = self.list(request, *args, **kwargs)
-
             return restful.result(message="操作成功", data=resoult.data)
         except Exception as e:
             return restful.result2(message="操作失败", data=e.args)
+
+
+"""智能预警历史规则修改"""
 
 
 class YjyzlsszView2(mixins.ListModelMixin, generics.GenericAPIView):
@@ -1358,6 +1379,7 @@ class YjyzlsszView2(mixins.ListModelMixin, generics.GenericAPIView):
             all_queryset = all_queryset | i
         return all_queryset
         # 序列化
+
     serializer_class = serialiser.YjyzlsszSerializer
 
     def get(self, request, *args, **kwargs):

@@ -225,10 +225,10 @@ class HxbqszfzView(mixins.ListModelMixin, mixins.CreateModelMixin, generics.Gene
 
             xtglbqsz = pm.XtglBqsz(bqmc=ret.bqmc + "_副本", zbfl=ret.zbfl, zbwd=ret.zbwd, zbx=ret.zbx, bqgz=ret.bqgz,
                                    bqms=ret.bqms
-                                   , kfqx=ret.kfqx, create_time=ret.create_time, update_time=datetime.now())
+                                   , bqqx=ret.bqqx, create_time=ret.create_time, update_time=datetime.now())
             xtglbqsz.save()
-            BqjmToSQL()
-            search()
+            # BqjmToSQL()
+            # search()
             return restful.ok()
         except Exception as e:
             return restful.result2(message="操作失败", data=e.args)
@@ -273,8 +273,8 @@ class HxbqszView(mixins.ListModelMixin, mixins.CreateModelMixin,
                 return restful.result2(message="请勿重复保存操作")
             except IndexError:
                 ret = self.create(request, *args, **kwargs)
-                BqjmToSQL()
-                search()
+                # BqjmToSQL()
+                # search()
                 return restful.result(message="保存成功")
         except Exception as e:
             return restful.result2(message="操作失败", data=e.args)
@@ -289,8 +289,8 @@ class HxbqszView(mixins.ListModelMixin, mixins.CreateModelMixin,
             ser = serialiser.BqszSerializer(instance=ret, data=request.data, partial=True)
             if ser.is_valid():
                 ser.save()
-            BqjmToSQL()
-            search()
+            # BqjmToSQL()
+            # search()
             return restful.ok()
         except Exception as e:
             return restful.result2(message="操作失败", data=e.args)

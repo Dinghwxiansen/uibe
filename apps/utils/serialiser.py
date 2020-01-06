@@ -297,15 +297,27 @@ class YjyzszSerializer(serializers.ModelSerializer):
 
 
 class YjyzlsszSerializer(serializers.ModelSerializer):
+    create_time = serializers.DateTimeField(format='%Y-%m-%d')
     class Meta:
         model = wm.XtglYjyzsz
-        fields = ['id', 'code', 'yjmc', 'yjgz', 'yjms', 'update_time']
+        fields = ['id', 'code', 'yjmc', 'yjgz', 'yjms', 'create_time']
+
+
+class ZjzxbxkYjyzlsszSerializer(serializers.ModelSerializer):
+    # create_time = serializers.DateField('create_time')
+
+    create_time = serializers.DateTimeField(format='%Y-%m-%d')
+
+    class Meta:
+        model = wm.XtglYjyzsz
+        fields = ['id', 'code','yjgz', 'yjms', 'create_time']
 
 
 class YjyzlsszSerializer2(serializers.ModelSerializer):
+    create_time = serializers.DateTimeField(format='%Y-%m-%d')
     class Meta:
         model = wm.XtglYjyzsz
-        fields = ['id', 'code', 'red', 'orange', 'yellow', 'yjgz', 'update_time']
+        fields = ['id', 'code', 'red', 'orange', 'yellow', 'yjgz', 'create_time']
 
 
 """指标项管理之数据库选择"""
