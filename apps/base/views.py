@@ -1,4 +1,3 @@
-from apps.utils.pagination import Pagination
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import filters
 from rest_framework import generics
@@ -6,7 +5,7 @@ from rest_framework import mixins
 
 from apps.utils import restful
 from apps.utils.pagination import Pagination
-from .filter import RoleFilter,UserFilter
+from .filter import RoleFilter, UserFilter
 from .models import User, Role, Menu
 from .serializer import RoleSerializer, MenuSerializer, UserSerializer
 
@@ -133,7 +132,7 @@ class MenuView(mixins.ListModelMixin, mixins.CreateModelMixin,
             if request.data["parent_id"] == 0:
                 # 查询编码值最大的一级菜单，设置以及菜单的编码和排序字段
                 firstLevelMenu = Menu.objects.filter(parent_id=0).order_by("-code").first()
-                #print(connection.queries)
+                # print(connection.queries)
                 if firstLevelMenu:
                     code_num = int(firstLevelMenu.code) + 1
                     code = "%03d" % code_num
@@ -225,8 +224,8 @@ class UserView(mixins.ListModelMixin, generics.GenericAPIView, ):
     """
 
     def get(self, request, *args, **kwargs):
-        #todo 创建用户
-        User.objects.create_user("dading","1")
+        # todo 创建用户
+        # User.objects.create_user("dading","1")
         try:
             ret = self.list(request, *args, **kwargs)
             return restful.result(message="操作成功", data=ret.data)
@@ -315,7 +314,7 @@ class RoleMenuView(mixins.ListModelMixin, generics.GenericAPIView, ):
             return restful.result(message=e.detail)
 
     """
-        查询指定用户的所有角色
+        查询指定角色的所有惨淡
     """
 
     def get(self, request, role_id):
@@ -340,3 +339,6 @@ class UserMenuView(mixins.ListModelMixin, generics.GenericAPIView, ):
         menus = Menu.objects.filter(roles__users__id=user_id).distinct()
         ser = MenuSerializer(instance=menus, many=True)
         return restful.result(message="查询成功", data=ser.data)
+
+
+

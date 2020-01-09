@@ -54,7 +54,6 @@ class User(AbstractBaseUser,PermissionsMixin):
     update_time = models.DateTimeField("修改时间", auto_now_add=True)
     role = models.ManyToManyField("Role",related_name="users", verbose_name="角色id")
 
-
     USERNAME_FIELD = 'username'
 
     objects = UserManager()

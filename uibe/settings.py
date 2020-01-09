@@ -108,6 +108,7 @@ TEMPLATES = [
     },
 ]
 
+
 WSGI_APPLICATION = 'uibe.wsgi.application'
 
 # Database

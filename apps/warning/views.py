@@ -1535,7 +1535,6 @@ class WaringTableView(mixins.ListModelMixin, generics.GenericAPIView):
 
 from datetime import datetime
 
-
 def BqjmToSQL():
     yjyzs = pm.XtglBqsz.objects.all().order_by("-update_time").values('bqgz', 'zbfl').first()
     aa = yjyzs['bqgz']
