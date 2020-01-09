@@ -20,6 +20,7 @@ BQQX_CHOICES = (
     (1, '学生'),
     (2, '教师'),)
 
+
 # Create your models here.
 # 数据表查询
 class Sjzb(models.Model):
@@ -193,7 +194,6 @@ class UibeJzg(models.Model):
         verbose_name_plural = verbose_name
 
 
-
 class XshxBq(models.Model):
     BQQX_CHOICES = (
         (0, '全部'),
@@ -237,7 +237,7 @@ class UibeBzks(models.Model):
     bj = models.CharField('班级名称', max_length=32, null=True)
     xjzt = models.CharField('学籍状态', max_length=32, null=True)
     ydrq = models.CharField('异动日期', max_length=32, null=True)
-    yx = models.CharField('院系',max_length=16, null=True)
+    yx = models.CharField('院系', max_length=16, null=True)
     # yxdm = models.ForeignKey("DW", on_delete=models.DO_NOTHING,to_field="id")
     zydm = models.CharField('专业代码', max_length=64, null=True)
     tkcs = models.IntegerField('逃课次数', default=0, null=True)
@@ -289,6 +289,18 @@ class JzgZcxx(models.Model):
     class Meta:
         db_table = 'jzg_Zc'
         verbose_name = "教职工职务分类"
+        verbose_name_plural = verbose_name
+
+
+class JzgZcxq(models.Model):
+    zgh = models.CharField('职工号', max_length=16)
+    ZWPDRQ = models.CharField('职务变动日期', max_length=16, null=True)
+    ZYJSZWMC = models.CharField('专业技术职务名称', max_length=16, null=True)
+    ZYJSZWJB = models.CharField('专业技术职务级别', max_length=16, null=True)
+
+    class Meta:
+        db_table = 'jzg_Zcxq'
+        verbose_name = "教职工职称详情"
         verbose_name_plural = verbose_name
 
 

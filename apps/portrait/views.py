@@ -634,8 +634,11 @@ class JshxxqView(mixins.ListModelMixin, generics.GenericAPIView, ):
 class JshxzcxqView(mixins.ListModelMixin, mixins.CreateModelMixin, generics.GenericAPIView, ):
     """教师画像职称详情"""
     # authentication_classes = []
-
-    queryset = pm.JzgZcxx.objects.all()
+    def get_queryset(self):
+        zgh = self.request.data["zgh"]
+        ret = pm.JzgZcxq.objects.filter(zgh=zgh)
+        return ret
+    # queryset = pm.JzgZcxq.objects.all()
     # 序列化
     serializer_class = serialiser.UibeJzgZcXqSerializer
 
@@ -647,11 +650,16 @@ class JshxzcxqView(mixins.ListModelMixin, mixins.CreateModelMixin, generics.Gene
                 zcbdrq = datetime.strptime(request.data['zcbdrq'], '%Y%m%d').date()
             else:
                 zcbdrq = ''
-            dqzc = list(pm.JzgZcxx.objects.filter(zwdm=request.data['zcxxdm']).values('zwmc', 'zwjb'))
+            # dqzc=request.data['zcxx']
+            # if dqzc:
+            #     print(dqzc)
+            # else:
+            #     dqzc=''
+            dqzc= list(pm.UibeJzg.objects.filter(zgh=request.data["zgh"]).values('zcxx'))[0]['zcxx']
             qxrs = pm.UibeJzg.objects.filter(zcxxdm=request.data['zcxxdm']).count()
             bmrs = pm.UibeJzg.objects.filter(zcxxdm=request.data['zcxxdm']).filter(bmdm=request.data['bmdm']).count()
 
-            mb = list(pm.JzgZcxx.objects.filter(zwdm=str(int(request.data['zcxxdm']) - 1)).values('zwmc'))
+            #mb = list(pm.JzgZcxx.objects.filter(zwdm=str(int(request.data['zcxxdm']) - 1)).values('zwmc'))
 
             # co = list(pm.JzgZcxx.objects.filter(zcjb=request.data['zcjb']).values('code'))
             # mbjb = list(pm.Zcdj.objects.filter(code=str(int(co[0]['code']) + 1)).values('zcjb'))
@@ -665,18 +673,17 @@ class JshxzcxqView(mixins.ListModelMixin, mixins.CreateModelMixin, generics.Gene
             ret['dqzc'] = dqzc
             ret['qxrs'] = qxrs
             ret['bmrs'] = bmrs
-            if mb:
-                ret['mb'] = mb
-            else:
-                ret['mb'] = '最顶级'
+            # if mb:
+            #     ret['mb'] = mb
+            # else:
+            #     ret['mb'] = '您已巅峰'
 
             # ret['zcjb'] = request.data['zcjb']
             # ret['bdrq'] = bdrq[0]['zcjbbdrq']
             # ret['xymb'] = mbjb[0]['zcjb']
             rets = self.list(request, *args, **kwargs)
-            print(list(rets.data))
             # print(connection.queries[-1:])
-            return restful.result(message="操作成功", kwargs=ret)
+            return restful.result(message="操作成功", data=rets.data, kwargs=ret)
 
         except Exception as e:
             return restful.result2(message="操作失败", data=e.args)

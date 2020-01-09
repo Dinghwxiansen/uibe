@@ -298,6 +298,7 @@ class YjyzszSerializer(serializers.ModelSerializer):
 
 class YjyzlsszSerializer(serializers.ModelSerializer):
     create_time = serializers.DateTimeField(format='%Y-%m-%d')
+
     class Meta:
         model = wm.XtglYjyzsz
         fields = ['id', 'code', 'yjmc', 'yjgz', 'yjms', 'create_time']
@@ -310,11 +311,12 @@ class ZjzxbxkYjyzlsszSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = wm.XtglYjyzsz
-        fields = ['id', 'code','yjgz', 'yjms', 'create_time']
+        fields = ['id', 'code', 'yjgz', 'yjms', 'create_time']
 
 
 class YjyzlsszSerializer2(serializers.ModelSerializer):
     create_time = serializers.DateTimeField(format='%Y-%m-%d')
+
     class Meta:
         model = wm.XtglYjyzsz
         fields = ['id', 'code', 'red', 'orange', 'yellow', 'yjgz', 'create_time']
@@ -387,9 +389,14 @@ class UibeJzgZcXqSerializer(serializers.ModelSerializer):
     # tjzc_nums = serializers.SerializerMethodField()
     # bbmzc_nums = serializers.SerializerMethodField()
 
+    # class Meta:
+    #     model = pm.JzgZcxx
+    #     fields = ['zwdm', 'zwmc', 'zwjb']
+    ZWPDRQ = serializers.DateTimeField(format='%Y-%m-%d')
+
     class Meta:
-        model = pm.JzgZcxx
-        fields = ['zwdm', 'zwmc', 'zwjb']
+        model = pm.JzgZcxq
+        fields = ['ZWPDRQ', 'ZYJSZWMC', 'ZYJSZWJB']
 
 
 """用户画像之学生画像教师端"""
