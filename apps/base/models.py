@@ -50,8 +50,8 @@ class User(AbstractBaseUser,PermissionsMixin):
     email = models.EmailField("邮箱",max_length=128, null=True)
     mobile = models.CharField("手机号",max_length=32, null=True)
     status = models.BooleanField("状态", choices=status_choices, default=True)
-    create_time = models.DateTimeField("创建时间", auto_now=True)
-    update_time = models.DateTimeField("修改时间", auto_now_add=True)
+    create_time = models.DateTimeField('创建时间', auto_now_add=True)
+    update_time = models.DateTimeField('更新时间', auto_now=True)
     role = models.ManyToManyField("Role",related_name="users", verbose_name="角色id")
 
     USERNAME_FIELD = 'username'
@@ -83,8 +83,8 @@ class Role(models.Model):
     code = models.CharField("编码",max_length=128)
     # user = models.ManyToManyField("User", related_name="user", verbose_name="用户id")
     menu = models.ManyToManyField("Menu", related_name="roles",verbose_name="菜单Id")
-    create_time = models.DateTimeField("创建时间", auto_now=True)
-    update_time = models.DateTimeField("修改时间", auto_now_add=True)
+    create_time = models.DateTimeField('创建时间', auto_now_add=True)
+    update_time = models.DateTimeField('更新时间', auto_now=True)
     class Meta:
         verbose_name = "角色信息表"
         verbose_name_plural = verbose_name
@@ -114,8 +114,8 @@ class Menu(models.Model):
     type = models.IntegerField("类型", choices=menu_type_choices, default=0)
     icon = models.CharField("图标", max_length=256,null=True)
     status = models.BooleanField("状态", choices=status_choices, default=True)
-    create_time = models.DateTimeField("创建时间",auto_now=True)
-    update_time = models.DateTimeField("修改时间",auto_now_add=True)
+    create_time = models.DateTimeField('创建时间', auto_now_add=True)
+    update_time = models.DateTimeField('更新时间', auto_now=True)
 
 
     class Meta:

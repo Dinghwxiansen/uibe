@@ -789,10 +789,10 @@ class XwgjView(mixins.ListModelMixin, mixins.CreateModelMixin,
                 gjcs__gte=1)
         else:
             if xhxm.isdigit():
-                ret = pm.UibeBzks.objects.filter(grgj__xh=xhxm).annotate(gjcs=Count("grgj", filter=myfilter)).filter(
+                ret = pm.UibeBzks.objects.filter(grgj__xh__icontains=xhxm).annotate(gjcs=Count("grgj", filter=myfilter)).filter(
                     gjcs__gte=1)
             else:
-                ret = pm.UibeBzks.objects.filter(xm=xhxm).annotate(gjcs=Count("grgj", filter=myfilter)).filter(
+                ret = pm.UibeBzks.objects.filter(xm__icontains=xhxm).annotate(gjcs=Count("grgj", filter=myfilter)).filter(
                     gjcs__gte=1)
         return ret
 
