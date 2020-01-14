@@ -79,6 +79,8 @@ class BzksSerialiser(serializers.ModelSerializer):
 
 
 class ZjzxbxkmxSerialiser(serializers.ModelSerializer):
+    yjrq = serializers.DateField(format='%Y-%m-%d')
+
     class Meta:
         model = wm.ZnyjZjzxbxk
         fields = ['id', 'xh', 'yjrq', 'sjxf', 'yxxf', 'wxkxq', 'clzt', ]
@@ -99,6 +101,8 @@ class XxtxblxMxSerialiser(serializers.ModelSerializer):
 
 
 class XwzsMxSerialiser(serializers.ModelSerializer):
+    yjrq = serializers.DateTimeField(format='%Y-%m-%d')
+
     class Meta:
         model = wm.ZnyjXwzsyj
         fields = ['id', 'xh', 'yjrq', 'xwzsts', 'yjqk', 'yjdj', 'clzt', ]
@@ -108,6 +112,8 @@ class XwzsMxSerialiser(serializers.ModelSerializer):
 
 
 class BzxMxSerialiser(serializers.ModelSerializer):
+    yjrq = serializers.DateTimeField(format='%Y-%m-%d')
+
     class Meta:
         model = wm.ZnyjBzx
         fields = ['id', 'xh', 'yjrq', 'bzxsj', 'bzxsc', 'yjdj', 'clzt', ]
@@ -117,6 +123,8 @@ class BzxMxSerialiser(serializers.ModelSerializer):
 
 
 class TkxwMxSerialiser(serializers.ModelSerializer):
+    yjrq = serializers.DateTimeField(format='%Y-%m-%d')
+
     class Meta:
         model = wm.ZnyjTkxw
         fields = ['id', 'xh', 'yjrq', 'kcsd', 'kcmc', 'yjqk', 'clzt', ]
@@ -126,6 +134,9 @@ class TkxwMxSerialiser(serializers.ModelSerializer):
 
 
 class WgMxSerialiser(serializers.ModelSerializer):
+    yjsj = serializers.DateTimeField(format='%Y-%m-%d')
+    wgsj = serializers.DateTimeField(format='%Y-%m-%d %H:%M:%S')
+
     class Meta:
         model = wm.ZnyjWgyj
         fields = ['id', 'xh', 'yjsj', 'wgsj', 'yjqk', 'yjdj', 'clzt', ]
