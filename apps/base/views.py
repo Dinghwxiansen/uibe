@@ -275,10 +275,18 @@ class UserRoleView(mixins.ListModelMixin, generics.GenericAPIView, ):
     """
 
     def get(self, request, user_id):
-        user = User.objects.get(pk=user_id)
-        roles = user.role.all()
-        ser = RoleSerializer(instance=roles, many=True)
-        return restful.result(message="查询成功", data=ser.data)
+        try:
+            user = User.objects.get(pk=user_id)
+            roles = user.role.all()
+            # todo 判断查询条件查询数据库是否为空
+            if roles.exists():
+                ser = RoleSerializer(instance=roles, many=True)
+                return restful.result(message="查询成功", data=ser.data)
+            else:
+                return restful.result(message="查询成功，当前用户无角色，请为用户添加角色")
+        except Exception as e:
+            return restful.result2(message="查询失败,请选择正确的用户id",data=e.args)
+
 
 
 class RoleMenuView(mixins.ListModelMixin, generics.GenericAPIView, ):

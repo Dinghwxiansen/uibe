@@ -88,6 +88,8 @@ class ZjzxbxkmxSerialiser(serializers.ModelSerializer):
 
 
 class XxtxblxMxSerialiser(serializers.ModelSerializer):
+    yjrq = serializers.DateTimeField(format='%Y-%m-%d')
+
     class Meta:
         model = wm.ZnyjXxtxblx
         fields = ['id', 'xh', 'yjrq', 'ydrq', 'yjqk', 'yjdj', 'clzt', ]
