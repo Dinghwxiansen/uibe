@@ -162,7 +162,7 @@ class ZnyjZjzxbxk(models.Model):
     clzt = models.IntegerField(choices=Clzt_Choices, default=0)
     create_time = models.DateTimeField('创建时间', auto_now_add=True)
     update_time = models.DateTimeField('更新时间', auto_now=True)
-    user = models.ForeignKey(UibeBzks, related_name="zjzxbxk",on_delete=models.CASCADE)
+    user = models.ForeignKey(UibeBzks, related_name="zjzxbxk", on_delete=models.CASCADE)
 
     class Meta:
         db_table = 'znyj_zjzxbxk'
@@ -178,7 +178,7 @@ class ZnyjXxtxblx(models.Model):
     yjrq = models.DateTimeField('预警日期', auto_now_add=True)
     ydrq = models.DateField('异动日期', auto_now_add=True, null=True, )
     yjqk = models.CharField('预警情况', max_length=256, null=True, )
-    blxsj = models.CharField('不离校时间', max_length=32,null=True)
+    blxsj = models.CharField('不离校时间', max_length=32, null=True)
     blxsc = models.IntegerField('不离校时长', default=0)
     yjdj = models.IntegerField(choices=Yjdj_Choices, default=0, null=True, )
     clzt = models.IntegerField(choices=Clzt_Choices, default=0)
@@ -199,7 +199,7 @@ class ZnyjXwzsyj(models.Model):
     # xh = models.ForeignKey('portrait.UibeBzks', max_length=32, on_delete=models.CASCADE, )
     xh = models.CharField(max_length=32)
     yjrq = models.DateTimeField('预警日期', auto_now_add=True)
-    xwzssj = models.CharField('校外住宿时长',max_length=32, null=True)
+    xwzssj = models.CharField('校外住宿时长', max_length=32, null=True)
     xwzsts = models.IntegerField('校外住宿天数', default=0, null=True)
     yjqk = models.CharField('预警情况', max_length=32, null=True)
     yjdj = models.IntegerField(choices=Yjdj_Choices, default=0)
@@ -244,6 +244,7 @@ class ZnyjTkxw(models.Model):
     kcsd = models.CharField('课程时段', max_length=32)
     kcmc = models.CharField('课程名称', max_length=64)
     yjqk = models.CharField('预警情况', max_length=64)
+    yjsj = models.DateTimeField("预警时间", auto_now_add=True, null=True)
     yjdj = models.IntegerField(choices=Yjdj_Choices, default=0, )
     clzt = models.IntegerField(choices=Clzt_Choices, default=0, )
     create_time = models.DateTimeField('创建时间', auto_now_add=True)

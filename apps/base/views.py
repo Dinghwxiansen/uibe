@@ -268,7 +268,7 @@ class UserRoleView(mixins.ListModelMixin, generics.GenericAPIView, ):
                 user.role.set(roles)  # 插入
             return restful.result(message="操作成功")
         except Exception as e:
-            return restful.result2(message="操作失败",data=e.args)
+            return restful.result2(message="操作失败", data=e.args)
 
     """
         查询指定用户的所有角色

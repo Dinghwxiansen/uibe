@@ -124,10 +124,11 @@ class BzxMxSerialiser(serializers.ModelSerializer):
 
 class TkxwMxSerialiser(serializers.ModelSerializer):
     yjrq = serializers.DateTimeField(format='%Y-%m-%d')
+    yjsj = serializers.DateTimeField(format='%Y-%m-%d %H:%M:%S')
 
     class Meta:
         model = wm.ZnyjTkxw
-        fields = ['id', 'xh', 'yjrq', 'kcsd', 'kcmc', 'yjqk', 'clzt', ]
+        fields = ['id', 'xh', 'yjrq', 'kcsd', 'kcmc', 'yjqk', 'yjsj', 'clzt', ]
 
 
 """*******************************晚归预警序列化*******************************"""
