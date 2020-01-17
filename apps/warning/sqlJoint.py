@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 # @Time    :2019/11/23 14:06
 # todo Python 数据库连接类，sql语句拼接方法
+import calendar
+import time
 
 import MySQLdb
 # todo 1 sql拼接方法
 import dbpool as DBpool
-from dateutil.relativedelta import relativedelta
 
 
 def safe(s):
@@ -131,10 +132,10 @@ def fSqlResult(r, key_list):
 
 list = ['SELECT zgh FROM jzg  WHERE xb=1', 'SELECT zgh FROM jzg WHERE zxxmsl >4 ', 'c']
 # list = ['a', 'b ', 'c']
-print(list[0]+' union all '+list[1]+' union all '+list[2])
+print(list[0] + ' union all ' + list[1] + ' union all ' + list[2])
 bbb = len(list) - 1
-aaa=' UNION ALL '.join(list)
-print("bbb"+aaa +str(bbb))
+aaa = ' UNION ALL '.join(list)
+print("bbb" + aaa + str(bbb))
 
 # todo 结果
 #     SELECT  zgh, COUNT(*)
@@ -154,48 +155,64 @@ print("bbb"+aaa +str(bbb))
 #     print(list[index])
 
 
+# tz = pytz.timezone('Asia/Shanghai')
+#
+# user_time = datetime.datetime.now(tz).strftime("%Y-%m")
+#
+# Last_month = datetime.date.today() - relativedelta(months=1)
+# print(Last_month)
+# print("**********************")
+# print(user_time)
 
-import pytz
+# =======================================
+# 关于月(本月，上月，当年1月，去年同月)
+# =======================================
+# 本月(月份)
+
 import datetime
 
-tz = pytz.timezone('Asia/Shanghai')
+today = datetime.date.today()
+data = today.month  # out: 2
+print(data)
+# 本月(年月)
 
-user_time = datetime.datetime.now(tz).strftime("%Y-%m")
+data1 = datetime.datetime.strftime(today, "%Y-%m")  # out: '2019-02'
+print(data1)
+# 上月
 
-Last_month = datetime.date.today() - relativedelta(months=1)
-print(Last_month)
-print(user_time)
+last_month = today + datetime.timedelta(days=-today.day)
+# last_month.month                                     # 月份，out: 1
+print(datetime.datetime.strftime(last_month, "%Y-%m"))  # out: '2019-01'
+
+# 上N个月
+from dateutil.relativedelta import relativedelta  # 需要引入新的包
+
+last_2_month = today + relativedelta(months=-12)  # 上两个月，上N个月参数为(months=-N)
+print(datetime.datetime.strftime(last_2_month, "%Y-%m"))
+
+#
+# def gen_dates(b_date, days):
+#     day = datetime.timedelta(days=1)
+#     for i in range(days):
+#         yield b_date + day*i
+#
+#
+# def get_date_list(start=None, end=None):
+#     """
+#     获取日期列表
+#     :param start: 开始日期
+#     :param end: 结束日期
+#     :return:
+#     """
+#     if start is None:
+#         start = datetime.datetime.strptime("2000-01-01", "%Y-%m-%d")
+#     if end is None:
+#         end = datetime.datetime.now()
+#     data = []
+#     for d in gen_dates(start, (end-start).days):
+#         data.append(d)
+#     return data
+#
 
 
-def gen_dates(b_date, days):
-    day = datetime.timedelta(days=1)
-    for i in range(days):
-        yield b_date + day*i
 
-
-def get_date_list(start=None, end=None):
-    """
-    获取日期列表
-    :param start: 开始日期
-    :param end: 结束日期
-    :return:
-    """
-    if start is None:
-        start = datetime.datetime.strptime("2000-01-01", "%Y-%m-%d")
-    if end is None:
-        end = datetime.datetime.now()
-    data = []
-    for d in gen_dates(start, (end-start).days):
-        data.append(d)
-    return data
-
-if __name__ == "__main__":
-    print(get_date_list())
-
-
-from datetime import *
-
-from dateutil.relativedelta import relativedelta
-
-if __name__ == "__main__":
-    print(datetime.today() - relativedelta(months=+1))
