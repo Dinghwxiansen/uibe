@@ -1,3 +1,4 @@
+from django.db.models import Q
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import filters
 from rest_framework import generics
@@ -281,11 +282,22 @@ class UserRoleView(mixins.ListModelMixin, generics.GenericAPIView, ):
     def get(self, request, user_id):
         try:
             user = User.objects.get(pk=user_id)
+
             roles = user.role.all()
+
+            ret = []
+            ids = list(roles.values('id'))
+            for i in ids:
+                ret.append(i['id'])
+            fid = Role.objects.filter(~Q(id__in=ret)).values('id','code','name')
+
+            ser2 = RoleSerializer(instance=fid, many=True)
             # todo 判断查询条件查询数据库是否为空
             if roles.exists():
+
                 ser = RoleSerializer(instance=roles, many=True)
-                return restful.result(message="查询成功", data=ser.data)
+
+                return restful.result(message="查询成功", role2=ser.data, role=ser2.data)
             else:
                 return restful.result(message="查询成功，当前用户无角色，请为用户添加角色")
         except Exception as e:

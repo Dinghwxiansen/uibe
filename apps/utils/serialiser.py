@@ -157,7 +157,7 @@ class BzksSwxwSerialiser(serializers.ModelSerializer):
 class SwxwMxSerialiser(serializers.ModelSerializer):
     class Meta:
         model = wm.ZnyjSwxw
-        fields = ['id', 'xh', 'syll', 'create_time', 'swsj']
+        fields = ['id', 'xh', 'syll', 'swsj']
 
 
 """*******************************行为轨迹序列化*******************************"""

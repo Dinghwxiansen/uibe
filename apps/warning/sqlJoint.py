@@ -5,6 +5,7 @@
 import MySQLdb
 # todo 1 sql拼接方法
 import dbpool as DBpool
+from dateutil.relativedelta import relativedelta
 
 
 def safe(s):
@@ -152,7 +153,49 @@ print("bbb"+aaa +str(bbb))
 #
 #     print(list[index])
 
+
+
+import pytz
 import datetime
 
-yesterday = datetime.date.today() + datetime.timedelta(-1)
-print(yesterday)
+tz = pytz.timezone('Asia/Shanghai')
+
+user_time = datetime.datetime.now(tz).strftime("%Y-%m")
+
+Last_month = datetime.date.today() - relativedelta(months=1)
+print(Last_month)
+print(user_time)
+
+
+def gen_dates(b_date, days):
+    day = datetime.timedelta(days=1)
+    for i in range(days):
+        yield b_date + day*i
+
+
+def get_date_list(start=None, end=None):
+    """
+    获取日期列表
+    :param start: 开始日期
+    :param end: 结束日期
+    :return:
+    """
+    if start is None:
+        start = datetime.datetime.strptime("2000-01-01", "%Y-%m-%d")
+    if end is None:
+        end = datetime.datetime.now()
+    data = []
+    for d in gen_dates(start, (end-start).days):
+        data.append(d)
+    return data
+
+if __name__ == "__main__":
+    print(get_date_list())
+
+
+from datetime import *
+
+from dateutil.relativedelta import relativedelta
+
+if __name__ == "__main__":
+    print(datetime.today() - relativedelta(months=+1))

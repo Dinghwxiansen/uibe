@@ -12,8 +12,8 @@ class HttpCode(object):
 
 
 # {"code":400,"message":"","data":{}}
-def result(code=HttpCode.ok, message="", data=None, kwargs=None):
-    json_dict = {"code": code, "message": message, "data": data}
+def result(code=HttpCode.ok, message="", data=None, kwargs=None, role=None, role2=None):
+    json_dict = {"code": code, "message": message, "data": data, 'unowned_role': role, "hvae_role": role2}
 
     if kwargs and isinstance(kwargs, dict) and kwargs.keys():
         json_dict.update(kwargs)

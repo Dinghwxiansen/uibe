@@ -748,11 +748,19 @@ class SwxwView(mixins.ListModelMixin, mixins.CreateModelMixin,
 
 
 class SwxwmxView(viewsets.ModelViewSet):
+
     # authentication_classes = []
     # permission_classes = []
     """分页"""
-    pagination_class = Pagination
-    queryset = wm.ZnyjSwxw.objects.all().order_by('-update_time')
+    # pagination_class = Pagination
+    def get_queryset(self):
+        import datetime
+        from dateutil.relativedelta import relativedelta
+        kssj = self.request.query_params.get("kssj", datetime.date.today() - relativedelta(months=+1))
+        jssj = self.request.query_params.get("jssj", date.today() + timedelta(days=1))
+        ret = wm.ZnyjSwxw.objects.filter(Q(swsj__gt=kssj) & Q(swsj__lte=jssj)).order_by('-swsj')
+        return ret
+    #queryset = wm.ZnyjSwxw.objects.all().order_by('-update_time')
     # 序列化
     serializer_class = serialiser.SwxwMxSerialiser
     filter_backends = (DjangoFilterBackend, filters.SearchFilter)
@@ -789,10 +797,12 @@ class XwgjView(mixins.ListModelMixin, mixins.CreateModelMixin,
                 gjcs__gte=1)
         else:
             if xhxm.isdigit():
-                ret = pm.UibeBzks.objects.filter(grgj__xh__icontains=xhxm).annotate(gjcs=Count("grgj", filter=myfilter)).filter(
+                ret = pm.UibeBzks.objects.filter(grgj__xh__icontains=xhxm).annotate(
+                    gjcs=Count("grgj", filter=myfilter)).filter(
                     gjcs__gte=1)
             else:
-                ret = pm.UibeBzks.objects.filter(xm__icontains=xhxm).annotate(gjcs=Count("grgj", filter=myfilter)).filter(
+                ret = pm.UibeBzks.objects.filter(xm__icontains=xhxm).annotate(
+                    gjcs=Count("grgj", filter=myfilter)).filter(
                     gjcs__gte=1)
         return ret
 
@@ -1495,7 +1505,9 @@ class WaringTableView(mixins.ListModelMixin, generics.GenericAPIView):
             one_year_data4 = wm.ZnyjXwzsyj.objects.filter(create_time__gte=time)
             one_year_data5 = wm.ZnyjWgyj.objects.filter(create_time__gte=time)
             one_year_data6 = wm.ZnyjTkxw.objects.filter(create_time__gte=time)
-
+            # 计算时间
+            aaa = yesterday-relativedelta(years=1)
+            rq = wm.ZnyjWgyj.objects.filter(create_time__gte=aaa)
             # 分组统计每个月的数据
             zjzxbxk_year_month = one_year_data1 \
                 .annotate(year=ExtractYear('create_time'), month=ExtractMonth('create_time')) \
@@ -1515,7 +1527,9 @@ class WaringTableView(mixins.ListModelMixin, generics.GenericAPIView):
             tkxw_year_month = one_year_data6 \
                 .annotate(year=ExtractYear('create_time'), month=ExtractMonth('create_time')) \
                 .values('year', 'month').order_by('year', 'month').annotate(count=Count('create_time'))
+            rqs = rq.annotate(year=ExtractYear('create_time'), month=ExtractMonth('create_time')).values('year', 'month')\
 
+            print(rqs)
             print("**************************")
             ret['zxzxbxk_year_month'] = list(zjzxbxk_year_month)
             ret['xxtxblx_year_month'] = list(xxtxblx_year_month)
@@ -1523,6 +1537,8 @@ class WaringTableView(mixins.ListModelMixin, generics.GenericAPIView):
             ret['xwzs_year_month'] = list(xwzs_year_month)
             ret['wg_year_month'] = list(wg_year_month)
             ret['tkxw_year_month'] = list(tkxw_year_month)
+            ret['rq'] = list(rqs)
+
             # query = pickle.loads()
             # zxzxbxk_year_month.query = query
             # print(query)
@@ -1534,6 +1550,7 @@ class WaringTableView(mixins.ListModelMixin, generics.GenericAPIView):
 """ 自定义函数，读取标签建模中设定规则，函数规则拼接SQL，并写入到数据库中"""
 
 from datetime import datetime
+
 
 def BqjmToSQL():
     yjyzs = pm.XtglBqsz.objects.all().order_by("-update_time").values('bqgz', 'zbfl').first()
