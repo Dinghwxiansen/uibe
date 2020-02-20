@@ -428,7 +428,7 @@ class XshxJstSerializer(serializers.ModelSerializer):
 class XshxJstXqSerializer(serializers.ModelSerializer):
     class Meta:
         model = pm.XshxBq
-        fields = ['bq', 'bqsm']
+        fields = ['bq', 'bqsm', 'bqqx']
 
 
 """*******************************行为轨迹序列化*******************************"""
