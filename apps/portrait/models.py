@@ -229,6 +229,7 @@ class UibeBzks(models.Model):
     )
     xh = models.CharField('学号', max_length=32, unique=True)
     xm = models.CharField('姓名', max_length=16, )
+    xb = models.IntegerField(choices=SEX_CHOICES, default=0)
     syd = models.CharField('生源地', max_length=32, null=True)
     xznj = models.CharField('现在年级', max_length=64, null=True)
     xn = models.CharField('学年', max_length=32, null=True)

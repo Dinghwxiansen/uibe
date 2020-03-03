@@ -734,9 +734,13 @@ class XshxXsdVIew(mixins.ListModelMixin, generics.GenericAPIView, ):
 
     def get(self, request, *args, **kwargs):
         try:
+            xbdm = {}
             ret = self.list(request, *args, **kwargs)
+            xhs = self.request.query_params.get('xh')
+            xb =list(pm.UibeBzks.objects.filter(xh = xhs).values('xb'))[0]['xb']
+            xbdm['xbdm']=xb
             # print(connection.queries[-1:])
-            return restful.result(message="操作成功", data=ret.data)
+            return restful.result(message="操作成功", data=ret.data, kwargs=xbdm)
         except Exception as e:
             return restful.result2(message="操作失败", data=e.args)
 
@@ -763,8 +767,12 @@ class XshxJsdXqVIew(mixins.ListModelMixin, generics.GenericAPIView, ):
 
     def get(self, request, *args, **kwargs):
         try:
+            xbdm = {}
             ret = self.list(request, *args, **kwargs)
+            xhs = self.request.query_params.get('xh')
+            xb =list(pm.UibeBzks.objects.filter(xh = xhs).values('xb'))[0]['xb']
+            xbdm['xbdm']=xb
             # print(connection.queries[-1:])
-            return restful.result(message="操作成功", data=ret.data)
+            return restful.result(message="操作成功", data=ret.data,kwargs=xbdm)
         except Exception as e:
             return restful.result2(message="操作失败", data=e.args)
