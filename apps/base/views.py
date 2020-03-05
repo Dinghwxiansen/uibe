@@ -142,8 +142,8 @@ class MenuView(mixins.ListModelMixin, mixins.CreateModelMixin,
                 request.data["code"] = code
                 request.data["order_num"] = order_num
                 request.data["layer"] = 1
-                print(code)
-                print(order_num)
+                # print(code)
+                # print(order_num)
             else:
                 # 查询父级菜单
                 parentNenu = Menu.objects.get(id=request.data["parent_id"])
@@ -249,6 +249,7 @@ class UserRoleView(mixins.ListModelMixin, generics.GenericAPIView, ):
     """
     设置用户角色
     """
+    queryset = Role.objects.all()
     # 序列化
     serializer_class = RoleSerializer
 
@@ -279,7 +280,7 @@ class UserRoleView(mixins.ListModelMixin, generics.GenericAPIView, ):
         查询指定用户的所有角色
     """
 
-    def get(self, request, user_id):
+    def get(self, request, user_id, *args, **kwargs):
         try:
             user = User.objects.get(pk=user_id)
 
@@ -289,7 +290,7 @@ class UserRoleView(mixins.ListModelMixin, generics.GenericAPIView, ):
             ids = list(roles.values('id'))
             for i in ids:
                 ret.append(i['id'])
-            fid = Role.objects.filter(~Q(id__in=ret)).values('id','code','name')
+            fid = Role.objects.filter(~Q(id__in=ret)).values('id', 'code', 'name')
 
             ser2 = RoleSerializer(instance=fid, many=True)
             # todo 判断查询条件查询数据库是否为空
@@ -299,7 +300,8 @@ class UserRoleView(mixins.ListModelMixin, generics.GenericAPIView, ):
 
                 return restful.result(message="查询成功", role2=ser.data, role=ser2.data)
             else:
-                return restful.result(message="查询成功，当前用户无角色，请为用户添加角色")
+                rets = self.list(request, *args, **kwargs)
+                return restful.result(message="查询成功，当前用户无角色，请为用户添加角色", role=rets.data)
         except Exception as e:
             return restful.result2(message="查询失败,id传输错误", data=e.args)
 
@@ -308,6 +310,7 @@ class RoleMenuView(mixins.ListModelMixin, generics.GenericAPIView, ):
     """
     设置角色菜单
     """
+    queryset = Menu.objects.all()
     # 序列化
     serializer_class = MenuSerializer
 
@@ -338,16 +341,26 @@ class RoleMenuView(mixins.ListModelMixin, generics.GenericAPIView, ):
         查询指定角色的所有菜单
     """
 
-    def get(self, request, role_id):
+    def get(self, request, role_id, *args, **kwargs):
         try:
             role = Role.objects.get(pk=role_id)
             menus = role.menu.all()
+            ret = []
+            ids = list(menus.values('id'))
+
+            for i in ids:
+                ret.append(i['id'])
+            fid = Menu.objects.filter(~Q(id__in=ret)).values('id', 'parent_id', 'name', 'code', 'type','layer')
+
+            ser2 = MenuSerializer(instance=fid, many=True)
+
             # todo 判断当前查询条件是否为空
             if menus.exists():
                 ser = MenuSerializer(instance=menus, many=True)
-                return restful.result(message="查询成功", data=ser.data)
+                return restful.result(message="查询成功",  role2=ser.data, role=ser2.data)
             else:
-                return restful.result(message="查询成功，当前角色无菜单")
+                rets = self.list(request, *args, **kwargs)
+                return restful.result(message="查询成功，当前角色无菜单,请为角色添加菜单", role=rets.data)
         except Exception as e:
             return restful.result(message="role_id传入错误，请检查", data=e.args)
 

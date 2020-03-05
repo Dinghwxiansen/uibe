@@ -14,7 +14,6 @@ from apps.portrait import models as pm
 from apps.utils import restful
 from apps.utils import serialiser
 from apps.utils.pagination import Pagination
-from apps.warning.views import BqjmToSQL, search
 
 
 class JqszView(mixins.ListModelMixin, mixins.CreateModelMixin,
@@ -633,11 +632,13 @@ class JshxxqView(mixins.ListModelMixin, generics.GenericAPIView, ):
 
 class JshxzcxqView(mixins.ListModelMixin, mixins.CreateModelMixin, generics.GenericAPIView, ):
     """教师画像职称详情"""
+
     # authentication_classes = []
     def get_queryset(self):
         zgh = self.request.data["zgh"]
         ret = pm.JzgZcxq.objects.filter(zgh=zgh)
         return ret
+
     # queryset = pm.JzgZcxq.objects.all()
     # 序列化
     serializer_class = serialiser.UibeJzgZcXqSerializer
@@ -655,11 +656,11 @@ class JshxzcxqView(mixins.ListModelMixin, mixins.CreateModelMixin, generics.Gene
             #     print(dqzc)
             # else:
             #     dqzc=''
-            dqzc= list(pm.UibeJzg.objects.filter(zgh=request.data["zgh"]).values('zcxx'))[0]['zcxx']
+            dqzc = list(pm.UibeJzg.objects.filter(zgh=request.data["zgh"]).values('zcxx'))[0]['zcxx']
             qxrs = pm.UibeJzg.objects.filter(zcxxdm=request.data['zcxxdm']).count()
             bmrs = pm.UibeJzg.objects.filter(zcxxdm=request.data['zcxxdm']).filter(bmdm=request.data['bmdm']).count()
 
-            #mb = list(pm.JzgZcxx.objects.filter(zwdm=str(int(request.data['zcxxdm']) - 1)).values('zwmc'))
+            # mb = list(pm.JzgZcxx.objects.filter(zwdm=str(int(request.data['zcxxdm']) - 1)).values('zwmc'))
 
             # co = list(pm.JzgZcxx.objects.filter(zcjb=request.data['zcjb']).values('code'))
             # mbjb = list(pm.Zcdj.objects.filter(code=str(int(co[0]['code']) + 1)).values('zcjb'))
@@ -737,8 +738,8 @@ class XshxXsdVIew(mixins.ListModelMixin, generics.GenericAPIView, ):
             xbdm = {}
             ret = self.list(request, *args, **kwargs)
             xhs = self.request.query_params.get('xh')
-            xb =list(pm.UibeBzks.objects.filter(xh = xhs).values('xb'))[0]['xb']
-            xbdm['xbdm']=xb
+            xb = list(pm.UibeBzks.objects.filter(xh=xhs).values('xb'))[0]['xb']
+            xbdm['xbdm'] = xb
             # print(connection.queries[-1:])
             return restful.result(message="操作成功", data=ret.data, kwargs=xbdm)
         except Exception as e:
@@ -770,9 +771,9 @@ class XshxJsdXqVIew(mixins.ListModelMixin, generics.GenericAPIView, ):
             xbdm = {}
             ret = self.list(request, *args, **kwargs)
             xhs = self.request.query_params.get('xh')
-            xb =list(pm.UibeBzks.objects.filter(xh = xhs).values('xb'))[0]['xb']
-            xbdm['xbdm']=xb
+            xb = list(pm.UibeBzks.objects.filter(xh=xhs).values('xb'))[0]['xb']
+            xbdm['xbdm'] = xb
             # print(connection.queries[-1:])
-            return restful.result(message="操作成功", data=ret.data,kwargs=xbdm)
+            return restful.result(message="操作成功", data=ret.data, kwargs=xbdm)
         except Exception as e:
             return restful.result2(message="操作失败", data=e.args)

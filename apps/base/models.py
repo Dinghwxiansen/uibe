@@ -30,8 +30,8 @@ class UserManager(BaseUserManager):
         return self._create_user(username, password)
 
 status_choices = (
-    (True, "启用"),
-    (False, "停用"),
+    (1, "启用"),
+    (2, "停用"),
 )
 
 """
@@ -49,7 +49,7 @@ class User(AbstractBaseUser,PermissionsMixin):
     user_type = models.IntegerField("用户类型", choices=user_type_choices, default=1)
     email = models.EmailField("邮箱",max_length=128, null=True)
     mobile = models.CharField("手机号",max_length=32, null=True)
-    status = models.BooleanField("状态", choices=status_choices, default=True)
+    status = models.IntegerField("状态", choices=status_choices, default=1)
     create_time = models.DateTimeField('创建时间', auto_now_add=True)
     update_time = models.DateTimeField('更新时间', auto_now=True)
     role = models.ManyToManyField("Role",related_name="users", verbose_name="角色id")
@@ -113,7 +113,7 @@ class Menu(models.Model):
     url = models.CharField("地址",max_length=128,null=True,blank=True)
     type = models.IntegerField("类型", choices=menu_type_choices, default=0)
     icon = models.CharField("图标", max_length=256,null=True)
-    status = models.BooleanField("状态", choices=status_choices, default=True)
+    status = models.IntegerField("状态", choices=status_choices, default=1)
     create_time = models.DateTimeField('创建时间', auto_now_add=True)
     update_time = models.DateTimeField('更新时间', auto_now=True)
 
