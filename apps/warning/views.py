@@ -1635,10 +1635,10 @@ def search():
     cursor = connection.cursor()
 
     # todo 2.按照系统管理标签设置更新时间字段取出最新的值
-    sqlResult = pm.XtglBqsz.objects.all().order_by("-update_time").values('bqmc', 'bqSQL', 'bqms', 'kfqx').first()
+    sqlResult = pm.XtglBqsz.objects.all().order_by("-update_time").values('bqmc', 'bqSQL', 'bqms', 'bqqx').first()
     # todo 4.获取插入学生画像标签数据
     bqmss = sqlResult['bqms']
-    kfqxs = sqlResult['kfqx']
+    kfqxs = sqlResult['bqqx']
     bqs = sqlResult['bqmc']
     sql = sqlResult['bqSQL']
     # todo 5.执行sql
@@ -1651,6 +1651,7 @@ def search():
         # todo 7.循环插入mysql数据库
         if bq == bqs:
             print("修改标签有效状态为0 ，再次插入有效状态标签")
+
             pm.XshxBq.objects.filter(bq=bqs).update(sfyx=0)
 
             for item in return_arr:
