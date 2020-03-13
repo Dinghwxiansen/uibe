@@ -14,6 +14,7 @@ from apps.portrait import models as pm
 from apps.utils import restful
 from apps.utils import serialiser
 from apps.utils.pagination import Pagination
+from apps.warning.views import BqjmToSQL,search
 
 
 class JqszView(mixins.ListModelMixin, mixins.CreateModelMixin,
@@ -272,8 +273,8 @@ class HxbqszView(mixins.ListModelMixin, mixins.CreateModelMixin,
                 return restful.result2(message="请勿重复保存操作")
             except IndexError:
                 ret = self.create(request, *args, **kwargs)
-                # BqjmToSQL()
-                # search()
+                BqjmToSQL()
+                search()
                 return restful.result(message="保存成功")
         except Exception as e:
             return restful.result2(message="操作失败", data=e.args)
