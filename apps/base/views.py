@@ -5,10 +5,16 @@ from rest_framework import generics
 from rest_framework import mixins
 
 from apps.utils import restful
+from apps.utils.Sample_username_ip import ip_username
 from apps.utils.pagination import Pagination
 from .filter import RoleFilter, UserFilter
 from .models import User, Role, Menu
 from .serializer import RoleSerializer, MenuSerializer, UserSerializer
+
+"""导入自定义日志模块"""
+import logging
+
+logger = logging.getLogger("django")
 
 """
 权限模块相关操作
@@ -44,7 +50,8 @@ class RoleView(mixins.ListModelMixin, mixins.CreateModelMixin,
             ret = self.list(request, *args, **kwargs)
             return restful.result(message="操作成功", data=ret.data)
         except Exception as e:
-            return restful.result2(message="操作失败", data=e.args)
+            ip_username(request)
+            return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
 
     """
         添加角色,并返回添加的数据
@@ -56,7 +63,8 @@ class RoleView(mixins.ListModelMixin, mixins.CreateModelMixin,
             ret = self.create(request, *args, **kwargs)
             return restful.result(message="保存成功")
         except Exception as e:
-            return restful.result2(message="操作失败", data=e.args)
+            ip_username(request)
+            return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
 
     """
         删除
@@ -67,16 +75,21 @@ class RoleView(mixins.ListModelMixin, mixins.CreateModelMixin,
             self.destroy(request, *args, **kwargs)
             return restful.ok()
         except Exception as e:
-            return restful.result2(message="操作失败", data=e.args)
+            ip_username(request)
+            return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
 
     """
         查询一条数据详情
     """
 
     def patch(self, request, id):
-        ret = Role.objects.filter(pk=id).first()
-        ser = RoleSerializer(instance=ret, many=False)
-        return restful.result(data=ser.data)
+        try:
+            ret = Role.objects.filter(pk=id).first()
+            ser = RoleSerializer(instance=ret, many=False)
+            return restful.result(data=ser.data)
+        except Exception as e:
+            ip_username(request)
+            return restful.result2("操作失败", kwargs=logger.error(e.args), data=e.args)
 
     """
         更新单条数据
@@ -92,7 +105,8 @@ class RoleView(mixins.ListModelMixin, mixins.CreateModelMixin,
                 ser.save()
             return restful.ok()
         except Exception as e:
-            return restful.result2(message="操作失败", data=e.args)
+            ip_username(request)
+            return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
 
 
 """
@@ -118,7 +132,8 @@ class MenuView(mixins.ListModelMixin, mixins.CreateModelMixin,
             ret = self.list(request, *args, **kwargs)
             return restful.result(message="操作成功", data=ret.data)
         except Exception as e:
-            return restful.result2(message="操作失败", data=e.args)
+            ip_username(request)
+            return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
 
     """
         添加菜单,并返回添加的数据
@@ -164,7 +179,8 @@ class MenuView(mixins.ListModelMixin, mixins.CreateModelMixin,
             # return restful.result(message="保存成功",data=ret.data)
             return restful.result(message="保存成功")
         except Exception as e:
-            return restful.result2(message="操作失败", data=e.args)
+            ip_username(request)
+            return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
 
     """
         删除
@@ -179,24 +195,29 @@ class MenuView(mixins.ListModelMixin, mixins.CreateModelMixin,
 
             return restful.ok()
         except Exception as e:
-            return restful.result2(message="操作失败", data=e.args)
+            ip_username(request)
+            return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
 
     """
         查询一条数据详情
     """
 
     def patch(self, request, id):
-        print(id)
-        ret = Menu.objects.filter(pk=id).first()
-        ser = MenuSerializer(instance=ret, many=False)
-        return restful.result(message="查询成功", data=ser.data)
+        try:
+
+            ret = Menu.objects.filter(pk=id).first()
+            ser = MenuSerializer(instance=ret, many=False)
+            return restful.result(message="查询成功", data=ser.data)
+        except Exception as e:
+            ip_username(request)
+            return restful.result2(message="传输id有误", kwargs=logger.error(e.args), data=e.args)
 
     """
         更新单条数据
     """
 
     def put(self, request):
-        print(request.data)
+
         try:
             ret = Menu.objects.get(pk=request.data['id'])
             # partial=True 标识局部跟新
@@ -205,7 +226,8 @@ class MenuView(mixins.ListModelMixin, mixins.CreateModelMixin,
                 ser.save()
             return restful.ok()
         except Exception as e:
-            return restful.result2(message="操作失败", data=e.args)
+            ip_username(request)
+            return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
 
 
 class UserView(mixins.ListModelMixin, generics.GenericAPIView, ):
@@ -233,16 +255,22 @@ class UserView(mixins.ListModelMixin, generics.GenericAPIView, ):
             ret = self.list(request, *args, **kwargs)
             return restful.result(message="操作成功", data=ret.data)
         except Exception as e:
-            return restful.result2(message="操作失败", data=e.args)
+            ip_username(request)
+            return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
 
     """
         查询一条数据详情
     """
 
     def patch(self, request, id):
-        ret = User.objects.filter(pk=id).first()
-        ser = UserSerializer(instance=ret, many=False)
-        return restful.result(message="查询成功", data=ser.data)
+        try:
+
+            ret = User.objects.filter(pk=id).first()
+            ser = UserSerializer(instance=ret, many=False)
+            return restful.result(message="查询成功", data=ser.data)
+        except Exception as e:
+            ip_username(request)
+            return restful.result2(message="传输id有误", kwargs=logger.error(e.args), data=e.args)
 
 
 class UserRoleView(mixins.ListModelMixin, generics.GenericAPIView, ):
@@ -274,7 +302,8 @@ class UserRoleView(mixins.ListModelMixin, generics.GenericAPIView, ):
                 user.role.set(roles)  # 插入
             return restful.result(message="操作成功")
         except Exception as e:
-            return restful.result2(message="操作失败", data=e.args)
+            ip_username(request)
+            return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
 
     """
         查询指定用户的所有角色
@@ -282,10 +311,9 @@ class UserRoleView(mixins.ListModelMixin, generics.GenericAPIView, ):
 
     def get(self, request, user_id, *args, **kwargs):
         try:
+
             user = User.objects.get(pk=user_id)
-
             roles = user.role.all()
-
             ret = []
             ids = list(roles.values('id'))
             for i in ids:
@@ -303,7 +331,8 @@ class UserRoleView(mixins.ListModelMixin, generics.GenericAPIView, ):
                 rets = self.list(request, *args, **kwargs)
                 return restful.result(message="查询成功，当前用户无角色，请为用户添加角色", role=rets.data)
         except Exception as e:
-            return restful.result2(message="查询失败,id传输错误", data=e.args)
+            ip_username(request)
+            return restful.result2(message="查询失败,id传输错误", kwargs=logger.error(e.args), data=e.args)
 
 
 class RoleMenuView(mixins.ListModelMixin, generics.GenericAPIView, ):
@@ -335,7 +364,8 @@ class RoleMenuView(mixins.ListModelMixin, generics.GenericAPIView, ):
                 role.menu.set(menus)  # 插入
             return restful.result(message="操作成功")
         except Exception as e:
-            return restful.result2(message="操作失败", data=e.args)
+            ip_username(request)
+            return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
 
     """
         查询指定角色的所有菜单
@@ -350,19 +380,20 @@ class RoleMenuView(mixins.ListModelMixin, generics.GenericAPIView, ):
 
             for i in ids:
                 ret.append(i['id'])
-            fid = Menu.objects.filter(~Q(id__in=ret)).values('id', 'parent_id', 'name', 'code', 'type','layer')
+            fid = Menu.objects.filter(~Q(id__in=ret)).values('id', 'parent_id', 'name', 'code', 'type', 'layer')
 
             ser2 = MenuSerializer(instance=fid, many=True)
 
             # todo 判断当前查询条件是否为空
             if menus.exists():
                 ser = MenuSerializer(instance=menus, many=True)
-                return restful.result(message="查询成功",  role2=ser.data, role=ser2.data)
+                return restful.result(message="查询成功", role2=ser.data, role=ser2.data)
             else:
                 rets = self.list(request, *args, **kwargs)
                 return restful.result(message="查询成功，当前角色无菜单,请为角色添加菜单", role=rets.data)
         except Exception as e:
-            return restful.result(message="role_id传入错误，请检查", data=e.args)
+            ip_username(request)
+            return restful.result(message="role_id传入错误，请检查", kwargs=logger.error(e.args), data=e.args)
 
 
 class UserMenuView(mixins.ListModelMixin, generics.GenericAPIView, ):
@@ -373,10 +404,15 @@ class UserMenuView(mixins.ListModelMixin, generics.GenericAPIView, ):
     serializer_class = MenuSerializer
 
     def get(self, request):
-        user_id = request.GET.get("user_id")
-        if not user_id:
-            user_id = request.user.id
+        try:
 
-        menus = Menu.objects.filter(roles__users__id=user_id).distinct()
-        ser = MenuSerializer(instance=menus, many=True)
-        return restful.result(message="查询成功", data=ser.data)
+            user_id = request.GET.get("user_id")
+            if not user_id:
+                user_id = request.user.id
+
+            menus = Menu.objects.filter(roles__users__id=user_id).distinct()
+            ser = MenuSerializer(instance=menus, many=True)
+            return restful.result(message="查询成功", data=ser.data)
+        except Exception as e:
+            ip_username(request)
+            return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
