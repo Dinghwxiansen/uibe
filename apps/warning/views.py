@@ -12,7 +12,7 @@ from rest_framework import filters
 from rest_framework import mixins, generics
 from rest_framework import viewsets
 from rest_framework.viewsets import ReadOnlyModelViewSet
-
+from apps.utils.Sample_username_ip import ip_username
 from apps.base import filter
 from apps.portrait import models as pm
 from apps.utils import restful
@@ -20,7 +20,9 @@ from apps.utils import serialiser
 from apps.utils.YearMonthStatistics import getBetweenMonth
 from apps.utils.pagination import Pagination
 from apps.warning import models as wm
-
+import logging
+# 导入自定义记录错误日志模块
+logger = logging.getLogger("django")
 
 class ZjzxbxkView(mixins.ListModelMixin, mixins.CreateModelMixin,
                   mixins.DestroyModelMixin, mixins.UpdateModelMixin, mixins.RetrieveModelMixin,
@@ -69,7 +71,8 @@ class ZjzxbxkView(mixins.ListModelMixin, mixins.CreateModelMixin,
             # print(connection.queries[-1:])
             return restful.result(message="操作成功", data=ret.data, kwargs=d)
         except Exception as e:
-            return restful.result2(message="操作失败", data=e.args)
+            ip_username(request)
+            return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
 
 
 """智能预警之在籍在校不选课预警明细"""
@@ -91,7 +94,8 @@ class ZjzxbxkmxView(viewsets.ModelViewSet):
             # print(connection.queries)
             return restful.result(message="操作成功", data=ret.data)
         except Exception as e:
-            return restful.result2(message="操作失败", data=e.args)
+            ip_username(request)
+            return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
 
     # 更新状态
     # def patch(self, request, *args, **kwargs):
@@ -134,7 +138,8 @@ class ZjzxbxkmxView(viewsets.ModelViewSet):
                     return restful.result(message="操作成功，已取消预警")
 
         except Exception as e:
-            return restful.result2(message="操作失败", data=e.args)
+            ip_username(request)
+            return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
 
 
 """*****************************智能预警之休学退学不离校预警*********************************"""
@@ -186,7 +191,8 @@ class XxtxblxView(mixins.ListModelMixin, mixins.CreateModelMixin,
             # <class 'collections.OrderedDict'>
             return restful.result(message="操作成功", data=ret.data, kwargs=d)
         except Exception as e:
-            return restful.result2(message="操作失败", data=e.args)
+            ip_username(request)
+            return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
 
 
 """智能预警之休学退学不离校预警明细"""
@@ -208,7 +214,8 @@ class XxtxblxmxView(viewsets.ModelViewSet):
             ret = self.list(request, *args, **kwargs)
             return restful.result(message="操作成功", data=ret.data)
         except Exception as e:
-            return restful.result2(message="操作失败", data=e.args)
+            ip_username(request)
+            return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
 
     """
     # def patch(self, request, *args, **kwargs):
@@ -248,7 +255,8 @@ class XxtxblxmxView(viewsets.ModelViewSet):
                 elif int(request.data['clzt']) == 2:
                     return restful.result(message="操作成功，已取消预警")
         except Exception as e:
-            return restful.result2(message="操作失败", data=e.args)
+            ip_username(request)
+            return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
 
 
 """*****************************智能预警之校外住宿预警*******************************"""
@@ -298,7 +306,8 @@ class XwzsView(mixins.ListModelMixin, mixins.CreateModelMixin,
                  "jssj": self.request.query_params.get("jssj", date.today())}
             return restful.result(message="操作成功", data=ret.data, kwargs=d)
         except Exception as e:
-            return restful.result2(message="操作失败", data=e.args)
+            ip_username(request)
+            return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
 
 
 """*************校外住宿预警明细************"""
@@ -320,7 +329,8 @@ class XwzsmxView(viewsets.ModelViewSet):
             ret = self.list(request, *args, **kwargs)
             return restful.result(message="操作成功", data=ret.data)
         except Exception as e:
-            return restful.result2(message="操作失败", data=e.args)
+            ip_username(request)
+            return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
 
     # def patch(self, request, *args, **kwargs):
     #     ids = request.data['id'].split(',')
@@ -358,7 +368,8 @@ class XwzsmxView(viewsets.ModelViewSet):
                 elif int(request.data['clzt']) == 2:
                     return restful.result(message="操作成功，已取消预警")
         except Exception as e:
-            return restful.result2(message="操作失败", data=e.args)
+            ip_username(request)
+            return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
 
 
 """******************************智能预警之不在校预警***********************************"""
@@ -411,7 +422,8 @@ class BzxView(mixins.ListModelMixin, mixins.CreateModelMixin,
                  "jssj": self.request.query_params.get("jssj", date.today())}
             return restful.result(message="操作成功", data=ret.data, kwargs=d)
         except Exception as e:
-            return restful.result2(message="操作失败", data=e.args)
+            ip_username(request)
+            return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
 
 
 '''不在校预警明细'''
@@ -433,7 +445,8 @@ class BzxmxView(viewsets.ModelViewSet):
             ret = self.list(request, *args, **kwargs)
             return restful.result(message="操作成功", data=ret.data)
         except Exception as e:
-            return restful.result2(message="操作失败", data=e.args)
+            ip_username(request)
+            return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
 
     # def patch(self, request, *args, **kwargs):
     #     ids = request.data['id'].split(',')
@@ -471,7 +484,8 @@ class BzxmxView(viewsets.ModelViewSet):
                 elif int(request.data['clzt']) == 2:
                     return restful.result(message="操作成功，已取消预警")
         except Exception as e:
-            return restful.result2(message="操作失败", data=e.args)
+            ip_username(request)
+            return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
 
 
 """*****************************智能预警之逃课行为预警*****************************"""
@@ -518,7 +532,8 @@ class TkxwView(mixins.ListModelMixin, mixins.CreateModelMixin,
                  "jssj": self.request.query_params.get("jssj", date.today())}
             return restful.result(message="操作成功", data=ret.data, kwargs=d)
         except Exception as e:
-            return restful.result2(message="操作失败", data=e.args)
+            ip_username(request)
+            return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
 
 
 '''逃课行为预警明细'''
@@ -540,7 +555,8 @@ class TkxwmxView(viewsets.ModelViewSet):
             ret = self.list(request, *args, **kwargs)
             return restful.result(message="操作成功", data=ret.data)
         except Exception as e:
-            return restful.result2(message="操作失败", data=e.args)
+            ip_username(request)
+            return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
 
     # def patch(self, request, *args, **kwargs):
     #     #     ids = request.data['id'].split(',')
@@ -579,7 +595,8 @@ class TkxwmxView(viewsets.ModelViewSet):
                 elif int(request.data['clzt']) == 2:
                     return restful.result(message="操作成功，已取消预警")
         except Exception as e:
-            return restful.result2(message="操作失败", data=e.args)
+            ip_username(request)
+            return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
 
 
 """***********************************智能预警之晚归预警************************************"""
@@ -628,7 +645,8 @@ class WgView(mixins.ListModelMixin, mixins.CreateModelMixin,
 
             return restful.result(message="操作成功", data=ret.data, kwargs=d)
         except Exception as e:
-            return restful.result2(message="操作失败", data=e.args)
+            ip_username(request)
+            return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
 
 
 '''晚归预警明细'''
@@ -650,7 +668,8 @@ class WgmxView(viewsets.ModelViewSet):
             ret = self.list(request, *args, **kwargs)
             return restful.result(message="操作成功", data=ret.data)
         except Exception as e:
-            return restful.result2(message="操作失败", data=e.args)
+            ip_username(request)
+            return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
 
     # def patch(self, request, *args, **kwargs):
     #     ids = request.data['id'].split(',')
@@ -688,7 +707,8 @@ class WgmxView(viewsets.ModelViewSet):
                 elif int(request.data['clzt']) == 2:
                     return restful.result(message="操作成功，已取消预警")
         except Exception as e:
-            return restful.result2(message="操作失败", data=e.args)
+            ip_username(request)
+            return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
 
 
 """*****************************智能预警之上网行为预警*****************************"""
@@ -742,7 +762,8 @@ class SwxwView(mixins.ListModelMixin, mixins.CreateModelMixin,
                  "jssj": self.request.query_params.get("jssj", date.today())}
             return restful.result(message="操作成功", data=ret.data, kwargs=d)
         except Exception as e:
-            return restful.result2(message="操作失败", data=e.args)
+            ip_username(request)
+            return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
 
 
 """智能预警之上网行为预警明细"""
@@ -773,7 +794,8 @@ class SwxwmxView(viewsets.ModelViewSet):
             ret = self.list(request, *args, **kwargs)
             return restful.result(message="操作成功", data=ret.data)
         except Exception as e:
-            return restful.result2(message="操作失败", data=e.args)
+            ip_username(request)
+            return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
 
 
 """******************************行为轨迹分析-**************************"""
@@ -821,7 +843,8 @@ class XwgjView(mixins.ListModelMixin, mixins.CreateModelMixin,
                  "jssj": self.request.query_params.get("jssj", date.today())}
             return restful.result(message="操作成功", data=ret.data, kwargs=d)
         except Exception as e:
-            return restful.result2(message="操作失败", data=e.args)
+            ip_username(request)
+            return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
 
 
 """******************************行为轨迹个人分析-**************************"""
@@ -843,7 +866,8 @@ class XwgjmxView(viewsets.ModelViewSet):
             ret = self.list(request, *args, **kwargs)
             return restful.result(message="操作成功", data=ret.data)
         except Exception as e:
-            return restful.result2(message="操作失败", data=e.args)
+            ip_username(request)
+            return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
 
 
 # class XwgjView(mixins.ListModelMixin, mixins.CreateModelMixin,
@@ -937,7 +961,8 @@ class CollegeView(mixins.ListModelMixin, generics.GenericAPIView):
             # print(connection.query)
             return restful.result(message="操作成功", data=ret.data)
         except Exception as e:
-            return restful.result2(message="操作失败", data=e.args)
+            ip_username(request)
+            return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
 
 
 """下拉列表中年级数据"""
@@ -962,7 +987,8 @@ class GradeView(mixins.ListModelMixin, generics.GenericAPIView):
             ret = self.list(request, *args, **kwargs)
             return restful.result(message="操作成功", data=ret.data)
         except Exception as e:
-            return restful.result2(message="操作失败", data=e.args)
+            ip_username(request)
+            return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
 
 
 """下拉列表班号数据"""
@@ -978,7 +1004,8 @@ class ClassView(generics.ListAPIView, generics.GenericAPIView):
             ret = self.list(request, *args, **kwargs)
             return restful.result(message="操作成功", data=ret.data)
         except Exception as e:
-            return restful.result2(message="操作失败", data=e.args)
+            ip_username(request)
+            return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
 
 
 class SpinnerView(ReadOnlyModelViewSet):
@@ -1029,7 +1056,8 @@ class ZjzxbxkxgView(mixins.CreateModelMixin, generics.GenericAPIView, ):
             # print(connection.queries)
             return restful.result(message="保存成功")
         except Exception as e:
-            return restful.result2(message="操作失败", data=e.args)
+            ip_username(request)
+            return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
 
     # def post(self, request, *args, **kwargs):
     #     # print(request.data)
@@ -1088,7 +1116,8 @@ class TkxwxgView(mixins.CreateModelMixin, generics.GenericAPIView, ):
             # print(connection.queries)
             return restful.result(message="保存成功")
         except Exception as e:
-            return restful.result2(message="操作失败", data=e.args)
+            ip_username(request)
+            return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
 
     """更新
 
@@ -1129,7 +1158,8 @@ class WgxgView(mixins.CreateModelMixin, generics.GenericAPIView, ):
             # print(connection.queries)
             return restful.result(message="保存成功")
         except Exception as e:
-            return restful.result2(message="操作失败", data=e.args)
+            ip_username(request)
+            return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
 
     """更新
 
@@ -1169,7 +1199,8 @@ class XxtxblxxgView(mixins.CreateModelMixin, generics.GenericAPIView, ):
             # print(connection.queries)
             return restful.result(message="保存成功")
         except Exception as e:
-            return restful.result2(message="操作失败", data=e.args)
+            ip_username(request)
+            return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
 
     """更新
 
@@ -1209,7 +1240,8 @@ class XwzsxgView(mixins.CreateModelMixin, generics.GenericAPIView, ):
             # print(connection.queries)
             return restful.result(message="保存成功")
         except Exception as e:
-            return restful.result2(message="操作失败", data=e.args)
+            ip_username(request)
+            return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
 
     """更新
 
@@ -1252,7 +1284,8 @@ class BzxxgView(mixins.CreateModelMixin, generics.GenericAPIView, ):
             # print(connection.queries)
             return restful.result(message="保存成功")
         except Exception as e:
-            return restful.result2(message="操作失败", data=e.args)
+            ip_username(request)
+            return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
 
     # def put(self, request, *args, **kwargs):
     #     print(request.data)
@@ -1304,7 +1337,8 @@ class YjyzszView(mixins.ListModelMixin, generics.GenericAPIView):
             # todo 加载函数，放在标签建模设置中指定运行，
             return restful.result(message="操作成功", data=ret1.data)
         except Exception as e:
-            return restful.result2(message="操作失败", data=e.args)
+            ip_username(request)
+            return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
 
     """更新状态"""
 
@@ -1329,7 +1363,8 @@ class YjyzszView(mixins.ListModelMixin, generics.GenericAPIView):
                 else:
                     return restful.result(message="操作成功，状态开启")
         except Exception as e:
-            return restful.result2(message="操作失败", data=e.args)
+            ip_username(request)
+            return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
 
 
 """预警阈值历史设置查询"""
@@ -1372,7 +1407,8 @@ class YjyzlsszView(mixins.ListModelMixin, generics.GenericAPIView):
             resoult = self.list(request, *args, **kwargs)
             return restful.result(message="操作成功", data=resoult.data)
         except Exception as e:
-            return restful.result2(message="操作失败", data=e.args)
+            ip_username(request)
+            return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
 
 
 """智能预警历史规则修改"""
@@ -1400,7 +1436,8 @@ class YjyzlsszView2(mixins.ListModelMixin, generics.GenericAPIView):
 
             return restful.result(message="操作成功", data=resoult.data)
         except Exception as e:
-            return restful.result2(message="操作失败", data=e.args)
+            ip_username(request)
+            return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
 
 
 class WaringTableView(mixins.ListModelMixin, generics.GenericAPIView):
@@ -1547,7 +1584,8 @@ class WaringTableView(mixins.ListModelMixin, generics.GenericAPIView):
             # print(query)
             return restful.result(message="操作成功", data=ret)
         except Exception as e:
-            return restful.result2(message="操作失败", data=e.args)
+            ip_username(request)
+            return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
 
 
 """ 自定义函数，读取标签建模中设定规则，函数规则拼接SQL，并写入到数据库中"""
