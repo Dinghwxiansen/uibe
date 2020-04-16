@@ -358,19 +358,19 @@ class XwgjGrgj(models.Model):
 """************************下拉列表**************************"""
 
 
-class Spinner(models.Model):
-    yxbj = models.CharField(max_length=50, verbose_name='院系班级名称')
-    pid = models.ForeignKey('self', on_delete=models.SET_NULL, related_name='addinfo', null=True, blank=True,
-                            verbose_name='上一级学院的id')
-
-    # on_delete = models.CASCADE # 删除关联数据的时候，与之相关联的也删除
-    # on_delete = models.DO_NOTHING # ... , 什么操作也不做
-    # on_delete = models.PROTECT # ... ,引发报错
-    # on_delete = models.SET_NULL # ... ,设置为空
-    # on_delete = models.SET_DEFAULT # ... , 设置为默认值
-    # on_delete = models.SET # ... , 删除关联数据
-    class Meta:
-        db_table = 'Spinner'
-
-    def __str__(self):
-        return self.yxbj
+# class Spinner(models.Model):
+#     yxbj = models.CharField(max_length=50, verbose_name='院系班级名称')
+#     pid = models.ForeignKey('self', on_delete=models.SET_NULL, related_name='addinfo', null=True, blank=True,
+#                             verbose_name='上一级学院的id')
+#
+#     # on_delete = models.CASCADE # 删除关联数据的时候，与之相关联的也删除
+#     # on_delete = models.DO_NOTHING # ... , 什么操作也不做
+#     # on_delete = models.PROTECT # ... ,引发报错
+#     # on_delete = models.SET_NULL # ... ,设置为空
+#     # on_delete = models.SET_DEFAULT # ... , 设置为默认值
+#     # on_delete = models.SET # ... , 删除关联数据
+#     class Meta:
+#         db_table = 'Spinner'
+#
+#     def __str__(self):
+#         return self.yxbj
