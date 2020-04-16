@@ -317,3 +317,78 @@ class BzksMiddle(models.Model):
 class DW(models.Model):
     id = models.IntegerField('院系代码', null=False, primary_key=True)
     yxmc = models.CharField('院系名称', max_length=32)
+
+
+#  todo:本专科生四六级非权重标签 数据处理中间表
+class BzksCETMiddle(models.Model):
+    xh = models.CharField('学号', max_length=32, unique=True)
+    kssj = models.CharField('考试时间', max_length=64)
+    tlcj = models.IntegerField("听力成绩", null=True, default=0)
+    ydcj = models.IntegerField("阅读成绩", null=True, default=0)
+    xzcj = models.IntegerField("写作成绩", null=True, default=0)
+    zfcj = models.IntegerField("总分成绩", null=True, default=0)
+    zfpm = models.IntegerField("总分排名", null=True, default=0)
+    zfpercentile = models.CharField("总分排名百分比", max_length=32)
+    zsmc = models.CharField("总分名称", max_length=32)
+    create_time = models.DateTimeField('创建时间', auto_now_add=True)
+    update_time = models.DateTimeField('更新时间', auto_now=True)
+
+    class Meta:
+        db_table = 'bzks_cet'
+        verbose_name = "本专科四六级数据处理中间表"
+        verbose_name_plural = verbose_name
+
+
+# todo:本专科生图书借阅数据处理中间表
+class BzksTSJYMiddle(models.Model):
+    xh = models.CharField('学号', max_length=32, unique=True)
+    xb = models.IntegerField(choices=SEX_CHOICES, default=0)
+    zcs = models.IntegerField("总册数", default=0, null=True)
+    zcspm = models.IntegerField("总册数排名", null=True, default=0)
+    zcspetcentile = models.CharField("总册数排名百分比", max_length=64)
+    highlb = models.CharField("借阅最高册数类别", max_length=32)
+    highcs = models.IntegerField("借阅最高类别册数", null=True, default=0)
+    create_time = models.DateTimeField('创建时间', auto_now_add=True)
+    update_time = models.DateTimeField('更新时间', auto_now=True)
+
+    class Meta:
+        db_table = 'bzks_tsjy'
+        verbose_name = "本专科图书借阅数据处理中间表"
+        verbose_name_plural = verbose_name
+
+
+# todo:本专科生E卡消费数据处理中间表
+class BzksEKMiddle(models.Model):
+    xh = models.CharField('学号', max_length=32, unique=True)
+    txamt = models.CharField('消费总金额', max_length=32, null=True)
+    txamtpm = models.IntegerField('消费总金额排名', null=True)
+    txamtpetcentile = models.CharField('消费总金额排名百分比', max_length=32, null=True)
+    ztcs = models.IntegerField('当月澡堂次数', null=True, default=0)
+    stskcs = models.IntegerField('当月食堂刷卡次数', null=True, default=0)
+    stskcspm = models.IntegerField('当月食堂刷卡次数排名', null=True, default=0)
+    stskcspetcentile = models.CharField('当月食堂刷卡次数排名百分比', max_length=32, null=True)
+    zccs = models.IntegerField('当月早餐消费次数', null=True, default=0)
+    wccs = models.IntegerField('当月午餐消费次数', null=True, default=0)
+    wcxfcs = models.IntegerField('当月晚餐消费次数', null=True, default=0)
+    ystjyje = models.CharField('当月一食堂交易金额', null=True, max_length=32)
+    ystjyjepm = models.IntegerField('一食堂交易金额排名', null=True, default=0)
+    ystjyjepercent = models.CharField('一食堂交易金额排名所占百分比', max_length=32, null=True)
+    estjyje = models.CharField('当月二食堂交易金额', null=True, max_length=32)
+    estjyjepm = models.IntegerField('二食堂交易金额排名', null=True, default=0)
+    estjyjepercent = models.CharField('二食堂交易金额排名所占百分比', max_length=32, null=True)
+    sstjyje = models.CharField('当月三食堂交易金额', null=True, max_length=32)
+    sstjyjepm = models.IntegerField('三食堂交易金额排名', null=True, default=0)
+    sstjyjepercent = models.CharField('三食堂交易金额排名所占百分比', max_length=32, null=True)
+    qzstjyje = models.CharField('当月清真食堂交易金额', null=True, max_length=32)
+    qzstjyjepm = models.IntegerField('清真食堂交易金额排名', null=True, default=0)
+    qzstjyjepercent = models.CharField('清真食堂交易金额排名所占百分比', max_length=32, null=True)
+    hywmjyje = models.CharField('当月虹远物美白月光交易金额', null=True, max_length=32)
+    hywmjyjepm = models.IntegerField('虹远物美白月光交易金额排名', null=True, default=0)
+    hywmjyjepercent = models.CharField('虹远物美白月光交易金额排名所占百分比', max_length=32, null=True)
+    create_time = models.DateTimeField('创建时间', auto_now_add=True)
+    update_time = models.DateTimeField('更新时间', auto_now=True)
+
+    class Meta:
+        db_table = 'bzks_ek'
+        verbose_name = "本专科E卡消费数据处理中间表"
+        verbose_name_plural = verbose_name
