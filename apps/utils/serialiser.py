@@ -176,7 +176,7 @@ class SwxwMxSerialiser(serializers.ModelSerializer):
 
 """下拉列表序列化"""
 
-
+"""
 # 这个序列化器就是展示地区名
 class SpinnerInfoSerializer(serializers.ModelSerializer):
     class Meta:
@@ -197,7 +197,7 @@ class NextSpinnerInfoSerializer(serializers.ModelSerializer):
     class Meta:
         model = wm.Spinner
         fields = ('id', 'yxbj', 'addinfo',)
-
+"""
 
 """系统管理之假期设置序列化"""
 
@@ -212,6 +212,8 @@ class JqSerializer(serializers.ModelSerializer):
 
 
 class BqwdSerializer(serializers.ModelSerializer):
+    create_time = serializers.DateTimeField(format='%Y-%m-%d %H:%M:%S')
+
     class Meta:
         model = pm.XtglBqwd
         fields = ['id', 'wdmc', 'wdms', 'create_time', 'kqzt']
@@ -221,6 +223,8 @@ class BqwdSerializer(serializers.ModelSerializer):
 
 
 class ZbxglSerializer(serializers.ModelSerializer):
+    # create_time = serializers.DateTimeField(format='%Y-%m-%d %H:%M:%S')
+
     class Meta:
         model = pm.XtglZbx
         fields = ['id', 'zbxmc', 'zbfl', 'zbwd', 'zdxz', 'jsgz', 'sjzb_id', 'create_time', 'zbms', 'kqzt', ]
@@ -304,7 +308,7 @@ class BzxSerializer(serializers.ModelSerializer):
 class YjyzszSerializer(serializers.ModelSerializer):
     class Meta:
         model = wm.XtglYjyzsz
-        fields = ['id', 'code', 'yjmc', 'yjms', 'yjgz', 'kqzt']
+        fields = ['id', 'code', 'yjmc', 'yjms', 'yjgz', 'kqzt', 'red', 'yellow', 'orange']
 
 
 """预警阈值设置历史记录序列化"""
@@ -441,6 +445,8 @@ class BzksXwgjSerialiser(serializers.ModelSerializer):
 
 
 class XwgjMxSerialiser(serializers.ModelSerializer):
+    xwsj = serializers.DateTimeField(format='%Y-%m-%d %H:%M:%S')
+
     class Meta:
         model = wm.XwgjGrgj
         fields = ['id', 'xh', 'xwsj', 'xwdd', 'jd', 'wd', ]
