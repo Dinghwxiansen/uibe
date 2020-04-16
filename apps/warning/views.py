@@ -1007,7 +1007,7 @@ class ClassView(generics.ListAPIView, generics.GenericAPIView):
             ip_username(request)
             return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
 
-
+"""遗弃下拉列表
 class SpinnerView(ReadOnlyModelViewSet):
     # authentication_classes = []
     # permission_classes = []
@@ -1036,7 +1036,7 @@ class SpinnerView(ReadOnlyModelViewSet):
             return serialiser.SpinnerInfoSerializer
         else:
             return serialiser.NextSpinnerInfoSerializer
-
+"""
 
 """预警阈值置之在籍在校不选课预警修改"""
 
