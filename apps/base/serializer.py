@@ -20,7 +20,7 @@ class MenuSerializer(serializers.ModelSerializer):
     # # 自动向内部进行深度查询  depth表示查询层数
     class Meta:
         model = Menu
-        fields = ['id', 'parent_id', 'name', 'code', 'type', 'layer']
+        fields = ['id', 'parent_id', 'name', 'code', 'type', 'layer', 'url']
 
 
 class UserSerializer(serializers.ModelSerializer):
