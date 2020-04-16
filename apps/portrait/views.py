@@ -13,7 +13,7 @@ from apps.base import filter
 from apps.portrait import models as pm
 from apps.utils import restful
 from apps.utils import serialiser
-from apps.utils.Sample_username_ip import ip_username
+from apps.utils.Sample_username_ip import ip_username, time_cmp
 from apps.utils.pagination import Pagination
 from apps.warning.views import BqjmToSQL, search
 
@@ -68,18 +68,21 @@ class JqszView(mixins.ListModelMixin, mixins.CreateModelMixin,
     """添加数据"""
 
     def post(self, request, *args, **kwargs):
-        # print(request.data)
-        try:
-            it = request.data['jqmc']
+
+        if time_cmp(request.data['jqkssj'], request.data['jqjssj']) > 0:
+            return restful.result2(message="假期开始时间不能大于结束时间")
+        else:
             try:
-                mc = list(pm.XtglJq.objects.filter(jqmc=it).values('jqmc'))[0]["jqmc"]
-                return restful.result2(message="请勿重复保存操作")
-            except IndexError:
-                ret = self.create(request, *args, **kwargs)
-                return restful.result(message="保存成功")
-        except Exception as e:
-            ip_username(request)
-            return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
+                it = request.data['jqmc']
+                try:
+                    mc = list(pm.XtglJq.objects.filter(jqmc=it).values('jqmc'))[0]["jqmc"]
+                    return restful.result2(message="请勿重复保存操作")
+                except IndexError:
+                    ret = self.create(request, *args, **kwargs)
+                    return restful.result(message="保存成功")
+            except Exception as e:
+                ip_username(request)
+                return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
 
     """更新数据"""
 
