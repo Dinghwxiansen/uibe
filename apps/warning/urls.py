@@ -8,7 +8,7 @@ from . import views
 
 router = routers.DefaultRouter()  # 默认附带一个api根视图，相对于SimpleRouter（）
 router.register(r'zjzxbxkmx', views.ZjzxbxkmxView),
-router.register(r'spinner', views.SpinnerView, base_name='spinner'),
+# router.register(r'spinner', views.SpinnerView, base_name='spinner'),
 
 urlpatterns = [
     re_path(r'^(?P<version>[v1|v2]+)/zjzxbxk/$', views.ZjzxbxkView.as_view()),
