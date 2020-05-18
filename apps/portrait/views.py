@@ -1,7 +1,7 @@
 # Create your views here.
-
+from django.db.models import  Count,Q,Sum
 from datetime import datetime
-
+import json
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import filters, status, viewsets
 from rest_framework import generics
@@ -16,6 +16,7 @@ from apps.utils import serialiser
 from apps.utils.Sample_username_ip import ip_username, time_cmp
 from apps.utils.pagination import Pagination
 from apps.warning.views import BqjmToSQL, search
+from django.db import connection
 
 """导入自定义日志模块"""
 import logging
@@ -73,11 +74,10 @@ class JqszView(mixins.ListModelMixin, mixins.CreateModelMixin,
             return restful.result2(message="假期开始时间不能大于结束时间")
         else:
             try:
-                it = request.data['jqmc']
-                try:
-                    mc = list(pm.XtglJq.objects.filter(jqmc=it).values('jqmc'))[0]["jqmc"]
+                mc = pm.XtglJq.objects.filter(jqmc=request.data['jqmc'])
+                if mc.exists():
                     return restful.result2(message="请勿重复保存操作")
-                except IndexError:
+                else:
                     ret = self.create(request, *args, **kwargs)
                     return restful.result(message="保存成功")
             except Exception as e:
@@ -159,8 +159,8 @@ class BqwdView(mixins.ListModelMixin, mixins.CreateModelMixin,
 
     def delete(self, request, *args, **kwargs):
         try:
-            id = request.query_params.get('id')
-            if id:
+            id = request.query_params.get('id',None)
+            if not id:
                 return Response(status=status.HTTP_404_NOT_FOUND)
             for i in id.split(','):
                 get_object_or_404(pm.XtglBqwd, pk=int(i)).delete()
@@ -169,15 +169,16 @@ class BqwdView(mixins.ListModelMixin, mixins.CreateModelMixin,
             ip_username(request)
             return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
 
+
+
     """添加数据"""
 
     def post(self, request, *args, **kwargs):
         try:
-            it = request.data['wdmc']
-            try:
-                mc = list(pm.XtglBqwd.objects.filter(wdmc=it).values('wdmc'))[0]["wdmc"]
+            mc = pm.XtglBqwd.objects.filter(wdmc=request.data['wdmc'])
+            if mc.exists():
                 return restful.result2(message="请勿重复保存操作")
-            except IndexError:
+            else:
                 ret = self.create(request, *args, **kwargs)
                 return restful.result(message="保存成功")
         except Exception as e:
@@ -287,19 +288,160 @@ class HxbqszView(mixins.ListModelMixin, mixins.CreateModelMixin,
 
     def post(self, request, *args, **kwargs):
 
-        try:
-            it = request.data['bqmc']
-            try:
-                mc = list(pm.XtglBqsz.objects.filter(bqmc=it).values('bqmc'))[0]["bqmc"]
-                return restful.result2(message="请勿重复保存操作")
-            except IndexError:
-                ret = self.create(request, *args, **kwargs)
-                BqjmToSQL()
-                search()
-                return restful.result(message="保存成功")
-        except Exception as e:
-            ip_username(request)
-            return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
+        #try:
+        bqmc = pm.XtglBqsz.objects.filter(bqmc=request.data['bqmc'])
+        if bqmc.exists():
+            return restful.result2(message="请勿重复保存操作")
+        else:
+            ret2 = self.create(request,*args,**kwargs)
+            # search()
+            return restful.result(message="保存成功")
+        #except Exception as e:
+        #    ip_username(request)
+        #    return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
+    # 重写保存save的逻辑
+    def perform_create(self, BqszSerializer):
+        #self.get_success_headers(BqszSerializer.data)
+        instance = BqszSerializer.save()
+        it = self.request.data['bqmc']
+        bqgz = self.request.data['bqgz']
+        zbfl = self.request.data['zbfl']
+        print(type(bqgz))
+        print(zbfl)
+        if zbfl == 1:
+            print("指标分类为1,非权重标签")
+            domlist_list = json.loads(bqgz)['domlist']
+            # 定义空数组
+            ret = []
+            # todo 1 遍历列表获取索引值
+            for i in range(len(domlist_list)):
+                # domlist_list_i_ = domlist_list[i]
+                #print(domlist_list_i_)
+                # TODO 查询指标项中指标分类是否为单字段多字段进行分类处理
+                zbxfl =  list(pm.XtglZbx.objects.filter(id=domlist_list[i]['id']).values('zbfl'))[0]['zbfl']
+                #  TODO、画像标签设置之标签建模单一字段处理
+                if zbxfl ==0:
+                    ywbm_ = json.loads(
+                        list(pm.XtglZbx.objects.filter(id=domlist_list[i]['id']).values('zdxz'))[0]['zdxz'])[
+                        'dataSelect'][0]['ywbm']
+                    zdxz = json.loads(
+                        list(pm.XtglZbx.objects.filter(id=domlist_list[i]['id']).values('zdxz'))[0]['zdxz'])[
+                        'dataSelect'][0]['zdsjbbs']
+                    jsf = domlist_list[i]['arrName'][0]['jsf']
+                    ysf = domlist_list[i]['arrName'][0]['ysf']
+                    yz_val = domlist_list[i]['arrName'][0]['yz_val']
+                    if jsf == 'value':
+                        print("本次计算value")
+                        SQL = 'SELECT ' + ' xh ' + ' FROM ' + ywbm_ + ' WHERE ' + zdxz + ysf + "'" + yz_val + "'"
+                    elif jsf == 'sum':
+                        print("本次计算sum")
+                        SQL = 'select xh from (' + 'SELECT ' + ' xh, ' + jsf + '(' + zdxz + ')' + ' as v ' + 'FROM ' + ywbm_ + ' group by  xh ' + ') b ' + ' where b.v '  + ysf + "' " + yz_val + "'"
+                    elif jsf == 'Max':
+                        print("本次计算max")
+                        SQL = 'SELECT ' + ' xh, ' + jsf + '(' + zdxz + ')' + ' FROM ' + ywbm_
+                    elif jsf == 'Min':
+                        print('本次计算Min')
+                        SQL = 'SELECT ' + ' xh, ' + jsf + '(' + zdxz + ')' + ' FROM ' + ywbm_
+                    elif jsf == 'average':
+                        print('本次计算平均值')
+                        SQL = 'select xh from (' + 'SELECT ' + ' xh, ' + " AVG " + '(' + zdxz + ')' + ' as v ' + 'FROM ' + ywbm_ + ' group by  xh ' + ') b ' + ' where b.v '  + ysf + "' " + yz_val + "'"
+                    elif jsf == 'count':
+                        print('本次计算count')
+                        SQL = 'select xh from (' + 'SELECT ' + ' xh, ' + jsf + '(' + zdxz + ')' + ' as v ' + 'FROM ' + ywbm_ + ' group by  xh ' + ') b ' + ' where b.v '  + ysf  + "' " + yz_val + "'"
+                    elif jsf == 'Top':
+                        SQL = 'SELECT ' + ' xh ' + ' FROM ' + ywbm_ + ' WHERE ' + zdxz + ysf + "'" + yz_val + "'"
+                # TODO 画像标签设置之标签建模多字段处理
+                elif zbxfl ==1:
+                    print(domlist_list[i])
+                    print(list(pm.XtglZbx.objects.filter(id=domlist_list[i]['id']).values('jsgz')))
+                    ywbm_ = json.loads(
+                        list(pm.XtglZbx.objects.filter(id=domlist_list[i]['id']).values('jsgz'))[0]['jsgz'])[
+                        'yunsuan'][0]['ywbm']
+                    print(ywbm_)
+                    zdxz = json.loads(
+                        list(pm.XtglZbx.objects.filter(id=domlist_list[i]['id']).values('jsgz'))[0]['jsgz'])[
+                        'yunsuan'][0]['ysfval']
+                    jsf = domlist_list[i]['arrName'][0]['jsf']
+                    ysf = domlist_list[i]['arrName'][0]['ysf']
+                    yz_val = domlist_list[i]['arrName'][0]['yz_val']
+                    if jsf == 'value':
+                        print("本次计算value")
+                        SQL = 'SELECT ' + ' xh ' + ' FROM ' + ywbm_ + ' WHERE ' + zdxz + ysf + "'" + yz_val + "'"
+                    elif jsf == 'sum':
+                        print("本次计算sum")
+                        SQL = 'select xh from (' + 'SELECT ' + ' xh, ' + jsf + '(' + zdxz + ')' + ' as v ' + 'FROM ' + ywbm_ + ' group by  xh ' + ') b ' + ' where b.v ' + ysf  + "' " + yz_val + "'"
+                    elif jsf == 'Max':
+                        print("本次计算max")
+                        SQL = 'SELECT ' + ' xh, ' + jsf + '(' + zdxz + ')' + ' FROM ' + ywbm_
+                    elif jsf == 'Min':
+                        print('本次计算Min')
+                        SQL = 'SELECT ' + ' xh, ' + jsf + '(' + zdxz + ')' + ' FROM ' + ywbm_
+                    elif jsf == 'average':
+                        print('本次计算平均值')
+                        SQL = 'select xh from (' + 'SELECT ' + ' xh, ' + " AVG " + '(' + zdxz + ')' + ' as v ' + 'FROM ' + ywbm_ + ' group by  xh ' + ') b ' + ' where b.v ' + ysf + "' " + yz_val + "'"
+                    elif jsf == 'count':
+                        print('本次计算count')
+                        SQL = 'select xh from (' + 'SELECT ' + ' xh, ' + jsf + '(' + zdxz + ')' + ' as v ' + 'FROM ' + ywbm_ + ' group by  xh ' + ') b ' + ' where b.v ' + ysf + "' " + yz_val + "'"
+                    elif jsf == 'Top':
+                        SQL = 'SELECT ' + ' xh ' + ' FROM ' + ywbm_ + ' WHERE ' + zdxz + ysf + "'" + yz_val + "'"
+
+                ret.append(SQL)
+            # todo 2 列表中拼接字符串
+            unionall = ' UNION ALL '.join(ret)
+            SQL_parameters = len(ret) - 1
+            sql = 'SELECT xh , count(*) FROM ( ' + unionall + " ) a GROUP BY xh HAVING count(*) > " + str(
+                SQL_parameters)
+            cursor = connection.cursor()
+            cursor.execute(sql)
+            return_arr = cursor.fetchall()
+            for item in return_arr:
+                pm.XshxBq.objects.create(xh=item[0], bq=instance.bqmc, bqsm=instance.bqms, bqqx=instance.bqqx,sfyx=instance.kqzt)
+
+            instance.bqSQL = sql
+
+
+            instance.save()
+
+        elif zbfl == 0:
+            print("指标分类为0 ，权重标签")
+            ysf = json.loads(bqgz)['ysf']
+            yz_val = json.loads(bqgz)['yz_val']
+            zbxmcarry_ = json.loads(bqgz)['zbxmcarry']
+            ret = []
+            for i in range(len(zbxmcarry_)):
+                # TODO 查询指标项中指标分类是否为单字段多字段进行分类处理
+                zbxfl =  list(pm.XtglZbx.objects.filter(id=zbxmcarry_[i]['id']).values('zbfl'))[0]['zbfl']
+                if zbxfl ==0:
+                    # todo 指标项单字段计算
+                    ywbm_ = json.loads(
+                        list(pm.XtglZbx.objects.filter(id=zbxmcarry_[i]['id']).values('zdxz'))[0]['zdxz'])[
+                        'dataSelect'][0]['ywbm']
+                    zdxz = json.loads(
+                        list(pm.XtglZbx.objects.filter(id=zbxmcarry_[i]['id']).values('zdxz'))[0]['zdxz'])[
+                        'dataSelect'][0]['zdsjbbs']
+                    qzxs = json.loads(zbxmcarry_[i]['qzxs'])
+
+                    SQL = 'SELECT ' + ' xh ,' + zdxz + ' * ' + qzxs +" as b "+ ' FROM ' + ywbm_
+                elif zbxfl ==1:
+                    # tido 指标项多字段计算
+                    print("指标项为多字段处理")
+                    ywbm_ = json.loads(
+                        list(pm.XtglZbx.objects.filter(id=zbxmcarry_[i]['id']).values('jsgz'))[0]['jsgz'])[
+                        'yunsuan'][0]['ywbm']
+                    zdxz = json.loads(
+                        list(pm.XtglZbx.objects.filter(id=zbxmcarry_[i]['id']).values('jsgz'))[0]['jsgz'])[
+                        'yunsuan'][0]['ysfval']
+                    qzxs = json.loads(zbxmcarry_[i]['qzxs'])
+                    SQL = 'SELECT '+  ' xh, '+' ( ' + zdxz + ' * ' + qzxs +' ) ' + ' as b ' + ' FROM' + ywbm_
+                ret.append(SQL)
+            # 列表中拼接字符串
+            join = " UNION ALL ".join(ret)
+            sql = 'SELECT xh,sum (a.b) FROM ( ' + join + " ) a GROUP BY a.xh HAVING sum(a.b)  " + ysf + yz_val
+            instance.bqSQL = sql
+
+            instance.save()
+
+
 
     """更新数据"""
 
@@ -354,6 +496,7 @@ class HxbqszView(mixins.ListModelMixin, mixins.CreateModelMixin,
                 return Response(status=status.HTTP_404_NOT_FOUND)
             for i in id.split(','):
                 get_object_or_404(pm.XtglBqsz, pk=int(i)).delete()
+
             return restful.ok()
         except Exception as e:
             ip_username(request)
@@ -429,12 +572,10 @@ class ZbxView(mixins.ListModelMixin, mixins.CreateModelMixin,
 
     def post(self, request, *args, **kwargs):
         try:
-            it = request.data['zbxmc']
-            try:
-
-                mc = list(pm.XtglZbx.objects.filter(zbxmc=it).values('zbxmc'))[0]["zbxmc"]
+            mc = pm.XtglZbx.objects.filter(zbxmc=request.data['zbxmc'])
+            if mc.exists():
                 return restful.result2(message="请勿重复保存操作")
-            except IndexError:
+            else:
                 ret = self.create(request, *args, **kwargs)
                 return restful.result(message="保存成功")
         except Exception as e:
@@ -551,6 +692,7 @@ class SjbxzzdView(viewsets.ModelViewSet):
     pagination_class = Pagination
 
     # 查询出来所有数据按照创建时间进行排序
+    """
     def get_queryset(self):
         all_queryset = pm.Sjzbzd.objects.none()
         sjzb_id = self.request.query_params.get('id').split(",")
@@ -561,7 +703,17 @@ class SjbxzzdView(viewsets.ModelViewSet):
         for i in querysetall:
             all_queryset = all_queryset | i
         return all_queryset
+    """
 
+    def get_queryset(self):
+        params_get = self.request.query_params.get('zbfl')
+        sjzb_id = self.request.query_params.get('id')
+        if int(params_get) == 0:
+            rets = pm.Sjzbzd.objects.filter(sjzb_id=sjzb_id)
+            return rets
+        elif int(params_get) == 1:
+            ret = pm.Sjzbzd.objects.filter(Q(sjzb_id=sjzb_id) & ~Q(sjlx="String"))
+            return ret
     # 序列化
 
     serializer_class = serialiser.SjbxzzdSerializer
