@@ -411,8 +411,14 @@ class UserMenuView(mixins.ListModelMixin, generics.GenericAPIView, ):
                 user_id = request.user.id
 
             menus = Menu.objects.filter(roles__users__id=user_id).distinct()
-            ser = MenuSerializer(instance=menus, many=True)
-            return restful.result(message="查询成功", data=ser.data)
+
+            if menus.count() == 0:
+                print("请为用户添加角色")
+                return restful.result2(message="当前用户无角色,请联系管理员")
+            else:
+
+                ser = MenuSerializer(instance=menus, many=True)
+                return restful.result(message="查询成功", data=ser.data)
         except Exception as e:
             ip_username(request)
             return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)

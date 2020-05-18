@@ -357,7 +357,6 @@ class XwgjGrgj(models.Model):
 
 """************************下拉列表**************************"""
 
-
 # class Spinner(models.Model):
 #     yxbj = models.CharField(max_length=50, verbose_name='院系班级名称')
 #     pid = models.ForeignKey('self', on_delete=models.SET_NULL, related_name='addinfo', null=True, blank=True,

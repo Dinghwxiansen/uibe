@@ -30,8 +30,8 @@ class UserManager(BaseUserManager):
         return self._create_user(username, password)
 
 status_choices = (
-    (1, "启用"),
-    (2, "停用"),
+    (0, "启用"),
+    (1, "停用"),
 )
 
 """

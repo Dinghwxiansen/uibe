@@ -212,8 +212,7 @@ class JqSerializer(serializers.ModelSerializer):
 
 
 class BqwdSerializer(serializers.ModelSerializer):
-    create_time = serializers.DateTimeField(format='%Y-%m-%d %H:%M:%S')
-
+    #create_time = serializers.DateTimeField(format='%Y-%m-%d %H:%M:%S')
     class Meta:
         model = pm.XtglBqwd
         fields = ['id', 'wdmc', 'wdms', 'create_time', 'kqzt']
@@ -236,7 +235,7 @@ class ZbxglSerializer(serializers.ModelSerializer):
 class BqszSerializer(serializers.ModelSerializer):
     class Meta:
         model = pm.XtglBqsz
-        fields = ['id', 'bqmc', 'zbfl', 'zbwd', 'create_time', 'zbx', 'bqgz', 'bqms', 'bqqx', 'kqzt']
+        fields = ['id', 'bqmc', 'zbfl', 'zbwd', 'create_time', 'zbx', 'bqgz', 'bqSQL', 'bqms', 'bqqx', 'kqzt']
 
 
 """画像标签设置之新增选择指标项"""

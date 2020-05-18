@@ -1310,12 +1310,14 @@ class YjyzszView(mixins.ListModelMixin, generics.GenericAPIView):
     # queryset = wm.XtglYjyzsz.objects.all().order_by("-update_time")
     def get_queryset(self):
         all_queryset = wm.XtglYjyzsz.objects.none()
-        res = ['bzxxg', 'xwzsxg', "xxtxblx", "tkyjxg", "wgyjxg", "zjzxbxk"]
+        res = ['bzx', 'xwzs', "xxtxblx", "tkyj", "wgyj", "zjzxbxk"]
         querysetall = []
         for i in res:
             query = wm.XtglYjyzsz.objects.filter(
                 id=wm.XtglYjyzsz.objects.filter(code=i).order_by("-update_time")[:1].values('id')[0]['id'])
+
             querysetall.append(query)
+
         for i in querysetall:
             all_queryset = all_queryset | i
         return all_queryset
@@ -1327,6 +1329,7 @@ class YjyzszView(mixins.ListModelMixin, generics.GenericAPIView):
 
     def get(self, request, *args, **kwargs):
         try:
+
             ret1 = self.list(request, *args, **kwargs)
 
             # bzx = wm.XtglYjyzsz.objects.filter(code='bzxxg').order_by("-update_time")[0:1]

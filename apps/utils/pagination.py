@@ -8,6 +8,11 @@ from rest_framework.pagination import PageNumberPagination, LimitOffsetPaginatio
 
 
 class Pagination(PageNumberPagination):
+    # 自定义设置列表显示数据条数
+    def __init__(self):
+        super(Pagination, self).__init__()
+        self.page_size_query_param = 'page_size'
+        self.max_page_size = 100
     # 默认每页显示的个数
     page_size = 10
     # 可以动态改变每页显示的个数
