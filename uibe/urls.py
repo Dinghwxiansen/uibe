@@ -29,5 +29,8 @@ urlpatterns = [
     path('base/', include(base_urls)),
     path('warning/', include('apps.warning.urls')),
     path('portrait/', include('apps.portrait.urls')),
+    #  cas单点登录
+    path(r'^accounts/login/$','django_cas.views.login'),
+    path(r'^accounts/logout/$','django_cas.views.logout'),
 
 ]

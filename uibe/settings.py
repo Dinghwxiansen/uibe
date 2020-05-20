@@ -61,7 +61,19 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # cas单点登录
+    'django.middleware.common.CommonMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django_cas.middleware.CASMiddleware',
+    'django.middleware.doc.XViewMiddleware',
 ]
+
+AUTHENTICATION = (
+    'django.contrib.auth.backends.ModelBackend',
+    'django_cas.backends.CASBackend',
+)
+CAS_SERVER_URL = 'http://cas.uibe.edu.cn/cas/'
 
 ROOT_URLCONF = 'uibe.urls'
 
@@ -124,9 +136,9 @@ DATABASES = {
         'USER': 'root',
         # 连接mysql数据库的密码
         'PASSWORD': 'Mysql123!',
-        #'PASSWORD': '123456',
+        # 'PASSWORD': '123456',
         # mysql数据库的主机地址
-        #'HOST': '127.0.0.1',
+        # 'HOST': '127.0.0.1',
         'HOST': '10.77.210.88',
         # mysql数据库的端口号
         'PORT': '3306',
@@ -238,7 +250,7 @@ LOGGING = {
             'level': 'DEBUG',
             'class': 'logging.StreamHandler',
             'stream': 'ext://sys.stdout',
-        # 文件重定向的配置，将打印到控制台的信息都重定向出去 python manage.py runserver >> /home/aea/log/test.log
+            # 文件重定向的配置，将打印到控制台的信息都重定向出去 python manage.py runserver >> /home/aea/log/test.log
             # 'stream': open('/home/aea/log/test.log','a'),  #虽然成功了，但是并没有将所有内容全部写入文件，目前还不清楚为什么
             'formatter': 'standard'  # 制定输出的格式，注意 在上面的formatters配置里面选择一个，否则会报错
         },
