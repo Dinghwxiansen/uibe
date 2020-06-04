@@ -25,7 +25,8 @@ urlpatterns = [
     re_path(r'^(?P<version>[v1|v2]+)/xwzsmx/$', views.XwzsmxView.as_view({'get': 'retrieve'})),
     re_path(r'^(?P<version>[v1|v2]+)/bzxmx/$', views.BzxmxView.as_view({'get': 'retrieve'})),
     re_path(r'^(?P<version>[v1|v2]+)/tkxwmx/$', views.TkxwmxView.as_view({'get': 'retrieve'})),
-    re_path(r'^(?P<version>[v1|v2]+)/swxwmx/$', views.SwxwmxView.as_view({'get': 'retrieve'})),
+    # re_path(r'^(?P<version>[v1|v2]+)/swxwmx/$', views.SwxwmxView.as_view({'get': 'retrieve'})),
+    re_path(r'^(?P<version>[v1|v2]+)/swxwmx/$', views.SwxwmxView.as_view()),
     re_path(r'^(?P<version>[v1|v2]+)/wgmx/$', views.WgmxView.as_view({'get': 'retrieve'})),
     re_path(r'^(?P<version>[v1|v2]+)/xwgjmx/$', views.XwgjmxView.as_view({'get': 'retrieve'})),
 
