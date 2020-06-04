@@ -62,18 +62,18 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     # cas单点登录
-    'django.middleware.common.CommonMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django_cas.middleware.CASMiddleware',
-    'django.middleware.doc.XViewMiddleware',
+    # 'django.middleware.common.CommonMiddleware',
+    # 'django.contrib.sessions.middleware.SessionMiddleware',
+    # 'django.contrib.auth.middleware.AuthenticationMiddleware',
+    # 'django_cas.middleware.CASMiddleware',
+    # 'django.middleware.doc.XViewMiddleware',
 ]
 
-AUTHENTICATION = (
-    'django.contrib.auth.backends.ModelBackend',
-    'django_cas.backends.CASBackend',
-)
-CAS_SERVER_URL = 'http://cas.uibe.edu.cn/cas/'
+# AUTHENTICATION = (
+#    'django.contrib.auth.backends.ModelBackend',
+#    'django_cas.backends.CASBackend',
+# )
+# CAS_SERVER_URL = 'http://cas.uibe.edu.cn/cas/'
 
 ROOT_URLCONF = 'uibe.urls'
 
@@ -131,14 +131,14 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         # 数据库的名字
         'NAME': 'uibe_2',
-        # 'NAME': 'uibetwo',
+        #'NAME': 'uibe2',
         # 连接mysql数据库的用户名
         'USER': 'root',
         # 连接mysql数据库的密码
         'PASSWORD': 'Mysql123!',
-        # 'PASSWORD': '123456',
+        #'PASSWORD': '123456',
         # mysql数据库的主机地址
-        # 'HOST': '127.0.0.1',
+        #'HOST': '127.0.0.1',
         'HOST': '10.77.210.88',
         # mysql数据库的端口号
         'PORT': '3306',

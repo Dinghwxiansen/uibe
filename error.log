@@ -984,3 +984,207 @@
 [2020-04-30 17:36:40,471] [INFO] "GET /warning/v1/grade/?yx= HTTP/1.1" 200 175
 [2020-04-30 17:36:40,485] [INFO] "GET /warning/v1/college/ HTTP/1.1" 200 607
 [2020-04-30 17:36:40,686] [INFO] "POST /warning/v1/xxtxblx/?xhxm=&xznj=&yx=&bj=&page=1&page_size=10 HTTP/1.1" 200 2180
+[2020-05-28 15:08:27,154] [INFO] "POST /login/ HTTP/1.1" 200 179
+[2020-05-28 15:08:40,964] [INFO] "GET /warning/v1/swxwmx/?xh=201619023 HTTP/1.1" 200 105
+[2020-05-28 15:08:56,373] [INFO] "GET /warning/v1/swxwmx/?xh=201619023&kssj=2019-09-01&jssj=2019-12-31 HTTP/1.1" 200 105
+[2020-05-28 15:10:06,686] [INFO] "POST /warning/v1/swxwmx/?xh=201619023&kssj=2019-09-01&jssj=2019-12-31 HTTP/1.1" 200 70
+[2020-05-28 15:10:42,532] [INFO] "POST /warning/v1/swxwmx/?xh=201619023&kssj=2019-09-01&jssj=2019-12-31 HTTP/1.1" 200 70
+[2020-05-28 15:10:51,038] [INFO] "POST /warning/v1/swxwmx/?xh=201619023&kssj=2019-09-01&jssj=2019-12-31 HTTP/1.1" 200 70
+[2020-05-28 15:10:55,711] [INFO] "GET /warning/v1/swxwmx/?xh=201619023&kssj=2019-09-01&jssj=2019-12-31 HTTP/1.1" 200 105
+[2020-05-28 15:18:17,677] [INFO] "GET /warning/v1/swxwmx/?xh=201619023&kssj=2019-09-01&jssj=2019-12-31 HTTP/1.1" 200 105
+[2020-05-28 15:18:25,028] [ERROR] wuyi
+[2020-05-28 15:18:25,028] [ERROR] 192.168.3.237
+[2020-05-28 15:18:25,029] [ERROR] ('can only concatenate str (not "datetime.date") to str',)
+[2020-05-28 15:18:25,029] [INFO] "GET /warning/v1/swxwmx/?xh=201619023 HTTP/1.1" 200 121
+[2020-05-28 15:18:32,129] [INFO] "GET /warning/v1/swxwmx/?xh=201619023&kssj=2019-09-01&jssj=2019-12-31 HTTP/1.1" 200 105
+[2020-05-28 15:21:51,802] [INFO] "GET /warning/v1/swxwmx/?xh=201619023&kssj=2019-09-01&jssj=2019-12-31 HTTP/1.1" 200 105
+[2020-05-28 15:23:03,728] [INFO] "GET /warning/v1/swxwmx/?xh=201619023&kssj=2019-09-01&jssj=2019-12-31 HTTP/1.1" 200 2455
+[2020-05-28 15:23:36,128] [ERROR] wuyi
+[2020-05-28 15:23:36,128] [ERROR] 192.168.3.237
+[2020-05-28 15:23:36,129] [ERROR] ('can only concatenate str (not "datetime.date") to str',)
+[2020-05-28 15:23:36,129] [INFO] "GET /warning/v1/swxwmx/?xh=201619023 HTTP/1.1" 200 121
+[2020-05-28 15:26:34,489] [INFO] "GET /warning/v1/swxwmx/?xh=201619023&kssj=2019-09-01&jssj=2019-12-31 HTTP/1.1" 200 2455
+[2020-05-28 15:30:27,847] [INFO] "GET /warning/v1/swxwmx/?xh=201619023&kssj=2019-09-01&jssj=2019-12-31 HTTP/1.1" 200 2455
+[2020-05-28 15:31:22,148] [ERROR] wuyi
+[2020-05-28 15:31:22,148] [ERROR] 192.168.3.237
+[2020-05-28 15:31:22,149] [ERROR] ('’%(value)s‘ 必须为合法的日期格式，请使用 YYYY-MM-DD 格式。', 'invalid', {'value': ''})
+[2020-05-28 15:31:22,157] [INFO] "GET /warning/v1/swxwmx/?xh=201619023&jssj=&kssj HTTP/1.1" 200 228
+[2020-05-28 15:39:48,129] [INFO] "GET /warning/v1/swxwmx/?xh=201619023 HTTP/1.1" 200 105
+[2020-05-28 15:40:03,436] [INFO] "GET /warning/v1/swxwmx/?xh=201619023 HTTP/1.1" 200 105
+[2020-05-28 15:40:49,266] [ERROR] wuyi
+[2020-05-28 15:40:49,267] [ERROR] 192.168.3.237
+[2020-05-28 15:40:49,267] [ERROR] ('can only concatenate str (not "datetime.date") to str',)
+[2020-05-28 15:40:49,268] [INFO] "GET /warning/v1/swxwmx/?xh=201619023 HTTP/1.1" 200 121
+[2020-05-28 15:41:33,108] [INFO] "GET /warning/v1/swxwmx/?xh=201619023&jssj=2019-12-01&kssj=2019-12-31 HTTP/1.1" 200 105
+[2020-05-28 15:42:52,417] [WARNING] "GET /warning/v1/swxwmx/?xh=201619023&jssj=2019-12-01&kssj=2019-12-31 HTTP/1.1" 403 94
+[2020-05-28 15:42:57,667] [INFO] "POST /login/ HTTP/1.1" 200 179
+[2020-05-28 15:43:07,246] [INFO] "GET /warning/v1/swxwmx/?xh=201619023&jssj=2019-12-01&kssj=2019-12-31 HTTP/1.1" 200 105
+[2020-05-28 15:47:31,825] [INFO] "GET /warning/v1/swxwmx/?xh=201619023&jssj=2019-12-01&kssj=2019-12-31 HTTP/1.1" 200 105
+[2020-05-28 15:48:06,681] [INFO] "GET /warning/v1/swxwmx/?xh=201619023&kssj=2019-12-01&jssj=2019-12-31 HTTP/1.1" 200 2455
+[2020-05-28 15:48:21,417] [ERROR] wuyi
+[2020-05-28 15:48:21,417] [ERROR] 192.168.3.237
+[2020-05-28 15:48:21,417] [ERROR] ('can only concatenate str (not "datetime.date") to str',)
+[2020-05-28 15:48:21,417] [INFO] "GET /warning/v1/swxwmx/?xh=201619023 HTTP/1.1" 200 121
+[2020-05-28 15:51:47,833] [ERROR] wuyi
+[2020-05-28 15:51:47,833] [ERROR] 192.168.3.237
+[2020-05-28 15:51:47,833] [ERROR] ('can only concatenate str (not "datetime.date") to str',)
+[2020-05-28 15:51:47,834] [INFO] "GET /warning/v1/swxwmx/?xh=201619023 HTTP/1.1" 200 121
+[2020-05-28 15:52:22,565] [INFO] "GET /warning/v1/swxwmx/?xh=201619023 HTTP/1.1" 200 105
+[2020-05-28 16:18:50,134] [INFO] "POST /warning/v1/swxw/ HTTP/1.1" 200 2025
+[2020-05-28 16:22:08,489] [ERROR] wuyi
+[2020-05-28 16:22:08,489] [ERROR] 192.168.3.237
+[2020-05-28 16:22:08,490] [ERROR] ("type CombinedExpression doesn't define __round__ method",)
+[2020-05-28 16:22:08,490] [INFO] "POST /warning/v1/swxw/ HTTP/1.1" 200 121
+[2020-05-28 16:22:11,831] [ERROR] wuyi
+[2020-05-28 16:22:11,831] [ERROR] 192.168.3.237
+[2020-05-28 16:22:11,832] [ERROR] ("type CombinedExpression doesn't define __round__ method",)
+[2020-05-28 16:22:11,832] [INFO] "POST /warning/v1/swxw/ HTTP/1.1" 200 121
+[2020-05-28 16:25:31,314] [ERROR] wuyi
+[2020-05-28 16:25:31,315] [ERROR] 192.168.3.237
+[2020-05-28 16:25:31,315] [ERROR] ("type CombinedExpression doesn't define __round__ method",)
+[2020-05-28 16:25:31,316] [INFO] "POST /warning/v1/swxw/ HTTP/1.1" 200 121
+[2020-05-28 16:25:32,565] [ERROR] wuyi
+[2020-05-28 16:25:32,566] [ERROR] 192.168.3.237
+[2020-05-28 16:25:32,566] [ERROR] ("type CombinedExpression doesn't define __round__ method",)
+[2020-05-28 16:25:32,567] [INFO] "POST /warning/v1/swxw/ HTTP/1.1" 200 121
+[2020-05-28 16:25:52,633] [ERROR] wuyi
+[2020-05-28 16:25:52,633] [ERROR] 192.168.3.237
+[2020-05-28 16:25:52,633] [ERROR] ("type CombinedExpression doesn't define __round__ method",)
+[2020-05-28 16:25:52,634] [INFO] "POST /warning/v1/swxw/ HTTP/1.1" 200 121
+[2020-05-28 16:34:31,464] [INFO] "POST /warning/v1/swxw/ HTTP/1.1" 200 49
+[2020-05-28 16:47:06,874] [INFO] "POST /warning/v1/swxw/ HTTP/1.1" 200 49
+[2020-05-28 16:51:22,374] [INFO] "POST /warning/v1/swxw/ HTTP/1.1" 200 49
+[2020-05-28 16:52:55,602] [INFO] "POST /warning/v1/swxw/ HTTP/1.1" 200 49
+[2020-05-28 16:56:38,476] [INFO] "POST /warning/v1/swxw/ HTTP/1.1" 200 49
+[2020-05-28 16:58:01,968] [INFO] "POST /warning/v1/swxw/ HTTP/1.1" 200 2025
+[2020-05-28 17:02:42,473] [INFO] "POST /warning/v1/swxw/ HTTP/1.1" 200 49
+[2020-05-28 17:41:03,355] [DEBUG] ALTER TABLE `xwgj_grgj` DROP COLUMN `id`; (params ())
+[2020-05-28 17:41:03,355] [DEBUG] ALTER TABLE `xwgj_grgj` DROP COLUMN `id`; (params ())
+[2020-05-28 17:41:03,710] [DEBUG] ALTER TABLE `znyj_bzxyj` DROP COLUMN `id`; (params ())
+[2020-05-28 17:41:03,710] [DEBUG] ALTER TABLE `znyj_bzxyj` DROP COLUMN `id`; (params ())
+[2020-05-28 17:41:04,405] [DEBUG] ALTER TABLE `znyj_swxw` DROP COLUMN `id`; (params ())
+[2020-05-28 17:41:04,405] [DEBUG] ALTER TABLE `znyj_swxw` DROP COLUMN `id`; (params ())
+[2020-05-28 17:41:09,999] [DEBUG] ALTER TABLE `znyj_tkxw` DROP COLUMN `id`; (params ())
+[2020-05-28 17:41:09,999] [DEBUG] ALTER TABLE `znyj_tkxw` DROP COLUMN `id`; (params ())
+[2020-05-28 17:41:10,582] [DEBUG] ALTER TABLE `znyj_wg` DROP COLUMN `id`; (params ())
+[2020-05-28 17:41:10,582] [DEBUG] ALTER TABLE `znyj_wg` DROP COLUMN `id`; (params ())
+[2020-05-28 17:41:11,883] [DEBUG] ALTER TABLE `znyj_xwzs` DROP COLUMN `id`; (params ())
+[2020-05-28 17:41:11,883] [DEBUG] ALTER TABLE `znyj_xwzs` DROP COLUMN `id`; (params ())
+[2020-05-28 17:41:13,959] [DEBUG] ALTER TABLE `znyj_xxtxblx` DROP COLUMN `id`; (params ())
+[2020-05-28 17:41:13,959] [DEBUG] ALTER TABLE `znyj_xxtxblx` DROP COLUMN `id`; (params ())
+[2020-05-28 17:41:14,462] [DEBUG] ALTER TABLE `znyj_zjzxbxk` DROP COLUMN `id`; (params ())
+[2020-05-28 17:41:14,462] [DEBUG] ALTER TABLE `znyj_zjzxbxk` DROP COLUMN `id`; (params ())
+[2020-05-28 17:41:14,771] [DEBUG] ALTER TABLE `xwgj_grgj` ADD CONSTRAINT xwgj_grgj_xh_c5173796_uniq UNIQUE (`xh`); (params ())
+[2020-05-28 17:41:14,771] [DEBUG] ALTER TABLE `xwgj_grgj` ADD CONSTRAINT xwgj_grgj_xh_c5173796_uniq UNIQUE (`xh`); (params ())
+[2020-05-28 17:50:46,027] [DEBUG] ALTER TABLE `bzks` DROP COLUMN `id`; (params ())
+[2020-05-28 17:50:46,027] [DEBUG] ALTER TABLE `bzks` DROP COLUMN `id`; (params ())
+[2020-05-28 17:55:30,663] [DEBUG] ALTER TABLE `bzks` DROP COLUMN `id`; (params ())
+[2020-05-28 17:55:30,663] [DEBUG] ALTER TABLE `bzks` DROP COLUMN `id`; (params ())
+[2020-05-28 17:58:02,928] [DEBUG] ALTER TABLE `bzks` DROP COLUMN `id`; (params ())
+[2020-05-28 17:58:02,928] [DEBUG] ALTER TABLE `bzks` DROP COLUMN `id`; (params ())
+[2020-05-28 17:58:43,097] [DEBUG] ALTER TABLE `xwgj_grgj` DROP FOREIGN KEY `xwgj_grgj_user_id_dd8a3aa7_fk_bzks_id`; (params ())
+[2020-05-28 17:58:43,097] [DEBUG] ALTER TABLE `xwgj_grgj` DROP FOREIGN KEY `xwgj_grgj_user_id_dd8a3aa7_fk_bzks_id`; (params ())
+[2020-05-28 17:58:43,118] [DEBUG] ALTER TABLE `xwgj_grgj` DROP COLUMN `user_id`; (params ())
+[2020-05-28 17:58:43,118] [DEBUG] ALTER TABLE `xwgj_grgj` DROP COLUMN `user_id`; (params ())
+[2020-05-28 17:58:43,185] [DEBUG] ALTER TABLE `znyj_bzxyj` DROP COLUMN `user_id`; (params ())
+[2020-05-28 17:58:43,185] [DEBUG] ALTER TABLE `znyj_bzxyj` DROP COLUMN `user_id`; (params ())
+[2020-05-28 17:58:43,243] [DEBUG] ALTER TABLE `znyj_swxw` DROP FOREIGN KEY `znyj_swxw_user_id_946e44ca_fk_bzks_id`; (params ())
+[2020-05-28 17:58:43,243] [DEBUG] ALTER TABLE `znyj_swxw` DROP FOREIGN KEY `znyj_swxw_user_id_946e44ca_fk_bzks_id`; (params ())
+[2020-05-28 17:58:43,250] [DEBUG] ALTER TABLE `znyj_swxw` DROP COLUMN `user_id`; (params ())
+[2020-05-28 17:58:43,250] [DEBUG] ALTER TABLE `znyj_swxw` DROP COLUMN `user_id`; (params ())
+[2020-05-28 17:58:43,304] [DEBUG] ALTER TABLE `znyj_tkxw` DROP FOREIGN KEY `znyj_tkxw_user_id_18a9d12a_fk_bzks_id`; (params ())
+[2020-05-28 17:58:43,304] [DEBUG] ALTER TABLE `znyj_tkxw` DROP FOREIGN KEY `znyj_tkxw_user_id_18a9d12a_fk_bzks_id`; (params ())
+[2020-05-28 17:58:43,312] [DEBUG] ALTER TABLE `znyj_tkxw` DROP COLUMN `user_id`; (params ())
+[2020-05-28 17:58:43,312] [DEBUG] ALTER TABLE `znyj_tkxw` DROP COLUMN `user_id`; (params ())
+[2020-05-28 17:58:43,371] [DEBUG] ALTER TABLE `znyj_wg` DROP FOREIGN KEY `znyj_wg_user_id_9360d693_fk_bzks_id`; (params ())
+[2020-05-28 17:58:43,371] [DEBUG] ALTER TABLE `znyj_wg` DROP FOREIGN KEY `znyj_wg_user_id_9360d693_fk_bzks_id`; (params ())
+[2020-05-28 17:58:43,378] [DEBUG] ALTER TABLE `znyj_wg` DROP COLUMN `user_id`; (params ())
+[2020-05-28 17:58:43,378] [DEBUG] ALTER TABLE `znyj_wg` DROP COLUMN `user_id`; (params ())
+[2020-05-28 17:58:43,450] [DEBUG] ALTER TABLE `znyj_xwzs` DROP COLUMN `user_id`; (params ())
+[2020-05-28 17:58:43,450] [DEBUG] ALTER TABLE `znyj_xwzs` DROP COLUMN `user_id`; (params ())
+[2020-05-28 17:58:43,515] [DEBUG] ALTER TABLE `znyj_xxtxblx` DROP COLUMN `user_id`; (params ())
+[2020-05-28 17:58:43,515] [DEBUG] ALTER TABLE `znyj_xxtxblx` DROP COLUMN `user_id`; (params ())
+[2020-05-28 17:58:43,567] [DEBUG] ALTER TABLE `znyj_zjzxbxk` DROP FOREIGN KEY `znyj_zjzxbxk_user_id_9f1ee74e_fk_bzks_id`; (params ())
+[2020-05-28 17:58:43,567] [DEBUG] ALTER TABLE `znyj_zjzxbxk` DROP FOREIGN KEY `znyj_zjzxbxk_user_id_9f1ee74e_fk_bzks_id`; (params ())
+[2020-05-28 17:58:43,575] [DEBUG] ALTER TABLE `znyj_zjzxbxk` DROP COLUMN `user_id`; (params ())
+[2020-05-28 17:58:43,575] [DEBUG] ALTER TABLE `znyj_zjzxbxk` DROP COLUMN `user_id`; (params ())
+[2020-05-28 17:58:59,779] [DEBUG] ALTER TABLE `bzks` DROP COLUMN `id`; (params ())
+[2020-05-28 17:58:59,779] [DEBUG] ALTER TABLE `bzks` DROP COLUMN `id`; (params ())
+[2020-05-28 17:59:00,880] [DEBUG] ALTER TABLE `bzks` DROP INDEX `xh`; (params ())
+[2020-05-28 17:59:00,880] [DEBUG] ALTER TABLE `bzks` DROP INDEX `xh`; (params ())
+[2020-05-28 17:59:02,056] [DEBUG] ALTER TABLE `bzks` ADD CONSTRAINT `bzks_xh_aedd518e_pk` PRIMARY KEY (`xh`); (params ())
+[2020-05-28 17:59:02,056] [DEBUG] ALTER TABLE `bzks` ADD CONSTRAINT `bzks_xh_aedd518e_pk` PRIMARY KEY (`xh`); (params ())
+[2020-05-28 18:03:35,279] [DEBUG] ALTER TABLE `xwgj_grgj` ADD COLUMN `user_id` varchar(32) NULL; (params [])
+[2020-05-28 18:03:35,279] [DEBUG] ALTER TABLE `xwgj_grgj` ADD COLUMN `user_id` varchar(32) NULL; (params [])
+[2020-05-28 18:03:35,348] [DEBUG] ALTER TABLE `znyj_bzxyj` ADD COLUMN `user_id` varchar(32) NULL; (params [])
+[2020-05-28 18:03:35,348] [DEBUG] ALTER TABLE `znyj_bzxyj` ADD COLUMN `user_id` varchar(32) NULL; (params [])
+[2020-05-28 18:03:35,414] [DEBUG] ALTER TABLE `znyj_swxw` ADD COLUMN `user_id` varchar(32) NULL; (params [])
+[2020-05-28 18:03:35,414] [DEBUG] ALTER TABLE `znyj_swxw` ADD COLUMN `user_id` varchar(32) NULL; (params [])
+[2020-05-28 18:03:35,465] [DEBUG] ALTER TABLE `znyj_tkxw` ADD COLUMN `user_id` varchar(32) NULL; (params [])
+[2020-05-28 18:03:35,465] [DEBUG] ALTER TABLE `znyj_tkxw` ADD COLUMN `user_id` varchar(32) NULL; (params [])
+[2020-05-28 18:03:35,547] [DEBUG] ALTER TABLE `znyj_wg` ADD COLUMN `user_id` varchar(32) NULL; (params [])
+[2020-05-28 18:03:35,547] [DEBUG] ALTER TABLE `znyj_wg` ADD COLUMN `user_id` varchar(32) NULL; (params [])
+[2020-05-28 18:03:35,618] [DEBUG] ALTER TABLE `znyj_xwzs` ADD COLUMN `user_id` varchar(32) NULL; (params [])
+[2020-05-28 18:03:35,618] [DEBUG] ALTER TABLE `znyj_xwzs` ADD COLUMN `user_id` varchar(32) NULL; (params [])
+[2020-05-28 18:03:35,713] [DEBUG] ALTER TABLE `znyj_xxtxblx` ADD COLUMN `user_id` varchar(32) NULL; (params [])
+[2020-05-28 18:03:35,713] [DEBUG] ALTER TABLE `znyj_xxtxblx` ADD COLUMN `user_id` varchar(32) NULL; (params [])
+[2020-05-28 18:03:35,790] [DEBUG] ALTER TABLE `znyj_zjzxbxk` ADD COLUMN `user_id` varchar(32) NULL; (params [])
+[2020-05-28 18:03:35,790] [DEBUG] ALTER TABLE `znyj_zjzxbxk` ADD COLUMN `user_id` varchar(32) NULL; (params [])
+[2020-05-28 18:03:35,848] [DEBUG] ALTER TABLE `xwgj_grgj` ADD CONSTRAINT `xwgj_grgj_user_id_dd8a3aa7_fk_bzks_xh` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`xh`); (params ())
+[2020-05-28 18:03:35,848] [DEBUG] ALTER TABLE `xwgj_grgj` ADD CONSTRAINT `xwgj_grgj_user_id_dd8a3aa7_fk_bzks_xh` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`xh`); (params ())
+[2020-05-28 18:03:35,936] [DEBUG] ALTER TABLE `znyj_bzxyj` ADD CONSTRAINT `znyj_bzxyj_user_id_b59ca30c_fk_bzks_xh` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`xh`); (params ())
+[2020-05-28 18:03:35,936] [DEBUG] ALTER TABLE `znyj_bzxyj` ADD CONSTRAINT `znyj_bzxyj_user_id_b59ca30c_fk_bzks_xh` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`xh`); (params ())
+[2020-05-28 18:03:36,006] [DEBUG] ALTER TABLE `znyj_swxw` ADD CONSTRAINT `znyj_swxw_user_id_946e44ca_fk_bzks_xh` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`xh`); (params ())
+[2020-05-28 18:03:36,006] [DEBUG] ALTER TABLE `znyj_swxw` ADD CONSTRAINT `znyj_swxw_user_id_946e44ca_fk_bzks_xh` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`xh`); (params ())
+[2020-05-28 18:03:36,080] [DEBUG] ALTER TABLE `znyj_tkxw` ADD CONSTRAINT `znyj_tkxw_user_id_18a9d12a_fk_bzks_xh` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`xh`); (params ())
+[2020-05-28 18:03:36,080] [DEBUG] ALTER TABLE `znyj_tkxw` ADD CONSTRAINT `znyj_tkxw_user_id_18a9d12a_fk_bzks_xh` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`xh`); (params ())
+[2020-05-28 18:03:36,160] [DEBUG] ALTER TABLE `znyj_wg` ADD CONSTRAINT `znyj_wg_user_id_9360d693_fk_bzks_xh` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`xh`); (params ())
+[2020-05-28 18:03:36,160] [DEBUG] ALTER TABLE `znyj_wg` ADD CONSTRAINT `znyj_wg_user_id_9360d693_fk_bzks_xh` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`xh`); (params ())
+[2020-05-28 18:03:36,287] [DEBUG] ALTER TABLE `znyj_xwzs` ADD CONSTRAINT `znyj_xwzs_user_id_541e223d_fk_bzks_xh` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`xh`); (params ())
+[2020-05-28 18:03:36,287] [DEBUG] ALTER TABLE `znyj_xwzs` ADD CONSTRAINT `znyj_xwzs_user_id_541e223d_fk_bzks_xh` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`xh`); (params ())
+[2020-05-28 18:03:36,366] [DEBUG] ALTER TABLE `znyj_xxtxblx` ADD CONSTRAINT `znyj_xxtxblx_user_id_ff86d8c1_fk_bzks_xh` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`xh`); (params ())
+[2020-05-28 18:03:36,366] [DEBUG] ALTER TABLE `znyj_xxtxblx` ADD CONSTRAINT `znyj_xxtxblx_user_id_ff86d8c1_fk_bzks_xh` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`xh`); (params ())
+[2020-05-28 18:03:36,428] [DEBUG] ALTER TABLE `znyj_zjzxbxk` ADD CONSTRAINT `znyj_zjzxbxk_user_id_9f1ee74e_fk_bzks_xh` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`xh`); (params ())
+[2020-05-28 18:03:36,428] [DEBUG] ALTER TABLE `znyj_zjzxbxk` ADD CONSTRAINT `znyj_zjzxbxk_user_id_9f1ee74e_fk_bzks_xh` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`xh`); (params ())
+[2020-06-02 11:12:35,630] [INFO] "POST /login/ HTTP/1.1" 200 179
+[2020-06-02 11:12:45,705] [INFO] "POST /warning/v1/swxw/ HTTP/1.1" 200 206
+[2020-06-02 11:31:36,794] [INFO] "POST /warning/v1/swxw/ HTTP/1.1" 200 206
+[2020-06-02 11:40:11,332] [INFO] "POST /warning/v1/swxw/ HTTP/1.1" 200 206
+[2020-06-02 11:41:04,205] [INFO] "POST /warning/v1/swxw/ HTTP/1.1" 200 206
+[2020-06-02 14:11:44,976] [INFO] "POST /warning/v1/swxw/ HTTP/1.1" 200 206
+[2020-06-02 14:15:31,131] [INFO] "GET /warning/v1/swxw/ HTTP/1.1" 200 69
+[2020-06-02 14:19:07,629] [INFO] "POST /warning/v1/swxw/ HTTP/1.1" 200 206
+[2020-06-02 14:20:08,107] [INFO] "POST /warning/v1/xxtxblx/ HTTP/1.1" 200 206
+[2020-06-02 14:20:49,606] [INFO] "POST /warning/v1/xxtxblx/ HTTP/1.1" 200 206
+[2020-06-02 14:24:01,956] [INFO] "GET /warning/v1/xxtxblx/ HTTP/1.1" 200 69
+[2020-06-02 14:24:03,174] [INFO] "GET /warning/v1/xxtxblx/ HTTP/1.1" 200 69
+[2020-06-02 14:24:25,602] [INFO] "GET /warning/v1/xxtxblx/ HTTP/1.1" 200 69
+[2020-06-02 14:24:39,111] [INFO] "GET /warning/v1/swxw/ HTTP/1.1" 200 206
+[2020-06-02 14:24:49,334] [INFO] "GET /warning/v1/swxw/ HTTP/1.1" 200 206
+[2020-06-02 14:25:01,044] [INFO] "GET /warning/v1/swxw/?kssj=2019-12-01&jssj=2019-12-31 HTTP/1.1" 200 206
+[2020-06-02 14:25:12,709] [INFO] "GET /warning/v1/swxw/?xh=201619023&kssj=2019-12-01&jssj=2019-12-31 HTTP/1.1" 200 206
+[2020-06-02 14:39:10,673] [WARNING] "GET /warning/v1/wg/ HTTP/1.1" 403 94
+[2020-06-02 14:39:17,601] [INFO] "POST /login/ HTTP/1.1" 200 179
+[2020-06-02 14:39:24,455] [INFO] "GET /warning/v1/wg/ HTTP/1.1" 200 69
+[2020-06-02 14:39:29,377] [INFO] "POST /warning/v1/wg/ HTTP/1.1" 200 206
+[2020-06-02 14:39:46,931] [INFO] "POST /warning/v1/swxw/ HTTP/1.1" 200 206
+[2020-06-02 14:46:47,398] [INFO] "POST /portrait/v1/jqsz/ HTTP/1.1" 200 49
+[2020-06-02 14:46:51,940] [INFO] "GET /portrait/v1/jqsz/ HTTP/1.1" 200 1270
+[2020-06-02 14:55:07,826] [INFO] "GET /portrait/v1/jqsz/ HTTP/1.1" 200 1270
+[2020-06-02 14:55:15,532] [WARNING] Not Found: /portrait/v1/swxw/
+[2020-06-02 14:55:15,535] [WARNING] "GET /portrait/v1/swxw/ HTTP/1.1" 404 91
+[2020-06-02 14:55:24,089] [WARNING] Not Found: /portrait/v1/swxw/
+[2020-06-02 14:55:24,092] [WARNING] "POST /portrait/v1/swxw/ HTTP/1.1" 404 91
+[2020-06-02 14:58:00,903] [INFO] "POST /warning/v1/swxw/ HTTP/1.1" 200 206
+[2020-06-02 15:05:21,493] [WARNING] "POST /warning/v1/swxw/ HTTP/1.1" 403 94
+[2020-06-02 15:05:30,330] [INFO] "POST /login/ HTTP/1.1" 200 179
+[2020-06-02 15:06:17,132] [INFO] "POST /warning/v1/swxw/ HTTP/1.1" 200 2157
+[2020-06-02 15:09:54,930] [INFO] "POST /warning/v1/swxw/ HTTP/1.1" 200 2157
+[2020-06-02 15:10:30,749] [INFO] "POST /warning/v1/swxw/?kssj=2019-12-01&jssj=2019-12-31 HTTP/1.1" 200 2181
+[2020-06-02 15:11:00,847] [INFO] "POST /warning/v1/swxw/?kssj=2019-12-20&jssj=2019-12-31 HTTP/1.1" 200 2191
+[2020-06-03 15:58:05,411] [DEBUG] CREATE TABLE `bzks_EK` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `xh` varchar(32) NOT NULL UNIQUE, `txamt` varchar(32) NULL, `txamtpm` integer NULL, `txamtpetcentile` varchar(32) NULL, `ztcs` integer NULL, `stskcs` integer NULL, `stskcspm` integer NULL, `stskcspetcentile` varchar(32) NULL, `zccs` integer NULL, `wccs` integer NULL, `wcxfcs` integer NULL, `ystjyje` varchar(32) NULL, `ystjyjepm` integer NULL, `ystjyjepercent` varchar(32) NULL, `estjyje` varchar(32) NULL, `estjyjepm` integer NULL, `estjyjepercent` varchar(32) NULL, `sstjyje` varchar(32) NULL, `sstjyjepm` integer NULL, `sstjyjepercent` varchar(32) NULL, `qzstjyje` varchar(32) NULL, `qzstjyjepm` integer NULL, `qzstjyjepercent` varchar(32) NULL, `hywmjyje` varchar(32) NULL, `hywmjyjepm` integer NULL, `hywmjyjepercent` varchar(32) NULL, `create_time` datetime(6) NOT NULL, `update_time` datetime(6) NOT NULL); (params None)
+[2020-06-03 15:58:05,411] [DEBUG] CREATE TABLE `bzks_EK` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `xh` varchar(32) NOT NULL UNIQUE, `txamt` varchar(32) NULL, `txamtpm` integer NULL, `txamtpetcentile` varchar(32) NULL, `ztcs` integer NULL, `stskcs` integer NULL, `stskcspm` integer NULL, `stskcspetcentile` varchar(32) NULL, `zccs` integer NULL, `wccs` integer NULL, `wcxfcs` integer NULL, `ystjyje` varchar(32) NULL, `ystjyjepm` integer NULL, `ystjyjepercent` varchar(32) NULL, `estjyje` varchar(32) NULL, `estjyjepm` integer NULL, `estjyjepercent` varchar(32) NULL, `sstjyje` varchar(32) NULL, `sstjyjepm` integer NULL, `sstjyjepercent` varchar(32) NULL, `qzstjyje` varchar(32) NULL, `qzstjyjepm` integer NULL, `qzstjyjepercent` varchar(32) NULL, `hywmjyje` varchar(32) NULL, `hywmjyjepm` integer NULL, `hywmjyjepercent` varchar(32) NULL, `create_time` datetime(6) NOT NULL, `update_time` datetime(6) NOT NULL); (params None)
+[2020-06-03 16:03:11,478] [DEBUG] ALTER TABLE `xwgj_grgj` MODIFY `id` varchar(32) NOT NULL; (params [])
+[2020-06-03 16:03:11,478] [DEBUG] ALTER TABLE `xwgj_grgj` MODIFY `id` varchar(32) NOT NULL; (params [])
+[2020-06-03 16:04:33,432] [DEBUG] ALTER TABLE `xwgj_grgj` MODIFY `id` varchar(32) NOT NULL; (params [])
+[2020-06-03 16:04:33,432] [DEBUG] ALTER TABLE `xwgj_grgj` MODIFY `id` varchar(32) NOT NULL; (params [])
