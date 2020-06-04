@@ -109,8 +109,8 @@ class WgmxFilter(django_filters.FilterSet):
 
 
 class SwxwmxFilter(django_filters.FilterSet):
-    kssj = django_filters.DateFilter(field_name="create_time", lookup_expr='gte')
-    jssj = django_filters.DateFilter(field_name="create_time", lookup_expr='lte')
+    kssj = django_filters.DateFilter(field_name="swsj", lookup_expr='gte')
+    jssj = django_filters.DateFilter(field_name="swsj", lookup_expr='lte')
     xm = django_filters.CharFilter(field_name="xm", lookup_expr='icontains')
 
     class Meta():
