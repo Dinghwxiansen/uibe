@@ -154,6 +154,8 @@ class BzksSwxwSerialiser(serializers.ModelSerializer):
         fields = ['xh', 'xm', 'yx', 'xznj', 'bj', 'fdy', 'zsyll', ]
 
 
+
+
 class SwxwMxSerialiser(serializers.ModelSerializer):
     class Meta:
         model = wm.ZnyjSwxw
