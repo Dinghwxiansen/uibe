@@ -1,6 +1,7 @@
 # Create your views here.
 
 import json
+import logging
 # todo import datetime直接导入 报错 nomodule min
 from datetime import *
 
@@ -11,18 +12,19 @@ from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import filters
 from rest_framework import mixins, generics
 from rest_framework import viewsets
-from rest_framework.viewsets import ReadOnlyModelViewSet
-from apps.utils.Sample_username_ip import ip_username
+
 from apps.base import filter
 from apps.portrait import models as pm
 from apps.utils import restful
 from apps.utils import serialiser
+from apps.utils.Sample_username_ip import ip_username
 from apps.utils.YearMonthStatistics import getBetweenMonth
 from apps.utils.pagination import Pagination
 from apps.warning import models as wm
-import logging
+
 # 导入自定义记录错误日志模块
 logger = logging.getLogger("django")
+
 
 class ZjzxbxkView(mixins.ListModelMixin, mixins.CreateModelMixin,
                   mixins.DestroyModelMixin, mixins.UpdateModelMixin, mixins.RetrieveModelMixin,
@@ -732,25 +734,28 @@ class SwxwView(mixins.ListModelMixin, mixins.CreateModelMixin,
         # 流量上限和下限
         llmin = eval(llrange[0])
         llmax = eval(llrange[1])
-
-        myfilter = Q(swxw__create_time__gt=kssj) & Q(swxw__create_time__lte=jssj)
+        # import numpy as np
+        # myfilter = Q(swxw__create_time__gt=kssj) & Q(swxw__create_time__lte=jssj)
+        myfilter = Q(swxw__swsj__gt=kssj) & Q(swxw__swsj__lte=jssj)
 
         if not xhxm:
-            ret = pm.UibeBzks.objects.annotate(zsyll=Sum("swxw__syll", filter=myfilter)).filter(
+            ret = pm.UibeBzks.objects.annotate(
+                zsyll=(Sum("swxw__syll", filter=myfilter) / 1024)).filter(
                 zsyll__gte=1).filter(zsyll__range=(llmin, llmax))
         else:
             if xhxm.isdigit():
                 ret = pm.UibeBzks.objects.filter(swxw__xh=xhxm).annotate(
-                    zsyll=Sum("swxw__syll", filter=myfilter)).filter(
+                    zsyll=(Sum("swxw__syll", filter=myfilter) / 1024)).filter(
                     zsyll__gte=1).filter(zsyll__range=(llmin, llmax))
             else:
                 ret = pm.UibeBzks.objects.filter(xm=xhxm).annotate(
-                    zsyll=Count("swxw__syll", filter=myfilter)).filter(
+                    zsyll=(Sum("swxw__syll", filter=myfilter) / 1024)).filter(
                     zsyll__gte=1).filter(zsyll__range=(llmin, llmax))
         return ret
 
     # 序列化
     serializer_class = serialiser.BzksSwxwSerialiser
+    filter_backends = (DjangoFilterBackend, filters.SearchFilter)
     filter_class = filter.BzksFilter
     # 搜索，前端通过search关键字传值，？search=''
     search_fields = ('xm', 'xh', 'yx', 'xznj', 'bj', '=kssj', '=jssj')  # 在这里添加可以搜索的字段，=表示等， 还可使用正则
@@ -769,7 +774,7 @@ class SwxwView(mixins.ListModelMixin, mixins.CreateModelMixin,
 """智能预警之上网行为预警明细"""
 
 
-class SwxwmxView(viewsets.ModelViewSet):
+class SwxwmxView(mixins.ListModelMixin, generics.GenericAPIView):
     # authentication_classes = []
     # permission_classes = []
     """分页"""
@@ -778,9 +783,15 @@ class SwxwmxView(viewsets.ModelViewSet):
     def get_queryset(self):
         import datetime
         from dateutil.relativedelta import relativedelta
-        kssj = self.request.query_params.get("kssj", datetime.date.today() - relativedelta(months=+1))
-        jssj = self.request.query_params.get("jssj", date.today() + timedelta(days=1))
-        ret = wm.ZnyjSwxw.objects.filter(Q(swsj__gt=kssj) & Q(swsj__lte=jssj)).order_by('-swsj')
+        kssj = self.request.query_params.get("kssj", str(datetime.date.today() - relativedelta(months=+1)))
+        jssj = self.request.query_params.get("jssj", str(date.today() + timedelta(days=1)))
+        ret = wm.ZnyjSwxw.objects.filter(Q(swsj__gt=kssj) & Q(swsj__lte=jssj)).order_by('swsj')
+        # print("开始时间"+kssj)
+        # print("结束时间"+jssj)
+        # print(ret)
+        # print(datetime.date.today() - relativedelta(months=+1))
+        # print(date.today() + timedelta(days=1))
+
         return ret
 
     # queryset = wm.ZnyjSwxw.objects.all().order_by('-update_time')
@@ -789,9 +800,13 @@ class SwxwmxView(viewsets.ModelViewSet):
     filter_backends = (DjangoFilterBackend, filters.SearchFilter)
     filter_class = filter.SwxwmxFilter
 
-    def retrieve(self, request, *args, **kwargs):
+    """获取所有数据"""
+
+    def get(self, request, *args, **kwargs):
         try:
+            # print(type(request.data))
             ret = self.list(request, *args, **kwargs)
+            # print(connection.queries[-1:])
             return restful.result(message="操作成功", data=ret.data)
         except Exception as e:
             ip_username(request)
@@ -855,7 +870,7 @@ class XwgjmxView(viewsets.ModelViewSet):
     # permission_classes = []
     """分页"""
     pagination_class = Pagination
-    queryset = wm.XwgjGrgj.objects.all().order_by('-update_time')
+    queryset = wm.XwgjGrgj.objects.all().order_by('-xwsj')
     # 序列化
     serializer_class = serialiser.XwgjMxSerialiser
     filter_backends = (DjangoFilterBackend, filters.SearchFilter)
@@ -1006,6 +1021,7 @@ class ClassView(generics.ListAPIView, generics.GenericAPIView):
         except Exception as e:
             ip_username(request)
             return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
+
 
 """遗弃下拉列表
 class SpinnerView(ReadOnlyModelViewSet):
