@@ -296,6 +296,7 @@ class ZnyjSwxw(models.Model):
 
 # 行为轨迹之个人轨迹
 class XwgjGrgj(models.Model):
+    id = models.CharField('UUID', max_length=32, null=False, primary_key=True)
     xh = models.CharField(max_length=32)
     # todo 新增 swsj,xwdd,jd,wd
     xwsj = models.DateTimeField('行为时间', null=True, )
