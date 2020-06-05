@@ -131,6 +131,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         # 数据库的名字
         'NAME': 'uibe',
+	#'NAME': 'uibe_2',
         #'NAME': 'uibe2',
         # 连接mysql数据库的用户名
         'USER': 'root',
