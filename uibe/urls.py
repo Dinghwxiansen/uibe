@@ -14,8 +14,6 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 # from django.contrib import admin
-import django_cas_ng
-import django_cas_ng.views as cas_views
 from django.urls import path, include
 from rest_framework.documentation import include_docs_urls
 
@@ -30,8 +28,8 @@ urlpatterns = [
     path('warning/', include('apps.warning.urls')),
     path('portrait/', include('apps.portrait.urls')),
     #  cas单点登录
-    path('login/', django_cas_ng.views.LoginView.as_view(), name='cas_ng_login'),
-    path('logout/', django_cas_ng.views.LogoutView.as_view(), name='cas_ng_logout'),
+    # path('login/', django_cas_ng.views.LoginView.as_view(), name='cas_ng_login'),
+    # path('logout/', django_cas_ng.views.LogoutView.as_view(), name='cas_ng_logout'),
     path('login/', login.LoginView.as_view(), name="login"),
     path('logout/', logout.LogoutView.as_view(), name="logout"),
 
