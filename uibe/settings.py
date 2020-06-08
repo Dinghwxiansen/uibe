@@ -47,8 +47,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_filters',  # 过滤器
     'coreschema',
-    'corsheaders'  # 跨域
-
+    'corsheaders',  # 跨域
+    'django_cas_ng',  # 单点登录
 ]
 
 MIDDLEWARE = [
@@ -69,11 +69,17 @@ MIDDLEWARE = [
     # 'django.middleware.doc.XViewMiddleware',
 ]
 
-# AUTHENTICATION = (
-#    'django.contrib.auth.backends.ModelBackend',
-#    'django_cas.backends.CASBackend',
-# )
-# CAS_SERVER_URL = 'http://cas.uibe.edu.cn/cas/'
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'django_cas_ng.backends.CASBackend',
+)
+
+# CAS 的地址
+CAS_SERVER_URL = 'http://cas.uibe.edu.cn/cas/login'
+# CAS 版本
+CAS_VERSION = '3'
+# 存入所有 CAS 服务端返回的 User 数据。
+CAS_APPLY_ATTRIBUTES_TO_USER = True
 
 ROOT_URLCONF = 'uibe.urls'
 
@@ -131,18 +137,18 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         # 数据库的名字
         'NAME': 'uibe',
-	#'NAME': 'uibe_2',
-        #'NAME': 'uibe2',
+        # 'NAME': 'uibe_2',
+        # 'NAME': 'uibe2',
         # 连接mysql数据库的用户名
         'USER': 'root',
         # 连接mysql数据库的密码
-        #'PASSWORD': 'Mysql123!',
-        #'PASSWORD': '123456',
-	'PASSWORD': 'Pass20rd@2018',
+        # 'PASSWORD': 'Mysql123!',
+        # 'PASSWORD': '123456',
+        'PASSWORD': 'Pass20rd@2018',
         # mysql数据库的主机地址
-        #'HOST': '127.0.0.1',
+        # 'HOST': '127.0.0.1',
         'HOST': '202.204.175.183',
-	#'HOST': '10.77.210.88',
+        # 'HOST': '10.77.210.88',
         # mysql数据库的端口号
         'PORT': '3306',
     }
