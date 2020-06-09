@@ -813,7 +813,7 @@ class SwxwmxView(mixins.ListModelMixin, generics.GenericAPIView):
             return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
 
 
-"""******************************行为轨迹分析-**************************"""
+"""******************************本专科生行为轨迹分析-**************************"""
 
 
 class XwgjView(mixins.ListModelMixin, mixins.CreateModelMixin,
@@ -862,47 +862,93 @@ class XwgjView(mixins.ListModelMixin, mixins.CreateModelMixin,
             return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
 
 
-"""******************************行为轨迹个人分析-**************************"""
+"""******************************本专科生行为轨迹个人分析-**************************"""
 
 
-class XwgjmxView(viewsets.ModelViewSet):
+class XwgjmxView(mixins.ListModelMixin, generics.GenericAPIView, ):
     # authentication_classes = []
     # permission_classes = []
     """分页"""
-    pagination_class = Pagination
+    # pagination_class = Pagination
     queryset = wm.XwgjGrgj.objects.all().order_by('-xwsj')
     # 序列化
     serializer_class = serialiser.XwgjMxSerialiser
+
     filter_backends = (DjangoFilterBackend, filters.SearchFilter)
     filter_class = filter.XwgjmxFilter
 
-    def retrieve(self, request, *args, **kwargs):
+    def get(self, request, *args, **kwargs):
         try:
             ret = self.list(request, *args, **kwargs)
+
             return restful.result(message="操作成功", data=ret.data)
+
         except Exception as e:
             ip_username(request)
             return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
 
 
-# class XwgjView(mixins.ListModelMixin, mixins.CreateModelMixin,
-#                mixins.DestroyModelMixin, mixins.UpdateModelMixin, mixins.RetrieveModelMixin,
-#                generics.GenericAPIView, ):
-#     # authentication_classes = []
-#     # permission_classes = []
-#     """分页"""
-#     pagination_class = Pagination
-#
-#     queryset = pm.UibeBzks.objects.all()
-#     # 序列化
-#     serializer_class = serialiser.BzksSerialiser
-#     filter_class = filter.BzksFilter
-#     # 搜索，前端通过search关键字传值，？search=''
-#     search_fields = ('xm', 'xh', 'yx', 'xznj', 'bj', '=kssj', '=jssj')  # 在这里添加可以搜索的字段，=表示等， 还可使用正则
-#
-#     def post(self, request, *args, **kwargs):
-#         ret = self.list(request, *args, **kwargs)
-#         return restful.result(message="操作成功", data=ret.data)
+"""******************************行为轨迹教职工-**************************"""
+
+
+class JzgXwgjView(mixins.ListModelMixin, generics.GenericAPIView, ):
+    # authentication_classes = []
+    # permission_classes = []
+    """分页"""
+    pagination_class = Pagination
+
+    def get_queryset(self):
+        kssj = self.request.query_params.get("kssj", date.min)
+        jssj = self.request.query_params.get("jssj", date.today() + timedelta(days=1))
+        myfilter = Q(grgj__create_time__gt=kssj) & Q(grgj__create_time__lte=jssj)
+        # ret = pm.UibeJzg.objects.annotate(gjcs=Count("grgj", filter=myfilter)).filter( gjcs__gte=1)
+        ret = pm.UibeJzg.objects.filter(myfilter)
+        return ret
+
+    # queryset = wm.XwgjGrgj.objects.all().order_by('-xwsj')
+    # 序列化
+    serializer_class = serialiser.JzgXwgjSerialiser
+
+    filter_backends = (DjangoFilterBackend, filters.SearchFilter)
+    filter_class = filter.JzgGJFilter
+
+    def get(self, request, *args, **kwargs):
+        try:
+            ret = self.list(request, *args, **kwargs)
+            d = {"kssj": self.request.query_params.get("kssj", date.min),
+                 "jssj": self.request.query_params.get("jssj", date.today())}
+            return restful.result(message="操作成功", data=ret.data, kwargs=d)
+
+        except Exception as e:
+            ip_username(request)
+            return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
+
+
+"""******************************行为轨迹教职工明细-**************************"""
+
+
+class XwgjJzgMxView(mixins.ListModelMixin, generics.GenericAPIView, ):
+    # authentication_classes = []
+    # permission_classes = []
+    """分页"""
+    # pagination_class = Pagination
+
+    queryset = wm.JzgXwgjGrgj.objects.all().order_by('-xwsj')
+    # 序列化
+    serializer_class = serialiser.XwgjJzgMxSerialiser
+    filter_class = filter.XwgjJzgMxFilter
+    # 搜索，前端通过search关键字传值，？search=''
+    search_fields = ('xm', 'xh', 'yx', 'xznj', 'bj', '=kssj', '=jssj')  # 在这里添加可以搜索的字段，=表示等， 还可使用正则
+
+    def get(self, request, *args, **kwargs):
+        try:
+            ret = self.list(request, *args, **kwargs)
+
+            return restful.result(message="操作成功", data=ret.data)
+
+        except Exception as e:
+            ip_username(request)
+            return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
 
 
 """下拉列表

@@ -33,6 +33,17 @@ class BzksFilter(django_filters.FilterSet):
         fields = ['yx', 'xznj', 'bj']
 
 
+"""********************************教职工轨迹过滤*************************"""
+
+
+class JzgGJFilter(django_filters.FilterSet):
+    # xjzt = django_filters.CharFilter(field_name='xjzt', lookup_expr='gt')
+    # syd = django_filters.CharFilter(field_name='syd', lookup_expr='lt')
+    class Meta:
+        model = pm.UibeJzg
+        fields = ['bm', 'xm', 'zgh']
+
+
 """********************************在籍在校不选课明细*************************"""
 
 
@@ -270,9 +281,21 @@ class XwgjmxFilter(django_filters.FilterSet):
     kssj = django_filters.DateFilter(field_name="xwsj", lookup_expr='gte')
     jssj = django_filters.DateFilter(field_name="xwsj", lookup_expr='lte')
 
-    class Meta():
+    class Meta:
         model = wm.XwgjGrgj
-        fields = ['xh', 'kssj', 'jssj', ]
+        fields = ['id', 'xh', 'kssj', 'jssj', ]
+
+
+"""********************************教职工行为轨迹明细*************************"""
+
+
+class XwgjJzgMxFilter(django_filters.FilterSet):
+    kssj = django_filters.DateFilter(field_name="xwsj", lookup_expr='gte')
+    jssj = django_filters.DateFilter(field_name="xwsj", lookup_expr='lte')
+
+    class Meta:
+        model = wm.JzgXwgjGrgj
+        fields = ['id', 'zgh', 'kssj', 'jssj', ]
 
 
 """下拉列表过滤

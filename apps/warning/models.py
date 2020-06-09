@@ -133,7 +133,7 @@ class XtglYjyzsz(models.Model):
 ***************************************智能预警*****************************************
 '''
 
-from apps.portrait.models import UibeBzks
+from apps.portrait.models import UibeBzks, UibeJzg
 
 Clzt_Choices = (
     (0, '未处理'),
@@ -162,7 +162,7 @@ class ZnyjZjzxbxk(models.Model):
     clzt = models.IntegerField(choices=Clzt_Choices, default=0)
     create_time = models.DateTimeField('创建时间', auto_now_add=True)
     update_time = models.DateTimeField('更新时间', auto_now=True)
-    user = models.ForeignKey(UibeBzks, related_name="zjzxbxk", on_delete=models.CASCADE)
+    user = models.ForeignKey(UibeBzks, related_name="zjzxbxk", null=True, on_delete=models.SET_NULL)
 
     class Meta:
         db_table = 'znyj_zjzxbxk'
@@ -184,7 +184,7 @@ class ZnyjXxtxblx(models.Model):
     clzt = models.IntegerField(choices=Clzt_Choices, default=0)
     create_time = models.DateTimeField('创建时间', auto_now_add=True)
     update_time = models.DateTimeField('更新时间', auto_now=True)
-    user = models.ForeignKey(UibeBzks, related_name="xxtxblx", on_delete=models.CASCADE)
+    user = models.ForeignKey(UibeBzks, related_name="xxtxblx", null=True, on_delete=models.SET_NULL)
 
     class Meta:
         db_table = 'znyj_xxtxblx'
@@ -206,7 +206,7 @@ class ZnyjXwzsyj(models.Model):
     clzt = models.IntegerField(choices=Clzt_Choices, default=0)
     create_time = models.DateTimeField('创建时间', auto_now_add=True)
     update_time = models.DateTimeField('更新时间', auto_now=True)
-    user = models.ForeignKey(UibeBzks, related_name="xwzs", on_delete=models.CASCADE)
+    user = models.ForeignKey(UibeBzks, related_name="xwzs", null=True, on_delete=models.SET_NULL)
 
     class Meta:
         db_table = 'znyj_xwzs'
@@ -226,7 +226,7 @@ class ZnyjBzx(models.Model):
     clzt = models.IntegerField(choices=Clzt_Choices, default=0, )
     create_time = models.DateTimeField('创建时间', auto_now_add=True)
     update_time = models.DateTimeField('更新时间', auto_now=True)
-    user = models.ForeignKey(UibeBzks, related_name="bzx", on_delete=models.CASCADE)
+    user = models.ForeignKey(UibeBzks, related_name="bzx", null=True, on_delete=models.SET_NULL)
 
     class Meta:
         db_table = 'znyj_bzxyj'
@@ -249,7 +249,7 @@ class ZnyjTkxw(models.Model):
     clzt = models.IntegerField(choices=Clzt_Choices, default=0, )
     create_time = models.DateTimeField('创建时间', auto_now_add=True)
     update_time = models.DateTimeField('更新时间', auto_now=True)
-    user = models.ForeignKey(UibeBzks, related_name="tkxw", on_delete=models.CASCADE)
+    user = models.ForeignKey(UibeBzks, related_name="tkxw", null=True, on_delete=models.SET_NULL)
 
     class Meta:
         db_table = 'znyj_tkxw'
@@ -269,7 +269,7 @@ class ZnyjWgyj(models.Model):
     clzt = models.IntegerField(choices=Clzt_Choices, default=0, )
     create_time = models.DateTimeField('创建时间', auto_now_add=True)
     update_time = models.DateTimeField('更新时间', auto_now=True)
-    user = models.ForeignKey(UibeBzks, related_name="wg", on_delete=models.CASCADE)
+    user = models.ForeignKey(UibeBzks, related_name="wg", null=True, on_delete=models.SET_NULL)
 
     class Meta:
         db_table = 'znyj_wg'
@@ -286,7 +286,7 @@ class ZnyjSwxw(models.Model):
     swsj = models.DateField('上网时间')
     create_time = models.DateTimeField('创建时间', auto_now_add=True)
     update_time = models.DateTimeField('更新时间', auto_now=True)
-    user = models.ForeignKey(UibeBzks, related_name="swxw", on_delete=models.CASCADE)
+    user = models.ForeignKey(UibeBzks, related_name="swxw", null=True, on_delete=models.SET_NULL)
 
     class Meta:
         db_table = 'znyj_swxw'
@@ -294,7 +294,7 @@ class ZnyjSwxw(models.Model):
         verbose_name_plural = verbose_name
 
 
-# 行为轨迹之个人轨迹
+# 行为轨迹之学生个人轨迹
 class XwgjGrgj(models.Model):
     id = models.CharField('UUID', max_length=32, null=False, primary_key=True)
     xh = models.CharField(max_length=32)
@@ -305,11 +305,31 @@ class XwgjGrgj(models.Model):
     wd = models.CharField('纬度', max_length=64, null=True, )
     create_time = models.DateTimeField('创建时间', auto_now_add=True)
     update_time = models.DateTimeField('更新时间', auto_now=True)
-    user = models.ForeignKey(UibeBzks, related_name="grgj", on_delete=models.CASCADE)
+    user = models.ForeignKey(UibeBzks, related_name="grgj", null=True, on_delete=models.SET_NULL)
 
     class Meta:
         db_table = 'xwgj_grgj'
         verbose_name = "行为轨迹个人轨迹"
+        verbose_name_plural = verbose_name
+
+
+# 行为轨迹之老师个人轨迹
+
+class JzgXwgjGrgj(models.Model):
+    id = models.CharField('UUID', max_length=32, null=False, primary_key=True)
+    zgh = models.CharField('职工号', max_length=32, null=False)
+    # todo 新增 swsj,xwdd,jd,wd
+    xwsj = models.DateTimeField('行为时间', null=True, )
+    xwdd = models.CharField('行为地点', max_length=64, null=True, )
+    jd = models.CharField('经度', max_length=64, null=True, )
+    wd = models.CharField('纬度', max_length=64, null=True, )
+    create_time = models.DateTimeField('创建时间', auto_now_add=True)
+    update_time = models.DateTimeField('更新时间', auto_now=True)
+    user = models.ForeignKey(UibeJzg, related_name="grgj", null=True, on_delete=models.SET_NULL)
+
+    class Meta:
+        db_table = 'xwgj_jzg_grgj'
+        verbose_name = "行为轨迹教职工个人轨迹"
         verbose_name_plural = verbose_name
 
 

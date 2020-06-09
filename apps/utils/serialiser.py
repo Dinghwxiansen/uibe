@@ -436,13 +436,23 @@ class XshxJstXqSerializer(serializers.ModelSerializer):
         fields = ['bq', 'bqsm']
 
 
-"""*******************************行为轨迹序列化*******************************"""
+"""*******************************本专科生行为轨迹序列化*******************************"""
 
 
 class BzksXwgjSerialiser(serializers.ModelSerializer):
     class Meta:
         model = pm.UibeBzks
         fields = ['xh', 'xm', 'yx', 'xznj', 'bj', 'fdy', ]
+"""*******************************本专科生行为轨迹序列化*******************************"""
+
+
+class JzgXwgjSerialiser(serializers.ModelSerializer):
+    class Meta:
+        model = pm.UibeJzg
+        fields = ['zgh', 'xm', 'bm', ]
+
+
+"""*******************************本专科生行为轨迹明细序列化*******************************"""
 
 
 class XwgjMxSerialiser(serializers.ModelSerializer):
@@ -451,3 +461,14 @@ class XwgjMxSerialiser(serializers.ModelSerializer):
     class Meta:
         model = wm.XwgjGrgj
         fields = ['id', 'xh', 'xwsj', 'xwdd', 'jd', 'wd', ]
+
+
+"""*******************************教职工行为轨迹明细序列化*******************************"""
+
+
+class XwgjJzgMxSerialiser(serializers.ModelSerializer):
+    xwsj = serializers.DateTimeField(format='%Y-%m-%d %H:%M:%S')
+
+    class Meta:
+        model = wm.JzgXwgjGrgj
+        fields = ['id', 'zgh', 'xwsj', 'xwdd', 'jd', 'wd', ]
