@@ -136,6 +136,7 @@ class UibeJzg(models.Model):
         (1, '男'),
         (2, '女'),
     )
+    id = models.CharField('id', max_length=32, null=False, primary_key=True)
     zgh = models.CharField('职工号', max_length=32, )
     xm = models.CharField('姓名', max_length=128, )
     xb = models.IntegerField(choices=SEX_CHOICES, default=0)
@@ -216,6 +217,7 @@ class XshxBq(models.Model):
 
 # 本专科生表
 class UibeBzks(models.Model):
+    id = models.CharField('id', max_length=32, null=False, primary_key=True)
     # 学号设置为主键
     # xh = models.CharField('学号', max_length=32, null=False, primary_key=True)
     XJZT_CHOICES = (
