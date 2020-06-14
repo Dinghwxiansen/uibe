@@ -154,8 +154,6 @@ class BzksSwxwSerialiser(serializers.ModelSerializer):
         fields = ['xh', 'xm', 'yx', 'xznj', 'bj', 'fdy', 'zsyll', ]
 
 
-
-
 class SwxwMxSerialiser(serializers.ModelSerializer):
     class Meta:
         model = wm.ZnyjSwxw
@@ -214,7 +212,7 @@ class JqSerializer(serializers.ModelSerializer):
 
 
 class BqwdSerializer(serializers.ModelSerializer):
-    #create_time = serializers.DateTimeField(format='%Y-%m-%d %H:%M:%S')
+    # create_time = serializers.DateTimeField(format='%Y-%m-%d %H:%M:%S')
     class Meta:
         model = pm.XtglBqwd
         fields = ['id', 'wdmc', 'wdms', 'create_time', 'kqzt']
@@ -387,6 +385,24 @@ class UibeJzgBmSerializer(serializers.ModelSerializer):
         fields = ['bm']
 
 
+"""研究生轨迹下拉列表yx"""
+
+
+class UibeYjsYxSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = pm.UibeYjs
+        fields = ['yx']
+
+
+"""研究生轨迹下拉列表学年"""
+
+
+class UibeYjsNjSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = pm.UibeYjs
+        fields = ['xn']
+
+
 """教师画像详情"""
 
 
@@ -443,13 +459,24 @@ class BzksXwgjSerialiser(serializers.ModelSerializer):
     class Meta:
         model = pm.UibeBzks
         fields = ['xh', 'xm', 'yx', 'xznj', 'bj', 'fdy', ]
-"""*******************************本专科生行为轨迹序列化*******************************"""
+
+
+"""*******************************教职工行为轨迹序列化*******************************"""
 
 
 class JzgXwgjSerialiser(serializers.ModelSerializer):
     class Meta:
         model = pm.UibeJzg
         fields = ['zgh', 'xm', 'bm', ]
+
+
+"""*******************************研究生行为轨迹序列化*******************************"""
+
+
+class YjsXwgjSerialiser(serializers.ModelSerializer):
+    class Meta:
+        model = pm.UibeYjs
+        fields = ['xh', 'xm', 'yx', 'xn', 'dszgh', ]
 
 
 """*******************************本专科生行为轨迹明细序列化*******************************"""
@@ -472,3 +499,14 @@ class XwgjJzgMxSerialiser(serializers.ModelSerializer):
     class Meta:
         model = wm.JzgXwgjGrgj
         fields = ['id', 'zgh', 'xwsj', 'xwdd', 'jd', 'wd', ]
+
+
+"""*******************************研究生行为轨迹明细序列化*******************************"""
+
+
+class XwgjYjsMxSerialiser(serializers.ModelSerializer):
+    xwsj = serializers.DateTimeField(format='%Y-%m-%d %H:%M:%S')
+
+    class Meta:
+        model = wm.YjsXwgjGrgj
+        fields = ['id', 'xh', 'xwsj', 'xwdd', 'jd', 'wd', ]

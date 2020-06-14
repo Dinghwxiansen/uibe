@@ -131,11 +131,7 @@ class XtglBqsz(models.Model):
 
 # 教职工表
 class UibeJzg(models.Model):
-    SEX_CHOICES = (
-        (0, '未知'),
-        (1, '男'),
-        (2, '女'),
-    )
+
     id = models.CharField('id', max_length=32, null=False, primary_key=True)
     zgh = models.CharField('职工号', max_length=32, )
     xm = models.CharField('姓名', max_length=128, )
@@ -271,6 +267,26 @@ class UibeBzks(models.Model):
     class Meta:
         db_table = 'bzks'
         verbose_name = "本专科生信息表"
+        verbose_name_plural = verbose_name
+
+
+# 研究生表
+
+class UibeYjs(models.Model):
+    id = models.CharField('id', max_length=32, null=False, primary_key=True)
+    xh = models.CharField('学号', max_length=32, unique=True)
+    xm = models.CharField('姓名', max_length=16, )
+    xb = models.IntegerField(choices=SEX_CHOICES, default=0)
+    yx = models.CharField('院系', max_length=64, null=True)
+    xn = models.CharField('学年', max_length=32, null=True)
+    zy = models.CharField('专业', max_length=64, null=True)
+    dszgh = models.CharField('导师职工号', max_length=16, null=True)
+    create_time = models.DateTimeField('创建时间', auto_now_add=True)
+    update_time = models.DateTimeField('更新时间', auto_now=True)
+
+    class Meta:
+        db_table = 'yjs'
+        verbose_name = "研究生信息表"
         verbose_name_plural = verbose_name
 
 

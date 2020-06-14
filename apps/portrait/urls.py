@@ -42,4 +42,15 @@ urlpatterns = [
 
     re_path(r'^(?P<version>[v1|v2]+)/bm/$', views.BmVIew.as_view()),
 
+
+    re_path(r'^(?P<version>[v1|v2]+)/yjsyx/$', views.YjsYxVIew.as_view()),
+
+    re_path(r'^(?P<version>[v1|v2]+)/yjsnj/$', views.YjsNjVIew.as_view()),
+
+
+    re_path(r'^(?P<version>[v1|v2]+)/yjsxwgj/$', views.YjsXwgjView.as_view()),
+    re_path(r'^(?P<version>[v1|v2]+)/yjsxwgjxq/$', views.YjsXwgjXqView.as_view()),
+
+
+
 ]

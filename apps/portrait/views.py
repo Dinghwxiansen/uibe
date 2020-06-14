@@ -1,7 +1,10 @@
 # Create your views here.
-from django.db.models import  Count,Q,Sum
-from datetime import datetime
 import json
+from datetime import *
+
+from django.db import connection
+from django.db.models import Count
+from django.db.models import Q
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import filters, status, viewsets
 from rest_framework import generics
@@ -15,18 +18,18 @@ from apps.utils import restful
 from apps.utils import serialiser
 from apps.utils.Sample_username_ip import ip_username, time_cmp
 from apps.utils.pagination import Pagination
-from apps.warning.views import BqjmToSQL, search
-from django.db import connection
+from apps.warning import models as wm
 
 """导入自定义日志模块"""
 import logging
 
 logger = logging.getLogger("django")
 
+"""***************系统管理之假期设置***************"""
+
 
 class JqszView(mixins.ListModelMixin, mixins.CreateModelMixin,
                mixins.DestroyModelMixin, mixins.UpdateModelMixin, mixins.RetrieveModelMixin, generics.GenericAPIView, ):
-    """系统管理之假期设置"""
     # authentication_classes = []
 
     # 分页
@@ -127,9 +130,11 @@ class JqszView(mixins.ListModelMixin, mixins.CreateModelMixin,
             return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
 
 
+"""**************系统管理之标签维度管理**********"""
+
+
 class BqwdView(mixins.ListModelMixin, mixins.CreateModelMixin,
                mixins.DestroyModelMixin, mixins.UpdateModelMixin, mixins.RetrieveModelMixin, generics.GenericAPIView, ):
-    """系统管理之标签维度管理"""
     # authentication_classes = []
     # permission_classes = []
 
@@ -159,7 +164,7 @@ class BqwdView(mixins.ListModelMixin, mixins.CreateModelMixin,
 
     def delete(self, request, *args, **kwargs):
         try:
-            id = request.query_params.get('id',None)
+            id = request.query_params.get('id', None)
             if not id:
                 return Response(status=status.HTTP_404_NOT_FOUND)
             for i in id.split(','):
@@ -168,8 +173,6 @@ class BqwdView(mixins.ListModelMixin, mixins.CreateModelMixin,
         except Exception as e:
             ip_username(request)
             return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
-
-
 
     """添加数据"""
 
@@ -228,8 +231,10 @@ class BqwdView(mixins.ListModelMixin, mixins.CreateModelMixin,
             return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
 
 
+"""***********系统管理之画像标签设置之复制标签*********"""
+
+
 class HxbqszfzView(mixins.ListModelMixin, mixins.CreateModelMixin, generics.GenericAPIView, ):
-    """系统管理之画像标签设置之复制标签"""
     queryset = pm.XtglBqsz.objects.all().order_by("-update_time")
     # 序列化
     serializer_class = serialiser.BqszSerializer
@@ -255,10 +260,12 @@ class HxbqszfzView(mixins.ListModelMixin, mixins.CreateModelMixin, generics.Gene
             return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
 
 
+"""**************系统管理之画像标签设置*************"""
+
+
 class HxbqszView(mixins.ListModelMixin, mixins.CreateModelMixin,
                  mixins.DestroyModelMixin, mixins.UpdateModelMixin, mixins.RetrieveModelMixin,
                  generics.GenericAPIView, ):
-    """系统管理之画像标签设置"""
     # authentication_classes = []
     # permission_classes = []
 
@@ -288,20 +295,21 @@ class HxbqszView(mixins.ListModelMixin, mixins.CreateModelMixin,
 
     def post(self, request, *args, **kwargs):
 
-        #try:
+        # try:
         bqmc = pm.XtglBqsz.objects.filter(bqmc=request.data['bqmc'])
         if bqmc.exists():
             return restful.result2(message="请勿重复保存操作")
         else:
-            ret2 = self.create(request,*args,**kwargs)
+            ret2 = self.create(request, *args, **kwargs)
             # search()
             return restful.result(message="保存成功")
-        #except Exception as e:
+        # except Exception as e:
         #    ip_username(request)
         #    return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
+
     # 重写保存save的逻辑
     def perform_create(self, BqszSerializer):
-        #self.get_success_headers(BqszSerializer.data)
+        # self.get_success_headers(BqszSerializer.data)
         instance = BqszSerializer.save()
         it = self.request.data['bqmc']
         bqgz = self.request.data['bqgz']
@@ -316,11 +324,11 @@ class HxbqszView(mixins.ListModelMixin, mixins.CreateModelMixin,
             # todo 1 遍历列表获取索引值
             for i in range(len(domlist_list)):
                 # domlist_list_i_ = domlist_list[i]
-                #print(domlist_list_i_)
+                # print(domlist_list_i_)
                 # TODO 查询指标项中指标分类是否为单字段多字段进行分类处理
-                zbxfl =  list(pm.XtglZbx.objects.filter(id=domlist_list[i]['id']).values('zbfl'))[0]['zbfl']
+                zbxfl = list(pm.XtglZbx.objects.filter(id=domlist_list[i]['id']).values('zbfl'))[0]['zbfl']
                 #  TODO、画像标签设置之标签建模单一字段处理
-                if zbxfl ==0:
+                if zbxfl == 0:
                     ywbm_ = json.loads(
                         list(pm.XtglZbx.objects.filter(id=domlist_list[i]['id']).values('zdxz'))[0]['zdxz'])[
                         'dataSelect'][0]['ywbm']
@@ -335,7 +343,7 @@ class HxbqszView(mixins.ListModelMixin, mixins.CreateModelMixin,
                         SQL = 'SELECT ' + ' xh ' + ' FROM ' + ywbm_ + ' WHERE ' + zdxz + ysf + "'" + yz_val + "'"
                     elif jsf == 'sum':
                         print("本次计算sum")
-                        SQL = 'select xh from (' + 'SELECT ' + ' xh, ' + jsf + '(' + zdxz + ')' + ' as v ' + 'FROM ' + ywbm_ + ' group by  xh ' + ') b ' + ' where b.v '  + ysf + "' " + yz_val + "'"
+                        SQL = 'select xh from (' + 'SELECT ' + ' xh, ' + jsf + '(' + zdxz + ')' + ' as v ' + 'FROM ' + ywbm_ + ' group by  xh ' + ') b ' + ' where b.v ' + ysf + "' " + yz_val + "'"
                     elif jsf == 'Max':
                         print("本次计算max")
                         SQL = 'SELECT ' + ' xh, ' + jsf + '(' + zdxz + ')' + ' FROM ' + ywbm_
@@ -344,14 +352,14 @@ class HxbqszView(mixins.ListModelMixin, mixins.CreateModelMixin,
                         SQL = 'SELECT ' + ' xh, ' + jsf + '(' + zdxz + ')' + ' FROM ' + ywbm_
                     elif jsf == 'average':
                         print('本次计算平均值')
-                        SQL = 'select xh from (' + 'SELECT ' + ' xh, ' + " AVG " + '(' + zdxz + ')' + ' as v ' + 'FROM ' + ywbm_ + ' group by  xh ' + ') b ' + ' where b.v '  + ysf + "' " + yz_val + "'"
+                        SQL = 'select xh from (' + 'SELECT ' + ' xh, ' + " AVG " + '(' + zdxz + ')' + ' as v ' + 'FROM ' + ywbm_ + ' group by  xh ' + ') b ' + ' where b.v ' + ysf + "' " + yz_val + "'"
                     elif jsf == 'count':
                         print('本次计算count')
-                        SQL = 'select xh from (' + 'SELECT ' + ' xh, ' + jsf + '(' + zdxz + ')' + ' as v ' + 'FROM ' + ywbm_ + ' group by  xh ' + ') b ' + ' where b.v '  + ysf  + "' " + yz_val + "'"
+                        SQL = 'select xh from (' + 'SELECT ' + ' xh, ' + jsf + '(' + zdxz + ')' + ' as v ' + 'FROM ' + ywbm_ + ' group by  xh ' + ') b ' + ' where b.v ' + ysf + "' " + yz_val + "'"
                     elif jsf == 'Top':
                         SQL = 'SELECT ' + ' xh ' + ' FROM ' + ywbm_ + ' WHERE ' + zdxz + ysf + "'" + yz_val + "'"
                 # TODO 画像标签设置之标签建模多字段处理
-                elif zbxfl ==1:
+                elif zbxfl == 1:
                     print(domlist_list[i])
                     print(list(pm.XtglZbx.objects.filter(id=domlist_list[i]['id']).values('jsgz')))
                     ywbm_ = json.loads(
@@ -369,7 +377,7 @@ class HxbqszView(mixins.ListModelMixin, mixins.CreateModelMixin,
                         SQL = 'SELECT ' + ' xh ' + ' FROM ' + ywbm_ + ' WHERE ' + zdxz + ysf + "'" + yz_val + "'"
                     elif jsf == 'sum':
                         print("本次计算sum")
-                        SQL = 'select xh from (' + 'SELECT ' + ' xh, ' + jsf + '(' + zdxz + ')' + ' as v ' + 'FROM ' + ywbm_ + ' group by  xh ' + ') b ' + ' where b.v ' + ysf  + "' " + yz_val + "'"
+                        SQL = 'select xh from (' + 'SELECT ' + ' xh, ' + jsf + '(' + zdxz + ')' + ' as v ' + 'FROM ' + ywbm_ + ' group by  xh ' + ') b ' + ' where b.v ' + ysf + "' " + yz_val + "'"
                     elif jsf == 'Max':
                         print("本次计算max")
                         SQL = 'SELECT ' + ' xh, ' + jsf + '(' + zdxz + ')' + ' FROM ' + ywbm_
@@ -395,10 +403,10 @@ class HxbqszView(mixins.ListModelMixin, mixins.CreateModelMixin,
             cursor.execute(sql)
             return_arr = cursor.fetchall()
             for item in return_arr:
-                pm.XshxBq.objects.create(xh=item[0], bq=instance.bqmc, bqsm=instance.bqms, bqqx=instance.bqqx,sfyx=instance.kqzt)
+                pm.XshxBq.objects.create(xh=item[0], bq=instance.bqmc, bqsm=instance.bqms, bqqx=instance.bqqx,
+                                         sfyx=instance.kqzt)
 
             instance.bqSQL = sql
-
 
             instance.save()
 
@@ -410,8 +418,8 @@ class HxbqszView(mixins.ListModelMixin, mixins.CreateModelMixin,
             ret = []
             for i in range(len(zbxmcarry_)):
                 # TODO 查询指标项中指标分类是否为单字段多字段进行分类处理
-                zbxfl =  list(pm.XtglZbx.objects.filter(id=zbxmcarry_[i]['id']).values('zbfl'))[0]['zbfl']
-                if zbxfl ==0:
+                zbxfl = list(pm.XtglZbx.objects.filter(id=zbxmcarry_[i]['id']).values('zbfl'))[0]['zbfl']
+                if zbxfl == 0:
                     # todo 指标项单字段计算
                     ywbm_ = json.loads(
                         list(pm.XtglZbx.objects.filter(id=zbxmcarry_[i]['id']).values('zdxz'))[0]['zdxz'])[
@@ -421,8 +429,8 @@ class HxbqszView(mixins.ListModelMixin, mixins.CreateModelMixin,
                         'dataSelect'][0]['zdsjbbs']
                     qzxs = json.loads(zbxmcarry_[i]['qzxs'])
 
-                    SQL = 'SELECT ' + ' xh ,' + zdxz + ' * ' + qzxs +" as b "+ ' FROM ' + ywbm_
-                elif zbxfl ==1:
+                    SQL = 'SELECT ' + ' xh ,' + zdxz + ' * ' + qzxs + " as b " + ' FROM ' + ywbm_
+                elif zbxfl == 1:
                     # tido 指标项多字段计算
                     print("指标项为多字段处理")
                     ywbm_ = json.loads(
@@ -432,7 +440,7 @@ class HxbqszView(mixins.ListModelMixin, mixins.CreateModelMixin,
                         list(pm.XtglZbx.objects.filter(id=zbxmcarry_[i]['id']).values('jsgz'))[0]['jsgz'])[
                         'yunsuan'][0]['ysfval']
                     qzxs = json.loads(zbxmcarry_[i]['qzxs'])
-                    SQL = 'SELECT '+  ' xh, '+' ( ' + zdxz + ' * ' + qzxs +' ) ' + ' as b ' + ' FROM' + ywbm_
+                    SQL = 'SELECT ' + ' xh, ' + ' ( ' + zdxz + ' * ' + qzxs + ' ) ' + ' as b ' + ' FROM' + ywbm_
                 ret.append(SQL)
             # 列表中拼接字符串
             join = " UNION ALL ".join(ret)
@@ -440,8 +448,6 @@ class HxbqszView(mixins.ListModelMixin, mixins.CreateModelMixin,
             instance.bqSQL = sql
 
             instance.save()
-
-
 
     """更新数据"""
 
@@ -503,8 +509,10 @@ class HxbqszView(mixins.ListModelMixin, mixins.CreateModelMixin,
             return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
 
 
+"""**************画像标签设置新增之指标项选择*******"""
+
+
 class HxbqszZbxView(mixins.ListModelMixin, generics.GenericAPIView):
-    """画像标签设置新增之指标项选择"""
 
     # authentication_classes = []
 
@@ -540,9 +548,11 @@ class HxbqszZbxView(mixins.ListModelMixin, generics.GenericAPIView):
             return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
 
 
+"""****************系统管理之指标项管理**********"""
+
+
 class ZbxView(mixins.ListModelMixin, mixins.CreateModelMixin,
               mixins.DestroyModelMixin, mixins.UpdateModelMixin, mixins.RetrieveModelMixin, generics.GenericAPIView, ):
-    """系统管理之指标项管理"""
     # authentication_classes = []
     # permission_classes = []
 
@@ -638,8 +648,10 @@ class ZbxView(mixins.ListModelMixin, mixins.CreateModelMixin,
             return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
 
 
+"""*****************数据表选择******************"""
+
+
 class SjbxzView(mixins.ListModelMixin, generics.GenericAPIView, ):
-    """数据表选择"""
     # authentication_classes = []
     # 分页
     pagination_class = Pagination
@@ -686,8 +698,10 @@ def check_contain_chinese(self):
         return False
 
 
+"""***************数据表字段选择********************"""
+
+
 class SjbxzzdView(viewsets.ModelViewSet):
-    """数据表字段选择"""
     # authentication_classes = []   # 分页
     pagination_class = Pagination
 
@@ -714,6 +728,7 @@ class SjbxzzdView(viewsets.ModelViewSet):
         elif int(params_get) == 1:
             ret = pm.Sjzbzd.objects.filter(Q(sjzb_id=sjzb_id) & ~Q(sjlx="String"))
             return ret
+
     # 序列化
 
     serializer_class = serialiser.SjbxzzdSerializer
@@ -754,8 +769,10 @@ class SjbxzzdView(viewsets.ModelViewSet):
             return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
 
 
+"*****************教师画像管理员下拉列表*************"
+
+
 class BmVIew(mixins.ListModelMixin, generics.GenericAPIView):
-    "教师画像管理员下拉列表"
     # 查询
     queryset = pm.UibeJzg.objects.filter(bm__isnull=False).values('bm').distinct()
     # 序列化
@@ -771,8 +788,10 @@ class BmVIew(mixins.ListModelMixin, generics.GenericAPIView):
             return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
 
 
+"""******************教师画像管理员******************"""
+
+
 class JshxView(mixins.ListModelMixin, generics.GenericAPIView, ):
-    """教师画像管理员"""
     # authentication_classes = []
     # 分页
     pagination_class = Pagination
@@ -796,8 +815,10 @@ class JshxView(mixins.ListModelMixin, generics.GenericAPIView, ):
             return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
 
 
+"""******************教师画像详情*********************"""
+
+
 class JshxxqView(mixins.ListModelMixin, generics.GenericAPIView, ):
-    """教师画像详情"""
 
     # authentication_classes = []
 
@@ -820,8 +841,10 @@ class JshxxqView(mixins.ListModelMixin, generics.GenericAPIView, ):
             return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
 
 
+"""****************教师画像职称详情**********************8"""
+
+
 class JshxzcxqView(mixins.ListModelMixin, mixins.CreateModelMixin, generics.GenericAPIView, ):
-    """教师画像职称详情"""
 
     # authentication_classes = []
     def get_queryset(self):
@@ -881,8 +904,10 @@ class JshxzcxqView(mixins.ListModelMixin, mixins.CreateModelMixin, generics.Gene
             return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
 
 
+"""****************用户画像之学生画像教师端***************"""
+
+
 class XshxJsdVIew(mixins.ListModelMixin, generics.GenericAPIView, ):
-    """用户画像之学生画像教师端"""
     # authentication_classes = []
     # 分页
     pagination_class = Pagination
@@ -905,8 +930,10 @@ class XshxJsdVIew(mixins.ListModelMixin, generics.GenericAPIView, ):
             return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
 
 
+"""****************用户画像之学生画像学生端****************"""
+
+
 class XshxXsdVIew(mixins.ListModelMixin, generics.GenericAPIView, ):
-    """用户画像之学生画像学生端"""
 
     #  authentication_classes = []
 
@@ -939,8 +966,10 @@ class XshxXsdVIew(mixins.ListModelMixin, generics.GenericAPIView, ):
             return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
 
 
+"""***************用户画像之学生画像教师端详情************"""
+
+
 class XshxJsdXqVIew(mixins.ListModelMixin, generics.GenericAPIView, ):
-    """用户画像之学生画像教师端详情"""
     # token认证
     # authentication_classes = []
     # 分页
@@ -968,6 +997,117 @@ class XshxJsdXqVIew(mixins.ListModelMixin, generics.GenericAPIView, ):
             xbdm['xbdm'] = xb
             # print(connection.queries[-1:])
             return restful.result(message="操作成功", data=ret.data, kwargs=xbdm)
+        except Exception as e:
+            ip_username(request)
+            return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
+
+
+"*******************研究生院系下拉院系列表***********"
+
+
+class YjsYxVIew(mixins.ListModelMixin, generics.GenericAPIView):
+    # 查询
+    queryset = pm.UibeYjs.objects.filter(yx__isnull=False).values('yx').distinct()
+    # 序列化
+    serializer_class = serialiser.UibeYjsYxSerializer
+
+    def get(self, request, *args, **kwargs):
+        try:
+            ret = self.list(request, *args, **kwargs)
+            # print(connection.queries[-1:])
+            return restful.result(message="操作成功", data=ret.data)
+        except Exception as e:
+            ip_username(request)
+            return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
+
+
+"*******************研究生年级下拉院系列表***********"
+
+
+class YjsNjVIew(mixins.ListModelMixin, generics.GenericAPIView):
+    # 查询
+    queryset = pm.UibeYjs.objects.filter(xn__isnull=False).values('xn').distinct()
+    # 序列化
+    serializer_class = serialiser.UibeYjsNjSerializer
+
+    def get(self, request, *args, **kwargs):
+        try:
+            ret = self.list(request, *args, **kwargs)
+            # print(connection.queries[-1:])
+            return restful.result(message="操作成功", data=ret.data)
+        except Exception as e:
+            ip_username(request)
+            return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
+
+
+"""*******************研究生行为轨迹***********************"""
+
+
+class YjsXwgjView(mixins.ListModelMixin, generics.GenericAPIView, ):
+    # authentication_classes = []
+    """分页"""
+    pagination_class = Pagination
+
+    def get_queryset(self):
+        kssj = self.request.query_params.get("kssj", date.min)
+        jssj = self.request.query_params.get("jssj", date.today() + timedelta(days=1))
+        xhxm = self.request.query_params.get('xhxm', None)
+        print(xhxm)
+
+        myfilter = Q(grgj__create_time__gt=kssj) & Q(grgj__create_time__lte=jssj)
+
+        if not xhxm:
+            ret = pm.UibeYjs.objects.annotate(gjcs=Count("grgj", filter=myfilter)).filter(
+                gjcs__gte=1)
+        else:
+            if xhxm.isdigit():
+                ret = pm.UibeYjs.objects.filter(grgj__xh__icontains=xhxm).annotate(
+                    gjcs=Count("grgj", filter=myfilter)).filter(
+                    gjcs__gte=1)
+            else:
+                ret = pm.UibeYjs.objects.filter(xm__icontains=xhxm).annotate(
+                    gjcs=Count("grgj", filter=myfilter)).filter(
+                    gjcs__gte=1)
+        return ret
+
+    # 序列化
+    serializer_class = serialiser.YjsXwgjSerialiser
+    filter_class = filter.YjsFilter
+    # 搜索，前端通过search关键字传值，？search=''
+    search_fields = ('xm', 'xh', 'yx', 'xn',)  # 在这里添加可以搜索的字段，=表示等， 还可使用正则
+
+    def post(self, request, *args, **kwargs):
+        try:
+            ret = self.list(request, *args, **kwargs)
+            d = {"kssj": self.request.query_params.get("kssj", date.min),
+                 "jssj": self.request.query_params.get("jssj", date.today())}
+            return restful.result(message="操作成功", data=ret.data, kwargs=d)
+        except Exception as e:
+            ip_username(request)
+            return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
+
+
+"""*******************研究生行为轨迹个人详情***********************"""
+
+
+class YjsXwgjXqView(mixins.ListModelMixin, generics.GenericAPIView, ):
+    # authentication_classes = []
+    """分页"""
+    #pagination_class = Pagination
+
+    queryset = wm.YjsXwgjGrgj.objects.all().order_by('-xwsj')
+    # 序列化
+    serializer_class = serialiser.XwgjYjsMxSerialiser
+    filter_class = filter.XwgjYjsMxFilter
+    # 搜索，前端通过search关键字传值，？search=''
+    search_fields = ( 'xh', 'yx', '=kssj', '=jssj')  # 在这里添加可以搜索的字段，=表示等， 还可使用正则
+
+    def get(self, request, *args, **kwargs):
+        try:
+            ret = self.list(request, *args, **kwargs)
+
+            return restful.result(message="操作成功", data=ret.data)
+
         except Exception as e:
             ip_username(request)
             return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)

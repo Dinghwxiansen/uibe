@@ -924,7 +924,7 @@ class JzgXwgjView(mixins.ListModelMixin, generics.GenericAPIView, ):
             return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
 
 
-"""******************************行为轨迹教职工明细-**************************"""
+"""******************************教职工行为轨迹个人明细-**************************"""
 
 
 class XwgjJzgMxView(mixins.ListModelMixin, generics.GenericAPIView, ):

@@ -133,7 +133,7 @@ class XtglYjyzsz(models.Model):
 ***************************************智能预警*****************************************
 '''
 
-from apps.portrait.models import UibeBzks, UibeJzg
+from apps.portrait.models import UibeBzks, UibeJzg, UibeYjs
 
 Clzt_Choices = (
     (0, '未处理'),
@@ -330,6 +330,25 @@ class JzgXwgjGrgj(models.Model):
     class Meta:
         db_table = 'xwgj_jzg_grgj'
         verbose_name = "行为轨迹教职工个人轨迹"
+        verbose_name_plural = verbose_name
+
+
+# 行为轨迹之研究生个人轨迹
+
+class YjsXwgjGrgj(models.Model):
+    id = models.CharField('ID', max_length=32, null=False, primary_key=True)
+    xh = models.CharField('学号', max_length=32, null=False)
+    xwsj = models.DateTimeField('行为时间', null=True, )
+    xwdd = models.CharField('行为地点', max_length=64, null=True, )
+    jd = models.CharField('经度', max_length=64, null=True, )
+    wd = models.CharField('纬度', max_length=64, null=True, )
+    create_time = models.DateTimeField('创建时间', auto_now_add=True)
+    update_time = models.DateTimeField('更新时间', auto_now=True)
+    user = models.ForeignKey(UibeYjs, related_name="grgj", null=True, on_delete=models.SET_NULL)
+
+    class Meta:
+        db_table = 'xwgj_yjs_grgj'
+        verbose_name = "行为轨迹研究生个人轨迹"
         verbose_name_plural = verbose_name
 
 
