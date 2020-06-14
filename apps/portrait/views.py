@@ -1100,7 +1100,7 @@ class YjsXwgjXqView(mixins.ListModelMixin, generics.GenericAPIView, ):
     serializer_class = serialiser.XwgjYjsMxSerialiser
     filter_class = filter.XwgjYjsMxFilter
     # 搜索，前端通过search关键字传值，？search=''
-    search_fields = ( 'xh', 'yx', '=kssj', '=jssj')  # 在这里添加可以搜索的字段，=表示等， 还可使用正则
+    # search_fields = ( 'xh', 'yx', '=kssj', '=jssj')  # 在这里添加可以搜索的字段，=表示等， 还可使用正则
 
     def get(self, request, *args, **kwargs):
         try:
