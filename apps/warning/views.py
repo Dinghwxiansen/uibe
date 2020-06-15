@@ -900,9 +900,8 @@ class JzgXwgjView(mixins.ListModelMixin, generics.GenericAPIView, ):
     def get_queryset(self):
         kssj = self.request.query_params.get("kssj", date.min)
         jssj = self.request.query_params.get("jssj", date.today() + timedelta(days=1))
-        myfilter = Q(grgj__create_time__gt=kssj) & Q(grgj__create_time__lte=jssj)
         # ret = pm.UibeJzg.objects.annotate(gjcs=Count("grgj", filter=myfilter)).filter( gjcs__gte=1)
-        ret = pm.UibeJzg.objects.filter(myfilter)
+        ret = pm.UibeJzg.objects.filter(Q(grgj__create_time__gt=kssj) & Q(grgj__create_time__lte=jssj)).distinct()
         return ret
 
     # queryset = wm.XwgjGrgj.objects.all().order_by('-xwsj')
