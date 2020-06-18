@@ -245,7 +245,7 @@ class ZnyjTkxw(models.Model):
     kcmc = models.CharField('课程名称', max_length=64)
     yjqk = models.CharField('预警情况', max_length=64)
     yjsj = models.DateTimeField("预警时间", auto_now_add=True, null=True)
-    yjdj = models.IntegerField(choices=Yjdj_Choices, default=0, )
+    # yjdj = models.IntegerField(choices=Yjdj_Choices, default=0, )
     clzt = models.IntegerField(choices=Clzt_Choices, default=0, )
     create_time = models.DateTimeField('创建时间', auto_now_add=True)
     update_time = models.DateTimeField('更新时间', auto_now=True)
