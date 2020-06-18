@@ -1014,6 +1014,8 @@ class YjsYxVIew(mixins.ListModelMixin, generics.GenericAPIView):
     def get(self, request, *args, **kwargs):
         try:
             ret = self.list(request, *args, **kwargs)
+            #value=self.request.COOKIES.get("sessionid")
+            #print(value)
             # print(connection.queries[-1:])
             return restful.result(message="操作成功", data=ret.data)
         except Exception as e:
