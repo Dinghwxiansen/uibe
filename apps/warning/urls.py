@@ -3,7 +3,6 @@
 from django.conf.urls import url, include
 from django.urls import re_path
 from rest_framework import routers
-
 from . import views
 
 router = routers.DefaultRouter()  # 默认附带一个api根视图，相对于SimpleRouter（）
@@ -25,7 +24,8 @@ urlpatterns = [
     re_path(r'^(?P<version>[v1|v2]+)/xxtxblxmx/$', views.XxtxblxmxView.as_view({'get': 'retrieve'})),
     re_path(r'^(?P<version>[v1|v2]+)/xwzsmx/$', views.XwzsmxView.as_view({'get': 'retrieve'})),
     re_path(r'^(?P<version>[v1|v2]+)/bzxmx/$', views.BzxmxView.as_view({'get': 'retrieve'})),
-    re_path(r'^(?P<version>[v1|v2]+)/tkxwmx/$', views.TkxwmxView.as_view({'get': 'retrieve'})),
+    # re_path(r'^(?P<version>[v1|v2]+)/tkxwmx/$', views.TkxwmxView.as_view({'get': 'retrieve'})),
+    re_path(r'^(?P<version>[v1|v2]+)/tkxwmx/$', views.TkxwmxView.as_view()),
     # re_path(r'^(?P<version>[v1|v2]+)/swxwmx/$', views.SwxwmxView.as_view({'get': 'retrieve'})),
     re_path(r'^(?P<version>[v1|v2]+)/swxwmx/$', views.SwxwmxView.as_view()),
     re_path(r'^(?P<version>[v1|v2]+)/wgmx/$', views.WgmxView.as_view({'get': 'retrieve'})),
@@ -52,8 +52,6 @@ urlpatterns = [
     # re_path(r'^(?P<version>[v1|v2]+)/yx/$', views.YxView.as_view()),
     # re_path(r'^(?P<version>[v1|v2]+)/nj/$', views.NjView.as_view()),
     # re_path(r'^(?P<version>[v1|v2]+)/bj/$', views.BjView.as_view()),
-
-
 
     url(r'^', include(router.urls)),
 

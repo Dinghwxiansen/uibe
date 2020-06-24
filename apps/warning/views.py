@@ -541,7 +541,8 @@ class TkxwView(mixins.ListModelMixin, mixins.CreateModelMixin,
 '''逃课行为预警明细'''
 
 
-class TkxwmxView(viewsets.ModelViewSet):
+class TkxwmxView(mixins.ListModelMixin, generics.GenericAPIView,
+                 ):
     # authentication_classes = []
     # permission_classes = []
     """分页"""
@@ -552,49 +553,41 @@ class TkxwmxView(viewsets.ModelViewSet):
     filter_backends = (DjangoFilterBackend, filters.SearchFilter)
     filter_class = filter.TkxwmxFilter
 
-    def retrieve(self, request, *args, **kwargs):
+    def get(self, request, *args, **kwargs):
         try:
             ret = self.list(request, *args, **kwargs)
+            print("*********")
             return restful.result(message="操作成功", data=ret.data)
         except Exception as e:
             ip_username(request)
             return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
 
-    # def patch(self, request, *args, **kwargs):
-    #     #     ids = request.data['id'].split(',')
-    #     #     # print(ids)
-    #     #     try:
-    #     #         for i in ids:
-    #     #             ret = wm.ZnyjTkxw.objects.filter(id=i).first()
-    #     #             ser = serialiser.TkxwMxSerialiser(instance=ret, data=request.data, partial=True)
-    #     #             if ser.is_valid():
-    #     #                 ser.save()
-    #     #         return restful.ok()
-    #     #     except Exception as e:
-    #     #         return restful.result(message=e.detail)
     def patch(self, request, *args, **kwargs):
         try:
             if not request.data['id']:
                 return restful.result2(message="请选择您想要更新的数据")
             else:
                 for i in request.data['id'].split(','):
-                    zt = list(wm.ZnyjTkxw.objects.filter(id=i).values('clzt'))[0]['clzt']
-                    it = int(request.data['clzt'])
+                    # zt =list(wm.ZnyjTkxw.objects.filter(id=i).values('clzt'))[0]['clzt']
+                    zt = wm.ZnyjTkxw.objects.filter(id=i).values('clzt')[0]['clzt']
+                    # it = int(request.data['clzt'])
+                    it = request.data['clzt']
                     if zt == it:
                         # return JsonResponse(rt)
                         return restful.result2(message="请勿重复操作")
                     else:
                         ret = wm.ZnyjTkxw.objects.filter(id=i).first()
-                        ret.clzt = int(request.data['clzt'])
+                        # ret.clzt = int(request.data['clzt'])
+                        ret.clzt = request.data['clzt']
                         ret.update_time = datetime.now()
                         ret.save()
                         # print(ret)
                         # ser = serialiser.TkxwMxSerialiser(instance=ret, data=request.data, partial=True)
                         # if ser.is_valid():
                         #     ser.save()
-                if int(request.data['clzt']) == 1:
+                if request.data['clzt'] == 1:
                     return restful.result(message="操作成功，已确认预警")
-                elif int(request.data['clzt']) == 2:
+                elif request.data['clzt'] == 2:
                     return restful.result(message="操作成功，已取消预警")
         except Exception as e:
             ip_username(request)

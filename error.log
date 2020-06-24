@@ -2573,3 +2573,1888 @@ django.template.base.VariableDoesNotExist: Failed lookup for key [is_authenticat
 [2020-06-08 11:05:47,677] [INFO] "GET /login/?next=%2F&ticket=ST-65004-eXmPxPzNcvT2AiFszVTj-cas HTTP/1.1" 302 0
 [2020-06-08 11:05:47,684] [WARNING] Not Found: /
 [2020-06-08 11:05:47,685] [WARNING] "GET / HTTP/1.1" 404 74
+[2020-06-08 11:43:32,363] [WARNING] Not Found: /
+[2020-06-08 11:43:32,364] [WARNING] "POST / HTTP/1.1" 404 74
+[2020-06-08 11:43:39,143] [WARNING] Not Found: /
+[2020-06-08 11:43:39,144] [WARNING] "POST / HTTP/1.1" 404 74
+[2020-06-08 11:44:03,681] [INFO] "POST / HTTP/1.1" 200 113
+[2020-06-08 11:44:15,965] [INFO] "POST / HTTP/1.1" 200 113
+[2020-06-08 11:44:28,212] [INFO] "POST / HTTP/1.1" 200 113
+[2020-06-08 11:44:51,040] [INFO] "POST / HTTP/1.1" 200 113
+[2020-06-08 11:45:16,869] [INFO] "POST / HTTP/1.1" 200 113
+[2020-06-08 11:45:50,450] [WARNING] Not Found: /
+[2020-06-08 11:45:50,452] [WARNING] "POST / HTTP/1.1" 404 74
+[2020-06-08 11:45:52,070] [WARNING] Not Found: /
+[2020-06-08 11:45:52,071] [WARNING] "POST / HTTP/1.1" 404 74
+[2020-06-08 11:46:01,979] [INFO] "POST /login HTTP/1.1" 301 0
+[2020-06-08 11:46:02,119] [INFO] "GET /login/ HTTP/1.1" 302 0
+[2020-06-08 11:46:35,710] [INFO] "POST /login HTTP/1.1" 301 0
+[2020-06-08 11:46:35,719] [INFO] "GET /login/ HTTP/1.1" 200 69
+[2020-06-08 11:46:41,602] [INFO] "POST /login HTTP/1.1" 301 0
+[2020-06-08 11:46:41,615] [INFO] "GET /login/ HTTP/1.1" 200 69
+[2020-06-08 11:46:48,828] [INFO] "POST /login HTTP/1.1" 301 0
+[2020-06-08 11:46:48,845] [INFO] "GET /login/ HTTP/1.1" 200 69
+[2020-06-08 11:47:19,146] [INFO] "POST /login HTTP/1.1" 301 0
+[2020-06-08 11:47:19,164] [INFO] "GET /login/ HTTP/1.1" 200 69
+[2020-06-08 11:47:29,977] [INFO] "POST /login/ HTTP/1.1" 200 113
+[2020-06-08 11:48:20,416] [INFO] "POST /login/ HTTP/1.1" 200 179
+[2020-06-08 11:50:52,820] [INFO] "POST / HTTP/1.1" 200 179
+[2020-06-08 11:51:05,950] [DEBUG] Exception while resolving variable 'is_authenticated' in template 'rest_framework/api.html'.
+Traceback (most recent call last):
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    current = current[bit]
+TypeError: 'NoneType' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'NoneType' object has no attribute 'is_authenticated'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\template\base.py", line 849, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'is_authenticated'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\template\base.py", line 856, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [is_authenticated] in None
+[2020-06-08 11:51:05,979] [INFO] "GET / HTTP/1.1" 200 5584
+[2020-06-08 11:51:06,071] [WARNING] Not Found: /static/rest_framework/css/bootstrap.min.css
+[2020-06-08 11:51:06,073] [WARNING] "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 404 117
+[2020-06-08 11:51:06,088] [WARNING] Not Found: /static/rest_framework/css/bootstrap-tweaks.css
+[2020-06-08 11:51:06,090] [WARNING] "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 404 120
+[2020-06-08 11:51:06,093] [WARNING] Not Found: /static/rest_framework/css/prettify.css
+[2020-06-08 11:51:06,100] [WARNING] Not Found: /static/rest_framework/css/default.css
+[2020-06-08 11:51:06,102] [WARNING] "GET /static/rest_framework/css/prettify.css HTTP/1.1" 404 112
+[2020-06-08 11:51:06,103] [WARNING] "GET /static/rest_framework/css/default.css HTTP/1.1" 404 111
+[2020-06-08 11:51:06,108] [WARNING] Not Found: /static/rest_framework/js/jquery-3.4.1.min.js
+[2020-06-08 11:51:06,111] [WARNING] "GET /static/rest_framework/js/jquery-3.4.1.min.js HTTP/1.1" 404 118
+[2020-06-08 11:51:06,117] [WARNING] Not Found: /static/rest_framework/js/ajax-form.js
+[2020-06-08 11:51:06,122] [WARNING] Not Found: /static/rest_framework/js/csrf.js
+[2020-06-08 11:51:06,122] [WARNING] "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 404 111
+[2020-06-08 11:51:06,127] [WARNING] Not Found: /static/rest_framework/js/bootstrap.min.js
+[2020-06-08 11:51:06,128] [WARNING] "GET /static/rest_framework/js/csrf.js HTTP/1.1" 404 106
+[2020-06-08 11:51:06,132] [WARNING] "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 404 115
+[2020-06-08 11:51:06,139] [WARNING] Not Found: /static/rest_framework/js/default.js
+[2020-06-08 11:51:06,142] [WARNING] Not Found: /static/rest_framework/js/prettify-min.js
+[2020-06-08 11:51:06,144] [WARNING] "GET /static/rest_framework/js/default.js HTTP/1.1" 404 109
+[2020-06-08 11:51:06,145] [WARNING] "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 404 114
+[2020-06-08 11:51:06,381] [WARNING] Not Found: /static/rest_framework/js/jquery-3.4.1.min.js
+[2020-06-08 11:51:06,382] [WARNING] "GET /static/rest_framework/js/jquery-3.4.1.min.js HTTP/1.1" 404 118
+[2020-06-08 11:51:06,401] [WARNING] Not Found: /static/rest_framework/js/ajax-form.js
+[2020-06-08 11:51:06,402] [WARNING] "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 404 111
+[2020-06-08 11:51:06,410] [WARNING] Not Found: /static/rest_framework/js/csrf.js
+[2020-06-08 11:51:06,412] [WARNING] "GET /static/rest_framework/js/csrf.js HTTP/1.1" 404 106
+[2020-06-08 11:51:06,421] [WARNING] Not Found: /static/rest_framework/js/bootstrap.min.js
+[2020-06-08 11:51:06,424] [WARNING] "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 404 115
+[2020-06-08 11:51:06,439] [WARNING] Not Found: /static/rest_framework/js/prettify-min.js
+[2020-06-08 11:51:06,441] [WARNING] "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 404 114
+[2020-06-08 11:51:06,453] [WARNING] Not Found: /static/rest_framework/js/default.js
+[2020-06-08 11:51:06,454] [WARNING] "GET /static/rest_framework/js/default.js HTTP/1.1" 404 109
+[2020-06-08 16:27:15,056] [INFO] "GET /login HTTP/1.1" 301 0
+[2020-06-08 16:27:15,095] [INFO] "GET /login/ HTTP/1.1" 302 0
+[2020-06-08 16:27:56,366] [INFO] "GET /login/?next=%2F&ticket=ST-65805-6RKrpyGWgcvnq3lTlR6H-cas HTTP/1.1" 302 0
+[2020-06-08 16:27:56,423] [WARNING] Not Found: /
+[2020-06-08 16:27:56,424] [WARNING] "GET / HTTP/1.1" 404 74
+[2020-06-09 11:23:37,973] [DEBUG] CREATE TABLE `xwgj_jzg_grgj` (`id` varchar(32) NOT NULL PRIMARY KEY, `zgh` varchar(32) NOT NULL, `xwsj` datetime(6) NULL, `xwdd` varchar(64) NULL, `jd` varchar(64) NULL, `wd` varchar(64) NULL, `create_time` datetime(6) NOT NULL, `update_time` datetime(6) NOT NULL, `user_id` integer NULL); (params None)
+[2020-06-09 11:23:37,973] [DEBUG] CREATE TABLE `xwgj_jzg_grgj` (`id` varchar(32) NOT NULL PRIMARY KEY, `zgh` varchar(32) NOT NULL, `xwsj` datetime(6) NULL, `xwdd` varchar(64) NULL, `jd` varchar(64) NULL, `wd` varchar(64) NULL, `create_time` datetime(6) NOT NULL, `update_time` datetime(6) NOT NULL, `user_id` integer NULL); (params None)
+[2020-06-09 11:23:39,203] [DEBUG] ALTER TABLE `xwgj_grgj` DROP FOREIGN KEY `xwgj_grgj_user_id_dd8a3aa7_fk_bzks_id`; (params ())
+[2020-06-09 11:23:39,203] [DEBUG] ALTER TABLE `xwgj_grgj` DROP FOREIGN KEY `xwgj_grgj_user_id_dd8a3aa7_fk_bzks_id`; (params ())
+[2020-06-09 11:23:39,219] [DEBUG] ALTER TABLE `xwgj_grgj` MODIFY `user_id` integer NULL; (params [])
+[2020-06-09 11:23:39,219] [DEBUG] ALTER TABLE `xwgj_grgj` MODIFY `user_id` integer NULL; (params [])
+[2020-06-09 11:23:41,918] [DEBUG] ALTER TABLE `xwgj_grgj` ADD CONSTRAINT `xwgj_grgj_user_id_dd8a3aa7_fk_bzks_id` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-09 11:23:41,918] [DEBUG] ALTER TABLE `xwgj_grgj` ADD CONSTRAINT `xwgj_grgj_user_id_dd8a3aa7_fk_bzks_id` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-09 11:23:43,978] [DEBUG] ALTER TABLE `znyj_bzxyj` DROP FOREIGN KEY `znyj_bzxyj_user_id_b59ca30c_fk_bzks_id`; (params ())
+[2020-06-09 11:23:43,978] [DEBUG] ALTER TABLE `znyj_bzxyj` DROP FOREIGN KEY `znyj_bzxyj_user_id_b59ca30c_fk_bzks_id`; (params ())
+[2020-06-09 11:23:43,992] [DEBUG] ALTER TABLE `znyj_bzxyj` MODIFY `user_id` integer NULL; (params [])
+[2020-06-09 11:23:43,992] [DEBUG] ALTER TABLE `znyj_bzxyj` MODIFY `user_id` integer NULL; (params [])
+[2020-06-09 11:23:44,232] [DEBUG] ALTER TABLE `znyj_bzxyj` ADD CONSTRAINT `znyj_bzxyj_user_id_b59ca30c_fk_bzks_id` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-09 11:23:44,232] [DEBUG] ALTER TABLE `znyj_bzxyj` ADD CONSTRAINT `znyj_bzxyj_user_id_b59ca30c_fk_bzks_id` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-09 11:23:44,435] [DEBUG] ALTER TABLE `znyj_swxw` DROP FOREIGN KEY `znyj_swxw_user_id_946e44ca_fk_bzks_id`; (params ())
+[2020-06-09 11:23:44,435] [DEBUG] ALTER TABLE `znyj_swxw` DROP FOREIGN KEY `znyj_swxw_user_id_946e44ca_fk_bzks_id`; (params ())
+[2020-06-09 11:23:44,449] [DEBUG] ALTER TABLE `znyj_swxw` MODIFY `user_id` integer NULL; (params [])
+[2020-06-09 11:23:44,449] [DEBUG] ALTER TABLE `znyj_swxw` MODIFY `user_id` integer NULL; (params [])
+[2020-06-09 11:23:48,460] [DEBUG] ALTER TABLE `znyj_swxw` ADD CONSTRAINT `znyj_swxw_user_id_946e44ca_fk_bzks_id` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-09 11:23:48,460] [DEBUG] ALTER TABLE `znyj_swxw` ADD CONSTRAINT `znyj_swxw_user_id_946e44ca_fk_bzks_id` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-09 11:23:51,453] [DEBUG] ALTER TABLE `znyj_tkxw` DROP FOREIGN KEY `znyj_tkxw_user_id_18a9d12a_fk_bzks_id`; (params ())
+[2020-06-09 11:23:51,453] [DEBUG] ALTER TABLE `znyj_tkxw` DROP FOREIGN KEY `znyj_tkxw_user_id_18a9d12a_fk_bzks_id`; (params ())
+[2020-06-09 11:23:51,466] [DEBUG] ALTER TABLE `znyj_tkxw` MODIFY `user_id` integer NULL; (params [])
+[2020-06-09 11:23:51,466] [DEBUG] ALTER TABLE `znyj_tkxw` MODIFY `user_id` integer NULL; (params [])
+[2020-06-09 11:23:52,011] [DEBUG] ALTER TABLE `znyj_tkxw` ADD CONSTRAINT `znyj_tkxw_user_id_18a9d12a_fk_bzks_id` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-09 11:23:52,011] [DEBUG] ALTER TABLE `znyj_tkxw` ADD CONSTRAINT `znyj_tkxw_user_id_18a9d12a_fk_bzks_id` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-09 11:23:52,449] [DEBUG] ALTER TABLE `znyj_wg` DROP FOREIGN KEY `znyj_wg_user_id_9360d693_fk_bzks_id`; (params ())
+[2020-06-09 11:23:52,449] [DEBUG] ALTER TABLE `znyj_wg` DROP FOREIGN KEY `znyj_wg_user_id_9360d693_fk_bzks_id`; (params ())
+[2020-06-09 11:23:52,464] [DEBUG] ALTER TABLE `znyj_wg` MODIFY `user_id` integer NULL; (params [])
+[2020-06-09 11:23:52,464] [DEBUG] ALTER TABLE `znyj_wg` MODIFY `user_id` integer NULL; (params [])
+[2020-06-09 11:23:53,057] [DEBUG] ALTER TABLE `znyj_wg` ADD CONSTRAINT `znyj_wg_user_id_9360d693_fk_bzks_id` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-09 11:23:53,057] [DEBUG] ALTER TABLE `znyj_wg` ADD CONSTRAINT `znyj_wg_user_id_9360d693_fk_bzks_id` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-09 11:23:53,639] [DEBUG] ALTER TABLE `znyj_xwzs` DROP FOREIGN KEY `znyj_xwzs_user_id_541e223d_fk_bzks_id`; (params ())
+[2020-06-09 11:23:53,639] [DEBUG] ALTER TABLE `znyj_xwzs` DROP FOREIGN KEY `znyj_xwzs_user_id_541e223d_fk_bzks_id`; (params ())
+[2020-06-09 11:23:53,651] [DEBUG] ALTER TABLE `znyj_xwzs` MODIFY `user_id` integer NULL; (params [])
+[2020-06-09 11:23:53,651] [DEBUG] ALTER TABLE `znyj_xwzs` MODIFY `user_id` integer NULL; (params [])
+[2020-06-09 11:23:54,069] [DEBUG] ALTER TABLE `znyj_xwzs` ADD CONSTRAINT `znyj_xwzs_user_id_541e223d_fk_bzks_id` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-09 11:23:54,069] [DEBUG] ALTER TABLE `znyj_xwzs` ADD CONSTRAINT `znyj_xwzs_user_id_541e223d_fk_bzks_id` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-09 11:23:54,493] [DEBUG] ALTER TABLE `znyj_xxtxblx` DROP FOREIGN KEY `znyj_xxtxblx_user_id_ff86d8c1_fk_bzks_id`; (params ())
+[2020-06-09 11:23:54,493] [DEBUG] ALTER TABLE `znyj_xxtxblx` DROP FOREIGN KEY `znyj_xxtxblx_user_id_ff86d8c1_fk_bzks_id`; (params ())
+[2020-06-09 11:23:54,507] [DEBUG] ALTER TABLE `znyj_xxtxblx` MODIFY `user_id` integer NULL; (params [])
+[2020-06-09 11:23:54,507] [DEBUG] ALTER TABLE `znyj_xxtxblx` MODIFY `user_id` integer NULL; (params [])
+[2020-06-09 11:23:54,560] [DEBUG] ALTER TABLE `znyj_xxtxblx` ADD CONSTRAINT `znyj_xxtxblx_user_id_ff86d8c1_fk_bzks_id` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-09 11:23:54,560] [DEBUG] ALTER TABLE `znyj_xxtxblx` ADD CONSTRAINT `znyj_xxtxblx_user_id_ff86d8c1_fk_bzks_id` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-09 11:23:54,630] [DEBUG] ALTER TABLE `znyj_zjzxbxk` DROP FOREIGN KEY `znyj_zjzxbxk_user_id_9f1ee74e_fk_bzks_id`; (params ())
+[2020-06-09 11:23:54,630] [DEBUG] ALTER TABLE `znyj_zjzxbxk` DROP FOREIGN KEY `znyj_zjzxbxk_user_id_9f1ee74e_fk_bzks_id`; (params ())
+[2020-06-09 11:23:54,642] [DEBUG] ALTER TABLE `znyj_zjzxbxk` MODIFY `user_id` integer NULL; (params [])
+[2020-06-09 11:23:54,642] [DEBUG] ALTER TABLE `znyj_zjzxbxk` MODIFY `user_id` integer NULL; (params [])
+[2020-06-09 11:23:54,712] [DEBUG] ALTER TABLE `znyj_zjzxbxk` ADD CONSTRAINT `znyj_zjzxbxk_user_id_9f1ee74e_fk_bzks_id` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-09 11:23:54,712] [DEBUG] ALTER TABLE `znyj_zjzxbxk` ADD CONSTRAINT `znyj_zjzxbxk_user_id_9f1ee74e_fk_bzks_id` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-09 11:23:54,761] [DEBUG] ALTER TABLE `xwgj_jzg_grgj` ADD CONSTRAINT `xwgj_jzg_grgj_user_id_a9e89b2d_fk_jzg_id` FOREIGN KEY (`user_id`) REFERENCES `jzg` (`id`); (params ())
+[2020-06-09 11:23:54,761] [DEBUG] ALTER TABLE `xwgj_jzg_grgj` ADD CONSTRAINT `xwgj_jzg_grgj_user_id_a9e89b2d_fk_jzg_id` FOREIGN KEY (`user_id`) REFERENCES `jzg` (`id`); (params ())
+[2020-06-09 11:26:45,574] [DEBUG] CREATE TABLE `xwgj_jzg_grgj` (`id` varchar(32) NOT NULL PRIMARY KEY, `zgh` varchar(32) NOT NULL, `xwsj` datetime(6) NULL, `xwdd` varchar(64) NULL, `jd` varchar(64) NULL, `wd` varchar(64) NULL, `create_time` datetime(6) NOT NULL, `update_time` datetime(6) NOT NULL, `user_id` integer NULL); (params None)
+[2020-06-09 11:26:45,574] [DEBUG] CREATE TABLE `xwgj_jzg_grgj` (`id` varchar(32) NOT NULL PRIMARY KEY, `zgh` varchar(32) NOT NULL, `xwsj` datetime(6) NULL, `xwdd` varchar(64) NULL, `jd` varchar(64) NULL, `wd` varchar(64) NULL, `create_time` datetime(6) NOT NULL, `update_time` datetime(6) NOT NULL, `user_id` integer NULL); (params None)
+[2020-06-09 11:26:45,707] [DEBUG] ALTER TABLE `xwgj_grgj` DROP FOREIGN KEY `xwgj_grgj_user_id_dd8a3aa7_fk_bzks_id`; (params ())
+[2020-06-09 11:26:45,707] [DEBUG] ALTER TABLE `xwgj_grgj` DROP FOREIGN KEY `xwgj_grgj_user_id_dd8a3aa7_fk_bzks_id`; (params ())
+[2020-06-09 11:26:45,745] [DEBUG] ALTER TABLE `xwgj_grgj` MODIFY `user_id` integer NULL; (params [])
+[2020-06-09 11:26:45,745] [DEBUG] ALTER TABLE `xwgj_grgj` MODIFY `user_id` integer NULL; (params [])
+[2020-06-09 11:26:55,966] [DEBUG] ALTER TABLE `xwgj_grgj` ADD CONSTRAINT `xwgj_grgj_user_id_dd8a3aa7_fk_bzks_id` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-09 11:26:55,966] [DEBUG] ALTER TABLE `xwgj_grgj` ADD CONSTRAINT `xwgj_grgj_user_id_dd8a3aa7_fk_bzks_id` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-09 11:27:03,988] [DEBUG] ALTER TABLE `znyj_bzxyj` DROP FOREIGN KEY `znyj_bzxyj_user_id_b59ca30c_fk_bzks_id`; (params ())
+[2020-06-09 11:27:03,988] [DEBUG] ALTER TABLE `znyj_bzxyj` DROP FOREIGN KEY `znyj_bzxyj_user_id_b59ca30c_fk_bzks_id`; (params ())
+[2020-06-09 11:27:04,057] [DEBUG] ALTER TABLE `znyj_bzxyj` MODIFY `user_id` integer NULL; (params [])
+[2020-06-09 11:27:04,057] [DEBUG] ALTER TABLE `znyj_bzxyj` MODIFY `user_id` integer NULL; (params [])
+[2020-06-09 11:27:05,433] [DEBUG] ALTER TABLE `znyj_bzxyj` ADD CONSTRAINT `znyj_bzxyj_user_id_b59ca30c_fk_bzks_id` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-09 11:27:05,433] [DEBUG] ALTER TABLE `znyj_bzxyj` ADD CONSTRAINT `znyj_bzxyj_user_id_b59ca30c_fk_bzks_id` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-09 11:27:06,106] [DEBUG] ALTER TABLE `znyj_swxw` DROP FOREIGN KEY `znyj_swxw_user_id_946e44ca_fk_bzks_id`; (params ())
+[2020-06-09 11:27:06,106] [DEBUG] ALTER TABLE `znyj_swxw` DROP FOREIGN KEY `znyj_swxw_user_id_946e44ca_fk_bzks_id`; (params ())
+[2020-06-09 11:27:06,373] [DEBUG] ALTER TABLE `znyj_swxw` MODIFY `user_id` integer NULL; (params [])
+[2020-06-09 11:27:06,373] [DEBUG] ALTER TABLE `znyj_swxw` MODIFY `user_id` integer NULL; (params [])
+[2020-06-09 11:27:21,538] [DEBUG] ALTER TABLE `znyj_swxw` ADD CONSTRAINT `znyj_swxw_user_id_946e44ca_fk_bzks_id` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-09 11:27:21,538] [DEBUG] ALTER TABLE `znyj_swxw` ADD CONSTRAINT `znyj_swxw_user_id_946e44ca_fk_bzks_id` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-09 11:27:29,333] [DEBUG] ALTER TABLE `znyj_tkxw` DROP FOREIGN KEY `znyj_tkxw_user_id_18a9d12a_fk_bzks_id`; (params ())
+[2020-06-09 11:27:29,333] [DEBUG] ALTER TABLE `znyj_tkxw` DROP FOREIGN KEY `znyj_tkxw_user_id_18a9d12a_fk_bzks_id`; (params ())
+[2020-06-09 11:27:29,465] [DEBUG] ALTER TABLE `znyj_tkxw` MODIFY `user_id` integer NULL; (params [])
+[2020-06-09 11:27:29,465] [DEBUG] ALTER TABLE `znyj_tkxw` MODIFY `user_id` integer NULL; (params [])
+[2020-06-09 11:27:33,254] [DEBUG] ALTER TABLE `znyj_tkxw` ADD CONSTRAINT `znyj_tkxw_user_id_18a9d12a_fk_bzks_id` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-09 11:27:33,254] [DEBUG] ALTER TABLE `znyj_tkxw` ADD CONSTRAINT `znyj_tkxw_user_id_18a9d12a_fk_bzks_id` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-09 11:27:35,174] [DEBUG] ALTER TABLE `znyj_wg` DROP FOREIGN KEY `znyj_wg_user_id_9360d693_fk_bzks_id`; (params ())
+[2020-06-09 11:27:35,174] [DEBUG] ALTER TABLE `znyj_wg` DROP FOREIGN KEY `znyj_wg_user_id_9360d693_fk_bzks_id`; (params ())
+[2020-06-09 11:27:35,240] [DEBUG] ALTER TABLE `znyj_wg` MODIFY `user_id` integer NULL; (params [])
+[2020-06-09 11:27:35,240] [DEBUG] ALTER TABLE `znyj_wg` MODIFY `user_id` integer NULL; (params [])
+[2020-06-09 11:27:39,143] [DEBUG] ALTER TABLE `znyj_wg` ADD CONSTRAINT `znyj_wg_user_id_9360d693_fk_bzks_id` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-09 11:27:39,143] [DEBUG] ALTER TABLE `znyj_wg` ADD CONSTRAINT `znyj_wg_user_id_9360d693_fk_bzks_id` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-09 11:27:40,557] [DEBUG] ALTER TABLE `znyj_xwzs` DROP FOREIGN KEY `znyj_xwzs_user_id_541e223d_fk_bzks_id`; (params ())
+[2020-06-09 11:27:40,557] [DEBUG] ALTER TABLE `znyj_xwzs` DROP FOREIGN KEY `znyj_xwzs_user_id_541e223d_fk_bzks_id`; (params ())
+[2020-06-09 11:27:40,610] [DEBUG] ALTER TABLE `znyj_xwzs` MODIFY `user_id` integer NULL; (params [])
+[2020-06-09 11:27:40,610] [DEBUG] ALTER TABLE `znyj_xwzs` MODIFY `user_id` integer NULL; (params [])
+[2020-06-09 11:27:43,142] [DEBUG] ALTER TABLE `znyj_xwzs` ADD CONSTRAINT `znyj_xwzs_user_id_541e223d_fk_bzks_id` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-09 11:27:43,142] [DEBUG] ALTER TABLE `znyj_xwzs` ADD CONSTRAINT `znyj_xwzs_user_id_541e223d_fk_bzks_id` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-09 11:27:44,398] [DEBUG] ALTER TABLE `znyj_xxtxblx` DROP FOREIGN KEY `znyj_xxtxblx_user_id_ff86d8c1_fk_bzks_id`; (params ())
+[2020-06-09 11:27:44,398] [DEBUG] ALTER TABLE `znyj_xxtxblx` DROP FOREIGN KEY `znyj_xxtxblx_user_id_ff86d8c1_fk_bzks_id`; (params ())
+[2020-06-09 11:27:44,449] [DEBUG] ALTER TABLE `znyj_xxtxblx` MODIFY `user_id` integer NULL; (params [])
+[2020-06-09 11:27:44,449] [DEBUG] ALTER TABLE `znyj_xxtxblx` MODIFY `user_id` integer NULL; (params [])
+[2020-06-09 11:27:44,717] [DEBUG] ALTER TABLE `znyj_xxtxblx` ADD CONSTRAINT `znyj_xxtxblx_user_id_ff86d8c1_fk_bzks_id` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-09 11:27:44,717] [DEBUG] ALTER TABLE `znyj_xxtxblx` ADD CONSTRAINT `znyj_xxtxblx_user_id_ff86d8c1_fk_bzks_id` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-09 11:27:45,081] [DEBUG] ALTER TABLE `znyj_zjzxbxk` DROP FOREIGN KEY `znyj_zjzxbxk_user_id_9f1ee74e_fk_bzks_id`; (params ())
+[2020-06-09 11:27:45,081] [DEBUG] ALTER TABLE `znyj_zjzxbxk` DROP FOREIGN KEY `znyj_zjzxbxk_user_id_9f1ee74e_fk_bzks_id`; (params ())
+[2020-06-09 11:27:45,127] [DEBUG] ALTER TABLE `znyj_zjzxbxk` MODIFY `user_id` integer NULL; (params [])
+[2020-06-09 11:27:45,127] [DEBUG] ALTER TABLE `znyj_zjzxbxk` MODIFY `user_id` integer NULL; (params [])
+[2020-06-09 11:27:45,505] [DEBUG] ALTER TABLE `znyj_zjzxbxk` ADD CONSTRAINT `znyj_zjzxbxk_user_id_9f1ee74e_fk_bzks_id` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-09 11:27:45,505] [DEBUG] ALTER TABLE `znyj_zjzxbxk` ADD CONSTRAINT `znyj_zjzxbxk_user_id_9f1ee74e_fk_bzks_id` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-09 11:27:45,810] [DEBUG] ALTER TABLE `xwgj_jzg_grgj` ADD CONSTRAINT `xwgj_jzg_grgj_user_id_a9e89b2d_fk_jzg_id` FOREIGN KEY (`user_id`) REFERENCES `jzg` (`id`); (params ())
+[2020-06-09 11:27:45,810] [DEBUG] ALTER TABLE `xwgj_jzg_grgj` ADD CONSTRAINT `xwgj_jzg_grgj_user_id_a9e89b2d_fk_jzg_id` FOREIGN KEY (`user_id`) REFERENCES `jzg` (`id`); (params ())
+[2020-06-09 11:41:52,763] [DEBUG] CREATE TABLE `django_cas_ng_proxygrantingticket` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `session_key` varchar(255) NULL, `pgtiou` varchar(255) NULL, `pgt` varchar(255) NULL, `date` datetime(6) NOT NULL, `user_id` bigint NULL); (params None)
+[2020-06-09 11:41:52,763] [DEBUG] CREATE TABLE `django_cas_ng_proxygrantingticket` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `session_key` varchar(255) NULL, `pgtiou` varchar(255) NULL, `pgt` varchar(255) NULL, `date` datetime(6) NOT NULL, `user_id` bigint NULL); (params None)
+[2020-06-09 11:41:52,923] [DEBUG] CREATE TABLE `django_cas_ng_sessionticket` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `session_key` varchar(255) NOT NULL, `ticket` varchar(255) NOT NULL); (params None)
+[2020-06-09 11:41:52,923] [DEBUG] CREATE TABLE `django_cas_ng_sessionticket` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `session_key` varchar(255) NOT NULL, `ticket` varchar(255) NOT NULL); (params None)
+[2020-06-09 11:41:53,342] [DEBUG] ALTER TABLE `django_cas_ng_proxygrantingticket` ADD CONSTRAINT django_cas_ng_proxygrant_session_key_user_id_4cd2ea19_uniq UNIQUE (`session_key`, `user_id`); (params ())
+[2020-06-09 11:41:53,342] [DEBUG] ALTER TABLE `django_cas_ng_proxygrantingticket` ADD CONSTRAINT django_cas_ng_proxygrant_session_key_user_id_4cd2ea19_uniq UNIQUE (`session_key`, `user_id`); (params ())
+[2020-06-09 11:41:53,650] [DEBUG] ALTER TABLE `django_cas_ng_proxygrantingticket` ADD CONSTRAINT `django_cas_ng_proxyg_user_id_f833edd2_fk_base_user` FOREIGN KEY (`user_id`) REFERENCES `base_user` (`id`); (params ())
+[2020-06-09 11:41:53,650] [DEBUG] ALTER TABLE `django_cas_ng_proxygrantingticket` ADD CONSTRAINT `django_cas_ng_proxyg_user_id_f833edd2_fk_base_user` FOREIGN KEY (`user_id`) REFERENCES `base_user` (`id`); (params ())
+[2020-06-09 11:41:54,066] [DEBUG] CREATE TABLE `xwgj_jzg_grgj` (`id` varchar(32) NOT NULL PRIMARY KEY, `zgh` varchar(32) NOT NULL, `xwsj` datetime(6) NULL, `xwdd` varchar(64) NULL, `jd` varchar(64) NULL, `wd` varchar(64) NULL, `create_time` datetime(6) NOT NULL, `update_time` datetime(6) NOT NULL, `user_id` integer NULL); (params None)
+[2020-06-09 11:41:54,066] [DEBUG] CREATE TABLE `xwgj_jzg_grgj` (`id` varchar(32) NOT NULL PRIMARY KEY, `zgh` varchar(32) NOT NULL, `xwsj` datetime(6) NULL, `xwdd` varchar(64) NULL, `jd` varchar(64) NULL, `wd` varchar(64) NULL, `create_time` datetime(6) NOT NULL, `update_time` datetime(6) NOT NULL, `user_id` integer NULL); (params None)
+[2020-06-09 11:41:54,234] [DEBUG] ALTER TABLE `xwgj_grgj` DROP FOREIGN KEY `xwgj_grgj_user_id_dd8a3aa7_fk_bzks_id`; (params ())
+[2020-06-09 11:41:54,234] [DEBUG] ALTER TABLE `xwgj_grgj` DROP FOREIGN KEY `xwgj_grgj_user_id_dd8a3aa7_fk_bzks_id`; (params ())
+[2020-06-09 11:41:54,298] [DEBUG] ALTER TABLE `xwgj_grgj` MODIFY `user_id` integer NULL; (params [])
+[2020-06-09 11:41:54,298] [DEBUG] ALTER TABLE `xwgj_grgj` MODIFY `user_id` integer NULL; (params [])
+[2020-06-09 11:42:06,360] [DEBUG] ALTER TABLE `xwgj_grgj` ADD CONSTRAINT `xwgj_grgj_user_id_dd8a3aa7_fk_bzks_id` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-09 11:42:06,360] [DEBUG] ALTER TABLE `xwgj_grgj` ADD CONSTRAINT `xwgj_grgj_user_id_dd8a3aa7_fk_bzks_id` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-09 11:42:20,150] [DEBUG] ALTER TABLE `znyj_bzxyj` DROP FOREIGN KEY `znyj_bzxyj_user_id_b59ca30c_fk_bzks_id`; (params ())
+[2020-06-09 11:42:20,150] [DEBUG] ALTER TABLE `znyj_bzxyj` DROP FOREIGN KEY `znyj_bzxyj_user_id_b59ca30c_fk_bzks_id`; (params ())
+[2020-06-09 11:42:20,194] [DEBUG] ALTER TABLE `znyj_bzxyj` MODIFY `user_id` integer NULL; (params [])
+[2020-06-09 11:42:20,194] [DEBUG] ALTER TABLE `znyj_bzxyj` MODIFY `user_id` integer NULL; (params [])
+[2020-06-09 11:42:22,109] [DEBUG] ALTER TABLE `znyj_bzxyj` ADD CONSTRAINT `znyj_bzxyj_user_id_b59ca30c_fk_bzks_id` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-09 11:42:22,109] [DEBUG] ALTER TABLE `znyj_bzxyj` ADD CONSTRAINT `znyj_bzxyj_user_id_b59ca30c_fk_bzks_id` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-09 11:42:23,406] [DEBUG] ALTER TABLE `znyj_swxw` DROP FOREIGN KEY `znyj_swxw_user_id_946e44ca_fk_bzks_id`; (params ())
+[2020-06-09 11:42:23,406] [DEBUG] ALTER TABLE `znyj_swxw` DROP FOREIGN KEY `znyj_swxw_user_id_946e44ca_fk_bzks_id`; (params ())
+[2020-06-09 11:42:23,448] [DEBUG] ALTER TABLE `znyj_swxw` MODIFY `user_id` integer NULL; (params [])
+[2020-06-09 11:42:23,448] [DEBUG] ALTER TABLE `znyj_swxw` MODIFY `user_id` integer NULL; (params [])
+[2020-06-09 11:42:42,168] [DEBUG] ALTER TABLE `znyj_swxw` ADD CONSTRAINT `znyj_swxw_user_id_946e44ca_fk_bzks_id` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-09 11:42:42,168] [DEBUG] ALTER TABLE `znyj_swxw` ADD CONSTRAINT `znyj_swxw_user_id_946e44ca_fk_bzks_id` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-09 11:43:02,015] [DEBUG] ALTER TABLE `znyj_tkxw` DROP FOREIGN KEY `znyj_tkxw_user_id_18a9d12a_fk_bzks_id`; (params ())
+[2020-06-09 11:43:02,015] [DEBUG] ALTER TABLE `znyj_tkxw` DROP FOREIGN KEY `znyj_tkxw_user_id_18a9d12a_fk_bzks_id`; (params ())
+[2020-06-09 11:43:02,068] [DEBUG] ALTER TABLE `znyj_tkxw` MODIFY `user_id` integer NULL; (params [])
+[2020-06-09 11:43:02,068] [DEBUG] ALTER TABLE `znyj_tkxw` MODIFY `user_id` integer NULL; (params [])
+[2020-06-09 11:43:08,665] [DEBUG] ALTER TABLE `znyj_tkxw` ADD CONSTRAINT `znyj_tkxw_user_id_18a9d12a_fk_bzks_id` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-09 11:43:08,665] [DEBUG] ALTER TABLE `znyj_tkxw` ADD CONSTRAINT `znyj_tkxw_user_id_18a9d12a_fk_bzks_id` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-09 11:43:11,513] [DEBUG] ALTER TABLE `znyj_wg` DROP FOREIGN KEY `znyj_wg_user_id_9360d693_fk_bzks_id`; (params ())
+[2020-06-09 11:43:11,513] [DEBUG] ALTER TABLE `znyj_wg` DROP FOREIGN KEY `znyj_wg_user_id_9360d693_fk_bzks_id`; (params ())
+[2020-06-09 11:43:11,562] [DEBUG] ALTER TABLE `znyj_wg` MODIFY `user_id` integer NULL; (params [])
+[2020-06-09 11:43:11,562] [DEBUG] ALTER TABLE `znyj_wg` MODIFY `user_id` integer NULL; (params [])
+[2020-06-09 11:43:17,420] [DEBUG] ALTER TABLE `znyj_wg` ADD CONSTRAINT `znyj_wg_user_id_9360d693_fk_bzks_id` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-09 11:43:17,420] [DEBUG] ALTER TABLE `znyj_wg` ADD CONSTRAINT `znyj_wg_user_id_9360d693_fk_bzks_id` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-09 11:43:20,824] [DEBUG] ALTER TABLE `znyj_xwzs` DROP FOREIGN KEY `znyj_xwzs_user_id_541e223d_fk_bzks_id`; (params ())
+[2020-06-09 11:43:20,824] [DEBUG] ALTER TABLE `znyj_xwzs` DROP FOREIGN KEY `znyj_xwzs_user_id_541e223d_fk_bzks_id`; (params ())
+[2020-06-09 11:43:20,868] [DEBUG] ALTER TABLE `znyj_xwzs` MODIFY `user_id` integer NULL; (params [])
+[2020-06-09 11:43:20,868] [DEBUG] ALTER TABLE `znyj_xwzs` MODIFY `user_id` integer NULL; (params [])
+[2020-06-09 11:43:25,370] [DEBUG] ALTER TABLE `znyj_xwzs` ADD CONSTRAINT `znyj_xwzs_user_id_541e223d_fk_bzks_id` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-09 11:43:25,370] [DEBUG] ALTER TABLE `znyj_xwzs` ADD CONSTRAINT `znyj_xwzs_user_id_541e223d_fk_bzks_id` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-09 11:43:27,721] [DEBUG] ALTER TABLE `znyj_xxtxblx` DROP FOREIGN KEY `znyj_xxtxblx_user_id_ff86d8c1_fk_bzks_id`; (params ())
+[2020-06-09 11:43:27,721] [DEBUG] ALTER TABLE `znyj_xxtxblx` DROP FOREIGN KEY `znyj_xxtxblx_user_id_ff86d8c1_fk_bzks_id`; (params ())
+[2020-06-09 11:43:27,773] [DEBUG] ALTER TABLE `znyj_xxtxblx` MODIFY `user_id` integer NULL; (params [])
+[2020-06-09 11:43:27,773] [DEBUG] ALTER TABLE `znyj_xxtxblx` MODIFY `user_id` integer NULL; (params [])
+[2020-06-09 11:43:28,316] [DEBUG] ALTER TABLE `znyj_xxtxblx` ADD CONSTRAINT `znyj_xxtxblx_user_id_ff86d8c1_fk_bzks_id` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-09 11:43:28,316] [DEBUG] ALTER TABLE `znyj_xxtxblx` ADD CONSTRAINT `znyj_xxtxblx_user_id_ff86d8c1_fk_bzks_id` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-09 11:43:28,715] [DEBUG] ALTER TABLE `znyj_zjzxbxk` DROP FOREIGN KEY `znyj_zjzxbxk_user_id_9f1ee74e_fk_bzks_id`; (params ())
+[2020-06-09 11:43:28,715] [DEBUG] ALTER TABLE `znyj_zjzxbxk` DROP FOREIGN KEY `znyj_zjzxbxk_user_id_9f1ee74e_fk_bzks_id`; (params ())
+[2020-06-09 11:43:28,777] [DEBUG] ALTER TABLE `znyj_zjzxbxk` MODIFY `user_id` integer NULL; (params [])
+[2020-06-09 11:43:28,777] [DEBUG] ALTER TABLE `znyj_zjzxbxk` MODIFY `user_id` integer NULL; (params [])
+[2020-06-09 11:43:29,309] [DEBUG] ALTER TABLE `znyj_zjzxbxk` ADD CONSTRAINT `znyj_zjzxbxk_user_id_9f1ee74e_fk_bzks_id` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-09 11:43:29,309] [DEBUG] ALTER TABLE `znyj_zjzxbxk` ADD CONSTRAINT `znyj_zjzxbxk_user_id_9f1ee74e_fk_bzks_id` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-09 11:43:29,709] [DEBUG] ALTER TABLE `xwgj_jzg_grgj` ADD CONSTRAINT `xwgj_jzg_grgj_user_id_a9e89b2d_fk_jzg_id` FOREIGN KEY (`user_id`) REFERENCES `jzg` (`id`); (params ())
+[2020-06-09 11:43:29,709] [DEBUG] ALTER TABLE `xwgj_jzg_grgj` ADD CONSTRAINT `xwgj_jzg_grgj_user_id_a9e89b2d_fk_jzg_id` FOREIGN KEY (`user_id`) REFERENCES `jzg` (`id`); (params ())
+[2020-06-09 14:32:48,782] [WARNING] "GET /warning/v1/xwgjmx/?xh=201921050 HTTP/1.1" 403 94
+[2020-06-09 14:32:52,910] [INFO] "POST /login HTTP/1.1" 301 0
+[2020-06-09 14:32:53,015] [INFO] "GET /login/ HTTP/1.1" 200 69
+[2020-06-09 14:32:57,300] [INFO] "POST /login HTTP/1.1" 301 0
+[2020-06-09 14:32:57,320] [INFO] "GET /login/ HTTP/1.1" 200 69
+[2020-06-09 14:33:58,096] [INFO] "POST /login/ HTTP/1.1" 200 179
+[2020-06-09 14:34:27,896] [INFO] "GET /warning/v1/xwgjmx/?xh=201921050 HTTP/1.1" 200 1853
+[2020-06-09 14:34:57,421] [INFO] "GET /warning/v1/xwgjmx/?id=af91b5ec7732466289517ed174dee518 HTTP/1.1" 200 1896
+[2020-06-09 14:35:12,167] [INFO] "GET /warning/v1/xwgjmx/?xh=201921050&id=af91b5ec7732466289517ed174dee518 HTTP/1.1" 200 1889
+[2020-06-09 14:35:36,629] [WARNING] Not Found: /warning/v1/xwgjmx/id=af91b5ec7732466289517ed174dee518
+[2020-06-09 14:35:36,630] [WARNING] "GET /warning/v1/xwgjmx/id=af91b5ec7732466289517ed174dee518 HTTP/1.1" 404 127
+[2020-06-09 14:35:43,021] [WARNING] Not Found: /warning/v1/xwgjmx/af91b5ec7732466289517ed174dee518
+[2020-06-09 14:35:43,022] [WARNING] "GET /warning/v1/xwgjmx/af91b5ec7732466289517ed174dee518 HTTP/1.1" 404 124
+[2020-06-09 14:36:14,189] [INFO] "GET /warning/v1/xwgjmx/?id=af91b5ec7732466289517ed174dee518 HTTP/1.1" 200 1896
+[2020-06-09 14:39:47,006] [INFO] "GET /warning/v1/xwgjmx/?xh=201921050 HTTP/1.1" 200 1853
+[2020-06-09 14:39:56,580] [INFO] "GET /warning/v1/xwgjmx/?xh=201921050&id=af91b5ec7732466289517ed174dee518 HTTP/1.1" 200 1889
+[2020-06-09 14:40:09,377] [WARNING] Not Found: /warning/v1/xwgjmx/af91b5ec7732466289517ed174dee518
+[2020-06-09 14:40:09,378] [WARNING] "GET /warning/v1/xwgjmx/af91b5ec7732466289517ed174dee518 HTTP/1.1" 404 124
+[2020-06-09 14:40:26,809] [INFO] "GET /warning/v1/xwgjmx/?id=af91b5ec7732466289517ed174dee518 HTTP/1.1" 200 1896
+[2020-06-09 14:40:32,124] [INFO] "GET /warning/v1/xwgjmx/?id=af91b5ec7732466289517ed174dee518 HTTP/1.1" 200 1896
+[2020-06-09 14:41:40,460] [INFO] "GET /warning/v1/xwgjmx/?id=af91b5ec7732466289517ed174dee518 HTTP/1.1" 200 1896
+[2020-06-09 14:41:44,478] [INFO] "GET /warning/v1/xwgjmx/ HTTP/1.1" 200 1860
+[2020-06-09 14:41:54,490] [INFO] "GET /warning/v1/xwgjmx/?xh=201921050 HTTP/1.1" 200 1853
+[2020-06-09 14:42:04,833] [WARNING] Not Found: /warning/v1/xwgjmx/1
+[2020-06-09 14:42:04,834] [WARNING] "GET /warning/v1/xwgjmx/1 HTTP/1.1" 404 93
+[2020-06-09 14:50:55,256] [INFO] "GET /warning/v1/xwgjmx/?id=af91b5ec7732466289517ed174dee518 HTTP/1.1" 200 323
+[2020-06-09 14:51:02,401] [INFO] "GET /warning/v1/xwgjmx/?xh=201921050&id=af91b5ec7732466289517ed174dee518 HTTP/1.1" 200 323
+[2020-06-09 15:17:36,533] [INFO] "GET /warning/v1/jzgxwgj/ HTTP/1.1" 200 162
+[2020-06-09 15:24:53,868] [INFO] "GET /warning/v1/jzgxwgj/ HTTP/1.1" 200 162
+[2020-06-09 15:24:56,066] [INFO] "GET /warning/v1/jzgxwgj/ HTTP/1.1" 200 162
+[2020-06-09 15:28:32,150] [INFO] "GET /warning/v1/jzgxwgj/ HTTP/1.1" 200 270
+[2020-06-09 15:30:13,437] [INFO] "GET /warning/v1/jzgxwgj/ HTTP/1.1" 200 314
+[2020-06-09 15:41:26,532] [INFO] "GET /warning/v1/jzgxwgj/ HTTP/1.1" 200 314
+[2020-06-09 15:41:43,996] [INFO] "GET /warning/v1/jzgxwgj/ HTTP/1.1" 200 314
+[2020-06-09 15:42:24,069] [INFO] "GET /warning/v1/xwgjjzgmx/?zgh=02852 HTTP/1.1" 200 232
+[2020-06-09 15:42:39,936] [INFO] "GET /warning/v1/xwgjjzgmx/?id=1&zgh=02852 HTTP/1.1" 200 232
+[2020-06-09 15:42:43,855] [INFO] "GET /warning/v1/xwgjjzgmx/?id=1 HTTP/1.1" 200 232
+[2020-06-09 15:55:56,527] [INFO] "GET /warning/v1/jzgxwgj/ HTTP/1.1" 200 314
+[2020-06-10 11:14:51,380] [DEBUG] ALTER TABLE `znyj_xxtxblx` DROP FOREIGN KEY `znyj_xxtxblx_user_id_ff86d8c1_fk_bzks_id`; (params ())
+[2020-06-10 11:14:51,380] [DEBUG] ALTER TABLE `znyj_xxtxblx` DROP FOREIGN KEY `znyj_xxtxblx_user_id_ff86d8c1_fk_bzks_id`; (params ())
+[2020-06-10 11:14:51,411] [DEBUG] ALTER TABLE `znyj_xwzs` DROP FOREIGN KEY `znyj_xwzs_user_id_541e223d_fk_bzks_id`; (params ())
+[2020-06-10 11:14:51,411] [DEBUG] ALTER TABLE `znyj_xwzs` DROP FOREIGN KEY `znyj_xwzs_user_id_541e223d_fk_bzks_id`; (params ())
+[2020-06-10 11:14:51,451] [DEBUG] ALTER TABLE `xwgj_grgj` DROP FOREIGN KEY `xwgj_grgj_user_id_dd8a3aa7_fk_bzks_id`; (params ())
+[2020-06-10 11:14:51,451] [DEBUG] ALTER TABLE `xwgj_grgj` DROP FOREIGN KEY `xwgj_grgj_user_id_dd8a3aa7_fk_bzks_id`; (params ())
+[2020-06-10 11:14:51,480] [DEBUG] ALTER TABLE `znyj_zjzxbxk` DROP FOREIGN KEY `znyj_zjzxbxk_user_id_9f1ee74e_fk_bzks_id`; (params ())
+[2020-06-10 11:14:51,480] [DEBUG] ALTER TABLE `znyj_zjzxbxk` DROP FOREIGN KEY `znyj_zjzxbxk_user_id_9f1ee74e_fk_bzks_id`; (params ())
+[2020-06-10 11:14:51,508] [DEBUG] ALTER TABLE `znyj_bzxyj` DROP FOREIGN KEY `znyj_bzxyj_user_id_b59ca30c_fk_bzks_id`; (params ())
+[2020-06-10 11:14:51,508] [DEBUG] ALTER TABLE `znyj_bzxyj` DROP FOREIGN KEY `znyj_bzxyj_user_id_b59ca30c_fk_bzks_id`; (params ())
+[2020-06-10 11:14:51,535] [DEBUG] ALTER TABLE `znyj_tkxw` DROP FOREIGN KEY `znyj_tkxw_user_id_18a9d12a_fk_bzks_id`; (params ())
+[2020-06-10 11:14:51,535] [DEBUG] ALTER TABLE `znyj_tkxw` DROP FOREIGN KEY `znyj_tkxw_user_id_18a9d12a_fk_bzks_id`; (params ())
+[2020-06-10 11:14:51,564] [DEBUG] ALTER TABLE `znyj_wg` DROP FOREIGN KEY `znyj_wg_user_id_9360d693_fk_bzks_id`; (params ())
+[2020-06-10 11:14:51,564] [DEBUG] ALTER TABLE `znyj_wg` DROP FOREIGN KEY `znyj_wg_user_id_9360d693_fk_bzks_id`; (params ())
+[2020-06-10 11:14:51,593] [DEBUG] ALTER TABLE `znyj_swxw` DROP FOREIGN KEY `znyj_swxw_user_id_946e44ca_fk_bzks_id`; (params ())
+[2020-06-10 11:14:51,593] [DEBUG] ALTER TABLE `znyj_swxw` DROP FOREIGN KEY `znyj_swxw_user_id_946e44ca_fk_bzks_id`; (params ())
+[2020-06-10 11:14:51,610] [DEBUG] ALTER TABLE `bzks` MODIFY `id` varchar(32) NOT NULL; (params [])
+[2020-06-10 11:14:51,610] [DEBUG] ALTER TABLE `bzks` MODIFY `id` varchar(32) NOT NULL; (params [])
+[2020-06-10 11:14:51,891] [DEBUG] ALTER TABLE `znyj_xxtxblx` MODIFY `user_id` varchar(32) NULL; (params [])
+[2020-06-10 11:14:51,891] [DEBUG] ALTER TABLE `znyj_xxtxblx` MODIFY `user_id` varchar(32) NULL; (params [])
+[2020-06-10 11:14:51,922] [DEBUG] ALTER TABLE `znyj_xwzs` MODIFY `user_id` varchar(32) NULL; (params [])
+[2020-06-10 11:14:51,922] [DEBUG] ALTER TABLE `znyj_xwzs` MODIFY `user_id` varchar(32) NULL; (params [])
+[2020-06-10 11:14:52,171] [DEBUG] ALTER TABLE `xwgj_grgj` MODIFY `user_id` varchar(32) NULL; (params [])
+[2020-06-10 11:14:52,171] [DEBUG] ALTER TABLE `xwgj_grgj` MODIFY `user_id` varchar(32) NULL; (params [])
+[2020-06-10 11:14:54,198] [DEBUG] ALTER TABLE `znyj_zjzxbxk` MODIFY `user_id` varchar(32) NULL; (params [])
+[2020-06-10 11:14:54,198] [DEBUG] ALTER TABLE `znyj_zjzxbxk` MODIFY `user_id` varchar(32) NULL; (params [])
+[2020-06-10 11:14:54,249] [DEBUG] ALTER TABLE `znyj_bzxyj` MODIFY `user_id` varchar(32) NULL; (params [])
+[2020-06-10 11:14:54,249] [DEBUG] ALTER TABLE `znyj_bzxyj` MODIFY `user_id` varchar(32) NULL; (params [])
+[2020-06-10 11:14:54,501] [DEBUG] ALTER TABLE `znyj_tkxw` MODIFY `user_id` varchar(32) NULL; (params [])
+[2020-06-10 11:14:54,501] [DEBUG] ALTER TABLE `znyj_tkxw` MODIFY `user_id` varchar(32) NULL; (params [])
+[2020-06-10 11:14:54,853] [DEBUG] ALTER TABLE `znyj_wg` MODIFY `user_id` varchar(32) NULL; (params [])
+[2020-06-10 11:14:54,853] [DEBUG] ALTER TABLE `znyj_wg` MODIFY `user_id` varchar(32) NULL; (params [])
+[2020-06-10 11:14:55,249] [DEBUG] ALTER TABLE `znyj_swxw` MODIFY `user_id` varchar(32) NULL; (params [])
+[2020-06-10 11:14:55,249] [DEBUG] ALTER TABLE `znyj_swxw` MODIFY `user_id` varchar(32) NULL; (params [])
+[2020-06-10 11:14:58,291] [DEBUG] ALTER TABLE `znyj_xxtxblx` ADD CONSTRAINT `znyj_xxtxblx_user_id_ff86d8c1_fk` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-10 11:14:58,291] [DEBUG] ALTER TABLE `znyj_xxtxblx` ADD CONSTRAINT `znyj_xxtxblx_user_id_ff86d8c1_fk` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-10 11:14:58,341] [DEBUG] ALTER TABLE `znyj_xwzs` ADD CONSTRAINT `znyj_xwzs_user_id_541e223d_fk` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-10 11:14:58,341] [DEBUG] ALTER TABLE `znyj_xwzs` ADD CONSTRAINT `znyj_xwzs_user_id_541e223d_fk` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-10 11:14:58,638] [DEBUG] ALTER TABLE `xwgj_grgj` ADD CONSTRAINT `xwgj_grgj_user_id_dd8a3aa7_fk` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-10 11:14:58,638] [DEBUG] ALTER TABLE `xwgj_grgj` ADD CONSTRAINT `xwgj_grgj_user_id_dd8a3aa7_fk` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-10 11:15:00,792] [DEBUG] ALTER TABLE `znyj_zjzxbxk` ADD CONSTRAINT `znyj_zjzxbxk_user_id_9f1ee74e_fk` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-10 11:15:00,792] [DEBUG] ALTER TABLE `znyj_zjzxbxk` ADD CONSTRAINT `znyj_zjzxbxk_user_id_9f1ee74e_fk` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-10 11:15:00,862] [DEBUG] ALTER TABLE `znyj_bzxyj` ADD CONSTRAINT `znyj_bzxyj_user_id_b59ca30c_fk` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-10 11:15:00,862] [DEBUG] ALTER TABLE `znyj_bzxyj` ADD CONSTRAINT `znyj_bzxyj_user_id_b59ca30c_fk` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-10 11:15:01,103] [DEBUG] ALTER TABLE `znyj_tkxw` ADD CONSTRAINT `znyj_tkxw_user_id_18a9d12a_fk` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-10 11:15:01,103] [DEBUG] ALTER TABLE `znyj_tkxw` ADD CONSTRAINT `znyj_tkxw_user_id_18a9d12a_fk` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-10 11:15:01,525] [DEBUG] ALTER TABLE `znyj_wg` ADD CONSTRAINT `znyj_wg_user_id_9360d693_fk` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-10 11:15:01,525] [DEBUG] ALTER TABLE `znyj_wg` ADD CONSTRAINT `znyj_wg_user_id_9360d693_fk` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-10 11:15:01,972] [DEBUG] ALTER TABLE `znyj_swxw` ADD CONSTRAINT `znyj_swxw_user_id_946e44ca_fk` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-10 11:15:01,972] [DEBUG] ALTER TABLE `znyj_swxw` ADD CONSTRAINT `znyj_swxw_user_id_946e44ca_fk` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-10 11:15:05,293] [DEBUG] ALTER TABLE `xwgj_jzg_grgj` DROP FOREIGN KEY `xwgj_jzg_grgj_user_id_a9e89b2d_fk_jzg_id`; (params ())
+[2020-06-10 11:15:05,293] [DEBUG] ALTER TABLE `xwgj_jzg_grgj` DROP FOREIGN KEY `xwgj_jzg_grgj_user_id_a9e89b2d_fk_jzg_id`; (params ())
+[2020-06-10 11:15:05,306] [DEBUG] ALTER TABLE `jzg` MODIFY `id` varchar(32) NOT NULL; (params [])
+[2020-06-10 11:15:05,306] [DEBUG] ALTER TABLE `jzg` MODIFY `id` varchar(32) NOT NULL; (params [])
+[2020-06-10 11:15:05,494] [DEBUG] ALTER TABLE `xwgj_jzg_grgj` MODIFY `user_id` varchar(32) NULL; (params [])
+[2020-06-10 11:15:05,494] [DEBUG] ALTER TABLE `xwgj_jzg_grgj` MODIFY `user_id` varchar(32) NULL; (params [])
+[2020-06-10 11:15:05,538] [DEBUG] ALTER TABLE `xwgj_jzg_grgj` ADD CONSTRAINT `xwgj_jzg_grgj_user_id_a9e89b2d_fk` FOREIGN KEY (`user_id`) REFERENCES `jzg` (`id`); (params ())
+[2020-06-10 11:15:05,538] [DEBUG] ALTER TABLE `xwgj_jzg_grgj` ADD CONSTRAINT `xwgj_jzg_grgj_user_id_a9e89b2d_fk` FOREIGN KEY (`user_id`) REFERENCES `jzg` (`id`); (params ())
+[2020-06-10 11:15:40,445] [DEBUG] ALTER TABLE `znyj_xxtxblx` DROP FOREIGN KEY `znyj_xxtxblx_user_id_ff86d8c1_fk_bzks_id`; (params ())
+[2020-06-10 11:15:40,445] [DEBUG] ALTER TABLE `znyj_xxtxblx` DROP FOREIGN KEY `znyj_xxtxblx_user_id_ff86d8c1_fk_bzks_id`; (params ())
+[2020-06-10 11:15:40,749] [DEBUG] ALTER TABLE `znyj_xwzs` DROP FOREIGN KEY `znyj_xwzs_user_id_541e223d_fk_bzks_id`; (params ())
+[2020-06-10 11:15:40,749] [DEBUG] ALTER TABLE `znyj_xwzs` DROP FOREIGN KEY `znyj_xwzs_user_id_541e223d_fk_bzks_id`; (params ())
+[2020-06-10 11:15:40,811] [DEBUG] ALTER TABLE `znyj_wg` DROP FOREIGN KEY `znyj_wg_user_id_9360d693_fk_bzks_id`; (params ())
+[2020-06-10 11:15:40,811] [DEBUG] ALTER TABLE `znyj_wg` DROP FOREIGN KEY `znyj_wg_user_id_9360d693_fk_bzks_id`; (params ())
+[2020-06-10 11:15:40,869] [DEBUG] ALTER TABLE `znyj_bzxyj` DROP FOREIGN KEY `znyj_bzxyj_user_id_b59ca30c_fk_bzks_id`; (params ())
+[2020-06-10 11:15:40,869] [DEBUG] ALTER TABLE `znyj_bzxyj` DROP FOREIGN KEY `znyj_bzxyj_user_id_b59ca30c_fk_bzks_id`; (params ())
+[2020-06-10 11:15:40,924] [DEBUG] ALTER TABLE `xwgj_grgj` DROP FOREIGN KEY `xwgj_grgj_user_id_dd8a3aa7_fk_bzks_id`; (params ())
+[2020-06-10 11:15:40,924] [DEBUG] ALTER TABLE `xwgj_grgj` DROP FOREIGN KEY `xwgj_grgj_user_id_dd8a3aa7_fk_bzks_id`; (params ())
+[2020-06-10 11:15:40,958] [DEBUG] ALTER TABLE `znyj_zjzxbxk` DROP FOREIGN KEY `znyj_zjzxbxk_user_id_9f1ee74e_fk_bzks_id`; (params ())
+[2020-06-10 11:15:40,958] [DEBUG] ALTER TABLE `znyj_zjzxbxk` DROP FOREIGN KEY `znyj_zjzxbxk_user_id_9f1ee74e_fk_bzks_id`; (params ())
+[2020-06-10 11:15:40,973] [DEBUG] ALTER TABLE `znyj_swxw` DROP FOREIGN KEY `znyj_swxw_user_id_946e44ca_fk_bzks_id`; (params ())
+[2020-06-10 11:15:40,973] [DEBUG] ALTER TABLE `znyj_swxw` DROP FOREIGN KEY `znyj_swxw_user_id_946e44ca_fk_bzks_id`; (params ())
+[2020-06-10 11:15:40,989] [DEBUG] ALTER TABLE `znyj_tkxw` DROP FOREIGN KEY `znyj_tkxw_user_id_18a9d12a_fk_bzks_id`; (params ())
+[2020-06-10 11:15:40,989] [DEBUG] ALTER TABLE `znyj_tkxw` DROP FOREIGN KEY `znyj_tkxw_user_id_18a9d12a_fk_bzks_id`; (params ())
+[2020-06-10 11:15:41,004] [DEBUG] ALTER TABLE `bzks` MODIFY `id` varchar(32) NOT NULL; (params [])
+[2020-06-10 11:15:41,004] [DEBUG] ALTER TABLE `bzks` MODIFY `id` varchar(32) NOT NULL; (params [])
+[2020-06-10 11:15:42,667] [DEBUG] ALTER TABLE `znyj_xxtxblx` MODIFY `user_id` varchar(32) NULL; (params [])
+[2020-06-10 11:15:42,667] [DEBUG] ALTER TABLE `znyj_xxtxblx` MODIFY `user_id` varchar(32) NULL; (params [])
+[2020-06-10 11:15:42,776] [DEBUG] ALTER TABLE `znyj_xwzs` MODIFY `user_id` varchar(32) NULL; (params [])
+[2020-06-10 11:15:42,776] [DEBUG] ALTER TABLE `znyj_xwzs` MODIFY `user_id` varchar(32) NULL; (params [])
+[2020-06-10 11:15:43,972] [DEBUG] ALTER TABLE `znyj_wg` MODIFY `user_id` varchar(32) NULL; (params [])
+[2020-06-10 11:15:43,972] [DEBUG] ALTER TABLE `znyj_wg` MODIFY `user_id` varchar(32) NULL; (params [])
+[2020-06-10 11:15:46,150] [DEBUG] ALTER TABLE `znyj_bzxyj` MODIFY `user_id` varchar(32) NULL; (params [])
+[2020-06-10 11:15:46,150] [DEBUG] ALTER TABLE `znyj_bzxyj` MODIFY `user_id` varchar(32) NULL; (params [])
+[2020-06-10 11:15:47,504] [DEBUG] ALTER TABLE `xwgj_grgj` MODIFY `user_id` varchar(32) NULL; (params [])
+[2020-06-10 11:15:47,504] [DEBUG] ALTER TABLE `xwgj_grgj` MODIFY `user_id` varchar(32) NULL; (params [])
+[2020-06-10 11:16:00,013] [DEBUG] ALTER TABLE `znyj_zjzxbxk` MODIFY `user_id` varchar(32) NULL; (params [])
+[2020-06-10 11:16:00,013] [DEBUG] ALTER TABLE `znyj_zjzxbxk` MODIFY `user_id` varchar(32) NULL; (params [])
+[2020-06-10 11:16:00,488] [DEBUG] ALTER TABLE `znyj_swxw` MODIFY `user_id` varchar(32) NULL; (params [])
+[2020-06-10 11:16:00,488] [DEBUG] ALTER TABLE `znyj_swxw` MODIFY `user_id` varchar(32) NULL; (params [])
+[2020-06-10 11:16:13,925] [DEBUG] ALTER TABLE `znyj_tkxw` MODIFY `user_id` varchar(32) NULL; (params [])
+[2020-06-10 11:16:13,925] [DEBUG] ALTER TABLE `znyj_tkxw` MODIFY `user_id` varchar(32) NULL; (params [])
+[2020-06-10 11:16:16,220] [DEBUG] ALTER TABLE `znyj_xxtxblx` ADD CONSTRAINT `znyj_xxtxblx_user_id_ff86d8c1_fk` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-10 11:16:16,220] [DEBUG] ALTER TABLE `znyj_xxtxblx` ADD CONSTRAINT `znyj_xxtxblx_user_id_ff86d8c1_fk` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-10 11:16:16,857] [DEBUG] ALTER TABLE `znyj_xwzs` ADD CONSTRAINT `znyj_xwzs_user_id_541e223d_fk` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-10 11:16:16,857] [DEBUG] ALTER TABLE `znyj_xwzs` ADD CONSTRAINT `znyj_xwzs_user_id_541e223d_fk` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-10 11:16:18,796] [DEBUG] ALTER TABLE `znyj_wg` ADD CONSTRAINT `znyj_wg_user_id_9360d693_fk` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-10 11:16:18,796] [DEBUG] ALTER TABLE `znyj_wg` ADD CONSTRAINT `znyj_wg_user_id_9360d693_fk` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-10 11:16:20,879] [DEBUG] ALTER TABLE `znyj_bzxyj` ADD CONSTRAINT `znyj_bzxyj_user_id_b59ca30c_fk` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-10 11:16:20,879] [DEBUG] ALTER TABLE `znyj_bzxyj` ADD CONSTRAINT `znyj_bzxyj_user_id_b59ca30c_fk` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-10 11:16:21,575] [DEBUG] ALTER TABLE `xwgj_grgj` ADD CONSTRAINT `xwgj_grgj_user_id_dd8a3aa7_fk` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-10 11:16:21,575] [DEBUG] ALTER TABLE `xwgj_grgj` ADD CONSTRAINT `xwgj_grgj_user_id_dd8a3aa7_fk` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-10 11:16:28,541] [DEBUG] ALTER TABLE `znyj_zjzxbxk` ADD CONSTRAINT `znyj_zjzxbxk_user_id_9f1ee74e_fk` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-10 11:16:28,541] [DEBUG] ALTER TABLE `znyj_zjzxbxk` ADD CONSTRAINT `znyj_zjzxbxk_user_id_9f1ee74e_fk` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-10 11:16:28,980] [DEBUG] ALTER TABLE `znyj_swxw` ADD CONSTRAINT `znyj_swxw_user_id_946e44ca_fk` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-10 11:16:28,980] [DEBUG] ALTER TABLE `znyj_swxw` ADD CONSTRAINT `znyj_swxw_user_id_946e44ca_fk` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-10 11:16:40,115] [DEBUG] ALTER TABLE `znyj_tkxw` ADD CONSTRAINT `znyj_tkxw_user_id_18a9d12a_fk` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-10 11:16:40,115] [DEBUG] ALTER TABLE `znyj_tkxw` ADD CONSTRAINT `znyj_tkxw_user_id_18a9d12a_fk` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-10 11:16:43,139] [DEBUG] ALTER TABLE `xwgj_jzg_grgj` DROP FOREIGN KEY `xwgj_jzg_grgj_user_id_a9e89b2d_fk_jzg_id`; (params ())
+[2020-06-10 11:16:43,139] [DEBUG] ALTER TABLE `xwgj_jzg_grgj` DROP FOREIGN KEY `xwgj_jzg_grgj_user_id_a9e89b2d_fk_jzg_id`; (params ())
+[2020-06-10 11:16:43,153] [DEBUG] ALTER TABLE `jzg` MODIFY `id` varchar(32) NOT NULL; (params [])
+[2020-06-10 11:16:43,153] [DEBUG] ALTER TABLE `jzg` MODIFY `id` varchar(32) NOT NULL; (params [])
+[2020-06-10 11:16:44,281] [DEBUG] ALTER TABLE `xwgj_jzg_grgj` MODIFY `user_id` varchar(32) NULL; (params [])
+[2020-06-10 11:16:44,281] [DEBUG] ALTER TABLE `xwgj_jzg_grgj` MODIFY `user_id` varchar(32) NULL; (params [])
+[2020-06-10 11:16:44,795] [DEBUG] ALTER TABLE `xwgj_jzg_grgj` ADD CONSTRAINT `xwgj_jzg_grgj_user_id_a9e89b2d_fk` FOREIGN KEY (`user_id`) REFERENCES `jzg` (`id`); (params ())
+[2020-06-10 11:16:44,795] [DEBUG] ALTER TABLE `xwgj_jzg_grgj` ADD CONSTRAINT `xwgj_jzg_grgj_user_id_a9e89b2d_fk` FOREIGN KEY (`user_id`) REFERENCES `jzg` (`id`); (params ())
+[2020-06-10 11:18:38,060] [DEBUG] ALTER TABLE `znyj_zjzxbxk` DROP FOREIGN KEY `znyj_zjzxbxk_user_id_9f1ee74e_fk_bzks_id`; (params ())
+[2020-06-10 11:18:38,060] [DEBUG] ALTER TABLE `znyj_zjzxbxk` DROP FOREIGN KEY `znyj_zjzxbxk_user_id_9f1ee74e_fk_bzks_id`; (params ())
+[2020-06-10 11:18:38,126] [DEBUG] ALTER TABLE `znyj_swxw` DROP FOREIGN KEY `znyj_swxw_user_id_946e44ca_fk_bzks_id`; (params ())
+[2020-06-10 11:18:38,126] [DEBUG] ALTER TABLE `znyj_swxw` DROP FOREIGN KEY `znyj_swxw_user_id_946e44ca_fk_bzks_id`; (params ())
+[2020-06-10 11:18:38,177] [DEBUG] ALTER TABLE `znyj_xwzs` DROP FOREIGN KEY `znyj_xwzs_user_id_541e223d_fk_bzks_id`; (params ())
+[2020-06-10 11:18:38,177] [DEBUG] ALTER TABLE `znyj_xwzs` DROP FOREIGN KEY `znyj_xwzs_user_id_541e223d_fk_bzks_id`; (params ())
+[2020-06-10 11:18:38,254] [DEBUG] ALTER TABLE `znyj_wg` DROP FOREIGN KEY `znyj_wg_user_id_9360d693_fk_bzks_id`; (params ())
+[2020-06-10 11:18:38,254] [DEBUG] ALTER TABLE `znyj_wg` DROP FOREIGN KEY `znyj_wg_user_id_9360d693_fk_bzks_id`; (params ())
+[2020-06-10 11:18:38,496] [DEBUG] ALTER TABLE `znyj_tkxw` DROP FOREIGN KEY `znyj_tkxw_user_id_18a9d12a_fk_bzks_id`; (params ())
+[2020-06-10 11:18:38,496] [DEBUG] ALTER TABLE `znyj_tkxw` DROP FOREIGN KEY `znyj_tkxw_user_id_18a9d12a_fk_bzks_id`; (params ())
+[2020-06-10 11:18:38,563] [DEBUG] ALTER TABLE `znyj_xxtxblx` DROP FOREIGN KEY `znyj_xxtxblx_user_id_ff86d8c1_fk_bzks_id`; (params ())
+[2020-06-10 11:18:38,563] [DEBUG] ALTER TABLE `znyj_xxtxblx` DROP FOREIGN KEY `znyj_xxtxblx_user_id_ff86d8c1_fk_bzks_id`; (params ())
+[2020-06-10 11:18:38,664] [DEBUG] ALTER TABLE `xwgj_grgj` DROP FOREIGN KEY `xwgj_grgj_user_id_dd8a3aa7_fk_bzks_id`; (params ())
+[2020-06-10 11:18:38,664] [DEBUG] ALTER TABLE `xwgj_grgj` DROP FOREIGN KEY `xwgj_grgj_user_id_dd8a3aa7_fk_bzks_id`; (params ())
+[2020-06-10 11:18:38,721] [DEBUG] ALTER TABLE `znyj_bzxyj` DROP FOREIGN KEY `znyj_bzxyj_user_id_b59ca30c_fk_bzks_id`; (params ())
+[2020-06-10 11:18:38,721] [DEBUG] ALTER TABLE `znyj_bzxyj` DROP FOREIGN KEY `znyj_bzxyj_user_id_b59ca30c_fk_bzks_id`; (params ())
+[2020-06-10 11:18:38,771] [DEBUG] ALTER TABLE `bzks` MODIFY `id` varchar(32) NOT NULL; (params [])
+[2020-06-10 11:18:38,771] [DEBUG] ALTER TABLE `bzks` MODIFY `id` varchar(32) NOT NULL; (params [])
+[2020-06-10 11:18:41,092] [DEBUG] ALTER TABLE `znyj_zjzxbxk` MODIFY `user_id` varchar(32) NULL; (params [])
+[2020-06-10 11:18:41,092] [DEBUG] ALTER TABLE `znyj_zjzxbxk` MODIFY `user_id` varchar(32) NULL; (params [])
+[2020-06-10 11:18:41,617] [DEBUG] ALTER TABLE `znyj_swxw` MODIFY `user_id` varchar(32) NULL; (params [])
+[2020-06-10 11:18:41,617] [DEBUG] ALTER TABLE `znyj_swxw` MODIFY `user_id` varchar(32) NULL; (params [])
+[2020-06-10 11:19:01,878] [DEBUG] ALTER TABLE `znyj_xwzs` MODIFY `user_id` varchar(32) NULL; (params [])
+[2020-06-10 11:19:01,878] [DEBUG] ALTER TABLE `znyj_xwzs` MODIFY `user_id` varchar(32) NULL; (params [])
+[2020-06-10 11:19:04,387] [DEBUG] ALTER TABLE `znyj_wg` MODIFY `user_id` varchar(32) NULL; (params [])
+[2020-06-10 11:19:04,387] [DEBUG] ALTER TABLE `znyj_wg` MODIFY `user_id` varchar(32) NULL; (params [])
+[2020-06-10 11:19:08,293] [DEBUG] ALTER TABLE `znyj_tkxw` MODIFY `user_id` varchar(32) NULL; (params [])
+[2020-06-10 11:19:08,293] [DEBUG] ALTER TABLE `znyj_tkxw` MODIFY `user_id` varchar(32) NULL; (params [])
+[2020-06-10 11:19:11,921] [DEBUG] ALTER TABLE `znyj_xxtxblx` MODIFY `user_id` varchar(32) NULL; (params [])
+[2020-06-10 11:19:11,921] [DEBUG] ALTER TABLE `znyj_xxtxblx` MODIFY `user_id` varchar(32) NULL; (params [])
+[2020-06-10 11:19:12,396] [DEBUG] ALTER TABLE `xwgj_grgj` MODIFY `user_id` varchar(32) NULL; (params [])
+[2020-06-10 11:19:12,396] [DEBUG] ALTER TABLE `xwgj_grgj` MODIFY `user_id` varchar(32) NULL; (params [])
+[2020-06-10 11:19:27,399] [DEBUG] ALTER TABLE `znyj_bzxyj` MODIFY `user_id` varchar(32) NULL; (params [])
+[2020-06-10 11:19:27,399] [DEBUG] ALTER TABLE `znyj_bzxyj` MODIFY `user_id` varchar(32) NULL; (params [])
+[2020-06-10 11:19:29,010] [DEBUG] ALTER TABLE `znyj_zjzxbxk` ADD CONSTRAINT `znyj_zjzxbxk_user_id_9f1ee74e_fk` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-10 11:19:29,010] [DEBUG] ALTER TABLE `znyj_zjzxbxk` ADD CONSTRAINT `znyj_zjzxbxk_user_id_9f1ee74e_fk` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-10 11:19:29,444] [DEBUG] ALTER TABLE `znyj_swxw` ADD CONSTRAINT `znyj_swxw_user_id_946e44ca_fk` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-10 11:19:29,444] [DEBUG] ALTER TABLE `znyj_swxw` ADD CONSTRAINT `znyj_swxw_user_id_946e44ca_fk` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-10 11:19:48,638] [DEBUG] ALTER TABLE `znyj_xwzs` ADD CONSTRAINT `znyj_xwzs_user_id_541e223d_fk` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-10 11:19:48,638] [DEBUG] ALTER TABLE `znyj_xwzs` ADD CONSTRAINT `znyj_xwzs_user_id_541e223d_fk` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-10 11:19:51,574] [DEBUG] ALTER TABLE `znyj_wg` ADD CONSTRAINT `znyj_wg_user_id_9360d693_fk` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-10 11:19:51,574] [DEBUG] ALTER TABLE `znyj_wg` ADD CONSTRAINT `znyj_wg_user_id_9360d693_fk` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-10 11:19:54,579] [DEBUG] ALTER TABLE `znyj_tkxw` ADD CONSTRAINT `znyj_tkxw_user_id_18a9d12a_fk` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-10 11:19:54,579] [DEBUG] ALTER TABLE `znyj_tkxw` ADD CONSTRAINT `znyj_tkxw_user_id_18a9d12a_fk` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-10 11:19:57,998] [DEBUG] ALTER TABLE `znyj_xxtxblx` ADD CONSTRAINT `znyj_xxtxblx_user_id_ff86d8c1_fk` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-10 11:19:57,998] [DEBUG] ALTER TABLE `znyj_xxtxblx` ADD CONSTRAINT `znyj_xxtxblx_user_id_ff86d8c1_fk` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-10 11:19:58,383] [DEBUG] ALTER TABLE `xwgj_grgj` ADD CONSTRAINT `xwgj_grgj_user_id_dd8a3aa7_fk` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-10 11:19:58,383] [DEBUG] ALTER TABLE `xwgj_grgj` ADD CONSTRAINT `xwgj_grgj_user_id_dd8a3aa7_fk` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-10 11:20:13,793] [DEBUG] ALTER TABLE `znyj_bzxyj` ADD CONSTRAINT `znyj_bzxyj_user_id_b59ca30c_fk` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-10 11:20:13,793] [DEBUG] ALTER TABLE `znyj_bzxyj` ADD CONSTRAINT `znyj_bzxyj_user_id_b59ca30c_fk` FOREIGN KEY (`user_id`) REFERENCES `bzks` (`id`); (params ())
+[2020-06-10 11:20:15,291] [DEBUG] ALTER TABLE `xwgj_jzg_grgj` DROP FOREIGN KEY `xwgj_jzg_grgj_user_id_a9e89b2d_fk_jzg_id`; (params ())
+[2020-06-10 11:20:15,291] [DEBUG] ALTER TABLE `xwgj_jzg_grgj` DROP FOREIGN KEY `xwgj_jzg_grgj_user_id_a9e89b2d_fk_jzg_id`; (params ())
+[2020-06-10 11:20:15,330] [DEBUG] ALTER TABLE `jzg` MODIFY `id` varchar(32) NOT NULL; (params [])
+[2020-06-10 11:20:15,330] [DEBUG] ALTER TABLE `jzg` MODIFY `id` varchar(32) NOT NULL; (params [])
+[2020-06-10 11:20:17,263] [DEBUG] ALTER TABLE `xwgj_jzg_grgj` MODIFY `user_id` varchar(32) NULL; (params [])
+[2020-06-10 11:20:17,263] [DEBUG] ALTER TABLE `xwgj_jzg_grgj` MODIFY `user_id` varchar(32) NULL; (params [])
+[2020-06-10 11:20:17,899] [DEBUG] ALTER TABLE `xwgj_jzg_grgj` ADD CONSTRAINT `xwgj_jzg_grgj_user_id_a9e89b2d_fk` FOREIGN KEY (`user_id`) REFERENCES `jzg` (`id`); (params ())
+[2020-06-10 11:20:17,899] [DEBUG] ALTER TABLE `xwgj_jzg_grgj` ADD CONSTRAINT `xwgj_jzg_grgj_user_id_a9e89b2d_fk` FOREIGN KEY (`user_id`) REFERENCES `jzg` (`id`); (params ())
+[2020-06-12 19:34:12,796] [DEBUG] CREATE TABLE `yjs` (`id` varchar(32) NOT NULL PRIMARY KEY, `xh` varchar(32) NOT NULL UNIQUE, `xm` varchar(16) NOT NULL, `xb` integer NOT NULL, `yx` varchar(16) NULL, `xn` varchar(32) NULL, `zy` varchar(64) NULL, `dszgh` varchar(16) NULL, `create_time` datetime(6) NOT NULL, `update_time` datetime(6) NOT NULL); (params None)
+[2020-06-12 19:34:12,796] [DEBUG] CREATE TABLE `yjs` (`id` varchar(32) NOT NULL PRIMARY KEY, `xh` varchar(32) NOT NULL UNIQUE, `xm` varchar(16) NOT NULL, `xb` integer NOT NULL, `yx` varchar(16) NULL, `xn` varchar(32) NULL, `zy` varchar(64) NULL, `dszgh` varchar(16) NULL, `create_time` datetime(6) NOT NULL, `update_time` datetime(6) NOT NULL); (params None)
+[2020-06-12 19:36:06,853] [DEBUG] CREATE TABLE `xwgj_yjs_grgj` (`id` varchar(32) NOT NULL PRIMARY KEY, `xh` varchar(32) NOT NULL, `xwsj` datetime(6) NULL, `xwdd` varchar(64) NULL, `jd` varchar(64) NULL, `wd` varchar(64) NULL, `create_time` datetime(6) NOT NULL, `update_time` datetime(6) NOT NULL, `user_id` varchar(32) NULL); (params None)
+[2020-06-12 19:36:06,853] [DEBUG] CREATE TABLE `xwgj_yjs_grgj` (`id` varchar(32) NOT NULL PRIMARY KEY, `xh` varchar(32) NOT NULL, `xwsj` datetime(6) NULL, `xwdd` varchar(64) NULL, `jd` varchar(64) NULL, `wd` varchar(64) NULL, `create_time` datetime(6) NOT NULL, `update_time` datetime(6) NOT NULL, `user_id` varchar(32) NULL); (params None)
+[2020-06-12 19:36:06,932] [DEBUG] ALTER TABLE `xwgj_yjs_grgj` ADD CONSTRAINT `xwgj_yjs_grgj_user_id_2250659c_fk_yjs_id` FOREIGN KEY (`user_id`) REFERENCES `yjs` (`id`); (params ())
+[2020-06-12 19:36:06,932] [DEBUG] ALTER TABLE `xwgj_yjs_grgj` ADD CONSTRAINT `xwgj_yjs_grgj_user_id_2250659c_fk_yjs_id` FOREIGN KEY (`user_id`) REFERENCES `yjs` (`id`); (params ())
+[2020-06-12 19:37:02,093] [DEBUG] CREATE TABLE `yjs` (`id` varchar(32) NOT NULL PRIMARY KEY, `xh` varchar(32) NOT NULL UNIQUE, `xm` varchar(16) NOT NULL, `xb` integer NOT NULL, `yx` varchar(16) NULL, `xn` varchar(32) NULL, `zy` varchar(64) NULL, `dszgh` varchar(16) NULL, `create_time` datetime(6) NOT NULL, `update_time` datetime(6) NOT NULL); (params None)
+[2020-06-12 19:37:02,093] [DEBUG] CREATE TABLE `yjs` (`id` varchar(32) NOT NULL PRIMARY KEY, `xh` varchar(32) NOT NULL UNIQUE, `xm` varchar(16) NOT NULL, `xb` integer NOT NULL, `yx` varchar(16) NULL, `xn` varchar(32) NULL, `zy` varchar(64) NULL, `dszgh` varchar(16) NULL, `create_time` datetime(6) NOT NULL, `update_time` datetime(6) NOT NULL); (params None)
+[2020-06-12 19:37:02,383] [DEBUG] CREATE TABLE `xwgj_yjs_grgj` (`id` varchar(32) NOT NULL PRIMARY KEY, `xh` varchar(32) NOT NULL, `xwsj` datetime(6) NULL, `xwdd` varchar(64) NULL, `jd` varchar(64) NULL, `wd` varchar(64) NULL, `create_time` datetime(6) NOT NULL, `update_time` datetime(6) NOT NULL, `user_id` varchar(32) NULL); (params None)
+[2020-06-12 19:37:02,383] [DEBUG] CREATE TABLE `xwgj_yjs_grgj` (`id` varchar(32) NOT NULL PRIMARY KEY, `xh` varchar(32) NOT NULL, `xwsj` datetime(6) NULL, `xwdd` varchar(64) NULL, `jd` varchar(64) NULL, `wd` varchar(64) NULL, `create_time` datetime(6) NOT NULL, `update_time` datetime(6) NOT NULL, `user_id` varchar(32) NULL); (params None)
+[2020-06-12 19:37:02,528] [DEBUG] ALTER TABLE `xwgj_yjs_grgj` ADD CONSTRAINT `xwgj_yjs_grgj_user_id_2250659c_fk_yjs_id` FOREIGN KEY (`user_id`) REFERENCES `yjs` (`id`); (params ())
+[2020-06-12 19:37:02,528] [DEBUG] ALTER TABLE `xwgj_yjs_grgj` ADD CONSTRAINT `xwgj_yjs_grgj_user_id_2250659c_fk_yjs_id` FOREIGN KEY (`user_id`) REFERENCES `yjs` (`id`); (params ())
+[2020-06-12 19:39:31,698] [DEBUG] CREATE TABLE `yjs` (`id` varchar(32) NOT NULL PRIMARY KEY, `xh` varchar(32) NOT NULL UNIQUE, `xm` varchar(16) NOT NULL, `xb` integer NOT NULL, `yx` varchar(16) NULL, `xn` varchar(32) NULL, `zy` varchar(64) NULL, `dszgh` varchar(16) NULL, `create_time` datetime(6) NOT NULL, `update_time` datetime(6) NOT NULL); (params None)
+[2020-06-12 19:39:31,698] [DEBUG] CREATE TABLE `yjs` (`id` varchar(32) NOT NULL PRIMARY KEY, `xh` varchar(32) NOT NULL UNIQUE, `xm` varchar(16) NOT NULL, `xb` integer NOT NULL, `yx` varchar(16) NULL, `xn` varchar(32) NULL, `zy` varchar(64) NULL, `dszgh` varchar(16) NULL, `create_time` datetime(6) NOT NULL, `update_time` datetime(6) NOT NULL); (params None)
+[2020-06-12 19:39:31,983] [DEBUG] CREATE TABLE `xwgj_yjs_grgj` (`id` varchar(32) NOT NULL PRIMARY KEY, `xh` varchar(32) NOT NULL, `xwsj` datetime(6) NULL, `xwdd` varchar(64) NULL, `jd` varchar(64) NULL, `wd` varchar(64) NULL, `create_time` datetime(6) NOT NULL, `update_time` datetime(6) NOT NULL, `user_id` varchar(32) NULL); (params None)
+[2020-06-12 19:39:31,983] [DEBUG] CREATE TABLE `xwgj_yjs_grgj` (`id` varchar(32) NOT NULL PRIMARY KEY, `xh` varchar(32) NOT NULL, `xwsj` datetime(6) NULL, `xwdd` varchar(64) NULL, `jd` varchar(64) NULL, `wd` varchar(64) NULL, `create_time` datetime(6) NOT NULL, `update_time` datetime(6) NOT NULL, `user_id` varchar(32) NULL); (params None)
+[2020-06-12 19:39:32,322] [DEBUG] ALTER TABLE `xwgj_yjs_grgj` ADD CONSTRAINT `xwgj_yjs_grgj_user_id_2250659c_fk_yjs_id` FOREIGN KEY (`user_id`) REFERENCES `yjs` (`id`); (params ())
+[2020-06-12 19:39:32,322] [DEBUG] ALTER TABLE `xwgj_yjs_grgj` ADD CONSTRAINT `xwgj_yjs_grgj_user_id_2250659c_fk_yjs_id` FOREIGN KEY (`user_id`) REFERENCES `yjs` (`id`); (params ())
+[2020-06-12 21:04:25,074] [DEBUG] ALTER TABLE `yjs` MODIFY `yx` varchar(64) NULL; (params [])
+[2020-06-12 21:04:25,074] [DEBUG] ALTER TABLE `yjs` MODIFY `yx` varchar(64) NULL; (params [])
+[2020-06-13 11:20:51,459] [INFO] "POST /login/ HTTP/1.1" 200 179
+[2020-06-13 11:21:44,171] [WARNING] "GET /portrait/v1/yjsyx/ HTTP/1.1" 403 94
+[2020-06-13 11:21:58,117] [INFO] "GET /portrait/v1/yjsyx/ HTTP/1.1" 200 1059
+[2020-06-13 11:24:57,037] [INFO] "GET /portrait/v1/yjsnj/ HTTP/1.1" 200 279
+[2020-06-13 11:28:22,558] [INFO] "GET /portrait/v1/yjsxwgj/ HTTP/1.1" 200 69
+[2020-06-13 11:28:36,335] [INFO] "POST /portrait/v1/yjsxwgj/ HTTP/1.1" 200 206
+[2020-06-13 11:33:24,656] [INFO] "POST /portrait/v1/yjsxwgj/ HTTP/1.1" 200 332
+[2020-06-13 11:38:18,244] [ERROR] wuyi
+[2020-06-13 11:38:18,244] [ERROR] 192.168.3.237
+[2020-06-13 11:38:18,244] [ERROR] ("Cannot resolve keyword 'grgj' into field. Choices are: create_time, id, jd, update_time, user, user_id, wd, xh, xwdd, xwsj",)
+[2020-06-13 11:38:18,245] [INFO] "GET /portrait/v1/yjsxwgjxq/?xh=201921512188 HTTP/1.1" 200 188
+[2020-06-13 11:38:39,156] [ERROR] wuyi
+[2020-06-13 11:38:39,157] [ERROR] 192.168.3.237
+[2020-06-13 11:38:39,157] [ERROR] ("Cannot resolve keyword 'grgj' into field. Choices are: create_time, id, jd, update_time, user, user_id, wd, xh, xwdd, xwsj",)
+[2020-06-13 11:38:39,157] [INFO] "GET /portrait/v1/yjsxwgjxq/?xh=201921512188 HTTP/1.1" 200 188
+[2020-06-13 11:39:58,904] [ERROR] wuyi
+[2020-06-13 11:39:58,904] [ERROR] 192.168.3.237
+[2020-06-13 11:39:58,904] [ERROR] ("Cannot resolve keyword 'grgj' into field. Choices are: create_time, id, jd, update_time, user, user_id, wd, xh, xwdd, xwsj",)
+[2020-06-13 11:39:58,905] [INFO] "GET /portrait/v1/yjsxwgjxq/?xhxm=201921512188 HTTP/1.1" 200 188
+[2020-06-13 11:43:13,131] [ERROR] wuyi
+[2020-06-13 11:43:13,131] [ERROR] 192.168.3.237
+[2020-06-13 11:43:13,131] [ERROR] ("Cannot resolve keyword 'grgj' into field. Choices are: create_time, id, jd, update_time, user, user_id, wd, xh, xwdd, xwsj",)
+[2020-06-13 11:43:13,132] [INFO] "GET /portrait/v1/yjsxwgjxq/?xh=201921512188 HTTP/1.1" 200 188
+[2020-06-13 11:43:15,251] [ERROR] wuyi
+[2020-06-13 11:43:15,251] [ERROR] 192.168.3.237
+[2020-06-13 11:43:15,251] [ERROR] ("Cannot resolve keyword 'grgj' into field. Choices are: create_time, id, jd, update_time, user, user_id, wd, xh, xwdd, xwsj",)
+[2020-06-13 11:43:15,252] [INFO] "GET /portrait/v1/yjsxwgjxq/?xh=201921512188 HTTP/1.1" 200 188
+[2020-06-13 11:44:13,522] [ERROR] wuyi
+[2020-06-13 11:44:13,523] [ERROR] 192.168.3.237
+[2020-06-13 11:44:13,523] [ERROR] ("Cannot resolve keyword 'grgj' into field. Choices are: create_time, id, jd, update_time, user, user_id, wd, xh, xwdd, xwsj",)
+[2020-06-13 11:44:13,524] [INFO] "GET /portrait/v1/yjsxwgjxq/?xh=201921512188 HTTP/1.1" 200 188
+[2020-06-13 11:44:39,739] [ERROR] wuyi
+[2020-06-13 11:44:39,739] [ERROR] 192.168.3.237
+[2020-06-13 11:44:39,739] [ERROR] ("Cannot resolve keyword 'grgj' into field. Choices are: create_time, id, jd, update_time, user, user_id, wd, xh, xwdd, xwsj",)
+[2020-06-13 11:44:39,740] [INFO] "GET /portrait/v1/yjsxwgjxq/ HTTP/1.1" 200 188
+[2020-06-13 11:48:43,458] [ERROR] wuyi
+[2020-06-13 11:48:43,458] [ERROR] 192.168.3.237
+[2020-06-13 11:48:43,458] [ERROR] ("Cannot resolve keyword 'grgj' into field. Choices are: create_time, id, jd, update_time, user, user_id, wd, xh, xwdd, xwsj",)
+[2020-06-13 11:48:43,459] [INFO] "GET /portrait/v1/yjsxwgjxq/?%20xh=201921512188 HTTP/1.1" 200 188
+[2020-06-13 11:50:54,006] [ERROR] wuyi
+[2020-06-13 11:50:54,006] [ERROR] 192.168.3.237
+[2020-06-13 11:50:54,006] [ERROR] ("Cannot resolve keyword 'grgj' into field. Choices are: create_time, id, jd, update_time, user, user_id, wd, xh, xwdd, xwsj",)
+[2020-06-13 11:50:54,007] [INFO] "GET /portrait/v1/yjsxwgjxq/?%20xh=201921512188 HTTP/1.1" 200 188
+[2020-06-13 11:57:08,416] [INFO] "GET /portrait/v1/yjsxwgjxq/?%20xh=201921512188 HTTP/1.1" 200 359
+[2020-06-14 13:57:50,964] [DEBUG] ALTER TABLE `yjs` MODIFY `yx` varchar(64) NULL; (params [])
+[2020-06-14 13:57:50,964] [DEBUG] ALTER TABLE `yjs` MODIFY `yx` varchar(64) NULL; (params [])
+[2020-06-14 14:12:35,095] [INFO] "POST /login/ HTTP/1.1" 200 179
+[2020-06-14 14:12:43,722] [WARNING] Not Found: /portrait/v1/jzgxwgj/
+[2020-06-14 14:12:43,724] [WARNING] "GET /portrait/v1/jzgxwgj/ HTTP/1.1" 404 94
+[2020-06-14 14:12:53,143] [INFO] "GET /warning/v1/jzgxwgj/ HTTP/1.1" 200 1203
+[2020-06-14 14:13:01,197] [INFO] "GET /warning/v1/jzgxwgj/?zgh=02332 HTTP/1.1" 200 1365
+[2020-06-14 14:13:15,768] [INFO] "GET /warning/v1/jzgxwgj/?xm=%E6%9D%A8%E6%A0%91%E6%98%A5 HTTP/1.1" 200 1386
+[2020-06-14 14:15:00,203] [INFO] "GET /warning/v1/xwgjjzgmx/?xm=%E6%9D%A8%E6%A0%91%E6%98%A5 HTTP/1.1" 200 510254
+[2020-06-14 14:15:16,329] [INFO] "GET /warning/v1/xwgjjzgmx/?zgh=02332 HTTP/1.1" 200 2645
+[2020-06-14 14:22:44,293] [INFO] "GET /warning/v1/jzgxwgj/?zgh=02332 HTTP/1.1" 200 1365
+[2020-06-14 14:22:55,170] [INFO] "GET /warning/v1/jzgxwgj/?xm=%E6%9D%A8%E6%A0%91%E6%98%A5 HTTP/1.1" 200 1386
+[2020-06-14 14:30:12,523] [WARNING] "GET /portrait/v1/yjsxwgjxq/?%20xh=201921512177 HTTP/1.1" 403 94
+[2020-06-14 14:30:16,624] [INFO] "POST /login/ HTTP/1.1" 200 179
+[2020-06-14 14:30:23,367] [INFO] "GET /portrait/v1/yjsxwgjxq/?%20xh=201921512177 HTTP/1.1" 200 642
+[2020-06-14 14:31:49,054] [INFO] "GET /portrait/v1/yjsxwgjxq/?%20xh=201921512177 HTTP/1.1" 200 585
+[2020-06-14 14:33:20,646] [INFO] "GET /portrait/v1/yjsxwgjxq/?%20xh=201921512177 HTTP/1.1" 200 585
+[2020-06-14 14:33:32,053] [INFO] "GET /portrait/v1/yjsxwgjxq/?%20xh=201921512192 HTTP/1.1" 200 585
+[2020-06-14 14:34:12,702] [INFO] "GET /portrait/v1/yjsxwgjxq/?%20id=201921512192 HTTP/1.1" 200 585
+[2020-06-14 14:35:21,626] [INFO] "GET /portrait/v1/yjsxwgjxq/ HTTP/1.1" 200 585
+[2020-06-14 14:38:49,400] [INFO] "GET /portrait/v1/yjsxwgjxq/?xhxm=201921512192 HTTP/1.1" 200 585
+[2020-06-14 14:39:14,066] [INFO] "GET /portrait/v1/yjsxwgjxq/?xhxm=201921512192 HTTP/1.1" 200 585
+[2020-06-14 14:39:15,781] [INFO] "GET /portrait/v1/yjsxwgjxq/?xhxm=201921512192 HTTP/1.1" 200 585
+[2020-06-14 14:39:23,702] [INFO] "GET /portrait/v1/yjsxwgjxq/?xhxm=201921512192 HTTP/1.1" 200 585
+[2020-06-14 14:40:13,486] [INFO] "GET /portrait/v1/yjsxwgjxq/?xhxm=201921512192 HTTP/1.1" 200 585
+[2020-06-14 14:40:57,242] [INFO] "GET /portrait/v1/yjsxwgjxq/?xhxm=201921512192 HTTP/1.1" 200 552
+[2020-06-14 14:43:03,098] [INFO] "GET /portrait/v1/yjsxwgjxq/?xhxm=201921512192 HTTP/1.1" 200 552
+[2020-06-14 14:43:11,328] [INFO] "GET /portrait/v1/yjsxwgjxq/?xh=201921512192 HTTP/1.1" 200 250
+[2020-06-17 10:09:59,463] [INFO] "GET /login HTTP/1.1" 301 0
+[2020-06-17 10:09:59,506] [INFO] "GET /login/ HTTP/1.1" 302 0
+[2020-06-17 10:11:33,183] [INFO] "GET /login/?next=%2F&ticket=ST-79076-Y4OoD7fRq0aMVPtZTe9c-cas HTTP/1.1" 302 0
+[2020-06-17 10:11:33,208] [WARNING] Not Found: /
+[2020-06-17 10:11:33,209] [WARNING] "GET / HTTP/1.1" 404 74
+[2020-06-17 10:11:33,693] [WARNING] Not Found: /favicon.ico
+[2020-06-17 10:11:33,694] [WARNING] "GET /favicon.ico HTTP/1.1" 404 85
+[2020-06-17 10:14:22,295] [WARNING] Not Found: /
+[2020-06-17 10:14:22,296] [WARNING] "GET / HTTP/1.1" 404 74
+[2020-06-17 10:46:20,069] [INFO] "GET /login/ HTTP/1.1" 302 0
+[2020-06-17 10:46:20,092] [WARNING] Not Found: /
+[2020-06-17 10:46:20,094] [WARNING] "GET / HTTP/1.1" 404 74
+[2020-06-17 10:46:36,421] [INFO] "GET /login/ HTTP/1.1" 302 0
+[2020-06-17 10:46:36,433] [WARNING] Not Found: /
+[2020-06-17 10:46:36,434] [WARNING] "GET / HTTP/1.1" 404 74
+[2020-06-17 10:47:37,256] [INFO] "GET /login/ HTTP/1.1" 302 0
+[2020-06-17 10:47:37,266] [WARNING] Not Found: /
+[2020-06-17 10:47:37,267] [WARNING] "GET / HTTP/1.1" 404 74
+[2020-06-17 10:48:11,784] [INFO] "GET /login/ HTTP/1.1" 302 0
+[2020-06-17 10:48:11,789] [WARNING] Not Found: /
+[2020-06-17 10:48:11,790] [WARNING] "GET / HTTP/1.1" 404 74
+[2020-06-17 10:48:28,008] [WARNING] Not Found: /
+[2020-06-17 10:48:28,008] [WARNING] "GET / HTTP/1.1" 404 74
+[2020-06-17 10:49:20,622] [INFO] "GET /login HTTP/1.1" 301 0
+[2020-06-17 10:49:20,636] [INFO] "GET /login/ HTTP/1.1" 302 0
+[2020-06-17 10:49:21,407] [WARNING] Not Found: /favicon.ico
+[2020-06-17 10:49:21,408] [WARNING] "GET /favicon.ico HTTP/1.1" 404 85
+[2020-06-17 10:49:49,015] [WARNING] Not Found: /favicon.ico
+[2020-06-17 10:49:49,015] [WARNING] "GET /favicon.ico HTTP/1.1" 404 85
+[2020-06-17 10:50:32,477] [INFO] "GET /login HTTP/1.1" 301 0
+[2020-06-17 10:50:32,490] [INFO] "GET /login/ HTTP/1.1" 302 0
+[2020-06-17 10:50:32,967] [WARNING] Not Found: /favicon.ico
+[2020-06-17 10:50:32,968] [WARNING] "GET /favicon.ico HTTP/1.1" 404 85
+[2020-06-17 10:50:37,945] [WARNING] Not Found: /favicon.ico
+[2020-06-17 10:50:37,946] [WARNING] "GET /favicon.ico HTTP/1.1" 404 85
+[2020-06-17 10:56:31,283] [INFO] "GET /login/?next=%2F&ticket=ST-79146-iaz01oRoLVX3VwqIRs5x-cas HTTP/1.1" 302 0
+[2020-06-17 10:56:31,290] [WARNING] Not Found: /
+[2020-06-17 10:56:31,291] [WARNING] "GET / HTTP/1.1" 404 74
+[2020-06-17 10:56:32,592] [WARNING] Not Found: /
+[2020-06-17 10:56:32,593] [WARNING] "GET / HTTP/1.1" 404 74
+[2020-06-17 10:56:33,012] [WARNING] Not Found: /favicon.ico
+[2020-06-17 10:56:33,012] [WARNING] "GET /favicon.ico HTTP/1.1" 404 85
+[2020-06-17 11:02:33,325] [WARNING] Not Found: /favicon.ico
+[2020-06-17 11:02:33,326] [WARNING] "GET /favicon.ico HTTP/1.1" 404 85
+[2020-06-17 11:02:36,948] [WARNING] Not Found: /favicon.ico
+[2020-06-17 11:02:36,949] [WARNING] "GET /favicon.ico HTTP/1.1" 404 85
+[2020-06-18 09:40:27,585] [WARNING] Not Found: /favicon.ico
+[2020-06-18 09:40:27,586] [WARNING] "GET /favicon.ico HTTP/1.1" 404 85
+[2020-06-18 09:40:28,144] [WARNING] Not Found: /favicon.ico
+[2020-06-18 09:40:28,145] [WARNING] "GET /favicon.ico HTTP/1.1" 404 85
+[2020-06-18 09:40:28,742] [WARNING] Not Found: /favicon.ico
+[2020-06-18 09:40:28,743] [WARNING] "GET /favicon.ico HTTP/1.1" 404 85
+[2020-06-18 09:40:43,472] [INFO] "GET /login HTTP/1.1" 301 0
+[2020-06-18 09:40:43,613] [INFO] "GET /login/ HTTP/1.1" 302 0
+[2020-06-18 09:40:44,639] [INFO] "GET /portrait/v1/yjsyx HTTP/1.1" 301 0
+[2020-06-18 09:40:44,719] [DEBUG] Exception while resolving variable 'is_authenticated' in template 'rest_framework/api.html'.
+Traceback (most recent call last):
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    current = current[bit]
+TypeError: 'NoneType' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'NoneType' object has no attribute 'is_authenticated'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\template\base.py", line 849, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'is_authenticated'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\template\base.py", line 856, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [is_authenticated] in None
+[2020-06-18 09:40:44,726] [WARNING] "GET /portrait/v1/yjsyx/ HTTP/1.1" 403 5328
+[2020-06-18 09:40:44,838] [WARNING] Not Found: /static/rest_framework/css/bootstrap.min.css
+[2020-06-18 09:40:44,839] [WARNING] "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 404 117
+[2020-06-18 09:40:44,842] [WARNING] Not Found: /static/rest_framework/css/bootstrap-tweaks.css
+[2020-06-18 09:40:44,846] [WARNING] Not Found: /static/rest_framework/css/prettify.css
+[2020-06-18 09:40:44,852] [WARNING] "GET /static/rest_framework/css/prettify.css HTTP/1.1" 404 112
+[2020-06-18 09:40:44,852] [WARNING] "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 404 120
+[2020-06-18 09:40:44,868] [WARNING] Not Found: /static/rest_framework/css/default.css
+[2020-06-18 09:40:44,871] [WARNING] Not Found: /static/rest_framework/js/jquery-3.4.1.min.js
+[2020-06-18 09:40:44,872] [WARNING] "GET /static/rest_framework/css/default.css HTTP/1.1" 404 111
+[2020-06-18 09:40:44,875] [WARNING] Not Found: /static/rest_framework/js/ajax-form.js
+[2020-06-18 09:40:44,881] [WARNING] "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 404 111
+[2020-06-18 09:40:44,879] [WARNING] Not Found: /static/rest_framework/js/csrf.js
+[2020-06-18 09:40:44,876] [WARNING] "GET /static/rest_framework/js/jquery-3.4.1.min.js HTTP/1.1" 404 118
+[2020-06-18 09:40:44,883] [WARNING] "GET /static/rest_framework/js/csrf.js HTTP/1.1" 404 106
+[2020-06-18 09:40:44,885] [WARNING] Not Found: /static/rest_framework/js/bootstrap.min.js
+[2020-06-18 09:40:44,886] [WARNING] "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 404 115
+[2020-06-18 09:40:44,898] [WARNING] Not Found: /static/rest_framework/js/prettify-min.js
+[2020-06-18 09:40:44,906] [WARNING] "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 404 114
+[2020-06-18 09:40:44,904] [WARNING] Not Found: /static/rest_framework/js/default.js
+[2020-06-18 09:40:44,915] [WARNING] "GET /static/rest_framework/js/default.js HTTP/1.1" 404 109
+[2020-06-18 09:40:45,381] [WARNING] Not Found: /favicon.ico
+[2020-06-18 09:40:45,382] [WARNING] "GET /favicon.ico HTTP/1.1" 404 85
+[2020-06-18 09:40:45,443] [WARNING] Not Found: /favicon.ico
+[2020-06-18 09:40:45,444] [WARNING] "GET /favicon.ico HTTP/1.1" 404 85
+[2020-06-18 09:41:55,903] [INFO] "GET /login HTTP/1.1" 301 0
+[2020-06-18 09:41:55,915] [INFO] "GET /login/ HTTP/1.1" 302 0
+[2020-06-18 09:43:12,837] [ERROR] Internal Server Error: /login/
+Traceback (most recent call last):
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\utils\decorators.py", line 62, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\utils\decorators.py", line 58, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django_cas_ng\views.py", line 76, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\views\generic\base.py", line 93, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django_cas_ng\views.py", line 107, in get
+    next_page = clean_next_page(request, request.GET.get('next'))
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django_cas_ng\views.py", line 49, in clean_next_page
+    raise Exception("Non-local url is forbidden to be redirected to.")
+Exception: Non-local url is forbidden to be redirected to.
+[2020-06-18 09:43:12,845] [ERROR] "GET /login/?next=http%3A%2F%2Flocalhost%3A8000%2Fportrait%2Fv1%2Fyjsyx&ticket=ST-80801-uczMGSYtvAdLuBqeJ3jN-cas HTTP/1.1" 500 27
+[2020-06-18 09:43:39,736] [ERROR] Internal Server Error: /login/
+Traceback (most recent call last):
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\utils\decorators.py", line 62, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\utils\decorators.py", line 58, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django_cas_ng\views.py", line 76, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\views\generic\base.py", line 93, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django_cas_ng\views.py", line 107, in get
+    next_page = clean_next_page(request, request.GET.get('next'))
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django_cas_ng\views.py", line 49, in clean_next_page
+    raise Exception("Non-local url is forbidden to be redirected to.")
+Exception: Non-local url is forbidden to be redirected to.
+[2020-06-18 09:43:39,738] [ERROR] "GET /login/?next=http%3A%2F%2Flocalhost%3A8000%2Fportrait%2Fv1%2Fyjsyx&ticket=ST-80801-uczMGSYtvAdLuBqeJ3jN-cas HTTP/1.1" 500 27
+[2020-06-18 09:44:07,711] [ERROR] Internal Server Error: /login/
+Traceback (most recent call last):
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\utils\decorators.py", line 62, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\utils\decorators.py", line 58, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django_cas_ng\views.py", line 76, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\views\generic\base.py", line 93, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django_cas_ng\views.py", line 107, in get
+    next_page = clean_next_page(request, request.GET.get('next'))
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django_cas_ng\views.py", line 49, in clean_next_page
+    raise Exception("Non-local url is forbidden to be redirected to.")
+Exception: Non-local url is forbidden to be redirected to.
+[2020-06-18 09:44:07,712] [ERROR] "GET /login/?next=http%3A%2F%2Flocalhost%3A8000%2Fportrait%2Fv1%2Fyjsyx&ticket=ST-80801-uczMGSYtvAdLuBqeJ3jN-cas HTTP/1.1" 500 27
+[2020-06-18 09:45:06,137] [ERROR] Internal Server Error: /login/
+Traceback (most recent call last):
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\utils\decorators.py", line 62, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\utils\decorators.py", line 58, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django_cas_ng\views.py", line 76, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\views\generic\base.py", line 93, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django_cas_ng\views.py", line 107, in get
+    next_page = clean_next_page(request, request.GET.get('next'))
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django_cas_ng\views.py", line 49, in clean_next_page
+    raise Exception("Non-local url is forbidden to be redirected to.")
+Exception: Non-local url is forbidden to be redirected to.
+[2020-06-18 09:45:06,149] [ERROR] "GET /login/?next=http%3A%2F%2Flocalhost%3A8000%2Fportrait%2Fv1%2Fyjsyx&ticket=ST-80801-uczMGSYtvAdLuBqeJ3jN-cas HTTP/1.1" 500 27
+[2020-06-18 09:45:16,788] [ERROR] Internal Server Error: /login/
+Traceback (most recent call last):
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\utils\decorators.py", line 62, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\utils\decorators.py", line 58, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django_cas_ng\views.py", line 76, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\views\generic\base.py", line 93, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django_cas_ng\views.py", line 107, in get
+    next_page = clean_next_page(request, request.GET.get('next'))
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django_cas_ng\views.py", line 49, in clean_next_page
+    raise Exception("Non-local url is forbidden to be redirected to.")
+Exception: Non-local url is forbidden to be redirected to.
+[2020-06-18 09:45:16,791] [ERROR] "GET /login/?next=http%3A%2F%2Flocalhost%3A8000%2Fportrait%2Fv1%2Fyjsyx&ticket=ST-80801-uczMGSYtvAdLuBqeJ3jN-cas HTTP/1.1" 500 27
+[2020-06-18 09:45:17,927] [ERROR] Internal Server Error: /login/
+Traceback (most recent call last):
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\utils\decorators.py", line 62, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\utils\decorators.py", line 58, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django_cas_ng\views.py", line 76, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\views\generic\base.py", line 93, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django_cas_ng\views.py", line 107, in get
+    next_page = clean_next_page(request, request.GET.get('next'))
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django_cas_ng\views.py", line 49, in clean_next_page
+    raise Exception("Non-local url is forbidden to be redirected to.")
+Exception: Non-local url is forbidden to be redirected to.
+[2020-06-18 09:45:17,928] [ERROR] "GET /login/?next=http%3A%2F%2Flocalhost%3A8000%2Fportrait%2Fv1%2Fyjsyx&ticket=ST-80801-uczMGSYtvAdLuBqeJ3jN-cas HTTP/1.1" 500 27
+[2020-06-18 09:45:18,285] [ERROR] Internal Server Error: /login/
+Traceback (most recent call last):
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\utils\decorators.py", line 62, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\utils\decorators.py", line 58, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django_cas_ng\views.py", line 76, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\views\generic\base.py", line 93, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django_cas_ng\views.py", line 107, in get
+    next_page = clean_next_page(request, request.GET.get('next'))
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django_cas_ng\views.py", line 49, in clean_next_page
+    raise Exception("Non-local url is forbidden to be redirected to.")
+Exception: Non-local url is forbidden to be redirected to.
+[2020-06-18 09:45:18,288] [ERROR] "GET /login/?next=http%3A%2F%2Flocalhost%3A8000%2Fportrait%2Fv1%2Fyjsyx&ticket=ST-80801-uczMGSYtvAdLuBqeJ3jN-cas HTTP/1.1" 500 27
+[2020-06-18 09:45:18,638] [ERROR] Internal Server Error: /login/
+Traceback (most recent call last):
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\utils\decorators.py", line 62, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\utils\decorators.py", line 58, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django_cas_ng\views.py", line 76, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\views\generic\base.py", line 93, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django_cas_ng\views.py", line 107, in get
+    next_page = clean_next_page(request, request.GET.get('next'))
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django_cas_ng\views.py", line 49, in clean_next_page
+    raise Exception("Non-local url is forbidden to be redirected to.")
+Exception: Non-local url is forbidden to be redirected to.
+[2020-06-18 09:45:18,641] [ERROR] "GET /login/?next=http%3A%2F%2Flocalhost%3A8000%2Fportrait%2Fv1%2Fyjsyx&ticket=ST-80801-uczMGSYtvAdLuBqeJ3jN-cas HTTP/1.1" 500 27
+[2020-06-18 09:45:19,004] [ERROR] Internal Server Error: /login/
+Traceback (most recent call last):
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\utils\decorators.py", line 62, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\utils\decorators.py", line 58, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django_cas_ng\views.py", line 76, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\views\generic\base.py", line 93, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django_cas_ng\views.py", line 107, in get
+    next_page = clean_next_page(request, request.GET.get('next'))
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django_cas_ng\views.py", line 49, in clean_next_page
+    raise Exception("Non-local url is forbidden to be redirected to.")
+Exception: Non-local url is forbidden to be redirected to.
+[2020-06-18 09:45:19,006] [ERROR] "GET /login/?next=http%3A%2F%2Flocalhost%3A8000%2Fportrait%2Fv1%2Fyjsyx&ticket=ST-80801-uczMGSYtvAdLuBqeJ3jN-cas HTTP/1.1" 500 27
+[2020-06-18 09:45:33,749] [ERROR] Internal Server Error: /login/
+Traceback (most recent call last):
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\utils\decorators.py", line 62, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\utils\decorators.py", line 58, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django_cas_ng\views.py", line 76, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\views\generic\base.py", line 93, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django_cas_ng\views.py", line 107, in get
+    next_page = clean_next_page(request, request.GET.get('next'))
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django_cas_ng\views.py", line 49, in clean_next_page
+    raise Exception("Non-local url is forbidden to be redirected to.")
+Exception: Non-local url is forbidden to be redirected to.
+[2020-06-18 09:45:33,784] [ERROR] "GET /login/?next=http%3A%2F%2Flocalhost%3A8000%2Fportrait%2Fv1%2Fyjsyx&ticket=ST-80801-uczMGSYtvAdLuBqeJ3jN-cas HTTP/1.1" 500 27
+[2020-06-18 09:45:58,479] [INFO] "GET /portrait/v1/yjsyx HTTP/1.1" 301 0
+[2020-06-18 09:45:58,555] [DEBUG] Exception while resolving variable 'is_authenticated' in template 'rest_framework/api.html'.
+Traceback (most recent call last):
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    current = current[bit]
+TypeError: 'NoneType' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'NoneType' object has no attribute 'is_authenticated'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\template\base.py", line 849, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'is_authenticated'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\template\base.py", line 856, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [is_authenticated] in None
+[2020-06-18 09:45:58,570] [WARNING] "GET /portrait/v1/yjsyx/ HTTP/1.1" 403 5328
+[2020-06-18 09:45:58,719] [WARNING] Not Found: /static/rest_framework/css/bootstrap.min.css
+[2020-06-18 09:45:58,720] [WARNING] "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 404 117
+[2020-06-18 09:45:58,725] [WARNING] Not Found: /static/rest_framework/css/bootstrap-tweaks.css
+[2020-06-18 09:45:58,726] [WARNING] "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 404 120
+[2020-06-18 09:45:58,737] [WARNING] Not Found: /static/rest_framework/css/prettify.css
+[2020-06-18 09:45:58,742] [WARNING] Not Found: /static/rest_framework/js/jquery-3.4.1.min.js
+[2020-06-18 09:45:58,740] [WARNING] Not Found: /static/rest_framework/css/default.css
+[2020-06-18 09:45:58,743] [WARNING] Not Found: /static/rest_framework/js/ajax-form.js
+[2020-06-18 09:45:58,744] [WARNING] "GET /static/rest_framework/css/prettify.css HTTP/1.1" 404 112
+[2020-06-18 09:45:58,745] [WARNING] "GET /static/rest_framework/css/default.css HTTP/1.1" 404 111
+[2020-06-18 09:45:58,746] [WARNING] "GET /static/rest_framework/js/jquery-3.4.1.min.js HTTP/1.1" 404 118
+[2020-06-18 09:45:58,749] [WARNING] Not Found: /static/rest_framework/js/csrf.js
+[2020-06-18 09:45:58,750] [WARNING] "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 404 111
+[2020-06-18 09:45:58,751] [WARNING] "GET /static/rest_framework/js/csrf.js HTTP/1.1" 404 106
+[2020-06-18 09:45:58,756] [WARNING] Not Found: /static/rest_framework/js/bootstrap.min.js
+[2020-06-18 09:45:58,757] [WARNING] "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 404 115
+[2020-06-18 09:45:58,774] [WARNING] Not Found: /static/rest_framework/js/prettify-min.js
+[2020-06-18 09:45:58,775] [WARNING] "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 404 114
+[2020-06-18 09:45:58,780] [WARNING] Not Found: /static/rest_framework/js/default.js
+[2020-06-18 09:45:58,781] [WARNING] "GET /static/rest_framework/js/default.js HTTP/1.1" 404 109
+[2020-06-18 09:45:58,801] [WARNING] Not Found: /static/rest_framework/js/jquery-3.4.1.min.js
+[2020-06-18 09:45:58,802] [WARNING] "GET /static/rest_framework/js/jquery-3.4.1.min.js HTTP/1.1" 404 118
+[2020-06-18 09:45:58,867] [WARNING] Not Found: /static/rest_framework/js/ajax-form.js
+[2020-06-18 09:45:58,869] [WARNING] "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 404 111
+[2020-06-18 09:45:58,881] [WARNING] Not Found: /static/rest_framework/js/csrf.js
+[2020-06-18 09:45:58,883] [WARNING] "GET /static/rest_framework/js/csrf.js HTTP/1.1" 404 106
+[2020-06-18 09:45:58,974] [WARNING] Not Found: /static/rest_framework/js/bootstrap.min.js
+[2020-06-18 09:45:58,975] [WARNING] "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 404 115
+[2020-06-18 09:45:58,985] [WARNING] Not Found: /static/rest_framework/js/prettify-min.js
+[2020-06-18 09:45:58,989] [WARNING] "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 404 114
+[2020-06-18 09:45:59,013] [WARNING] Not Found: /static/rest_framework/js/default.js
+[2020-06-18 09:45:59,014] [WARNING] "GET /static/rest_framework/js/default.js HTTP/1.1" 404 109
+[2020-06-18 09:46:04,431] [DEBUG] Exception while resolving variable 'is_authenticated' in template 'rest_framework/api.html'.
+Traceback (most recent call last):
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    current = current[bit]
+TypeError: 'NoneType' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'NoneType' object has no attribute 'is_authenticated'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\template\base.py", line 849, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'is_authenticated'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\template\base.py", line 856, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [is_authenticated] in None
+[2020-06-18 09:46:04,435] [WARNING] "GET /portrait/v1/yjsyx/?format=api HTTP/1.1" 403 5372
+[2020-06-18 09:46:04,501] [WARNING] Not Found: /static/rest_framework/css/bootstrap.min.css
+[2020-06-18 09:46:04,503] [WARNING] Not Found: /static/rest_framework/css/bootstrap-tweaks.css
+[2020-06-18 09:46:04,505] [WARNING] Not Found: /static/rest_framework/css/prettify.css
+[2020-06-18 09:46:04,515] [WARNING] Not Found: /static/rest_framework/js/jquery-3.4.1.min.js
+[2020-06-18 09:46:04,516] [WARNING] "GET /static/rest_framework/css/prettify.css HTTP/1.1" 404 112
+[2020-06-18 09:46:04,511] [WARNING] Not Found: /static/rest_framework/js/ajax-form.js
+[2020-06-18 09:46:04,516] [WARNING] "GET /static/rest_framework/js/jquery-3.4.1.min.js HTTP/1.1" 404 118
+[2020-06-18 09:46:04,516] [WARNING] "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 404 117
+[2020-06-18 09:46:04,517] [WARNING] "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 404 120
+[2020-06-18 09:46:04,517] [WARNING] "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 404 111
+[2020-06-18 09:46:04,508] [WARNING] Not Found: /static/rest_framework/css/default.css
+[2020-06-18 09:46:04,519] [WARNING] "GET /static/rest_framework/css/default.css HTTP/1.1" 404 111
+[2020-06-18 09:46:04,527] [WARNING] Not Found: /static/rest_framework/js/csrf.js
+[2020-06-18 09:46:04,529] [WARNING] Not Found: /static/rest_framework/js/bootstrap.min.js
+[2020-06-18 09:46:04,530] [WARNING] "GET /static/rest_framework/js/csrf.js HTTP/1.1" 404 106
+[2020-06-18 09:46:04,530] [WARNING] "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 404 115
+[2020-06-18 09:46:04,533] [WARNING] Not Found: /static/rest_framework/js/prettify-min.js
+[2020-06-18 09:46:04,538] [WARNING] Not Found: /static/rest_framework/js/default.js
+[2020-06-18 09:46:04,539] [WARNING] "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 404 114
+[2020-06-18 09:46:04,540] [WARNING] "GET /static/rest_framework/js/default.js HTTP/1.1" 404 109
+[2020-06-18 09:46:04,551] [WARNING] Not Found: /static/rest_framework/js/jquery-3.4.1.min.js
+[2020-06-18 09:46:04,552] [WARNING] "GET /static/rest_framework/js/jquery-3.4.1.min.js HTTP/1.1" 404 118
+[2020-06-18 09:46:04,561] [WARNING] Not Found: /static/rest_framework/js/ajax-form.js
+[2020-06-18 09:46:04,562] [WARNING] "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 404 111
+[2020-06-18 09:46:04,570] [WARNING] Not Found: /static/rest_framework/js/csrf.js
+[2020-06-18 09:46:04,571] [WARNING] "GET /static/rest_framework/js/csrf.js HTTP/1.1" 404 106
+[2020-06-18 09:46:04,583] [WARNING] Not Found: /static/rest_framework/js/bootstrap.min.js
+[2020-06-18 09:46:04,584] [WARNING] "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 404 115
+[2020-06-18 09:46:04,598] [WARNING] Not Found: /static/rest_framework/js/prettify-min.js
+[2020-06-18 09:46:04,599] [WARNING] "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 404 114
+[2020-06-18 09:46:04,605] [WARNING] Not Found: /static/rest_framework/js/default.js
+[2020-06-18 09:46:04,605] [WARNING] "GET /static/rest_framework/js/default.js HTTP/1.1" 404 109
+[2020-06-18 09:46:06,890] [WARNING] "GET /portrait/v1/yjsyx/?format=json HTTP/1.1" 403 94
+[2020-06-18 09:46:15,029] [DEBUG] Exception while resolving variable 'is_authenticated' in template 'rest_framework/api.html'.
+Traceback (most recent call last):
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    current = current[bit]
+TypeError: 'NoneType' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'NoneType' object has no attribute 'is_authenticated'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\template\base.py", line 849, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'is_authenticated'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\template\base.py", line 856, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [is_authenticated] in None
+[2020-06-18 09:46:15,032] [WARNING] "GET /portrait/v1/yjsyx/ HTTP/1.1" 403 5328
+[2020-06-18 09:46:15,092] [WARNING] Not Found: /static/rest_framework/css/bootstrap.min.css
+[2020-06-18 09:46:15,093] [WARNING] "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 404 117
+[2020-06-18 09:46:15,097] [WARNING] Not Found: /static/rest_framework/css/bootstrap-tweaks.css
+[2020-06-18 09:46:15,099] [WARNING] Not Found: /static/rest_framework/js/jquery-3.4.1.min.js
+[2020-06-18 09:46:15,100] [WARNING] Not Found: /static/rest_framework/js/ajax-form.js
+[2020-06-18 09:46:15,103] [WARNING] Not Found: /static/rest_framework/css/default.css
+[2020-06-18 09:46:15,106] [WARNING] Not Found: /static/rest_framework/css/prettify.css
+[2020-06-18 09:46:15,109] [WARNING] "GET /static/rest_framework/js/jquery-3.4.1.min.js HTTP/1.1" 404 118
+[2020-06-18 09:46:15,109] [WARNING] "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 404 120
+[2020-06-18 09:46:15,117] [WARNING] "GET /static/rest_framework/css/default.css HTTP/1.1" 404 111
+[2020-06-18 09:46:15,117] [WARNING] "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 404 111
+[2020-06-18 09:46:15,116] [WARNING] Not Found: /static/rest_framework/js/csrf.js
+[2020-06-18 09:46:15,120] [WARNING] "GET /static/rest_framework/js/csrf.js HTTP/1.1" 404 106
+[2020-06-18 09:46:15,118] [WARNING] "GET /static/rest_framework/css/prettify.css HTTP/1.1" 404 112
+[2020-06-18 09:46:15,135] [WARNING] Not Found: /static/rest_framework/js/bootstrap.min.js
+[2020-06-18 09:46:15,138] [WARNING] Not Found: /static/rest_framework/js/default.js
+[2020-06-18 09:46:15,140] [WARNING] Not Found: /static/rest_framework/js/prettify-min.js
+[2020-06-18 09:46:15,141] [WARNING] "GET /static/rest_framework/js/default.js HTTP/1.1" 404 109
+[2020-06-18 09:46:15,141] [WARNING] "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 404 115
+[2020-06-18 09:46:15,143] [WARNING] "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 404 114
+[2020-06-18 09:46:15,150] [WARNING] Not Found: /static/rest_framework/js/jquery-3.4.1.min.js
+[2020-06-18 09:46:15,152] [WARNING] "GET /static/rest_framework/js/jquery-3.4.1.min.js HTTP/1.1" 404 118
+[2020-06-18 09:46:15,217] [WARNING] Not Found: /static/rest_framework/js/ajax-form.js
+[2020-06-18 09:46:15,219] [WARNING] "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 404 111
+[2020-06-18 09:46:15,232] [WARNING] Not Found: /static/rest_framework/js/csrf.js
+[2020-06-18 09:46:15,233] [WARNING] "GET /static/rest_framework/js/csrf.js HTTP/1.1" 404 106
+[2020-06-18 09:46:15,242] [WARNING] Not Found: /static/rest_framework/js/bootstrap.min.js
+[2020-06-18 09:46:15,243] [WARNING] "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 404 115
+[2020-06-18 09:46:15,256] [WARNING] Not Found: /static/rest_framework/js/prettify-min.js
+[2020-06-18 09:46:15,256] [WARNING] "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 404 114
+[2020-06-18 09:46:15,261] [WARNING] Not Found: /static/rest_framework/js/default.js
+[2020-06-18 09:46:15,262] [WARNING] "GET /static/rest_framework/js/default.js HTTP/1.1" 404 109
+[2020-06-18 09:46:30,032] [ERROR] Internal Server Error: /login/
+Traceback (most recent call last):
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\utils\decorators.py", line 62, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\utils\decorators.py", line 58, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django_cas_ng\views.py", line 76, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\views\generic\base.py", line 93, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django_cas_ng\views.py", line 107, in get
+    next_page = clean_next_page(request, request.GET.get('next'))
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django_cas_ng\views.py", line 49, in clean_next_page
+    raise Exception("Non-local url is forbidden to be redirected to.")
+Exception: Non-local url is forbidden to be redirected to.
+[2020-06-18 09:46:30,034] [ERROR] "GET /login/?next=http%3A%2F%2Flocalhost%3A8000%2Fportrait%2Fv1%2Fyjsyx&ticket=ST-80810-MccWvSRbhgOTSwj4P5cJ-cas HTTP/1.1" 500 27
+[2020-06-18 09:47:10,976] [INFO] "GET /login/ HTTP/1.1" 302 0
+[2020-06-18 09:47:11,943] [INFO] "GET /login/?next=%2Fportrait%2Fv1%2Fyjsyx&ticket=ST-80813-iaoEoNzZcuKD64LYVqmJ-cas HTTP/1.1" 302 0
+[2020-06-18 09:47:12,066] [DEBUG] Exception while resolving variable 'is_authenticated' in template 'rest_framework/api.html'.
+Traceback (most recent call last):
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    current = current[bit]
+TypeError: 'NoneType' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'NoneType' object has no attribute 'is_authenticated'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\template\base.py", line 849, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'is_authenticated'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\template\base.py", line 856, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [is_authenticated] in None
+[2020-06-18 09:47:12,070] [WARNING] "GET /portrait/v1/yjsyx/ HTTP/1.1" 403 5328
+[2020-06-18 09:47:12,295] [WARNING] Not Found: /static/rest_framework/css/bootstrap.min.css
+[2020-06-18 09:47:12,296] [WARNING] "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 404 117
+[2020-06-18 09:47:12,300] [WARNING] Not Found: /static/rest_framework/css/bootstrap-tweaks.css
+[2020-06-18 09:47:12,301] [WARNING] "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 404 120
+[2020-06-18 09:47:12,307] [WARNING] Not Found: /static/rest_framework/css/prettify.css
+[2020-06-18 09:47:12,308] [WARNING] "GET /static/rest_framework/css/prettify.css HTTP/1.1" 404 112
+[2020-06-18 09:47:12,319] [WARNING] Not Found: /static/rest_framework/css/default.css
+[2020-06-18 09:47:12,323] [WARNING] "GET /static/rest_framework/css/default.css HTTP/1.1" 404 111
+[2020-06-18 09:47:12,332] [WARNING] Not Found: /static/rest_framework/js/ajax-form.js
+[2020-06-18 09:47:12,335] [WARNING] Not Found: /static/rest_framework/js/jquery-3.4.1.min.js
+[2020-06-18 09:47:12,339] [WARNING] Not Found: /static/rest_framework/js/csrf.js
+[2020-06-18 09:47:12,341] [WARNING] "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 404 111
+[2020-06-18 09:47:12,347] [WARNING] Not Found: /static/rest_framework/js/bootstrap.min.js
+[2020-06-18 09:47:12,351] [WARNING] "GET /static/rest_framework/js/csrf.js HTTP/1.1" 404 106
+[2020-06-18 09:47:12,350] [WARNING] "GET /static/rest_framework/js/jquery-3.4.1.min.js HTTP/1.1" 404 118
+[2020-06-18 09:47:12,360] [WARNING] "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 404 115
+[2020-06-18 09:47:12,368] [WARNING] Not Found: /static/rest_framework/js/prettify-min.js
+[2020-06-18 09:47:12,369] [WARNING] Not Found: /static/rest_framework/js/default.js
+[2020-06-18 09:47:12,370] [WARNING] "GET /static/rest_framework/js/default.js HTTP/1.1" 404 109
+[2020-06-18 09:47:12,371] [WARNING] "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 404 114
+[2020-06-18 09:47:12,397] [WARNING] Not Found: /static/rest_framework/js/ajax-form.js
+[2020-06-18 09:47:12,398] [WARNING] "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 404 111
+[2020-06-18 09:47:12,410] [WARNING] Not Found: /static/rest_framework/js/csrf.js
+[2020-06-18 09:47:12,411] [WARNING] "GET /static/rest_framework/js/csrf.js HTTP/1.1" 404 106
+[2020-06-18 09:47:12,431] [WARNING] Not Found: /static/rest_framework/js/bootstrap.min.js
+[2020-06-18 09:47:12,436] [WARNING] "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 404 115
+[2020-06-18 09:47:12,480] [WARNING] Not Found: /static/rest_framework/js/prettify-min.js
+[2020-06-18 09:47:12,481] [WARNING] "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 404 114
+[2020-06-18 09:47:12,493] [WARNING] Not Found: /static/rest_framework/js/default.js
+[2020-06-18 09:47:12,494] [WARNING] "GET /static/rest_framework/js/default.js HTTP/1.1" 404 109
+[2020-06-18 09:47:51,287] [WARNING] "GET /portrait/v1/yjsyx/?format=json HTTP/1.1" 403 94
+[2020-06-18 09:47:51,293] [ERROR] "GET /portrait/v1/yjsyx/?format=json HTTP/1.1" 500 59
+[2020-06-18 09:47:55,814] [DEBUG] Exception while resolving variable 'is_authenticated' in template 'rest_framework/api.html'.
+Traceback (most recent call last):
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    current = current[bit]
+TypeError: 'NoneType' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'NoneType' object has no attribute 'is_authenticated'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\template\base.py", line 849, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'is_authenticated'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\template\base.py", line 856, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [is_authenticated] in None
+[2020-06-18 09:47:55,817] [WARNING] "GET /portrait/v1/yjsyx/ HTTP/1.1" 403 5328
+[2020-06-18 09:47:55,891] [WARNING] Not Found: /static/rest_framework/css/bootstrap.min.css
+[2020-06-18 09:47:55,893] [WARNING] Not Found: /static/rest_framework/css/bootstrap-tweaks.css
+[2020-06-18 09:47:55,894] [WARNING] Not Found: /static/rest_framework/css/default.css
+[2020-06-18 09:47:55,896] [WARNING] Not Found: /static/rest_framework/js/jquery-3.4.1.min.js
+[2020-06-18 09:47:55,897] [WARNING] Not Found: /static/rest_framework/css/prettify.css
+[2020-06-18 09:47:55,898] [WARNING] "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 404 117
+[2020-06-18 09:47:55,899] [WARNING] "GET /static/rest_framework/css/default.css HTTP/1.1" 404 111
+[2020-06-18 09:47:55,900] [WARNING] "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 404 120
+[2020-06-18 09:47:55,900] [WARNING] "GET /static/rest_framework/js/jquery-3.4.1.min.js HTTP/1.1" 404 118
+[2020-06-18 09:47:55,903] [WARNING] "GET /static/rest_framework/css/prettify.css HTTP/1.1" 404 112
+[2020-06-18 09:47:55,918] [WARNING] Not Found: /static/rest_framework/js/ajax-form.js
+[2020-06-18 09:47:55,919] [WARNING] "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 404 111
+[2020-06-18 09:47:55,922] [WARNING] Not Found: /static/rest_framework/js/csrf.js
+[2020-06-18 09:47:55,923] [WARNING] "GET /static/rest_framework/js/csrf.js HTTP/1.1" 404 106
+[2020-06-18 09:47:55,942] [WARNING] Not Found: /static/rest_framework/js/prettify-min.js
+[2020-06-18 09:47:55,944] [WARNING] Not Found: /static/rest_framework/js/bootstrap.min.js
+[2020-06-18 09:47:55,945] [WARNING] "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 404 115
+[2020-06-18 09:47:55,951] [WARNING] "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 404 114
+[2020-06-18 09:47:55,961] [WARNING] Not Found: /static/rest_framework/js/default.js
+[2020-06-18 09:47:55,962] [WARNING] "GET /static/rest_framework/js/default.js HTTP/1.1" 404 109
+[2020-06-18 09:47:55,971] [WARNING] Not Found: /static/rest_framework/js/jquery-3.4.1.min.js
+[2020-06-18 09:47:55,972] [WARNING] "GET /static/rest_framework/js/jquery-3.4.1.min.js HTTP/1.1" 404 118
+[2020-06-18 09:47:55,989] [WARNING] Not Found: /static/rest_framework/js/ajax-form.js
+[2020-06-18 09:47:55,990] [WARNING] "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 404 111
+[2020-06-18 09:47:55,998] [WARNING] Not Found: /static/rest_framework/js/csrf.js
+[2020-06-18 09:47:55,999] [WARNING] "GET /static/rest_framework/js/csrf.js HTTP/1.1" 404 106
+[2020-06-18 09:47:56,036] [WARNING] Not Found: /static/rest_framework/js/bootstrap.min.js
+[2020-06-18 09:47:56,037] [WARNING] "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 404 115
+[2020-06-18 09:47:56,049] [WARNING] Not Found: /static/rest_framework/js/prettify-min.js
+[2020-06-18 09:47:56,050] [WARNING] "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 404 114
+[2020-06-18 09:47:56,073] [WARNING] Not Found: /static/rest_framework/js/default.js
+[2020-06-18 09:47:56,074] [WARNING] "GET /static/rest_framework/js/default.js HTTP/1.1" 404 109
+[2020-06-18 09:48:17,034] [WARNING] "GET /portrait/v1/yjsyx/?format=json HTTP/1.1" 403 94
+[2020-06-18 09:59:40,062] [WARNING] "GET /portrait/v1/yjsyx/?format=json HTTP/1.1" 403 94
+[2020-06-18 10:06:33,187] [WARNING] Not Found: /favicon.ico
+[2020-06-18 10:06:33,189] [WARNING] "GET /favicon.ico HTTP/1.1" 404 85
+[2020-06-18 10:06:33,764] [WARNING] Not Found: /favicon.ico
+[2020-06-18 10:06:33,765] [WARNING] "GET /favicon.ico HTTP/1.1" 404 85
+[2020-06-18 10:06:34,379] [WARNING] Not Found: /favicon.ico
+[2020-06-18 10:06:34,380] [WARNING] "GET /favicon.ico HTTP/1.1" 404 85
+[2020-06-18 10:06:34,987] [WARNING] Not Found: /favicon.ico
+[2020-06-18 10:06:34,988] [WARNING] "GET /favicon.ico HTTP/1.1" 404 85
+[2020-06-18 10:06:35,594] [WARNING] Not Found: /favicon.ico
+[2020-06-18 10:06:35,595] [WARNING] "GET /favicon.ico HTTP/1.1" 404 85
+[2020-06-18 10:06:36,192] [WARNING] Not Found: /favicon.ico
+[2020-06-18 10:06:36,193] [WARNING] "GET /favicon.ico HTTP/1.1" 404 85
+[2020-06-18 10:06:36,793] [WARNING] Not Found: /favicon.ico
+[2020-06-18 10:06:36,793] [WARNING] "GET /favicon.ico HTTP/1.1" 404 85
+[2020-06-18 10:06:37,412] [WARNING] Not Found: /favicon.ico
+[2020-06-18 10:06:37,413] [WARNING] "GET /favicon.ico HTTP/1.1" 404 85
+[2020-06-18 10:06:38,032] [WARNING] Not Found: /favicon.ico
+[2020-06-18 10:06:38,033] [WARNING] "GET /favicon.ico HTTP/1.1" 404 85
+[2020-06-18 10:06:51,003] [INFO] "GET /login HTTP/1.1" 301 0
+[2020-06-18 10:06:51,142] [INFO] "GET /login/ HTTP/1.1" 302 0
+[2020-06-18 10:06:51,151] [INFO] "GET /portrait/v1/yjsyx HTTP/1.1" 301 0
+[2020-06-18 10:06:51,218] [DEBUG] Exception while resolving variable 'is_authenticated' in template 'rest_framework/api.html'.
+Traceback (most recent call last):
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    current = current[bit]
+TypeError: 'NoneType' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'NoneType' object has no attribute 'is_authenticated'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\template\base.py", line 849, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'is_authenticated'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\template\base.py", line 856, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [is_authenticated] in None
+[2020-06-18 10:06:51,223] [WARNING] "GET /portrait/v1/yjsyx/ HTTP/1.1" 403 5328
+[2020-06-18 10:06:51,296] [WARNING] Not Found: /static/rest_framework/css/bootstrap.min.css
+[2020-06-18 10:06:51,300] [WARNING] Not Found: /static/rest_framework/css/bootstrap-tweaks.css
+[2020-06-18 10:06:51,300] [WARNING] "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 404 120
+[2020-06-18 10:06:51,302] [WARNING] "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 404 117
+[2020-06-18 10:06:51,305] [WARNING] Not Found: /static/rest_framework/css/prettify.css
+[2020-06-18 10:06:51,306] [WARNING] "GET /static/rest_framework/css/prettify.css HTTP/1.1" 404 112
+[2020-06-18 10:06:51,310] [WARNING] Not Found: /static/rest_framework/css/default.css
+[2020-06-18 10:06:51,311] [WARNING] Not Found: /static/rest_framework/js/jquery-3.4.1.min.js
+[2020-06-18 10:06:51,313] [WARNING] Not Found: /static/rest_framework/js/ajax-form.js
+[2020-06-18 10:06:51,315] [WARNING] Not Found: /static/rest_framework/js/csrf.js
+[2020-06-18 10:06:51,315] [WARNING] "GET /static/rest_framework/js/jquery-3.4.1.min.js HTTP/1.1" 404 118
+[2020-06-18 10:06:51,315] [WARNING] "GET /static/rest_framework/css/default.css HTTP/1.1" 404 111
+[2020-06-18 10:06:51,317] [WARNING] Not Found: /static/rest_framework/js/prettify-min.js
+[2020-06-18 10:06:51,318] [WARNING] "GET /static/rest_framework/js/csrf.js HTTP/1.1" 404 106
+[2020-06-18 10:06:51,320] [WARNING] Not Found: /static/rest_framework/js/default.js
+[2020-06-18 10:06:51,321] [WARNING] "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 404 111
+[2020-06-18 10:06:51,323] [WARNING] Not Found: /static/rest_framework/js/bootstrap.min.js
+[2020-06-18 10:06:51,324] [WARNING] "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 404 114
+[2020-06-18 10:06:51,325] [WARNING] "GET /static/rest_framework/js/default.js HTTP/1.1" 404 109
+[2020-06-18 10:06:51,326] [WARNING] "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 404 115
+[2020-06-18 10:06:51,739] [WARNING] Not Found: /favicon.ico
+[2020-06-18 10:06:51,740] [WARNING] "GET /favicon.ico HTTP/1.1" 404 85
+[2020-06-18 10:07:58,567] [WARNING] Not Found: /favicon.ico
+[2020-06-18 10:07:58,567] [WARNING] "GET /favicon.ico HTTP/1.1" 404 85
+[2020-06-18 10:07:59,160] [WARNING] Not Found: /favicon.ico
+[2020-06-18 10:07:59,161] [WARNING] "GET /favicon.ico HTTP/1.1" 404 85
+[2020-06-18 10:07:59,760] [WARNING] Not Found: /favicon.ico
+[2020-06-18 10:07:59,761] [WARNING] "GET /favicon.ico HTTP/1.1" 404 85
+[2020-06-18 10:08:00,410] [WARNING] Not Found: /favicon.ico
+[2020-06-18 10:08:00,411] [WARNING] "GET /favicon.ico HTTP/1.1" 404 85
+[2020-06-18 10:08:03,813] [INFO] "GET /login HTTP/1.1" 301 0
+[2020-06-18 10:08:03,937] [INFO] "GET /login/ HTTP/1.1" 302 0
+[2020-06-18 10:08:03,940] [INFO] "GET /portrait/v1/yjsyx HTTP/1.1" 301 0
+[2020-06-18 10:08:03,994] [DEBUG] Exception while resolving variable 'is_authenticated' in template 'rest_framework/api.html'.
+Traceback (most recent call last):
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    current = current[bit]
+TypeError: 'NoneType' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'NoneType' object has no attribute 'is_authenticated'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\template\base.py", line 849, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'is_authenticated'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\template\base.py", line 856, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [is_authenticated] in None
+[2020-06-18 10:08:03,996] [WARNING] "GET /portrait/v1/yjsyx/ HTTP/1.1" 403 5328
+[2020-06-18 10:08:04,062] [WARNING] Not Found: /static/rest_framework/css/bootstrap.min.css
+[2020-06-18 10:08:04,069] [WARNING] "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 404 117
+[2020-06-18 10:08:04,064] [WARNING] Not Found: /static/rest_framework/css/prettify.css
+[2020-06-18 10:08:04,063] [WARNING] Not Found: /static/rest_framework/css/bootstrap-tweaks.css
+[2020-06-18 10:08:04,067] [WARNING] Not Found: /static/rest_framework/js/jquery-3.4.1.min.js
+[2020-06-18 10:08:04,068] [WARNING] Not Found: /static/rest_framework/js/ajax-form.js
+[2020-06-18 10:08:04,066] [WARNING] Not Found: /static/rest_framework/css/default.css
+[2020-06-18 10:08:04,071] [WARNING] "GET /static/rest_framework/css/prettify.css HTTP/1.1" 404 112
+[2020-06-18 10:08:04,072] [WARNING] "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 404 111
+[2020-06-18 10:08:04,072] [WARNING] "GET /static/rest_framework/js/jquery-3.4.1.min.js HTTP/1.1" 404 118
+[2020-06-18 10:08:04,073] [WARNING] "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 404 120
+[2020-06-18 10:08:04,073] [WARNING] "GET /static/rest_framework/css/default.css HTTP/1.1" 404 111
+[2020-06-18 10:08:04,079] [WARNING] Not Found: /static/rest_framework/js/csrf.js
+[2020-06-18 10:08:04,081] [WARNING] "GET /static/rest_framework/js/csrf.js HTTP/1.1" 404 106
+[2020-06-18 10:08:04,083] [WARNING] Not Found: /static/rest_framework/js/bootstrap.min.js
+[2020-06-18 10:08:04,084] [WARNING] Not Found: /static/rest_framework/js/prettify-min.js
+[2020-06-18 10:08:04,086] [WARNING] "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 404 114
+[2020-06-18 10:08:04,086] [WARNING] "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 404 115
+[2020-06-18 10:08:04,086] [WARNING] Not Found: /static/rest_framework/js/default.js
+[2020-06-18 10:08:04,087] [WARNING] "GET /static/rest_framework/js/default.js HTTP/1.1" 404 109
+[2020-06-18 10:08:04,424] [WARNING] Not Found: /favicon.ico
+[2020-06-18 10:08:04,425] [WARNING] "GET /favicon.ico HTTP/1.1" 404 85
+[2020-06-18 10:09:18,759] [INFO] "GET /login HTTP/1.1" 301 0
+[2020-06-18 10:09:18,779] [INFO] "GET /login/ HTTP/1.1" 302 0
+[2020-06-18 10:09:35,365] [INFO] "GET /login/?next=%2Fportrait%2Fv1%2Fyjsyx&ticket=ST-80838-FhR1EuKzG7GbTluStSBE-cas HTTP/1.1" 302 0
+[2020-06-18 10:09:35,381] [INFO] "GET /portrait/v1/yjsyx HTTP/1.1" 301 0
+[2020-06-18 10:09:35,445] [DEBUG] Exception while resolving variable 'is_authenticated' in template 'rest_framework/api.html'.
+Traceback (most recent call last):
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    current = current[bit]
+TypeError: 'NoneType' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'NoneType' object has no attribute 'is_authenticated'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\template\base.py", line 849, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'is_authenticated'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\template\base.py", line 856, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [is_authenticated] in None
+[2020-06-18 10:09:35,448] [WARNING] "GET /portrait/v1/yjsyx/ HTTP/1.1" 403 5328
+[2020-06-18 10:09:35,650] [WARNING] Not Found: /static/rest_framework/css/bootstrap.min.css
+[2020-06-18 10:09:35,651] [WARNING] "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 404 117
+[2020-06-18 10:09:35,654] [WARNING] Not Found: /static/rest_framework/css/bootstrap-tweaks.css
+[2020-06-18 10:09:35,656] [WARNING] Not Found: /static/rest_framework/css/prettify.css
+[2020-06-18 10:09:35,657] [WARNING] "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 404 120
+[2020-06-18 10:09:35,657] [WARNING] "GET /static/rest_framework/css/prettify.css HTTP/1.1" 404 112
+[2020-06-18 10:09:35,661] [WARNING] Not Found: /static/rest_framework/css/default.css
+[2020-06-18 10:09:35,663] [WARNING] Not Found: /static/rest_framework/js/jquery-3.4.1.min.js
+[2020-06-18 10:09:35,666] [WARNING] Not Found: /static/rest_framework/js/ajax-form.js
+[2020-06-18 10:09:35,669] [WARNING] Not Found: /static/rest_framework/js/csrf.js
+[2020-06-18 10:09:35,670] [WARNING] "GET /static/rest_framework/js/jquery-3.4.1.min.js HTTP/1.1" 404 118
+[2020-06-18 10:09:35,671] [WARNING] "GET /static/rest_framework/js/csrf.js HTTP/1.1" 404 106
+[2020-06-18 10:09:35,673] [WARNING] "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 404 111
+[2020-06-18 10:09:35,670] [WARNING] "GET /static/rest_framework/css/default.css HTTP/1.1" 404 111
+[2020-06-18 10:09:35,690] [WARNING] Not Found: /static/rest_framework/js/bootstrap.min.js
+[2020-06-18 10:09:35,691] [WARNING] "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 404 115
+[2020-06-18 10:09:35,694] [WARNING] Not Found: /static/rest_framework/js/prettify-min.js
+[2020-06-18 10:09:35,697] [WARNING] Not Found: /static/rest_framework/js/default.js
+[2020-06-18 10:09:35,698] [WARNING] "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 404 114
+[2020-06-18 10:09:35,698] [WARNING] "GET /static/rest_framework/js/default.js HTTP/1.1" 404 109
+[2020-06-18 10:09:35,789] [WARNING] Not Found: /static/rest_framework/js/jquery-3.4.1.min.js
+[2020-06-18 10:09:35,790] [WARNING] "GET /static/rest_framework/js/jquery-3.4.1.min.js HTTP/1.1" 404 118
+[2020-06-18 10:09:35,810] [WARNING] Not Found: /static/rest_framework/js/ajax-form.js
+[2020-06-18 10:09:35,811] [WARNING] "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 404 111
+[2020-06-18 10:09:35,822] [WARNING] Not Found: /static/rest_framework/js/csrf.js
+[2020-06-18 10:09:35,823] [WARNING] "GET /static/rest_framework/js/csrf.js HTTP/1.1" 404 106
+[2020-06-18 10:09:35,829] [WARNING] Not Found: /static/rest_framework/js/bootstrap.min.js
+[2020-06-18 10:09:35,830] [WARNING] "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 404 115
+[2020-06-18 10:09:35,849] [WARNING] Not Found: /static/rest_framework/js/prettify-min.js
+[2020-06-18 10:09:35,850] [WARNING] "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 404 114
+[2020-06-18 10:09:35,858] [WARNING] Not Found: /static/rest_framework/js/default.js
+[2020-06-18 10:09:35,859] [WARNING] "GET /static/rest_framework/js/default.js HTTP/1.1" 404 109
+[2020-06-18 10:10:29,460] [WARNING] Not Found: /static/rest_framework/css/bootstrap.min.css
+[2020-06-18 10:10:29,461] [WARNING] "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 404 117
+[2020-06-18 10:10:29,492] [WARNING] Not Found: /static/rest_framework/css/bootstrap-tweaks.css
+[2020-06-18 10:10:29,493] [WARNING] "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 404 120
+[2020-06-18 10:10:29,497] [WARNING] Not Found: /static/rest_framework/css/prettify.css
+[2020-06-18 10:10:29,501] [WARNING] Not Found: /static/rest_framework/css/default.css
+[2020-06-18 10:10:29,512] [WARNING] "GET /static/rest_framework/css/prettify.css HTTP/1.1" 404 112
+[2020-06-18 10:10:29,513] [WARNING] "GET /static/rest_framework/css/default.css HTTP/1.1" 404 111
+[2020-06-18 10:10:56,482] [DEBUG] Exception while resolving variable 'is_authenticated' in template 'rest_framework/api.html'.
+Traceback (most recent call last):
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    current = current[bit]
+TypeError: 'NoneType' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'NoneType' object has no attribute 'is_authenticated'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\template\base.py", line 849, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'is_authenticated'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\template\base.py", line 856, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [is_authenticated] in None
+[2020-06-18 10:10:56,487] [WARNING] "GET /portrait/v1/yjsyx/ HTTP/1.1" 403 5328
+[2020-06-18 10:10:56,570] [WARNING] Not Found: /static/rest_framework/css/bootstrap.min.css
+[2020-06-18 10:10:56,572] [WARNING] Not Found: /static/rest_framework/css/default.css
+[2020-06-18 10:10:56,574] [WARNING] Not Found: /static/rest_framework/css/bootstrap-tweaks.css
+[2020-06-18 10:10:56,578] [WARNING] Not Found: /static/rest_framework/js/jquery-3.4.1.min.js
+[2020-06-18 10:10:56,580] [WARNING] Not Found: /static/rest_framework/js/ajax-form.js
+[2020-06-18 10:10:56,582] [WARNING] Not Found: /static/rest_framework/css/prettify.css
+[2020-06-18 10:10:56,582] [WARNING] "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 404 117
+[2020-06-18 10:10:56,583] [WARNING] "GET /static/rest_framework/css/default.css HTTP/1.1" 404 111
+[2020-06-18 10:10:56,583] [WARNING] "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 404 120
+[2020-06-18 10:10:56,584] [WARNING] "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 404 111
+[2020-06-18 10:10:56,584] [WARNING] "GET /static/rest_framework/css/prettify.css HTTP/1.1" 404 112
+[2020-06-18 10:10:56,584] [WARNING] "GET /static/rest_framework/js/jquery-3.4.1.min.js HTTP/1.1" 404 118
+[2020-06-18 10:10:56,597] [WARNING] Not Found: /static/rest_framework/js/bootstrap.min.js
+[2020-06-18 10:10:56,599] [WARNING] Not Found: /static/rest_framework/js/prettify-min.js
+[2020-06-18 10:10:56,602] [WARNING] Not Found: /static/rest_framework/js/default.js
+[2020-06-18 10:10:56,605] [WARNING] Not Found: /static/rest_framework/js/csrf.js
+[2020-06-18 10:10:56,606] [WARNING] "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 404 114
+[2020-06-18 10:10:56,606] [WARNING] "GET /static/rest_framework/js/default.js HTTP/1.1" 404 109
+[2020-06-18 10:10:56,607] [WARNING] "GET /static/rest_framework/js/csrf.js HTTP/1.1" 404 106
+[2020-06-18 10:10:56,608] [WARNING] "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 404 115
+[2020-06-18 10:10:56,622] [WARNING] Not Found: /static/rest_framework/js/jquery-3.4.1.min.js
+[2020-06-18 10:10:56,624] [WARNING] "GET /static/rest_framework/js/jquery-3.4.1.min.js HTTP/1.1" 404 118
+[2020-06-18 10:10:56,637] [WARNING] Not Found: /static/rest_framework/js/ajax-form.js
+[2020-06-18 10:10:56,638] [WARNING] "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 404 111
+[2020-06-18 10:10:56,652] [WARNING] Not Found: /static/rest_framework/js/csrf.js
+[2020-06-18 10:10:56,654] [WARNING] "GET /static/rest_framework/js/csrf.js HTTP/1.1" 404 106
+[2020-06-18 10:10:56,696] [WARNING] Not Found: /static/rest_framework/js/bootstrap.min.js
+[2020-06-18 10:10:56,697] [WARNING] "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 404 115
+[2020-06-18 10:10:56,705] [WARNING] Not Found: /static/rest_framework/js/prettify-min.js
+[2020-06-18 10:10:56,706] [WARNING] "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 404 114
+[2020-06-18 10:10:56,713] [WARNING] Not Found: /static/rest_framework/js/default.js
+[2020-06-18 10:10:56,714] [WARNING] "GET /static/rest_framework/js/default.js HTTP/1.1" 404 109
+[2020-06-18 10:16:18,826] [INFO] "GET /login/?next=%2Fportrait%2Fv1%2Fyjsyx&ticket=ST-80850-jMZfiDK55smgH5RFjMfC-cas HTTP/1.1" 302 0
+[2020-06-18 10:16:18,931] [DEBUG] Exception while resolving variable 'is_authenticated' in template 'rest_framework/api.html'.
+Traceback (most recent call last):
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    current = current[bit]
+TypeError: 'NoneType' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'NoneType' object has no attribute 'is_authenticated'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\template\base.py", line 849, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'is_authenticated'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\template\base.py", line 856, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [is_authenticated] in None
+[2020-06-18 10:16:18,935] [WARNING] "GET /portrait/v1/yjsyx/ HTTP/1.1" 403 5328
+[2020-06-18 10:16:32,875] [INFO] "GET /login/ HTTP/1.1" 302 0
+[2020-06-18 10:16:32,994] [DEBUG] Exception while resolving variable 'is_authenticated' in template 'rest_framework/api.html'.
+Traceback (most recent call last):
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    current = current[bit]
+TypeError: 'NoneType' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'NoneType' object has no attribute 'is_authenticated'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\template\base.py", line 849, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'is_authenticated'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PycharmProjects\DjangoWorkerHome\my_env\lib\site-packages\django\template\base.py", line 856, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [is_authenticated] in None
+[2020-06-18 10:16:32,996] [WARNING] "GET /portrait/v1/yjsyx/ HTTP/1.1" 403 5328
+[2020-06-18 10:16:33,098] [WARNING] Not Found: /static/rest_framework/css/bootstrap.min.css
+[2020-06-18 10:16:33,099] [WARNING] "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 404 117
+[2020-06-18 10:16:33,108] [WARNING] Not Found: /static/rest_framework/css/bootstrap-tweaks.css
+[2020-06-18 10:16:33,112] [WARNING] Not Found: /static/rest_framework/css/prettify.css
+[2020-06-18 10:16:33,113] [WARNING] "GET /static/rest_framework/css/prettify.css HTTP/1.1" 404 112
+[2020-06-18 10:16:33,117] [WARNING] Not Found: /static/rest_framework/css/default.css
+[2020-06-18 10:16:33,119] [WARNING] "GET /static/rest_framework/css/default.css HTTP/1.1" 404 111
+[2020-06-18 10:16:33,120] [WARNING] "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 404 120
+[2020-06-18 10:16:33,123] [WARNING] Not Found: /static/rest_framework/js/jquery-3.4.1.min.js
+[2020-06-18 10:16:33,126] [WARNING] Not Found: /static/rest_framework/js/ajax-form.js
+[2020-06-18 10:16:33,126] [WARNING] "GET /static/rest_framework/js/jquery-3.4.1.min.js HTTP/1.1" 404 118
+[2020-06-18 10:16:33,127] [WARNING] "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 404 111
+[2020-06-18 10:16:33,150] [WARNING] Not Found: /static/rest_framework/js/csrf.js
+[2020-06-18 10:16:33,152] [WARNING] "GET /static/rest_framework/js/csrf.js HTTP/1.1" 404 106
+[2020-06-18 10:16:33,162] [WARNING] Not Found: /static/rest_framework/js/bootstrap.min.js
+[2020-06-18 10:16:33,166] [WARNING] Not Found: /static/rest_framework/js/prettify-min.js
+[2020-06-18 10:16:33,167] [WARNING] "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 404 115
+[2020-06-18 10:16:33,175] [WARNING] "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 404 114
+[2020-06-18 10:16:33,171] [WARNING] Not Found: /static/rest_framework/js/default.js
+[2020-06-18 10:16:33,178] [WARNING] "GET /static/rest_framework/js/default.js HTTP/1.1" 404 109
+[2020-06-18 10:36:07,808] [DEBUG] ALTER TABLE `znyj_tkxw` DROP COLUMN `yjdj`; (params ())
+[2020-06-18 10:36:07,808] [DEBUG] ALTER TABLE `znyj_tkxw` DROP COLUMN `yjdj`; (params ())
+[2020-06-19 17:19:16,979] [WARNING] Not Found: /dist
+[2020-06-19 17:19:16,982] [WARNING] "GET /dist HTTP/1.1" 404 78
+[2020-06-19 17:19:17,867] [WARNING] Not Found: /favicon.ico
+[2020-06-19 17:19:17,869] [WARNING] "GET /favicon.ico HTTP/1.1" 404 85
+[2020-06-19 17:20:36,460] [INFO] "GET /login HTTP/1.1" 301 0
+[2020-06-19 17:20:36,714] [DEBUG] Exception while resolving variable 'is_authenticated' in template 'rest_framework/api.html'.
+Traceback (most recent call last):
+  File "E:\pythonCode\PythonVirtualenv\uibe\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    current = current[bit]
+TypeError: 'NoneType' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\pythonCode\PythonVirtualenv\uibe\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'NoneType' object has no attribute 'is_authenticated'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\pythonCode\PythonVirtualenv\uibe\lib\site-packages\django\template\base.py", line 849, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'is_authenticated'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\pythonCode\PythonVirtualenv\uibe\lib\site-packages\django\template\base.py", line 856, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [is_authenticated] in None
+[2020-06-19 17:20:36,847] [INFO] "GET /login/ HTTP/1.1" 200 5608
+[2020-06-19 17:20:37,183] [WARNING] Not Found: /static/rest_framework/css/bootstrap.min.css
+[2020-06-19 17:20:37,185] [WARNING] "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 404 117
+[2020-06-19 17:20:37,274] [WARNING] Not Found: /static/rest_framework/css/prettify.css
+[2020-06-19 17:20:37,276] [WARNING] "GET /static/rest_framework/css/prettify.css HTTP/1.1" 404 112
+[2020-06-19 17:20:37,333] [WARNING] Not Found: /static/rest_framework/css/bootstrap-tweaks.css
+[2020-06-19 17:20:37,335] [WARNING] "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 404 120
+[2020-06-19 17:20:37,384] [WARNING] Not Found: /static/rest_framework/css/default.css
+[2020-06-19 17:20:37,387] [WARNING] "GET /static/rest_framework/css/default.css HTTP/1.1" 404 111
+[2020-06-19 17:20:37,448] [WARNING] Not Found: /static/rest_framework/js/jquery-3.4.1.min.js
+[2020-06-19 17:20:37,450] [WARNING] "GET /static/rest_framework/js/jquery-3.4.1.min.js HTTP/1.1" 404 118
+[2020-06-19 17:20:37,486] [WARNING] Not Found: /static/rest_framework/js/ajax-form.js
+[2020-06-19 17:20:37,489] [WARNING] "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 404 111
+[2020-06-19 17:20:37,569] [WARNING] Not Found: /static/rest_framework/js/csrf.js
+[2020-06-19 17:20:37,573] [WARNING] "GET /static/rest_framework/js/csrf.js HTTP/1.1" 404 106
+[2020-06-19 17:20:37,667] [WARNING] Not Found: /static/rest_framework/js/bootstrap.min.js
+[2020-06-19 17:20:37,669] [WARNING] "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 404 115
+[2020-06-19 17:20:37,781] [WARNING] Not Found: /static/rest_framework/js/prettify-min.js
+[2020-06-19 17:20:37,782] [WARNING] "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 404 114
+[2020-06-19 17:20:37,881] [WARNING] Not Found: /static/rest_framework/js/default.js
+[2020-06-19 17:20:37,885] [WARNING] "GET /static/rest_framework/js/default.js HTTP/1.1" 404 109
+[2020-06-19 17:21:22,090] [INFO] "POST /login/ HTTP/1.1" 200 179
+[2020-06-19 17:22:20,298] [WARNING] Not Found: /warning/v1/jzgxwgi/
+[2020-06-19 17:22:20,299] [WARNING] "GET /warning/v1/jzgxwgi/ HTTP/1.1" 404 93
+[2020-06-19 17:23:10,002] [INFO] "GET /warning/v1/zjzxbxk/ HTTP/1.1" 200 69
+[2020-06-19 17:23:15,620] [INFO] "POST /warning/v1/zjzxbxk/ HTTP/1.1" 200 2280
+[2020-06-23 10:41:16,578] [INFO] "POST /login/ HTTP/1.1" 200 179
+[2020-06-23 10:41:32,465] [INFO] "POST /login/ HTTP/1.1" 200 179
+[2020-06-23 10:44:23,669] [INFO] "POST /warning/v1/tkxw/ HTTP/1.1" 200 2284
+[2020-06-23 10:44:58,729] [INFO] "POST /warning/v1/tkxwmx/?xh=201601027 HTTP/1.1" 200 70
+[2020-06-23 10:45:04,388] [INFO] "GET /warning/v1/tkxwmx/?xh=201601027 HTTP/1.1" 200 1354
+[2020-06-23 10:50:33,463] [ERROR] dading
+[2020-06-23 10:50:33,464] [ERROR] 192.168.3.243
+[2020-06-23 10:50:33,464] [ERROR] ('list index out of range',)
+[2020-06-23 10:50:33,466] [INFO] "PATCH /warning/v1/tkxwmx/?xh=201601027 HTTP/1.1" 200 89
+[2020-06-23 10:51:04,409] [ERROR] dading
+[2020-06-23 10:51:04,409] [ERROR] 192.168.3.243
+[2020-06-23 10:51:04,409] [ERROR] ('list index out of range',)
+[2020-06-23 10:51:04,411] [INFO] "PATCH /warning/v1/tkxwmx/ HTTP/1.1" 200 89
+[2020-06-23 10:53:46,598] [ERROR] dading
+[2020-06-23 10:53:46,598] [ERROR] 192.168.3.243
+[2020-06-23 10:53:46,599] [ERROR] ('list index out of range',)
+[2020-06-23 10:53:46,601] [INFO] "PATCH /warning/v1/tkxwmx/ HTTP/1.1" 200 89
+[2020-06-23 11:12:34,798] [INFO] "GET /warning/v1/tkxwmx/?xh=201601027 HTTP/1.1" 200 1354
+[2020-06-23 11:13:21,662] [INFO] "PATCH /warning/v1/tkxwmx/ HTTP/1.1" 200 143
+[2020-06-23 11:16:30,301] [INFO] "PATCH /warning/v1/tkxwmx/ HTTP/1.1" 200 71
+[2020-06-23 11:19:16,481] [INFO] "PATCH /warning/v1/tkxwmx/ HTTP/1.1" 200 78
+[2020-06-23 11:20:29,972] [ERROR] Internal Server Error: /warning/v1/tkxwmx/
+Traceback (most recent call last):
+  File "E:\pythonCode\PythonVirtualenv\uibe\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "E:\pythonCode\PythonVirtualenv\uibe\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\pythonCode\PythonVirtualenv\uibe\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\pythonCode\PythonVirtualenv\uibe\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\pythonCode\PythonVirtualenv\uibe\lib\site-packages\rest_framework\viewsets.py", line 114, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\pythonCode\PythonVirtualenv\uibe\lib\site-packages\rest_framework\views.py", line 499, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+  File "E:\pythonCode\PythonVirtualenv\uibe\lib\site-packages\rest_framework\views.py", line 414, in finalize_response
+    % type(response)
+AssertionError: Expected a `Response`, `HttpResponse` or `HttpStreamingResponse` to be returned from the view, but received a `<class 'NoneType'>`
+[2020-06-23 11:20:30,158] [ERROR] "PATCH /warning/v1/tkxwmx/ HTTP/1.1" 500 27
+[2020-06-23 11:20:40,063] [INFO] "PATCH /warning/v1/tkxwmx/ HTTP/1.1" 200 143
+[2020-06-23 11:33:31,875] [WARNING] "PATCH /warning/v1/tkxwmx/ HTTP/1.1" 403 94
+[2020-06-23 15:39:32,224] [INFO] "POST /login/ HTTP/1.1" 200 113
+[2020-06-23 15:41:37,267] [INFO] "POST /login/ HTTP/1.1" 200 179
+[2020-06-23 15:42:38,040] [INFO] "POST /warning/v1/tkxw/ HTTP/1.1" 200 2284
+[2020-06-23 16:01:08,802] [WARNING] "POST /warning/v1/tkxwmx/?xh=201601003 HTTP/1.1" 403 94
+[2020-06-23 16:01:26,408] [INFO] "POST /login/ HTTP/1.1" 200 179
+[2020-06-23 16:02:47,977] [INFO] "POST /warning/v1/tkxwmx/?xh=201601027 HTTP/1.1" 200 70
+[2020-06-23 16:02:55,108] [INFO] "GET /warning/v1/tkxwmx/?xh=201601027 HTTP/1.1" 200 1354
+[2020-06-23 16:05:25,507] [INFO] "PATCH /warning/v1/tkxwmx/?xh=201601027 HTTP/1.1" 200 143
+[2020-06-23 16:05:43,696] [INFO] "PATCH /warning/v1/tkxwmx/?xh=201601027 HTTP/1.1" 200 78
+[2020-06-23 16:08:35,408] [INFO] "PATCH /warning/v1/tkxwmx/?xh=201601027 HTTP/1.1" 200 108
+[2020-06-23 16:18:56,313] [INFO] "GET /warning/v1/tkxwmx/?xh=201601027 HTTP/1.1" 200 1354
+[2020-06-23 16:47:23,330] [ERROR] dading
+[2020-06-23 16:47:23,330] [ERROR] 192.168.3.243
+[2020-06-23 16:47:23,330] [ERROR] (22, 'Invalid argument')
+[2020-06-23 16:47:23,332] [INFO] "GET /warning/v1/tkxwmx/?xh=201601027 HTTP/1.1" 200 86
+[2020-06-23 16:49:07,778] [ERROR] dading
+[2020-06-23 16:49:07,778] [ERROR] 192.168.3.243
+[2020-06-23 16:49:07,778] [ERROR] (22, 'Invalid argument')
+[2020-06-23 16:49:07,780] [INFO] "GET /warning/v1/tkxwmx/?xh=201601027 HTTP/1.1" 200 86
+[2020-06-23 16:49:27,633] [INFO] "POST /login/ HTTP/1.1" 200 179
+[2020-06-23 16:50:03,761] [ERROR] dading
+[2020-06-23 16:50:03,763] [ERROR] 192.168.3.243
+[2020-06-23 16:50:03,763] [ERROR] (22, 'Invalid argument')
+[2020-06-23 16:50:03,764] [INFO] "GET /warning/v1/tkxwmx/?xh=201601027 HTTP/1.1" 200 86
+[2020-06-23 16:50:30,592] [INFO] "POST /warning/v1/tkxwmx/ HTTP/1.1" 200 70
+[2020-06-23 16:50:37,065] [INFO] "POST /warning/v1/tkxw/ HTTP/1.1" 200 2284
+[2020-06-23 16:52:26,027] [ERROR] dading
+[2020-06-23 16:52:26,027] [ERROR] 192.168.3.243
+[2020-06-23 16:52:26,028] [ERROR] (22, 'Invalid argument')
+[2020-06-23 16:52:26,029] [INFO] "GET /warning/v1/tkxwmx/?xh=201601025 HTTP/1.1" 200 86
+[2020-06-23 17:04:15,317] [INFO] "GET /warning/v1/tkxwmx/?xh=201601025 HTTP/1.1" 200 658
+[2020-06-23 17:14:12,381] [INFO] "PATCH /warning/v1/tkxwmx/ HTTP/1.1" 200 143
+[2020-06-23 17:48:52,657] [ERROR] dading
+[2020-06-23 17:48:52,658] [ERROR] 192.168.3.243
+[2020-06-23 17:48:52,659] [ERROR] ("'dict' object is not callable",)
+[2020-06-23 17:48:52,661] [INFO] "PATCH /warning/v1/tkxwmx/ HTTP/1.1" 200 95
+[2020-06-23 17:49:52,994] [ERROR] dading
+[2020-06-23 17:49:52,996] [ERROR] 192.168.3.243
+[2020-06-23 17:49:53,236] [ERROR] ("'dict' object is not callable",)
+[2020-06-23 17:49:58,534] [INFO] "PATCH /warning/v1/tkxwmx/ HTTP/1.1" 200 95
+[2020-06-23 17:51:16,325] [INFO] "GET /warning/v1/tkxwmx/?xh=201601025 HTTP/1.1" 200 658
+[2020-06-23 19:18:16,069] [INFO] "GET /login HTTP/1.1" 301 0
+[2020-06-23 19:18:16,268] [DEBUG] Exception while resolving variable 'is_authenticated' in template 'rest_framework/api.html'.
+Traceback (most recent call last):
+  File "E:\pythonCode\PythonVirtualenv\uibe\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    current = current[bit]
+TypeError: 'NoneType' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\pythonCode\PythonVirtualenv\uibe\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'NoneType' object has no attribute 'is_authenticated'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\pythonCode\PythonVirtualenv\uibe\lib\site-packages\django\template\base.py", line 849, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'is_authenticated'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\pythonCode\PythonVirtualenv\uibe\lib\site-packages\django\template\base.py", line 856, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [is_authenticated] in None
+[2020-06-23 19:18:16,306] [INFO] "GET /login/ HTTP/1.1" 200 5608
+[2020-06-23 19:18:16,402] [WARNING] Not Found: /static/rest_framework/css/bootstrap.min.css
+[2020-06-23 19:18:16,406] [WARNING] "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 404 117
+[2020-06-23 19:18:16,410] [WARNING] Not Found: /static/rest_framework/css/bootstrap-tweaks.css
+[2020-06-23 19:18:16,413] [WARNING] Not Found: /static/rest_framework/css/prettify.css
+[2020-06-23 19:18:16,415] [WARNING] "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 404 120
+[2020-06-23 19:18:16,416] [WARNING] "GET /static/rest_framework/css/prettify.css HTTP/1.1" 404 112
+[2020-06-23 19:18:16,422] [WARNING] Not Found: /static/rest_framework/css/default.css
+[2020-06-23 19:18:16,424] [WARNING] "GET /static/rest_framework/css/default.css HTTP/1.1" 404 111
+[2020-06-23 19:18:16,427] [WARNING] Not Found: /static/rest_framework/js/jquery-3.4.1.min.js
+[2020-06-23 19:18:16,429] [WARNING] "GET /static/rest_framework/js/jquery-3.4.1.min.js HTTP/1.1" 404 118
+[2020-06-23 19:18:16,433] [WARNING] Not Found: /static/rest_framework/js/ajax-form.js
+[2020-06-23 19:18:16,439] [WARNING] Not Found: /static/rest_framework/js/csrf.js
+[2020-06-23 19:18:16,441] [WARNING] "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 404 111
+[2020-06-23 19:18:16,445] [WARNING] Not Found: /static/rest_framework/js/bootstrap.min.js
+[2020-06-23 19:18:16,450] [WARNING] Not Found: /static/rest_framework/js/prettify-min.js
+[2020-06-23 19:18:16,451] [WARNING] "GET /static/rest_framework/js/csrf.js HTTP/1.1" 404 106
+[2020-06-23 19:18:16,452] [WARNING] "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 404 115
+[2020-06-23 19:18:16,453] [WARNING] "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 404 114
+[2020-06-23 19:18:16,457] [WARNING] Not Found: /static/rest_framework/js/default.js
+[2020-06-23 19:18:16,458] [WARNING] "GET /static/rest_framework/js/default.js HTTP/1.1" 404 109
+[2020-06-23 19:18:16,826] [WARNING] Not Found: /static/rest_framework/js/jquery-3.4.1.min.js
+[2020-06-23 19:18:16,828] [WARNING] "GET /static/rest_framework/js/jquery-3.4.1.min.js HTTP/1.1" 404 118
+[2020-06-23 19:18:16,853] [WARNING] Not Found: /static/rest_framework/js/ajax-form.js
+[2020-06-23 19:18:16,855] [WARNING] "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 404 111
+[2020-06-23 19:18:16,868] [WARNING] Not Found: /static/rest_framework/js/csrf.js
+[2020-06-23 19:18:16,870] [WARNING] "GET /static/rest_framework/js/csrf.js HTTP/1.1" 404 106
+[2020-06-23 19:18:16,888] [WARNING] Not Found: /static/rest_framework/js/bootstrap.min.js
+[2020-06-23 19:18:16,891] [WARNING] "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 404 115
+[2020-06-23 19:18:16,929] [WARNING] Not Found: /static/rest_framework/js/prettify-min.js
+[2020-06-23 19:18:16,935] [WARNING] "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 404 114
+[2020-06-23 19:18:16,964] [WARNING] Not Found: /static/rest_framework/js/default.js
+[2020-06-23 19:18:16,972] [WARNING] "GET /static/rest_framework/js/default.js HTTP/1.1" 404 109
+[2020-06-23 19:18:17,005] [WARNING] Not Found: /favicon.ico
+[2020-06-23 19:18:17,007] [WARNING] "GET /favicon.ico HTTP/1.1" 404 85
+[2020-06-23 19:18:34,883] [INFO] "POST /login/ HTTP/1.1" 200 179
+[2020-06-23 19:19:00,566] [INFO] "POST /warning/v1/tkxw/ HTTP/1.1" 200 2284
+[2020-06-23 19:19:31,010] [INFO] "POST /warning/v1/tkxwmx/ HTTP/1.1" 200 2696
+[2020-06-23 19:20:25,445] [INFO] "POST /warning/v1/tkxwmx/ HTTP/1.1" 200 2696
+[2020-06-24 10:52:35,625] [INFO] "POST /login/ HTTP/1.1" 200 179
+[2020-06-24 10:52:45,739] [INFO] "POST /login/ HTTP/1.1" 200 179
+[2020-06-24 10:53:05,214] [INFO] "POST /warning/v1/tkxw/ HTTP/1.1" 200 2284
+[2020-06-24 10:53:23,162] [INFO] "GET /warning/v1/tkxw/?xh=201601021 HTTP/1.1" 200 69
+[2020-06-24 10:54:36,887] [INFO] "GET /warning/v1/tkxw/?xh=201601021 HTTP/1.1" 200 69
+[2020-06-24 10:54:47,335] [INFO] "GET /warning/v1/tkxw/?bqmc=%E5%A4%8D%E5%88%B6&xh=201601021 HTTP/1.1" 200 69
+[2020-06-24 10:56:20,008] [INFO] "GET /warning/v1/tkxw/?xh=201601021 HTTP/1.1" 200 69
+[2020-06-24 10:56:27,964] [INFO] "POST /warning/v1/tkxw/?xh=201601021 HTTP/1.1" 200 2297
+[2020-06-24 10:57:37,009] [INFO] "GET /warning/v1/tkxwmx/?xh=201601021 HTTP/1.1" 200 658
+[2020-06-24 10:57:46,178] [INFO] "GET /warning/v1/tkxwmx/?bqmc=%E5%A4%8D%E5%88%B6&xh=201601021 HTTP/1.1" 200 658
+[2020-06-24 10:57:58,908] [INFO] "GET /warning/v1/tkxwmx/?zwzdmc=%E5%AD%A6%E5%8F%B7&bqmc=%E5%A4%8D%E5%88%B6&xh=201601021 HTTP/1.1" 200 658
+[2020-06-24 10:58:15,016] [INFO] "GET /warning/v1/tkxwmx/?xh=201601021&reom=00000 HTTP/1.1" 200 658
+[2020-06-24 11:11:38,136] [DEBUG] Exception while resolving variable 'is_authenticated' in template 'rest_framework/api.html'.
+Traceback (most recent call last):
+  File "E:\pythonCode\PythonVirtualenv\uibe\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    current = current[bit]
+TypeError: 'NoneType' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\pythonCode\PythonVirtualenv\uibe\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'NoneType' object has no attribute 'is_authenticated'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\pythonCode\PythonVirtualenv\uibe\lib\site-packages\django\template\base.py", line 849, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'is_authenticated'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\pythonCode\PythonVirtualenv\uibe\lib\site-packages\django\template\base.py", line 856, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [is_authenticated] in None
+[2020-06-24 11:11:38,226] [INFO] "GET /login/ HTTP/1.1" 200 5608
+[2020-06-24 11:11:38,394] [WARNING] Not Found: /static/rest_framework/js/default.js
+[2020-06-24 11:11:38,396] [WARNING] "GET /static/rest_framework/js/default.js HTTP/1.1" 404 109
+[2020-06-24 11:11:38,461] [WARNING] Not Found: /static/rest_framework/css/bootstrap.min.css
+[2020-06-24 11:11:38,462] [WARNING] "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 404 117
+[2020-06-24 11:11:38,509] [WARNING] Not Found: /static/rest_framework/css/bootstrap-tweaks.css
+[2020-06-24 11:11:38,511] [WARNING] "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 404 120
+[2020-06-24 11:11:38,576] [WARNING] Not Found: /static/rest_framework/css/prettify.css
+[2020-06-24 11:11:38,581] [WARNING] "GET /static/rest_framework/css/prettify.css HTTP/1.1" 404 112
+[2020-06-24 11:11:38,608] [WARNING] Not Found: /static/rest_framework/css/default.css
+[2020-06-24 11:11:38,611] [WARNING] "GET /static/rest_framework/css/default.css HTTP/1.1" 404 111
+[2020-06-24 11:11:38,626] [WARNING] Not Found: /static/rest_framework/js/jquery-3.4.1.min.js
+[2020-06-24 11:11:38,628] [WARNING] "GET /static/rest_framework/js/jquery-3.4.1.min.js HTTP/1.1" 404 118
+[2020-06-24 11:11:38,636] [WARNING] Not Found: /static/rest_framework/js/ajax-form.js
+[2020-06-24 11:11:38,639] [WARNING] "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 404 111
+[2020-06-24 11:11:38,656] [WARNING] Not Found: /static/rest_framework/js/csrf.js
+[2020-06-24 11:11:38,659] [WARNING] "GET /static/rest_framework/js/csrf.js HTTP/1.1" 404 106
+[2020-06-24 11:11:38,669] [WARNING] Not Found: /static/rest_framework/js/bootstrap.min.js
+[2020-06-24 11:11:38,673] [WARNING] "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 404 115
+[2020-06-24 11:11:38,686] [WARNING] Not Found: /static/rest_framework/js/prettify-min.js
+[2020-06-24 11:11:38,690] [WARNING] "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 404 114
+[2020-06-24 11:11:39,522] [WARNING] Not Found: /static/rest_framework/js/jquery-3.4.1.min.js
+[2020-06-24 11:11:39,524] [WARNING] "GET /static/rest_framework/js/jquery-3.4.1.min.js HTTP/1.1" 404 118
+[2020-06-24 11:11:39,605] [WARNING] Not Found: /static/rest_framework/js/ajax-form.js
+[2020-06-24 11:11:39,608] [WARNING] "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 404 111
+[2020-06-24 11:11:39,636] [WARNING] Not Found: /static/rest_framework/js/csrf.js
+[2020-06-24 11:11:39,639] [WARNING] "GET /static/rest_framework/js/csrf.js HTTP/1.1" 404 106
+[2020-06-24 11:11:39,678] [WARNING] Not Found: /static/rest_framework/js/bootstrap.min.js
+[2020-06-24 11:11:39,680] [WARNING] "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 404 115
+[2020-06-24 11:11:39,714] [WARNING] Not Found: /static/rest_framework/js/prettify-min.js
+[2020-06-24 11:11:39,715] [WARNING] "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 404 114
+[2020-06-24 11:11:39,781] [WARNING] Not Found: /static/rest_framework/js/default.js
+[2020-06-24 11:11:39,784] [WARNING] "GET /static/rest_framework/js/default.js HTTP/1.1" 404 109
+[2020-06-24 11:11:44,342] [WARNING] Not Found: /dist/
+[2020-06-24 11:11:44,344] [WARNING] "GET /dist/ HTTP/1.1" 404 79
+[2020-06-24 14:21:32,596] [WARNING] "PATCH /warning/v1/tkxwmx/ HTTP/1.1" 403 94
+[2020-06-24 14:21:51,144] [INFO] "POST /login/ HTTP/1.1" 200 179
+[2020-06-24 14:22:14,438] [INFO] "PATCH /warning/v1/tkxwmx/ HTTP/1.1" 200 143
+[2020-06-24 14:24:03,392] [INFO] "GET /warning/v1/tkxwmx/?xh=201601021 HTTP/1.1" 200 658
+[2020-06-24 14:24:28,021] [INFO] "PATCH /warning/v1/tkxwmx/ HTTP/1.1" 200 78
+[2020-06-24 14:24:34,138] [INFO] "PATCH /warning/v1/tkxwmx/ HTTP/1.1" 200 143
+[2020-06-24 14:24:57,919] [INFO] "GET /warning/v1/tkxwmx/?xh=201601021 HTTP/1.1" 200 658
+[2020-06-24 15:04:30,859] [INFO] "GET /warning/v1/tkxwmx/?xh=201601021 HTTP/1.1" 200 658
+[2020-06-24 15:04:48,524] [WARNING] Not Found: /warning/v1/xwgjjzg/
+[2020-06-24 15:04:48,526] [WARNING] "POST /warning/v1/xwgjjzg/ HTTP/1.1" 404 93
+[2020-06-24 15:05:08,392] [INFO] "POST /warning/v1/jzgxwgj/ HTTP/1.1" 200 70
+[2020-06-24 15:05:33,216] [INFO] "GET /warning/v1/jzgxwgj/ HTTP/1.1" 200 1202
+[2020-06-24 15:07:13,596] [INFO] "POST /warning/v1/jzgxwgj/ HTTP/1.1" 200 1202
+[2020-06-24 15:11:47,213] [INFO] "GET /warning/v1/jzgxwgj/ HTTP/1.1" 200 69
+[2020-06-24 15:13:08,956] [INFO] "GET /warning/v1/xwgj/ HTTP/1.1" 200 69
+[2020-06-24 15:13:14,820] [INFO] "POST /warning/v1/xwgj/ HTTP/1.1" 200 1881

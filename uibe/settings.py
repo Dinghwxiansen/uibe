@@ -75,32 +75,22 @@ AUTHENTICATION_BACKENDS = (
 )
 
 # CAS 的地址
-#CAS_SERVER_URL = 'http://cas.uibe.edu.cn/cas/login'
+# CAS_SERVER_URL = 'http://cas.uibe.edu.cn/cas/login'
 # CAS 版本
-#CAS_VERSION = '3'
+# CAS_VERSION = '3'
 # 存入所有 CAS 服务端返回的 User 数据。
 CAS_APPLY_ATTRIBUTES_TO_USER = True
-
 
 CAS_SERVER_URL = 'http://cas.uibe.edu.cn/cas/login'
 # CAS_LOGOUT_COMPLETELY = True
 CAS_PROVIDE_URL_TO_LOGOUT = True
 CAS_VERSION = '3'
 CAS_IGNORE_REFERER = True
-CAS_REDIRECT_URL = 'http://192.168.3.237:8000/portrait/v1/yjsyx' #(需要跳转到的应用url)
+CAS_REDIRECT_URL = 'http://192.168.3.237:8000/portrait/v1/yjsyx'  # (需要跳转到的应用url)
 CAS_RESPONSE_CALLBACKS = False
 GLOBAL_CSRF_CHECK = False
 CAS_LOGOUT_COMPLETELY = True
-CAS_SERVER_URL_LOGOUT = 'http://cas.uibe.edu.cn/cas/logout' #(退出登录是需要调用的cas server url接口)
-
-
-
-
-
-
-
-
-
+CAS_SERVER_URL_LOGOUT = 'http://cas.uibe.edu.cn/cas/logout'  # (退出登录是需要调用的cas server url接口)
 
 ROOT_URLCONF = 'uibe.urls'
 
@@ -157,19 +147,20 @@ DATABASES = {
         # 数据库引擎（是mysql还是oracle等）
         'ENGINE': 'django.db.backends.mysql',
         # 数据库的名字
-        'NAME': 'uibe',
-        # 'NAME': 'uibe_2',
+        #'NAME': 'uibe',
+        'NAME': 'uibe_2',
         # 'NAME': 'uibe2',
         # 连接mysql数据库的用户名
         'USER': 'root',
         # 连接mysql数据库的密码
-        # 'PASSWORD': 'Mysql123!',
+        'PASSWORD': 'Mysql123!',
         # 'PASSWORD': '123456',
-        'PASSWORD': 'Pass20rd@2018',
+        #'PASSWORD': 'Pass20rd@2018',
         # mysql数据库的主机地址
         # 'HOST': '127.0.0.1',
-        'HOST': '202.204.175.183',
-        # 'HOST': '10.77.210.88',
+        # 'HOST': '202.204.175.183',
+        'HOST': '10.77.210.88',
+
         # mysql数据库的端口号
         'PORT': '3306',
     }
