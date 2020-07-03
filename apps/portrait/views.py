@@ -1014,8 +1014,8 @@ class YjsYxVIew(mixins.ListModelMixin, generics.GenericAPIView):
     def get(self, request, *args, **kwargs):
         try:
             ret = self.list(request, *args, **kwargs)
-            #value=self.request.COOKIES.get("sessionid")
-            #print(value)
+            # value=self.request.COOKIES.get("sessionid")
+            # print(value)
             # print(connection.queries[-1:])
             return restful.result(message="操作成功", data=ret.data)
         except Exception as e:
@@ -1053,6 +1053,8 @@ class YjsXwgjView(mixins.ListModelMixin, generics.GenericAPIView, ):
     def get_queryset(self):
         kssj = self.request.query_params.get("kssj", date.min)
         jssj = self.request.query_params.get("jssj", date.today() + timedelta(days=1))
+        # xhxm = self.request.POST.get("xhxm", None)
+
         xhxm = self.request.query_params.get('xhxm', None)
         print(xhxm)
 
@@ -1095,12 +1097,13 @@ class YjsXwgjView(mixins.ListModelMixin, generics.GenericAPIView, ):
 class YjsXwgjXqView(mixins.ListModelMixin, generics.GenericAPIView, ):
     # authentication_classes = []
     """分页"""
-    #pagination_class = Pagination
+    # pagination_class = Pagination
 
     queryset = wm.YjsXwgjGrgj.objects.all().order_by('-xwsj')
     # 序列化
     serializer_class = serialiser.XwgjYjsMxSerialiser
     filter_class = filter.XwgjYjsMxFilter
+
     # 搜索，前端通过search关键字传值，？search=''
     # search_fields = ( 'xh', 'yx', '=kssj', '=jssj')  # 在这里添加可以搜索的字段，=表示等， 还可使用正则
 

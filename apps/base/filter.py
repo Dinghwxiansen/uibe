@@ -31,6 +31,7 @@ class UserFilter(django_filters.FilterSet):
 class BzksFilter(django_filters.FilterSet):
     # xjzt = django_filters.CharFilter(field_name='xjzt', lookup_expr='gt')
     # syd = django_filters.CharFilter(field_name='syd', lookup_expr='lt')
+
     class Meta:
         model = pm.UibeBzks
         fields = ['yx', 'xznj', 'bj']
@@ -42,6 +43,9 @@ class BzksFilter(django_filters.FilterSet):
 class YjsFilter(django_filters.FilterSet):
     # xjzt = django_filters.CharFilter(field_name='xjzt', lookup_expr='gt')
     # syd = django_filters.CharFilter(field_name='syd', lookup_expr='lt')
+    # 20200701 研究生轨迹模糊查询
+    xm = django_filters.CharFilter(field_name="xm", lookup_expr='icontains')
+
     class Meta:
         model = pm.UibeYjs
         fields = ['yx', 'xn', 'xm', 'xh']
@@ -53,6 +57,9 @@ class YjsFilter(django_filters.FilterSet):
 class JzgGJFilter(django_filters.FilterSet):
     # xjzt = django_filters.CharFilter(field_name='xjzt', lookup_expr='gt')
     # syd = django_filters.CharFilter(field_name='syd', lookup_expr='lt')
+    # 20200701 教职工轨迹模糊查询
+    xm = django_filters.CharFilter(field_name="xm", lookup_expr='icontains')
+
     class Meta:
         model = pm.UibeJzg
         fields = ['bm', 'xm', 'zgh']

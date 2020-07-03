@@ -893,6 +893,7 @@ class JzgXwgjView(mixins.ListModelMixin, generics.GenericAPIView, ):
     def get_queryset(self):
         kssj = self.request.query_params.get("kssj", date.min)
         jssj = self.request.query_params.get("jssj", date.today() + timedelta(days=1))
+
         # ret = pm.UibeJzg.objects.annotate(gjcs=Count("grgj", filter=myfilter)).filter( gjcs__gte=1)
         ret = pm.UibeJzg.objects.filter(Q(grgj__create_time__gt=kssj) & Q(grgj__create_time__lte=jssj)).distinct()
         return ret
@@ -903,6 +904,8 @@ class JzgXwgjView(mixins.ListModelMixin, generics.GenericAPIView, ):
 
     filter_backends = (DjangoFilterBackend, filters.SearchFilter)
     filter_class = filter.JzgGJFilter
+
+    # search_fields = ('zgh', 'xm', 'bm',)  # 在这里添加可以搜索的字段，=表示等， 还可使用正则
 
     def get(self, request, *args, **kwargs):
         try:
