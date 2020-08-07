@@ -226,7 +226,7 @@ class UibeBzks(models.Model):
         (1, '北京'),
     )
     xh = models.CharField('学号', max_length=32, unique=True)
-    xm = models.CharField('姓名', max_length=16, )
+    xm = models.CharField('姓名', max_length=32, )
     xb = models.IntegerField(choices=SEX_CHOICES, default=0)
     syd = models.CharField('生源地', max_length=32, null=True)
     xznj = models.CharField('现在年级', max_length=64, null=True)
@@ -344,6 +344,7 @@ class BzksCETMiddle(models.Model):
     tlcj = models.IntegerField("听力成绩", null=True, default=0)
     ydcj = models.IntegerField("阅读成绩", null=True, default=0)
     xzcj = models.IntegerField("写作成绩", null=True, default=0)
+    zhcj = models.IntegerField("综合成绩", null=True, default=0)
     zfcj = models.IntegerField("总分成绩", null=True, default=0)
     zfpm = models.IntegerField("总分排名", null=True, default=0)
     zfpercentile = models.CharField("总分排名百分比", max_length=32)
