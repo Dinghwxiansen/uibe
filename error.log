@@ -76,7 +76,7 @@
 [2020-04-16 12:01:06,587] [INFO] "PUT /base/menu/ HTTP/1.1" 200 107
 [2020-04-16 12:01:41,463] [ERROR] wuyi
 [2020-04-16 12:01:41,464] [ERROR] 192.168.3.103
-[2020-04-16 12:01:41,464] [ERROR] ({'create_time': [ErrorDetail(string='¸Ã×Ö¶ÎÊÇ±ØÌîÏî¡£', code='required')]},)
+[2020-04-16 12:01:41,464] [ERROR] ({'create_time': [ErrorDetail(string='ï¿½ï¿½ï¿½Ö¶ï¿½ï¿½Ç±ï¿½ï¿½ï¿½ï¿½î¡£', code='required')]},)
 [2020-04-16 12:01:41,471] [INFO] "POST /portrait/v1/tzjm/ HTTP/1.1" 200 133
 [2020-04-16 12:08:42,690] [INFO] "POST /portrait/v1/tzjm/ HTTP/1.1" 200 107
 [2020-04-21 10:29:48,331] [INFO] "POST /login/ HTTP/1.1" 200 179
@@ -362,7 +362,7 @@
 [2020-04-23 16:16:07,471] [INFO] "OPTIONS /portrait/v1/bqwd/ HTTP/1.1" 200 0
 [2020-04-23 16:16:07,494] [ERROR] admin
 [2020-04-23 16:16:07,494] [ERROR] 192.168.3.121
-[2020-04-23 16:16:07,494] [ERROR] ({'create_time': [ErrorDetail(string='¸Ã×Ö¶ÎÊÇ±ØÌîÏî¡£', code='required')]},)
+[2020-04-23 16:16:07,494] [ERROR] ({'create_time': [ErrorDetail(string='ï¿½ï¿½ï¿½Ö¶ï¿½ï¿½Ç±ï¿½ï¿½ï¿½ï¿½î¡£', code='required')]},)
 [2020-04-23 16:16:07,499] [INFO] "POST /portrait/v1/bqwd/ HTTP/1.1" 200 133
 [2020-04-23 16:16:30,433] [INFO] "GET /portrait/v1/bqwd/?wdmc=&page=1 HTTP/1.1" 200 1383
 [2020-04-23 16:16:31,994] [INFO] "GET /portrait/v1/hxbqsz/?bqmc=&page=1 HTTP/1.1" 200 3282
@@ -372,7 +372,7 @@
 [2020-04-23 16:16:43,684] [INFO] "GET /portrait/v1/bqwd/?wdmc=&page=1 HTTP/1.1" 200 1383
 [2020-04-23 16:17:19,247] [ERROR] admin
 [2020-04-23 16:17:19,247] [ERROR] 192.168.3.121
-[2020-04-23 16:17:19,247] [ERROR] ({'create_time': [ErrorDetail(string='¸Ã×Ö¶ÎÊÇ±ØÌîÏî¡£', code='required')]},)
+[2020-04-23 16:17:19,247] [ERROR] ({'create_time': [ErrorDetail(string='ï¿½ï¿½ï¿½Ö¶ï¿½ï¿½Ç±ï¿½ï¿½ï¿½ï¿½î¡£', code='required')]},)
 [2020-04-23 16:17:19,248] [INFO] "POST /portrait/v1/bqwd/ HTTP/1.1" 200 133
 [2020-04-23 16:18:16,576] [INFO] "GET /portrait/v1/tzjm/?zbqmc=&zbfl=&page=1 HTTP/1.1" 200 3385
 [2020-04-23 16:18:18,750] [INFO] "OPTIONS /portrait/v1/bqwd/?kqzt=1 HTTP/1.1" 200 0
@@ -1007,7 +1007,7 @@
 [2020-05-28 15:30:27,847] [INFO] "GET /warning/v1/swxwmx/?xh=201619023&kssj=2019-09-01&jssj=2019-12-31 HTTP/1.1" 200 2455
 [2020-05-28 15:31:22,148] [ERROR] wuyi
 [2020-05-28 15:31:22,148] [ERROR] 192.168.3.237
-[2020-05-28 15:31:22,149] [ERROR] ('¡¯%(value)s¡® ±ØÐëÎªºÏ·¨µÄÈÕÆÚ¸ñÊ½£¬ÇëÊ¹ÓÃ YYYY-MM-DD ¸ñÊ½¡£', 'invalid', {'value': ''})
+[2020-05-28 15:31:22,149] [ERROR] ('ï¿½ï¿½%(value)sï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Îªï¿½Ï·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¸ï¿½Ê½ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½ YYYY-MM-DD ï¿½ï¿½Ê½ï¿½ï¿½', 'invalid', {'value': ''})
 [2020-05-28 15:31:22,157] [INFO] "GET /warning/v1/swxwmx/?xh=201619023&jssj=&kssj HTTP/1.1" 200 228
 [2020-05-28 15:39:48,129] [INFO] "GET /warning/v1/swxwmx/?xh=201619023 HTTP/1.1" 200 105
 [2020-05-28 15:40:03,436] [INFO] "GET /warning/v1/swxwmx/?xh=201619023 HTTP/1.1" 200 105
