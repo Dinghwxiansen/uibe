@@ -7582,3 +7582,146 @@ django.template.base.VariableDoesNotExist: Failed lookup for key [is_authenticat
 [2020-08-07 10:52:25,291] [ERROR] 192.168.3.237
 [2020-08-07 10:52:25,291] [ERROR] ({'zbxmc': [ErrorDetail(string='请确保这个字段不能超过 32 个字符。', code='max_length')], 'zdxz': [ErrorDetail(string='请确保这个字段不能超过 128 个字符。', code='max_length')]},)
 [2020-08-07 10:52:25,292] [INFO] "POST /portrait/v1/tzjm/ HTTP/1.1" 200 282
+[2020-08-07 16:39:54,853] [ERROR] wuyi
+[2020-08-07 16:39:54,853] [ERROR] 192.168.3.237
+[2020-08-07 16:39:54,853] [ERROR] ({'zbxmc': [ErrorDetail(string='请确保这个字段不能超过 32 个字符。', code='max_length')], 'zdxz': [ErrorDetail(string='请确保这个字段不能超过 128 个字符。', code='max_length')]},)
+[2020-08-07 16:39:54,854] [INFO] "POST /portrait/v1/tzjm/ HTTP/1.1" 200 282
+[2020-08-07 16:44:18,179] [INFO] "POST /login/ HTTP/1.1" 200 179
+[2020-08-07 16:44:19,209] [ERROR] Internal Server Error: /warning/v1/warningtable/
+Traceback (most recent call last):
+  File "D:\
+  \uibe\uibe\apps\warning\views.py", line 1513, in get
+    print(yesterday)
+OSError: [Errno 22] Invalid argument
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PycharmProjects\uibe\lib\site-packages\rest_framework\views.py", line 494, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\PythonCode\uibe\uibe\apps\warning\views.py", line 1647, in get
+    ip_username(request)
+  File "D:\PythonCode\uibe\uibe\apps\utils\Sample_username_ip.py", line 12, in ip_username
+    logger.error(request.user.username)
+AttributeError: 'NoneType' object has no attribute 'username'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PycharmProjects\uibe\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "D:\PycharmProjects\uibe\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\PycharmProjects\uibe\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PycharmProjects\uibe\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\PycharmProjects\uibe\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\PycharmProjects\uibe\lib\site-packages\rest_framework\views.py", line 497, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\PycharmProjects\uibe\lib\site-packages\rest_framework\views.py", line 454, in handle_exception
+    response = exception_handler(exc, context)
+  File "D:\PythonCode\uibe\uibe\apps\utils\exception.py", line 55, in exception_handler
+    print(traceback.format_exc())
+OSError: [Errno 22] Invalid argument
+[2020-08-07 16:44:19,229] [ERROR] "GET /warning/v1/warningtable/ HTTP/1.1" 500 27
+[2020-08-07 16:44:34,296] [ERROR] Internal Server Error: /warning/v1/warningtable/
+Traceback (most recent call last):
+  File "D:\PythonCode\uibe\uibe\apps\warning\views.py", line 1513, in get
+    print(yesterday)
+OSError: [Errno 22] Invalid argument
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PycharmProjects\uibe\lib\site-packages\rest_framework\views.py", line 494, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\PythonCode\uibe\uibe\apps\warning\views.py", line 1647, in get
+    ip_username(request)
+  File "D:\PythonCode\uibe\uibe\apps\utils\Sample_username_ip.py", line 12, in ip_username
+    logger.error(request.user.username)
+AttributeError: 'NoneType' object has no attribute 'username'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PycharmProjects\uibe\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "D:\PycharmProjects\uibe\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\PycharmProjects\uibe\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PycharmProjects\uibe\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\PycharmProjects\uibe\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\PycharmProjects\uibe\lib\site-packages\rest_framework\views.py", line 497, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\PycharmProjects\uibe\lib\site-packages\rest_framework\views.py", line 454, in handle_exception
+    response = exception_handler(exc, context)
+  File "D:\PythonCode\uibe\uibe\apps\utils\exception.py", line 55, in exception_handler
+    print(traceback.format_exc())
+OSError: [Errno 22] Invalid argument
+[2020-08-07 16:44:34,298] [ERROR] "GET /warning/v1/warningtable/ HTTP/1.1" 500 27
+[2020-08-07 16:44:40,506] [INFO] "GET /portrait/v1/hxbqsz/?bqmc=&page=1&page_size=10 HTTP/1.1" 200 5538
+[2020-08-07 16:44:47,534] [INFO] "GET /warning/v1/college HTTP/1.1" 301 0
+[2020-08-07 16:44:47,648] [INFO] "GET /warning/v1/grade/?yx= HTTP/1.1" 200 175
+[2020-08-07 16:44:47,649] [INFO] "GET /warning/v1/college/ HTTP/1.1" 200 607
+[2020-08-07 16:44:47,942] [INFO] "POST /warning/v1/zjzxbxk/ HTTP/1.1" 200 2280
+[2020-08-07 16:45:48,165] [INFO] "GET /warning/v1/college HTTP/1.1" 301 0
+[2020-08-07 16:45:48,203] [ERROR] wuyi
+[2020-08-07 16:45:48,203] [ERROR] 192.168.3.237
+[2020-08-07 16:45:48,204] [ERROR] (22, 'Invalid argument')
+[2020-08-07 16:45:48,204] [INFO] "POST /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&page=1&page_size=10&random=1596789948147 HTTP/1.1" 200 86
+[2020-08-07 16:45:48,220] [INFO] "GET /warning/v1/grade/?yx= HTTP/1.1" 200 175
+[2020-08-07 16:45:48,231] [INFO] "GET /warning/v1/college/ HTTP/1.1" 200 607
+[2020-08-07 16:45:50,529] [INFO] "GET /warning/v1/college HTTP/1.1" 301 0
+[2020-08-07 16:45:50,593] [INFO] "GET /portrait/v1/xshxjsd/?xm=&xh=&xznj=&yx=&bj=&page=1&page_size=10 HTTP/1.1" 200 1923
+[2020-08-07 16:45:50,594] [INFO] "GET /warning/v1/grade/?yx= HTTP/1.1" 200 175
+[2020-08-07 16:45:50,601] [INFO] "GET /warning/v1/college/ HTTP/1.1" 200 607
+[2020-08-07 16:50:09,737] [INFO] "OPTIONS /login/ HTTP/1.1" 200 0
+[2020-08-07 16:50:10,276] [INFO] "POST /login/ HTTP/1.1" 200 179
+[2020-08-07 16:50:10,323] [INFO] "OPTIONS /warning/v1/warningtable/ HTTP/1.1" 200 0
+[2020-08-07 16:50:10,567] [INFO] "GET /warning/v1/warningtable/ HTTP/1.1" 200 937
+[2020-08-07 16:50:13,202] [INFO] "OPTIONS /portrait/v1/hxbqsz/?bqmc=&page=1&page_size=10 HTTP/1.1" 200 0
+[2020-08-07 16:50:13,260] [INFO] "GET /portrait/v1/hxbqsz/?bqmc=&page=1&page_size=10 HTTP/1.1" 200 5538
+[2020-08-07 16:50:14,774] [INFO] "OPTIONS /warning/v1/college HTTP/1.1" 200 0
+[2020-08-07 16:50:14,776] [INFO] "OPTIONS /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&page=1&page_size=10&random=1596790214759 HTTP/1.1" 200 0
+[2020-08-07 16:50:14,778] [INFO] "OPTIONS /warning/v1/grade/?yx= HTTP/1.1" 200 0
+[2020-08-07 16:50:14,786] [INFO] "GET /warning/v1/college HTTP/1.1" 301 0
+[2020-08-07 16:50:14,790] [INFO] "OPTIONS /warning/v1/college/ HTTP/1.1" 200 0
+[2020-08-07 16:50:14,835] [INFO] "GET /warning/v1/grade/?yx= HTTP/1.1" 200 175
+[2020-08-07 16:50:14,851] [INFO] "GET /warning/v1/college/ HTTP/1.1" 200 607
+[2020-08-07 16:50:17,226] [INFO] "OPTIONS /portrait/v1/bm/ HTTP/1.1" 200 0
+[2020-08-07 16:50:17,228] [INFO] "OPTIONS /warning/v1/jzgxwgj/?xm=&zgh=&page=1&page_size=10 HTTP/1.1" 200 0
+[2020-08-07 16:50:17,414] [INFO] "GET /portrait/v1/bm/ HTTP/1.1" 200 3433
+[2020-08-07 16:50:17,548] [INFO] "GET /warning/v1/jzgxwgj/?xm=&zgh=&page=1&page_size=10 HTTP/1.1" 200 1224
+[2020-08-07 16:50:18,594] [INFO] "OPTIONS /portrait/v1/yjsyx/ HTTP/1.1" 200 0
+[2020-08-07 16:50:18,596] [INFO] "OPTIONS /portrait/v1/yjsxwgj/?xm=&xh=&yx=&xn=&page=1&page_size=10 HTTP/1.1" 200 0
+[2020-08-07 16:50:18,599] [INFO] "OPTIONS /portrait/v1/yjsnj/?yx= HTTP/1.1" 200 0
+[2020-08-07 16:50:18,816] [INFO] "GET /portrait/v1/yjsyx/ HTTP/1.1" 200 1059
+[2020-08-07 16:50:18,819] [INFO] "GET /portrait/v1/yjsnj/?yx= HTTP/1.1" 200 279
+[2020-08-07 16:50:19,234] [INFO] "POST /portrait/v1/yjsxwgj/?xm=&xh=&yx=&xn=&page=1&page_size=10 HTTP/1.1" 200 1660
+[2020-08-07 16:50:19,901] [INFO] "OPTIONS /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&page=1&page_size=10&random=1596790219884 HTTP/1.1" 200 0
+[2020-08-07 16:50:19,953] [INFO] "GET /warning/v1/grade/?yx= HTTP/1.1" 200 175
+[2020-08-07 16:50:19,963] [INFO] "GET /warning/v1/college/ HTTP/1.1" 200 607
+[2020-08-07 16:50:21,488] [INFO] "POST /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&page=1&page_size=10&random=1596790214759 HTTP/1.1" 200 1935
+[2020-08-07 16:50:21,488] [INFO] "POST /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&page=1&page_size=10&random=1596790219884 HTTP/1.1" 200 1935
+[2020-08-07 16:50:23,188] [INFO] "GET /portrait/v1/hxbqsz/?bqmc=&page=1&page_size=10 HTTP/1.1" 200 5538
+[2020-08-07 16:50:28,547] [INFO] "OPTIONS /portrait/v1/tzjm/?zbqmc=&zbfl=&page=1&page_size=10 HTTP/1.1" 200 0
+[2020-08-07 16:50:28,600] [INFO] "GET /portrait/v1/tzjm/?zbqmc=&zbfl=&page=1&page_size=10 HTTP/1.1" 200 3948
+[2020-08-07 16:50:32,102] [INFO] "OPTIONS /portrait/v1/tzjm/?id=56 HTTP/1.1" 200 0
+[2020-08-07 16:50:32,203] [INFO] "DELETE /portrait/v1/tzjm/?id=56 HTTP/1.1" 200 107
+[2020-08-07 16:50:32,252] [INFO] "GET /portrait/v1/tzjm/?zbqmc=&zbfl=&page=1&page_size=10 HTTP/1.1" 200 3924
+[2020-08-07 16:50:34,623] [INFO] "OPTIONS /portrait/v1/bqwd/?kqzt=1 HTTP/1.1" 200 0
+[2020-08-07 16:50:34,681] [INFO] "GET /portrait/v1/bqwd/?kqzt=1 HTTP/1.1" 200 982
+[2020-08-07 16:50:48,758] [INFO] "OPTIONS /portrait/v1/sjbxz/?zywbm=&page=1 HTTP/1.1" 200 0
+[2020-08-07 16:50:48,803] [INFO] "GET /portrait/v1/sjbxz/?zywbm=&page=1 HTTP/1.1" 200 593
+[2020-08-07 16:50:55,199] [INFO] "OPTIONS /portrait/v1/sjbxzzd/?id=1&zwzdmc=&page=1&zbfl=0 HTTP/1.1" 200 0
+[2020-08-07 16:50:55,239] [INFO] "GET /portrait/v1/sjbxzzd/?id=1&zwzdmc=&page=1&zbfl=0 HTTP/1.1" 200 1441
+[2020-08-07 16:51:06,657] [INFO] "OPTIONS /portrait/v1/tzjm/ HTTP/1.1" 200 0
+[2020-08-07 16:51:06,697] [ERROR] wuyi
+[2020-08-07 16:51:06,697] [ERROR] 192.168.3.237
+[2020-08-07 16:51:06,697] [ERROR] ({'zbxmc': [ErrorDetail(string='请确保这个字段不能超过 32 个字符。', code='max_length')], 'zdxz': [ErrorDetail(string='请确保这个字段不能超过 128 个字符。', code='max_length')]},)
+[2020-08-07 16:51:06,698] [INFO] "POST /portrait/v1/tzjm/ HTTP/1.1" 200 282
