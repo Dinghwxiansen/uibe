@@ -67,6 +67,7 @@ MIDDLEWARE = [
     # 'django.contrib.auth.middleware.AuthenticationMiddleware',
     # 'django_cas.middleware.CASMiddleware',
     # 'django.middleware.doc.XViewMiddleware',
+    'django_cas_ng.middleware.CASMiddleware',
 ]
 
 AUTHENTICATION_BACKENDS = (
@@ -147,19 +148,19 @@ DATABASES = {
         # 数据库引擎（是mysql还是oracle等）
         'ENGINE': 'django.db.backends.mysql',
         # 数据库的名字
-        # 'NAME': 'uibe',
-        'NAME': 'uibe_2',
-        # 'NAME': 'uibe2',
+        'NAME': 'uibe',
+        # 'NAME': 'uibe_2',
+        # 'NAME': 'uibe3',
         # 连接mysql数据库的用户名
         'USER': 'root',
         # 连接mysql数据库的密码
-        'PASSWORD': 'Mysql123!',
+        # 'PASSWORD': 'Mysql123!',
         # 'PASSWORD': '123456',
-        # 'PASSWORD': 'Pass20rd@2018',
+        'PASSWORD': 'Pass20rd@2018',
         # mysql数据库的主机地址
         # 'HOST': '127.0.0.1',
-        # 'HOST': '202.204.175.183',
-        'HOST': '10.77.210.88',
+        'HOST': '202.204.175.183',
+        # 'HOST': '10.77.210.88',
 
         # mysql数据库的端口号
         'PORT': '3306',

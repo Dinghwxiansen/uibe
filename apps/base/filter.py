@@ -117,8 +117,8 @@ class BzxmxFilter(django_filters.FilterSet):
 
 
 class TkxwmxFilter(django_filters.FilterSet):
-    kssj = django_filters.DateFilter(field_name="create_time", lookup_expr='gte')
-    jssj = django_filters.DateFilter(field_name="create_time", lookup_expr='lte')
+    kssj = django_filters.DateFilter(field_name="create_time__date", lookup_expr='gte')
+    jssj = django_filters.DateFilter(field_name="create_time__date", lookup_expr='lte')
 
     class Meta:
         model = wm.ZnyjTkxw
