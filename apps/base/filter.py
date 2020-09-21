@@ -311,7 +311,7 @@ class XwgjmxFilter(django_filters.FilterSet):
 
 
 class XwgjJzgMxFilter(django_filters.FilterSet):
-    kssj = django_filters.DateFilter(field_name="xwsj", lookup_expr='gte')
+    kssj = django_filters.DateFilter(field_name="xwsj", lookup_expr='gte',)
     jssj = django_filters.DateFilter(field_name="xwsj", lookup_expr='lte')
 
     class Meta:
