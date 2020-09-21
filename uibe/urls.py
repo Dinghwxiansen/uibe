@@ -34,5 +34,7 @@ urlpatterns = [
     # path('logout/', django_cas_ng.views.LogoutView.as_view(), name='cas_ng_logout'),
     path('login/', login.LoginView.as_view(), name="login"),
     path('logout/', logout.LogoutView.as_view(), name="logout"),
+    # path('accounts/login', django_cas_ng.views.LoginView.as_view(), name='cas_ng_login'),
+    # path('accounts/logout', django_cas_ng.views.LogoutView.as_view(), name='cas_ng_logout'),
 
 ]
