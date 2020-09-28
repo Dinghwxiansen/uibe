@@ -19,7 +19,7 @@ import django_cas_ng.views as cas_views
 from django.urls import path, include
 from rest_framework.documentation import include_docs_urls
 
-from apps.base import logout, login
+from apps.base import logout, login,callBack
 from apps.base import urls as base_urls
 
 urlpatterns = [
@@ -32,6 +32,8 @@ urlpatterns = [
     #  cas单点登录
     # path('login/', django_cas_ng.views.LoginView.as_view(), name='cas_ng_login'),
     # path('logout/', django_cas_ng.views.LogoutView.as_view(), name='cas_ng_logout'),
+    # path('login/callback/', callBack.LoginView.as_view(), name="call_back_in"),
+    # path('callback/', callBack.LogoutView.as_view(), name="call_back_out"),
     path('login/', login.LoginView.as_view(), name="login"),
     path('logout/', logout.LogoutView.as_view(), name="logout"),
     # path('accounts/login', django_cas_ng.views.LoginView.as_view(), name='cas_ng_login'),

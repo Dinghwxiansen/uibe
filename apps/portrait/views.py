@@ -263,6 +263,9 @@ class HxbqszfzView(mixins.ListModelMixin, mixins.CreateModelMixin, generics.Gene
 """**************系统管理之画像标签设置*************"""
 
 
+# 20200927 添加过滤条件是否删除
+
+
 class HxbqszView(mixins.ListModelMixin, mixins.CreateModelMixin,
                  mixins.DestroyModelMixin, mixins.UpdateModelMixin, mixins.RetrieveModelMixin,
                  generics.GenericAPIView, ):
@@ -271,8 +274,26 @@ class HxbqszView(mixins.ListModelMixin, mixins.CreateModelMixin,
 
     # 分页
     pagination_class = Pagination
+
     # 查询出来所有数据按照创建时间进行排序
-    queryset = pm.XtglBqsz.objects.all().order_by("-update_time")
+    # todo 20200927 添加过滤条件是否删除,sfsc=0,表示未删除。新增权限
+    # queryset = pm.XtglBqsz.objects.all().order_by("-update_time")
+    def get_queryset(self):
+
+        user = self.request.user
+        user_type = self.request.user.user_type
+
+        if user_type == 0:
+            # 管理员
+            all_queryset = pm.XtglBqsz.objects.filter(sfsc=0, ).order_by("-update_time")
+        else:
+            # 教师，学生
+            all_queryset = pm.XtglBqsz.objects.filter(sfsc=0, bqqx=user_type).order_by("-update_time")
+
+        print(user, user_type)
+        return all_queryset
+
+    # queryset = pm.XtglBqsz.objects.filter(sfsc=0).order_by("-update_time")
     # 序列化
     serializer_class = serialiser.BqszSerializer
 
@@ -296,7 +317,9 @@ class HxbqszView(mixins.ListModelMixin, mixins.CreateModelMixin,
     def post(self, request, *args, **kwargs):
 
         # try:
-        bqmc = pm.XtglBqsz.objects.filter(bqmc=request.data['bqmc'])
+        # 20200927 添加是否删除的过滤条件
+        bqmc = pm.XtglBqsz.objects.filter(bqmc=request.data['bqmc'], sfsc=0)
+        print(request.data)
         if bqmc.exists():
             return restful.result2(message="请勿重复保存操作")
         else:
@@ -403,8 +426,9 @@ class HxbqszView(mixins.ListModelMixin, mixins.CreateModelMixin,
             cursor.execute(sql)
             return_arr = cursor.fetchall()
             for item in return_arr:
-                pm.XshxBq.objects.create(xh=item[0], bq=instance.bqmc, bqsm=instance.bqms, bqqx=instance.bqqx,
-                                         sfyx=instance.kqzt)
+                # pm.XshxBq.objects.create(xh=item[0], bq=instance.bqmc, bqsm=instance.bqms, bqqx=instance.bqqx,
+                #                          sfyx=instance.kqzt)
+                pm.XshxBq.objects.create(xh=item[0], sfyx=instance.kqzt, bq_id=instance.id, )
 
             instance.bqSQL = sql
 
@@ -482,6 +506,7 @@ class HxbqszView(mixins.ListModelMixin, mixins.CreateModelMixin,
                     else:
                         ret = pm.XtglBqsz.objects.filter(id=i).first()
                         print(ret)
+                        print(request.data, type(request.data))
                         ser = serialiser.BqszSerializer(instance=ret, data=request.data, partial=True)
                         if ser.is_valid():
                             ser.save()
@@ -494,15 +519,23 @@ class HxbqszView(mixins.ListModelMixin, mixins.CreateModelMixin,
             return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
 
     """删除"""
+    '''
+    20200927 修改删除方法，实现逻辑删除
+    '''
 
     def delete(self, request, *args, **kwargs):
         try:
-            id = request.query_params.get('id', None)
-            if not id:
+            ids = request.query_params.get('id', None)
+            if not ids:
                 return Response(status=status.HTTP_404_NOT_FOUND)
-            for i in id.split(','):
-                get_object_or_404(pm.XtglBqsz, pk=int(i)).delete()
-
+            for i in ids.split(','):
+                # get_object_or_404(pm.XtglBqsz, pk=int(i)).delete()
+                ret = pm.XtglBqsz.objects.filter(id=i).first()
+                request.data['sfsc'] = 1
+                print(request.data)
+                ser = serialiser.BqszSerializer(instance=ret, data=request.data, partial=True)
+                if ser.is_valid():
+                    ser.save()
             return restful.ok()
         except Exception as e:
             ip_username(request)
@@ -941,7 +974,10 @@ class XshxXsdVIew(mixins.ListModelMixin, generics.GenericAPIView, ):
     def get_queryset(self):
 
         xhs = self.request.query_params.get('xh')
-        ret = pm.XshxBq.objects.filter(bqqx=1).filter(xh=xhs, sfyx=1)
+        # ret = pm.XshxBq.objects.filter(bqqx=1).filter(xh=xhs, sfyx=1)
+        # todo 20200924 表关联后修改filter条件
+        # ret = pm.XtglBqsz.objects.filter(bqqx=0).filter(xshxbq__xh=xhs, xshxbq__sfyx=1)
+        ret = pm.XtglBqsz.objects.filter(bqqx=0).filter(xshxbq__sfyx=1, xshxbq__xh=xhs)
         return ret
 
     # queryset = pm.XshxBq.objects.filter(bqqx=1).filter()
@@ -950,7 +986,8 @@ class XshxXsdVIew(mixins.ListModelMixin, generics.GenericAPIView, ):
 
     filter_backends = (DjangoFilterBackend, filters.SearchFilter)
     # 过滤
-    filter_class = filter.XshxJsdXqFilter
+    # filter_class = filter.XshxJsdXqFilter
+    filter_class = filter.HxbqszFilter
 
     def get(self, request, *args, **kwargs):
         try:
@@ -978,7 +1015,11 @@ class XshxJsdXqVIew(mixins.ListModelMixin, generics.GenericAPIView, ):
     # 查询出来所有数据按照创建时间进行排序
     def get_queryset(self):
         xhs = self.request.query_params.get('xh')
-        ret = pm.XshxBq.objects.filter(xh=xhs, sfyx=1)
+        print(xhs)
+        # ret = pm.XshxBq.objects.filter(xh=xhs, sfyx=1)
+        # 20200924 关联表后修改过滤条件,
+        # 20200927 添加  是否删除（sfsc=0）   过滤条件
+        ret = pm.XtglBqsz.objects.filter(xshxbq__xh=xhs, xshxbq__sfyx=1, sfsc=0)
         return ret
 
     # 序列化
@@ -986,7 +1027,8 @@ class XshxJsdXqVIew(mixins.ListModelMixin, generics.GenericAPIView, ):
 
     filter_backends = (DjangoFilterBackend, filters.SearchFilter)
     # 过滤
-    filter_class = filter.XshxJsdXqFilter
+    # filter_class = filter.XshxJsdXqFilter
+    filter_class = filter.HxbqszFilter
 
     def get(self, request, *args, **kwargs):
         try:
@@ -1116,3 +1158,7 @@ class YjsXwgjXqView(mixins.ListModelMixin, generics.GenericAPIView, ):
         except Exception as e:
             ip_username(request)
             return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
+
+
+'''************************定时任务************************'''
+from .tasks import test1

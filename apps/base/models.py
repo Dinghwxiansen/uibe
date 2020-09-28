@@ -38,10 +38,15 @@ status_choices = (
 用户信息
 """
 class User(AbstractBaseUser,PermissionsMixin):
+    # user_type_choices =(
+    #     (1,"教职工"),
+    #     (2,"本科生"),
+    #     (3,"研究生"),
+    # )
     user_type_choices =(
+        (0,"管理员"),
         (1,"教职工"),
-        (2,"本科生"),
-        (3,"研究生"),
+        (2,"学生"),
     )
     id = models.BigAutoField("id", primary_key=True)
     username = models.CharField("用户名(学号/教职工号/研究生)", unique=True, max_length=150)

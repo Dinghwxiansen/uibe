@@ -4,6 +4,8 @@ from rest_framework import serializers
 
 from apps.portrait import models as pm
 from apps.warning import models as wm
+import datetime
+import time
 
 """*********************下拉列表序列化*******************
 
@@ -232,10 +234,12 @@ class ZbxglSerializer(serializers.ModelSerializer):
 """系统管理之画像标签设置序列化"""
 
 
+# 20200927 添加是否删除字段序列化
+
 class BqszSerializer(serializers.ModelSerializer):
     class Meta:
         model = pm.XtglBqsz
-        fields = ['id', 'bqmc', 'zbfl', 'zbwd', 'create_time', 'zbx', 'bqgz', 'bqSQL', 'bqms', 'bqqx', 'kqzt']
+        fields = ['id', 'bqmc', 'zbfl', 'zbwd', 'create_time', 'zbx', 'bqgz', 'bqSQL', 'bqms', 'bqqx', 'kqzt', 'sfsc', ]
 
 
 """画像标签设置之新增选择指标项"""
@@ -404,9 +408,22 @@ class UibeYjsNjSerializer(serializers.ModelSerializer):
 
 
 """教师画像详情"""
+'''
+20200927 添加科研信息、教学信息的统计时间
+'''
 
 
 class UibeJzgXqSerializer(serializers.ModelSerializer):
+    create_time = serializers.DateField(format='%Y%m%d')
+    # lxrq = serializers.DateField(format='%Y-%m-%d')
+
+    # kyxxtjsj = serializers.SerializerMethodField()
+    # ekwltjsj = serializers.SerializerMethodField()
+
+    # lxrq = serializers.StringRelatedField(format='%Y-%m-%d')
+    wlsysc = serializers.SerializerMethodField()
+    wlsyll = serializers.SerializerMethodField()
+
     class Meta:
         model = pm.UibeJzg
         fields = ['id', 'zgh', 'xm', 'xb', 'csrq', 'xw', 'xl', 'lxrq', 'zzmm', 'jsjzs', 'jszgz', 'gqpxzs', 'qtzs',
@@ -414,7 +431,26 @@ class UibeJzgXqSerializer(serializers.ModelSerializer):
                   'zxxmsl', 'hxxmsl', 'cgjlsl', 'yjbgsl', 'zzcgsl', 'lwcgsl', 'bmdm', 'bm', 'rylb', 'gwzj', 'zcxxdm',
                   'zcxx', 'zcbdrq', 'xngw',
                   'zxsf', 'jl', 'yjskcxsrc', 'yjskcskjc', 'yjskcxss', 'yjskcskms', 'bkkcxsrc', 'bkkcskjc', 'bkkcxss',
-                  'bkkcskms', 'tsjycs', 'ekxf', 'wlsyll', 'wlsysc']
+                  'bkkcskms', 'tsjycs', 'ekxf', 'wlsyll', 'wlsysc', 'create_time', ]
+
+    # def get_kyxxtjsj(self, obj):
+    #     lxrq = time.strftime("%Y-%m-%d", obj.lxrq)
+    #     create_time = time.strftime("%Y-%m-%d", obj.create_time)
+    #     return lxrq + "-" + create_time
+
+    #
+    # def get_ekwltjsj(self, obj):
+    #     create_time = obj.create_time
+    #     tjsj = time.strftime("%Y%m", create_time)
+    #     return tjsj
+
+    def get_wlsysc(self, obj):
+        sysc = ("%.2f" % float(obj.wlsysc))
+        return sysc
+
+    def get_wlsyll(self, obj):
+        syll = ("%.2f" % float(obj.wlsyll))
+        return syll
 
 
 """教师画像职称详情"""
@@ -443,13 +479,46 @@ class XshxJstSerializer(serializers.ModelSerializer):
         fields = ['id', 'xh', 'xm', 'yx', 'xznj', 'bj']
 
 
+class XtglBqszSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = pm.XtglBqsz
+        fields = ['bqmc', 'bqms', 'bqqx']
+
+
+# class BqszRelateField(serializers.RelatedField):
+#     def to_representation(self, instance):
+#         return 'bqmc:%d  bqms:%s' % (instance.bqmc, instance.bqms)
+
+
 """用户画像之学生画像教师端详情"""
 
 
+# class XshxJstXqSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = pm.XshxBq
+#         fields = ['bq', 'bqsm']
+
+# todo 20200924 重写学生画像序列化，和model中的bqsz_bqmc相关
 class XshxJstXqSerializer(serializers.ModelSerializer):
+    # xshxbq = XtglBqszSerializer(many=True, read_only=True, )
+    # bqmc = serializers.CharField(source='bq.bqmc', read_only=True)
+    # bqms = serializers.CharField(source='bq.bqms', read_only=True)
+    # bqqx = serializers.CharField(source='bq.bqqx', read_only=True)
+    # bq = BqszRelateField(read_only=True)
+    # bq = XtglBqszSerializer(many=True, read_only=True)
+    # bq_id = serializers.CharField()
+
+    # 方案一
+    bqmc = serializers.ReadOnlyField()
+    bqms = serializers.ReadOnlyField()
+
+    # 方案二
+    # bqmc = serializers.CharField(source='bq.bqmc')
+    # bqms = serializers.CharField(source='bq.bqms')
+
     class Meta:
         model = pm.XshxBq
-        fields = ['bq', 'bqsm']
+        fields = ['bqmc', 'bqms']
 
 
 """*******************************本专科生行为轨迹序列化*******************************"""

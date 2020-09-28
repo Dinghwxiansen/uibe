@@ -82,16 +82,21 @@ AUTHENTICATION_BACKENDS = (
 # 存入所有 CAS 服务端返回的 User 数据。
 CAS_APPLY_ATTRIBUTES_TO_USER = True
 
-CAS_SERVER_URL = 'http://cas.uibe.edu.cn/cas/login'
-# CAS_LOGOUT_COMPLETELY = True
-CAS_PROVIDE_URL_TO_LOGOUT = True
+# CAS_SERVER_URL = 'http://cas.uibe.edu.cn/cas/login'
+CAS_SERVER_URL = 'http://cas.uibe.edu.cn/cas/'
+CAS_CHECK_NEXT = lambda _: True
 CAS_VERSION = '3'
-CAS_IGNORE_REFERER = True
-CAS_REDIRECT_URL = 'http://192.168.3.237:8000/portrait/v1/yjsyx'  # (需要跳转到的应用url)
-CAS_RESPONSE_CALLBACKS = False
-GLOBAL_CSRF_CHECK = False
-CAS_LOGOUT_COMPLETELY = True
-CAS_SERVER_URL_LOGOUT = 'http://cas.uibe.edu.cn/cas/logout'  # (退出登录是需要调用的cas server url接口)
+# CAS_REDIRECT_URL = 'http://192.168.3.243:8080/dist/#/workbench'
+CAS_REDIRECT_URL = 'callback/'
+# CAS_LOGOUT_COMPLETELY = True
+# CAS_PROVIDE_URL_TO_LOGOUT = True
+# CAS_VERSION = '3'
+# CAS_IGNORE_REFERER = True
+# CAS_REDIRECT_URL = 'http://192.168.3.237:8000/portrait/v1/yjsyx'  # (需要跳转到的应用url)
+# CAS_RESPONSE_CALLBACKS = False
+# GLOBAL_CSRF_CHECK = False
+# CAS_LOGOUT_COMPLETELY = True
+# CAS_SERVER_URL_LOGOUT = 'http://cas.uibe.edu.cn/cas/logout'  # (退出登录是需要调用的cas server url接口)
 
 ROOT_URLCONF = 'uibe.urls'
 
@@ -151,12 +156,14 @@ DATABASES = {
         'NAME': 'uibe',
         # 'NAME': 'uibe_2',
         # 'NAME': 'uibe3',
+        # 'NAME': 'uibe2',
         # 连接mysql数据库的用户名
         'USER': 'root',
         # 连接mysql数据库的密码
         # 'PASSWORD': 'Mysql123!',
         # 'PASSWORD': '123456',
         'PASSWORD': 'Pass20rd@2018',
+        # 'PASSWORD': '813',
         # mysql数据库的主机地址
         # 'HOST': '127.0.0.1',
         'HOST': '202.204.175.183',
@@ -314,3 +321,7 @@ LOGGING = {
         },
     },
 }
+
+# 定时任务
+CELERY_ACCEPT_CONTENT = ['pickle', 'json', 'msgpack', 'yaml']  # 接受的文件类型
+CELERYD_MAX_TASKS_PER_CHILD = 10  # 每个worker执行多少次任务后死亡，防止内存泄漏用的

@@ -17,8 +17,8 @@ Sfyx_Choices = (
 )
 BQQX_CHOICES = (
     (0, '全部'),
-    (1, '学生'),
-    (2, '教师'),)
+    (1, '教师'),
+    (2, '学生'),)
 
 
 # Create your models here.
@@ -105,10 +105,16 @@ class XtglJq(models.Model):
 
 
 # 系统管理之画像标签设置
+# 20200927 添加字段是否删除
 class XtglBqsz(models.Model):
     Bqsz_CHOICES = (
         (0, '权重标签'),
         (1, '非权重标签'),
+    )
+
+    Sfsc_CHOICES = (
+        (0, "未删除"),
+        (1, "已删除")
     )
 
     bqmc = models.CharField('标签名称', max_length=32, null=False)
@@ -120,6 +126,7 @@ class XtglBqsz(models.Model):
     bqms = models.CharField('标签描述', max_length=512, null=True)
     bqqx = models.IntegerField('标签权限', choices=BQQX_CHOICES, default=0)
     kqzt = models.IntegerField('标签开启状态', choices=kqzt_CHOICES, default=0)
+    sfsc = models.IntegerField('是否删除', choices=Sfsc_CHOICES, default=0)
     create_time = models.DateTimeField('创建时间', auto_now_add=True)
     update_time = models.DateTimeField('更新时间', auto_now=True)
 
@@ -131,7 +138,6 @@ class XtglBqsz(models.Model):
 
 # 教职工表
 class UibeJzg(models.Model):
-
     id = models.CharField('id', max_length=32, null=False, primary_key=True)
     zgh = models.CharField('职工号', max_length=32, )
     xm = models.CharField('姓名', max_length=128, )
@@ -191,24 +197,40 @@ class UibeJzg(models.Model):
         verbose_name_plural = verbose_name
 
 
-class XshxBq(models.Model):
-    BQQX_CHOICES = (
-        (0, '全部'),
-        (1, '学生'),
-        (2, '教师'),)
+# class XshxBq(models.Model):
+#     BQQX_CHOICES = (
+#         (0, '全部'),
+#         (1, '学生'),
+#         (2, '教师'),)
+#
+#     xh = models.CharField('学号', max_length=32)
+#     bq = models.CharField('标签', max_length=32, )
+#     bqsm = models.CharField('标签说明', max_length=32, null=True)
+#     bqqx = models.IntegerField('标签权限', choices=BQQX_CHOICES, default=0)
+#     sfyx = models.IntegerField('是否有效', choices=Sfyx_Choices, default=1)
+#     create_time = models.DateTimeField('创建时间', auto_now_add=True)
+#     update_time = models.DateTimeField('更新时间', auto_now=True)
+#
+#     class Meta:
+#         db_table = 'bzks_xshxbq'
+#         verbose_name = "用户画像之学生标签权限"
+#         verbose_name_plural = verbose_name
 
+class XshxBq(models.Model):
     xh = models.CharField('学号', max_length=32)
-    bq = models.CharField('标签', max_length=32, )
-    bqsm = models.CharField('标签说明', max_length=32, null=True)
-    bqqx = models.IntegerField('标签权限', choices=BQQX_CHOICES, default=0)
     sfyx = models.IntegerField('是否有效', choices=Sfyx_Choices, default=1)
     create_time = models.DateTimeField('创建时间', auto_now_add=True)
     update_time = models.DateTimeField('更新时间', auto_now=True)
+    bq = models.ForeignKey(XtglBqsz, related_name="xshxbq", null=True, on_delete=models.SET_NULL)
 
     class Meta:
         db_table = 'bzks_xshxbq'
-        verbose_name = "用户画像之学生标签权限"
+        verbose_name = "用户画像之学生画像"
         verbose_name_plural = verbose_name
+
+    @property
+    def bqsz_bqmc(self):
+        return self.bq.bqmc, self.bq.bqms
 
 
 # 本专科生表

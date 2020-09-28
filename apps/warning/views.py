@@ -928,7 +928,14 @@ class XwgjJzgMxView(mixins.ListModelMixin, generics.GenericAPIView, ):
     """分页"""
     # pagination_class = Pagination
 
-    queryset = wm.JzgXwgjGrgj.objects.all().order_by('-xwsj')
+    # queryset = wm.JzgXwgjGrgj.objects.all().order_by('-xwsj')
+
+    def get_queryset(self):
+        kssj = self.request.query_params.get("kssj", date.min)
+        jssj = self.request.query_params.get("jssj", date.today() + timedelta(days=1))
+        # ret = pm.UibeJzg.objects.annotate(gjcs=Count("grgj", filter=myfilter)).filter( gjcs__gte=1)
+        ret = wm.JzgXwgjGrgj.objects.filter(Q(create_time__gt=kssj) & Q(create_time__lte=jssj)).distinct()
+        return ret
     # 序列化
     serializer_class = serialiser.XwgjJzgMxSerialiser
     filter_class = filter.XwgjJzgMxFilter
