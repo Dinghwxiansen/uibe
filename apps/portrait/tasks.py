@@ -5,7 +5,6 @@
 # software: PyCharm
 
 from __future__ import absolute_import
-import time
 
 import os
 from datetime import datetime, timedelta
@@ -18,13 +17,10 @@ from django.http import HttpResponse
 
 # 函数如果需要传参，那么在celery.py下的定时任务模块中添加args项。
 @shared_task
-def test1():
-    localtime = time.asctime(time.localtime(time.time()))
-    print(localtime)
+def test1(x, y):
+    return x + y
 
 
 @shared_task
-def 函数(传参):
-    return ""
-
-# 可以写多个
+def test2(x):
+    return x

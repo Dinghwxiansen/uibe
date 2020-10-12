@@ -4,6 +4,24 @@
 # datetime:2020/9/25 16:17
 # software: PyCharm
 
+# import os
+# import django
+# from celery import Celery
+# from django.conf import settings
+#
+# # set the default Django settings module for the 'celery' program.
+#
+# os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'opsweb.settings')
+# django.setup()
+# app = Celery('uibe')
+# app.config_from_object('django.conf:settings')
+# app.autodiscover_tasks(lambda: settings.INSTALLED_APPS)
+#
+#
+# @app.task(bind=True)
+# def debug_task(self):
+#     print('Request: {0!r}'.format(self.request))
+
 from __future__ import absolute_import, unicode_literals
 import os
 from celery import Celery, platforms
@@ -32,13 +50,13 @@ app.conf.update(
     CELERYBEAT_SCHEDULE={
         'test1': {
             'task': 'portrait.tasks.test1',  # 这个task任务在app下的tasks.py文件内
-            'schedule': timedelta(seconds=10),
-            # 'args': （想传的参数）#不传参也可去除此项
+            'schedule': timedelta(seconds=2),
+            'args': ""  # 不传参也可去除此项
         },
-        '任务名称（自定义）': {
-            'task': '你的项目app.tasks.你要执行的脚本或代码函数',  # 这个task任务在app下的tasks.py文件内
-            'schedule': crontab(hour=1, minute=5),
-            # 'args': （想传的参数）#不传参也可去除此项
+        'test2': {
+            'task': 'portrait.tasks.test2',  # 这个task任务在app下的tasks.py文件内
+            'schedule': crontab(hour=1, minute=2),
+            'args': " "  # 不传参也可去除此项
         }
     }
 )

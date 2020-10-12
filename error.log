@@ -14150,3 +14150,1333 @@ django.template.base.VariableDoesNotExist: Failed lookup for key [is_authenticat
 [2020-09-28 11:11:10,611] [INFO] "OPTIONS /portrait/v1/hxbqszzbx/?id=49&random=1601262670505 HTTP/1.1" 200 0
 [2020-09-28 11:11:11,008] [INFO] "GET /portrait/v1/bqwd/?kqzt=1&page=1&random=1601262670504 HTTP/1.1" 200 1274
 [2020-09-28 11:11:11,013] [INFO] "GET /portrait/v1/hxbqszzbx/?id=49&random=1601262670505 HTTP/1.1" 200 275
+[2020-09-28 11:54:49,365] [DEBUG] ALTER TABLE `xtgl_zbx` DROP COLUMN `zbxmc`; (params ())
+[2020-09-28 11:54:49,365] [DEBUG] ALTER TABLE `xtgl_zbx` DROP COLUMN `zbxmc`; (params ())
+[2020-09-28 11:54:49,466] [DEBUG] ALTER TABLE `xtgl_zbx` ADD COLUMN `zbxmc` varchar(32) DEFAULT %s NOT NULL; (params ['abc'])
+[2020-09-28 11:54:49,466] [DEBUG] ALTER TABLE `xtgl_zbx` ADD COLUMN `zbxmc` varchar(32) DEFAULT %s NOT NULL; (params ['abc'])
+[2020-09-28 11:54:49,531] [DEBUG] ALTER TABLE `xtgl_zbx` ALTER COLUMN `zbxmc` DROP DEFAULT; (params [])
+[2020-09-28 11:54:49,531] [DEBUG] ALTER TABLE `xtgl_zbx` ALTER COLUMN `zbxmc` DROP DEFAULT; (params [])
+[2020-09-28 11:54:49,636] [DEBUG] ALTER TABLE `bzks_xshxbq` DROP COLUMN `bq`; (params ())
+[2020-09-28 11:54:49,636] [DEBUG] ALTER TABLE `bzks_xshxbq` DROP COLUMN `bq`; (params ())
+[2020-09-28 11:54:49,942] [DEBUG] ALTER TABLE `bzks_xshxbq` ADD COLUMN `bqid_id` integer NULL; (params [])
+[2020-09-28 11:54:49,942] [DEBUG] ALTER TABLE `bzks_xshxbq` ADD COLUMN `bqid_id` integer NULL; (params [])
+[2020-09-28 11:54:50,280] [DEBUG] ALTER TABLE `bzks_xshxbq` ADD CONSTRAINT `bzks_xshxbq_bqid_id_a6702fc2_fk_xtgl_bqsz_id` FOREIGN KEY (`bqid_id`) REFERENCES `xtgl_bqsz` (`id`); (params ())
+[2020-09-28 11:54:50,280] [DEBUG] ALTER TABLE `bzks_xshxbq` ADD CONSTRAINT `bzks_xshxbq_bqid_id_a6702fc2_fk_xtgl_bqsz_id` FOREIGN KEY (`bqid_id`) REFERENCES `xtgl_bqsz` (`id`); (params ())
+[2020-09-28 11:54:50,616] [DEBUG] ALTER TABLE `bzks_xshxbq` DROP COLUMN `bqsm`; (params ())
+[2020-09-28 11:54:50,616] [DEBUG] ALTER TABLE `bzks_xshxbq` DROP COLUMN `bqsm`; (params ())
+[2020-09-28 11:54:50,956] [DEBUG] ALTER TABLE `bzks_xshxbq` DROP FOREIGN KEY `bzks_xshxbq_bqid_id_a6702fc2_fk_xtgl_bqsz_id`; (params ())
+[2020-09-28 11:54:50,956] [DEBUG] ALTER TABLE `bzks_xshxbq` DROP FOREIGN KEY `bzks_xshxbq_bqid_id_a6702fc2_fk_xtgl_bqsz_id`; (params ())
+[2020-09-28 11:54:50,968] [DEBUG] ALTER TABLE `bzks_xshxbq` DROP COLUMN `bqid_id`; (params ())
+[2020-09-28 11:54:50,968] [DEBUG] ALTER TABLE `bzks_xshxbq` DROP COLUMN `bqid_id`; (params ())
+[2020-09-28 11:54:51,235] [DEBUG] ALTER TABLE `bzks_xshxbq` ADD COLUMN `bq_id` integer NULL; (params [])
+[2020-09-28 11:54:51,235] [DEBUG] ALTER TABLE `bzks_xshxbq` ADD COLUMN `bq_id` integer NULL; (params [])
+[2020-09-28 11:54:51,526] [DEBUG] ALTER TABLE `bzks_xshxbq` ADD CONSTRAINT `bzks_xshxbq_bq_id_b1fb4d35_fk_xtgl_bqsz_id` FOREIGN KEY (`bq_id`) REFERENCES `xtgl_bqsz` (`id`); (params ())
+[2020-09-28 11:54:51,526] [DEBUG] ALTER TABLE `bzks_xshxbq` ADD CONSTRAINT `bzks_xshxbq_bq_id_b1fb4d35_fk_xtgl_bqsz_id` FOREIGN KEY (`bq_id`) REFERENCES `xtgl_bqsz` (`id`); (params ())
+[2020-09-28 11:54:51,852] [DEBUG] ALTER TABLE `bzks_xshxbq` DROP COLUMN `bqqx`; (params ())
+[2020-09-28 11:54:51,852] [DEBUG] ALTER TABLE `bzks_xshxbq` DROP COLUMN `bqqx`; (params ())
+[2020-09-28 11:54:52,192] [DEBUG] ALTER TABLE `xtgl_bqsz` ADD COLUMN `sfsc` integer DEFAULT %s NOT NULL; (params [0])
+[2020-09-28 11:54:52,192] [DEBUG] ALTER TABLE `xtgl_bqsz` ADD COLUMN `sfsc` integer DEFAULT %s NOT NULL; (params [0])
+[2020-09-28 11:54:52,247] [DEBUG] ALTER TABLE `xtgl_bqsz` ALTER COLUMN `sfsc` DROP DEFAULT; (params [])
+[2020-09-28 11:54:52,247] [DEBUG] ALTER TABLE `xtgl_bqsz` ALTER COLUMN `sfsc` DROP DEFAULT; (params [])
+[2020-09-28 13:05:59,251] [INFO] "OPTIONS /portrait/v1/hxbqszzbx/?id=49&random=1601269559764 HTTP/1.1" 200 0
+[2020-09-28 13:05:59,251] [INFO] "OPTIONS /portrait/v1/bqwd/?kqzt=1&page=1&random=1601269559760 HTTP/1.1" 200 0
+[2020-09-28 13:05:59,321] [WARNING] "GET /portrait/v1/bqwd/?kqzt=1&page=1&random=1601269559760 HTTP/1.1" 403 94
+[2020-09-28 13:05:59,322] [WARNING] "GET /portrait/v1/hxbqszzbx/?id=49&random=1601269559764 HTTP/1.1" 403 94
+[2020-09-28 14:25:33,136] [INFO] "OPTIONS /login/ HTTP/1.1" 200 0
+[2020-09-28 14:25:33,589] [INFO] "POST /login/ HTTP/1.1" 200 179
+[2020-09-28 14:25:34,008] [INFO] "OPTIONS /warning/v1/warningtable/ HTTP/1.1" 200 0
+[2020-09-28 14:25:36,105] [INFO] "GET /warning/v1/warningtable/ HTTP/1.1" 200 1031
+[2020-09-28 14:25:38,190] [INFO] "OPTIONS /portrait/v1/hxbqsz/?bqmc=&page=1&page_size=10&random=1601274338137 HTTP/1.1" 200 0
+[2020-09-28 14:25:38,295] [INFO] "GET /portrait/v1/hxbqsz/?bqmc=&page=1&page_size=10&random=1601274338137 HTTP/1.1" 200 5893
+[2020-09-28 14:25:42,483] [INFO] "OPTIONS /portrait/v1/tzjm/?zbxmc=&zbfl=&page=1&page_size=10&random=1601274342339 HTTP/1.1" 200 0
+[2020-09-28 14:25:42,540] [INFO] "GET /portrait/v1/tzjm/?zbxmc=&zbfl=&page=1&page_size=10&random=1601274342339 HTTP/1.1" 200 967
+[2020-09-28 14:25:44,373] [INFO] "OPTIONS /portrait/v1/bqwd/?kqzt=1&random=1601274344261 HTTP/1.1" 200 0
+[2020-09-28 14:25:44,433] [INFO] "GET /portrait/v1/bqwd/?kqzt=1&random=1601274344261 HTTP/1.1" 200 1274
+[2020-09-28 14:25:56,994] [INFO] "OPTIONS /portrait/v1/sjbxz/?zywbm=&page=1&random=1601274356891 HTTP/1.1" 200 0
+[2020-09-28 14:25:57,088] [INFO] "GET /portrait/v1/sjbxz/?zywbm=&page=1&random=1601274356891 HTTP/1.1" 200 593
+[2020-09-28 14:26:00,296] [INFO] "OPTIONS /portrait/v1/sjbxzzd/?id=1&zwzdmc=&page=1&zbfl=0&random=1601274360209 HTTP/1.1" 200 0
+[2020-09-28 14:26:00,354] [INFO] "GET /portrait/v1/sjbxzzd/?id=1&zwzdmc=&page=1&zbfl=0&random=1601274360209 HTTP/1.1" 200 1462
+[2020-09-28 14:26:05,261] [INFO] "OPTIONS /portrait/v1/sjbxzzd/?id=1&zwzdmc=&page=2&zbfl=0&random=1601274365134 HTTP/1.1" 200 0
+[2020-09-28 14:26:05,316] [INFO] "GET /portrait/v1/sjbxzzd/?id=1&zwzdmc=&page=2&zbfl=0&random=1601274365134 HTTP/1.1" 200 1879
+[2020-09-28 14:26:07,394] [INFO] "OPTIONS /portrait/v1/sjbxzzd/?id=1&zwzdmc=&page=3&zbfl=0&random=1601274367352 HTTP/1.1" 200 0
+[2020-09-28 14:26:07,441] [INFO] "GET /portrait/v1/sjbxzzd/?id=1&zwzdmc=&page=3&zbfl=0&random=1601274367352 HTTP/1.1" 200 1814
+[2020-09-28 14:26:19,579] [INFO] "OPTIONS /portrait/v1/sjbxz/?zywbm=&page=1&random=1601274379516 HTTP/1.1" 200 0
+[2020-09-28 14:26:19,622] [INFO] "GET /portrait/v1/sjbxz/?zywbm=&page=1&random=1601274379516 HTTP/1.1" 200 593
+[2020-09-28 14:26:22,746] [INFO] "OPTIONS /portrait/v1/sjbxzzd/?id=1&zwzdmc=&page=3&zbfl=0&random=1601274382622 HTTP/1.1" 200 0
+[2020-09-28 14:26:22,792] [INFO] "GET /portrait/v1/sjbxzzd/?id=1&zwzdmc=&page=3&zbfl=0&random=1601274382622 HTTP/1.1" 200 1814
+[2020-09-28 14:26:26,684] [INFO] "OPTIONS /portrait/v1/sjbxzzd/?id=1&zwzdmc=&page=1&zbfl=0&random=1601274386636 HTTP/1.1" 200 0
+[2020-09-28 14:26:26,739] [INFO] "GET /portrait/v1/sjbxzzd/?id=1&zwzdmc=&page=1&zbfl=0&random=1601274386636 HTTP/1.1" 200 1462
+[2020-09-28 14:26:36,338] [INFO] "OPTIONS /portrait/v1/tzjm/ HTTP/1.1" 200 0
+[2020-09-28 14:26:36,380] [ERROR] dading
+[2020-09-28 14:26:36,380] [ERROR] 192.168.3.243
+[2020-09-28 14:26:36,381] [ERROR] ({'zbxmc': [ErrorDetail(string='请确保这个字段不能超过 32 个字符。', code='max_length')], 'zdxz': [ErrorDetail(string='请确保这个字段不能超过 128 个字符。', code='max_length')]},)
+[2020-09-28 14:26:36,386] [INFO] "POST /portrait/v1/tzjm/ HTTP/1.1" 200 282
+[2020-09-28 14:27:01,529] [INFO] "OPTIONS /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601274421426 HTTP/1.1" 200 0
+[2020-09-28 14:27:01,636] [INFO] "GET /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601274421426 HTTP/1.1" 200 1494
+[2020-09-28 14:27:16,432] [INFO] "OPTIONS /portrait/v1/bqwd/ HTTP/1.1" 200 0
+[2020-09-28 14:27:16,465] [ERROR] dading
+[2020-09-28 14:27:16,466] [ERROR] 192.168.3.243
+[2020-09-28 14:27:16,466] [ERROR] ({'wdmc': [ErrorDetail(string='请确保这个字段不能超过 32 个字符。', code='max_length')]},)
+[2020-09-28 14:27:16,468] [INFO] "POST /portrait/v1/bqwd/ HTTP/1.1" 200 172
+[2020-09-28 14:28:44,283] [INFO] "OPTIONS /login/ HTTP/1.1" 200 0
+[2020-09-28 14:28:45,273] [INFO] "POST /login/ HTTP/1.1" 200 179
+[2020-09-28 14:28:46,119] [INFO] "OPTIONS /warning/v1/warningtable/ HTTP/1.1" 200 0
+[2020-09-28 14:28:47,960] [INFO] "GET /warning/v1/warningtable/ HTTP/1.1" 200 1031
+[2020-09-28 14:28:50,012] [INFO] "OPTIONS /portrait/v1/hxbqsz/?bqmc=&page=1&page_size=10&random=1601274529884 HTTP/1.1" 200 0
+[2020-09-28 14:28:50,230] [INFO] "GET /portrait/v1/hxbqsz/?bqmc=&page=1&page_size=10&random=1601274529884 HTTP/1.1" 200 5893
+[2020-09-28 14:28:51,543] [INFO] "OPTIONS /portrait/v1/tzjm/?zbxmc=&zbfl=&page=1&page_size=10&random=1601274531387 HTTP/1.1" 200 0
+[2020-09-28 14:28:51,660] [INFO] "GET /portrait/v1/tzjm/?zbxmc=&zbfl=&page=1&page_size=10&random=1601274531387 HTTP/1.1" 200 967
+[2020-09-28 14:28:54,262] [INFO] "OPTIONS /portrait/v1/bqwd/?kqzt=1&random=1601274533930 HTTP/1.1" 200 0
+[2020-09-28 14:28:54,493] [INFO] "GET /portrait/v1/bqwd/?kqzt=1&random=1601274533930 HTTP/1.1" 200 1274
+[2020-09-28 14:29:07,741] [INFO] "OPTIONS /portrait/v1/sjbxz/?zywbm=&page=1&random=1601274547393 HTTP/1.1" 200 0
+[2020-09-28 14:29:08,039] [INFO] "GET /portrait/v1/sjbxz/?zywbm=&page=1&random=1601274547393 HTTP/1.1" 200 593
+[2020-09-28 14:29:11,308] [INFO] "OPTIONS /portrait/v1/sjbxzzd/?id=1&zwzdmc=&page=1&zbfl=0&random=1601274550995 HTTP/1.1" 200 0
+[2020-09-28 14:29:11,576] [INFO] "GET /portrait/v1/sjbxzzd/?id=1&zwzdmc=&page=1&zbfl=0&random=1601274550995 HTTP/1.1" 200 1462
+[2020-09-28 14:29:25,404] [INFO] "OPTIONS /portrait/v1/tzjm/ HTTP/1.1" 200 0
+[2020-09-28 14:29:25,502] [ERROR] wuyi
+[2020-09-28 14:29:25,502] [ERROR] 192.168.3.243
+[2020-09-28 14:29:25,503] [ERROR] ({'zbxmc': [ErrorDetail(string='请确保这个字段不能超过 32 个字符。', code='max_length')], 'zdxz': [ErrorDetail(string='请确保这个字段不能超过 128 个字符。', code='max_length')]},)
+[2020-09-28 14:29:25,504] [INFO] "POST /portrait/v1/tzjm/ HTTP/1.1" 200 282
+[2020-09-28 14:32:01,294] [INFO] "OPTIONS /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601274721803 HTTP/1.1" 200 0
+[2020-09-28 14:32:01,329] [WARNING] "GET /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601274721803 HTTP/1.1" 403 94
+[2020-09-28 14:32:53,011] [INFO] "OPTIONS /portrait/v1/bqwd/ HTTP/1.1" 200 0
+[2020-09-28 14:32:53,037] [WARNING] "POST /portrait/v1/bqwd/ HTTP/1.1" 403 94
+[2020-09-28 14:32:57,029] [WARNING] "POST /portrait/v1/bqwd/ HTTP/1.1" 403 94
+[2020-09-28 14:33:02,109] [WARNING] "POST /portrait/v1/bqwd/ HTTP/1.1" 403 94
+[2020-09-28 14:33:37,901] [INFO] "OPTIONS /portrait/v1/bqwd/ HTTP/1.1" 200 0
+[2020-09-28 14:33:37,928] [WARNING] "POST /portrait/v1/bqwd/ HTTP/1.1" 403 94
+[2020-09-28 14:34:57,570] [INFO] "OPTIONS /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601274897375 HTTP/1.1" 200 0
+[2020-09-28 14:34:57,680] [INFO] "GET /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601274897375 HTTP/1.1" 200 1494
+[2020-09-28 14:35:00,409] [INFO] "OPTIONS /portrait/v1/hxbqsz/?bqmc=&page=1&page_size=10&random=1601274900005 HTTP/1.1" 200 0
+[2020-09-28 14:35:00,475] [INFO] "GET /portrait/v1/hxbqsz/?bqmc=&page=1&page_size=10&random=1601274900005 HTTP/1.1" 200 5893
+[2020-09-28 14:35:01,300] [INFO] "OPTIONS /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601274901221 HTTP/1.1" 200 0
+[2020-09-28 14:35:01,355] [INFO] "GET /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601274901221 HTTP/1.1" 200 1494
+[2020-09-28 14:35:15,456] [ERROR] dading
+[2020-09-28 14:35:15,457] [ERROR] 192.168.3.243
+[2020-09-28 14:35:15,457] [ERROR] ({'wdmc': [ErrorDetail(string='请确保这个字段不能超过 32 个字符。', code='max_length')]},)
+[2020-09-28 14:35:15,458] [INFO] "POST /portrait/v1/bqwd/ HTTP/1.1" 200 172
+[2020-09-28 14:35:52,314] [INFO] "OPTIONS /login/ HTTP/1.1" 200 0
+[2020-09-28 14:35:52,628] [INFO] "POST /login/ HTTP/1.1" 200 179
+[2020-09-28 14:35:52,759] [INFO] "OPTIONS /warning/v1/warningtable/ HTTP/1.1" 200 0
+[2020-09-28 14:35:53,125] [INFO] "GET /warning/v1/warningtable/ HTTP/1.1" 200 1031
+[2020-09-28 14:35:53,741] [INFO] "OPTIONS /portrait/v1/hxbqsz/?bqmc=&page=1&page_size=10&random=1601274954276 HTTP/1.1" 200 0
+[2020-09-28 14:35:53,780] [INFO] "GET /portrait/v1/hxbqsz/?bqmc=&page=1&page_size=10&random=1601274954276 HTTP/1.1" 200 5893
+[2020-09-28 14:35:54,683] [INFO] "OPTIONS /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601274955221 HTTP/1.1" 200 0
+[2020-09-28 14:35:54,712] [INFO] "GET /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601274955221 HTTP/1.1" 200 1494
+[2020-09-28 14:36:04,419] [ERROR] admin
+[2020-09-28 14:36:04,419] [ERROR] 192.168.3.220
+[2020-09-28 14:36:04,419] [ERROR] ({'wdmc': [ErrorDetail(string='请确保这个字段不能超过 32 个字符。', code='max_length')]},)
+[2020-09-28 14:36:04,420] [INFO] "POST /portrait/v1/bqwd/ HTTP/1.1" 200 172
+[2020-09-28 14:36:14,201] [ERROR] admin
+[2020-09-28 14:36:14,201] [ERROR] 192.168.3.220
+[2020-09-28 14:36:14,201] [ERROR] ({'wdmc': [ErrorDetail(string='请确保这个字段不能超过 32 个字符。', code='max_length')]},)
+[2020-09-28 14:36:14,202] [INFO] "POST /portrait/v1/bqwd/ HTTP/1.1" 200 172
+[2020-09-28 14:38:11,643] [INFO] "OPTIONS /portrait/v1/hxbqsz/?bqmc=&page=1&page_size=10&random=1601275091569 HTTP/1.1" 200 0
+[2020-09-28 14:38:11,709] [INFO] "GET /portrait/v1/hxbqsz/?bqmc=&page=1&page_size=10&random=1601275091569 HTTP/1.1" 200 5893
+[2020-09-28 14:38:13,354] [INFO] "OPTIONS /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601275093127 HTTP/1.1" 200 0
+[2020-09-28 14:38:13,423] [INFO] "GET /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601275093127 HTTP/1.1" 200 1494
+[2020-09-28 14:38:14,711] [INFO] "OPTIONS /portrait/v1/tzjm/?zbxmc=&zbfl=&page=1&page_size=10&random=1601275094513 HTTP/1.1" 200 0
+[2020-09-28 14:38:14,762] [INFO] "GET /portrait/v1/tzjm/?zbxmc=&zbfl=&page=1&page_size=10&random=1601275094513 HTTP/1.1" 200 967
+[2020-09-28 14:38:16,153] [INFO] "OPTIONS /warning/v1/college HTTP/1.1" 200 0
+[2020-09-28 14:38:16,159] [INFO] "OPTIONS /warning/v1/grade/?yx= HTTP/1.1" 200 0
+[2020-09-28 14:38:16,169] [INFO] "OPTIONS /portrait/v1/xshxjsd/?xm=&xh=&xznj=&yx=&bj=&page=1&page_size=10 HTTP/1.1" 200 0
+[2020-09-28 14:38:16,354] [INFO] "OPTIONS /warning/v1/college/ HTTP/1.1" 200 0
+[2020-09-28 14:38:16,398] [INFO] "GET /warning/v1/grade/?yx= HTTP/1.1" 200 175
+[2020-09-28 14:38:16,407] [INFO] "GET /portrait/v1/xshxjsd/?xm=&xh=&xznj=&yx=&bj=&page=1&page_size=10 HTTP/1.1" 200 1915
+[2020-09-28 14:38:16,481] [INFO] "GET /warning/v1/college/ HTTP/1.1" 200 637
+[2020-09-28 14:38:17,835] [INFO] "OPTIONS /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-09-21&jssj=2020-09-28&page=1&page_size=10&random=1601275097732 HTTP/1.1" 200 0
+[2020-09-28 14:38:17,883] [INFO] "GET /warning/v1/grade/?yx= HTTP/1.1" 200 175
+[2020-09-28 14:38:17,996] [INFO] "GET /warning/v1/college/ HTTP/1.1" 200 637
+[2020-09-28 14:38:27,931] [ERROR] admin
+[2020-09-28 14:38:27,931] [ERROR] 192.168.3.220
+[2020-09-28 14:38:27,931] [ERROR] ({'wdmc': [ErrorDetail(string='请确保这个字段不能超过 32 个字符。', code='max_length')]},)
+[2020-09-28 14:38:27,932] [INFO] "POST /portrait/v1/bqwd/ HTTP/1.1" 200 172
+[2020-09-28 14:38:29,856] [INFO] "POST /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-09-21&jssj=2020-09-28&page=1&page_size=10&random=1601275097732 HTTP/1.1" 200 1835
+[2020-09-28 14:38:33,472] [INFO] "POST /portrait/v1/bqwd/ HTTP/1.1" 200 107
+[2020-09-28 14:38:33,530] [INFO] "OPTIONS /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601275114037 HTTP/1.1" 200 0
+[2020-09-28 14:38:33,576] [INFO] "GET /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601275114037 HTTP/1.1" 200 1486
+[2020-09-28 14:38:42,812] [INFO] "OPTIONS /warning/v1/college HTTP/1.1" 200 0
+[2020-09-28 14:38:42,847] [INFO] "OPTIONS /warning/v1/swxw/?xhxm=&xznj=&yx=&bj=&page=1&page_size=10 HTTP/1.1" 200 0
+[2020-09-28 14:38:42,876] [INFO] "OPTIONS /warning/v1/grade/?yx= HTTP/1.1" 200 0
+[2020-09-28 14:38:42,954] [INFO] "GET /warning/v1/college HTTP/1.1" 301 0
+[2020-09-28 14:38:43,062] [INFO] "GET /warning/v1/college/ HTTP/1.1" 200 637
+[2020-09-28 14:38:43,153] [INFO] "GET /warning/v1/grade/?yx= HTTP/1.1" 200 175
+[2020-09-28 14:38:47,760] [INFO] "POST /warning/v1/swxw/?xhxm=&xznj=&yx=&bj=&page=1&page_size=10 HTTP/1.1" 200 2074
+[2020-09-28 14:38:53,418] [INFO] "OPTIONS /portrait/v1/bqwd/ HTTP/1.1" 200 0
+[2020-09-28 14:38:53,618] [INFO] "PUT /portrait/v1/bqwd/ HTTP/1.1" 200 107
+[2020-09-28 14:38:53,726] [INFO] "OPTIONS /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601275134184 HTTP/1.1" 200 0
+[2020-09-28 14:38:53,806] [INFO] "GET /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601275134184 HTTP/1.1" 200 1498
+[2020-09-28 14:40:53,502] [INFO] "OPTIONS /portrait/v1/bm/ HTTP/1.1" 200 0
+[2020-09-28 14:40:53,519] [INFO] "OPTIONS /warning/v1/jzgxwgj/?xm=&zgh=&bm=&kssj=2020-09-21&jssj=2020-09-28&page=1&page_size=10 HTTP/1.1" 200 0
+[2020-09-28 14:40:53,614] [INFO] "GET /portrait/v1/bm/ HTTP/1.1" 200 3493
+[2020-09-28 14:40:54,698] [INFO] "OPTIONS /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-09-21&jssj=2020-09-28&page=1&page_size=10&random=1601275254588 HTTP/1.1" 200 0
+[2020-09-28 14:40:54,789] [INFO] "GET /warning/v1/grade/?yx= HTTP/1.1" 200 175
+[2020-09-28 14:40:54,921] [INFO] "GET /warning/v1/college/ HTTP/1.1" 200 637
+[2020-09-28 14:40:56,400] [INFO] "GET /warning/v1/jzgxwgj/?xm=&zgh=&bm=&kssj=2020-09-21&jssj=2020-09-28&page=1&page_size=10 HTTP/1.1" 200 1175
+[2020-09-28 14:41:06,837] [INFO] "POST /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-09-21&jssj=2020-09-28&page=1&page_size=10&random=1601275254588 HTTP/1.1" 200 1835
+[2020-09-28 14:41:09,324] [INFO] "OPTIONS /warning/v1/xwgjmx/?xh=201501267&kssj=&jssj= HTTP/1.1" 200 0
+[2020-09-28 14:41:11,285] [INFO] "GET /warning/v1/xwgjmx/?xh=201501267&kssj=&jssj= HTTP/1.1" 200 20646
+[2020-09-28 14:41:21,143] [INFO] "OPTIONS /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-09-21&jssj=2020-09-28&page=1&page_size=10&random=1601275280750 HTTP/1.1" 200 0
+[2020-09-28 14:41:21,231] [INFO] "GET /warning/v1/grade/?yx= HTTP/1.1" 200 175
+[2020-09-28 14:41:21,497] [INFO] "GET /warning/v1/college/ HTTP/1.1" 200 637
+[2020-09-28 14:41:25,540] [INFO] "GET /portrait/v1/bm/ HTTP/1.1" 200 3493
+[2020-09-28 14:41:27,410] [INFO] "GET /warning/v1/jzgxwgj/?xm=&zgh=&bm=&kssj=2020-09-21&jssj=2020-09-28&page=1&page_size=10 HTTP/1.1" 200 1175
+[2020-09-28 14:41:31,669] [INFO] "OPTIONS /warning/v1/xwgjjzgmx/?zgh=01506&kssj=&jssj= HTTP/1.1" 200 0
+[2020-09-28 14:41:31,738] [ERROR] dading
+[2020-09-28 14:41:31,739] [ERROR] 192.168.3.243
+[2020-09-28 14:41:31,739] [ERROR] ('’%(value)s‘ 必须为合法的日期时间格式，请使用 YYYY-MM-DD HH:MM[:ss[.uuuuuu]][TZ] 格式。', 'invalid', {'value': ''})
+[2020-09-28 14:41:31,742] [INFO] "GET /warning/v1/xwgjjzgmx/?zgh=01506&kssj=&jssj= HTTP/1.1" 200 264
+[2020-09-28 14:41:32,525] [INFO] "POST /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-09-21&jssj=2020-09-28&page=1&page_size=10&random=1601275280750 HTTP/1.1" 200 1835
+[2020-09-28 14:42:42,164] [INFO] "GET /portrait/v1/bm/ HTTP/1.1" 200 3493
+[2020-09-28 14:42:44,012] [INFO] "OPTIONS /portrait/v1/yjsyx/ HTTP/1.1" 200 0
+[2020-09-28 14:42:44,178] [INFO] "OPTIONS /portrait/v1/yjsxwgj/?xm=&xh=&yx=&xn=&kssj=2020-09-21&jssj=2020-09-28&page=1&page_size=10 HTTP/1.1" 200 0
+[2020-09-28 14:42:44,373] [INFO] "OPTIONS /portrait/v1/yjsnj/?yx= HTTP/1.1" 200 0
+[2020-09-28 14:42:45,039] [INFO] "GET /portrait/v1/yjsyx/ HTTP/1.1" 200 1059
+[2020-09-28 14:42:45,488] [INFO] "GET /portrait/v1/yjsnj/?yx= HTTP/1.1" 200 279
+[2020-09-28 14:42:45,797] [INFO] "GET /portrait/v1/bm/ HTTP/1.1" 200 3493
+[2020-09-28 14:42:45,958] [INFO] "GET /warning/v1/jzgxwgj/?xm=&zgh=&bm=&kssj=2020-09-21&jssj=2020-09-28&page=1&page_size=10 HTTP/1.1" 200 1175
+[2020-09-28 14:42:47,675] [INFO] "GET /warning/v1/jzgxwgj/?xm=&zgh=&bm=&kssj=2020-09-21&jssj=2020-09-28&page=1&page_size=10 HTTP/1.1" 200 1175
+[2020-09-28 14:43:02,792] [INFO] "POST /portrait/v1/yjsxwgj/?xm=&xh=&yx=&xn=&kssj=2020-09-21&jssj=2020-09-28&page=1&page_size=10 HTTP/1.1" 200 1588
+[2020-09-28 14:43:13,443] [INFO] "OPTIONS /warning/v1/xwgjjzgmx/?zgh=02655&kssj=&jssj= HTTP/1.1" 200 0
+[2020-09-28 14:43:13,943] [ERROR] dading
+[2020-09-28 14:43:13,944] [ERROR] 192.168.3.243
+[2020-09-28 14:43:13,944] [ERROR] ('’%(value)s‘ 必须为合法的日期时间格式，请使用 YYYY-MM-DD HH:MM[:ss[.uuuuuu]][TZ] 格式。', 'invalid', {'value': ''})
+[2020-09-28 14:43:13,946] [INFO] "GET /warning/v1/xwgjjzgmx/?zgh=02655&kssj=&jssj= HTTP/1.1" 200 264
+[2020-09-28 14:43:58,541] [INFO] "OPTIONS /warning/v1/xwgjjzgmx/?zgh=02655&kssj=2020-09-25&jssj=2020-09-28 HTTP/1.1" 200 0
+[2020-09-28 14:44:02,063] [INFO] "GET /warning/v1/xwgjjzgmx/?zgh=02655&kssj=2020-09-25&jssj=2020-09-28 HTTP/1.1" 200 105
+[2020-09-28 14:44:14,588] [INFO] "GET /portrait/v1/bm/ HTTP/1.1" 200 3493
+[2020-09-28 14:44:16,854] [INFO] "GET /warning/v1/jzgxwgj/?xm=&zgh=&bm=&kssj=2020-09-21&jssj=2020-09-28&page=1&page_size=10 HTTP/1.1" 200 1175
+[2020-09-28 14:44:18,918] [INFO] "OPTIONS /warning/v1/jzgxwgj/?xm=%E8%A7%A3&zgh=&bm=&kssj=2020-09-21&jssj=2020-09-28&page=1&page_size=10 HTTP/1.1" 200 0
+[2020-09-28 14:44:19,203] [INFO] "GET /warning/v1/jzgxwgj/?xm=%E8%A7%A3&zgh=&bm=&kssj=2020-09-21&jssj=2020-09-28&page=1&page_size=10 HTTP/1.1" 200 314
+[2020-09-28 14:44:21,081] [INFO] "OPTIONS /warning/v1/xwgjjzgmx/?zgh=02852&kssj=&jssj= HTTP/1.1" 200 0
+[2020-09-28 14:44:21,545] [ERROR] dading
+[2020-09-28 14:44:21,545] [ERROR] 192.168.3.243
+[2020-09-28 14:44:21,546] [ERROR] ('’%(value)s‘ 必须为合法的日期时间格式，请使用 YYYY-MM-DD HH:MM[:ss[.uuuuuu]][TZ] 格式。', 'invalid', {'value': ''})
+[2020-09-28 14:44:21,548] [INFO] "GET /warning/v1/xwgjjzgmx/?zgh=02852&kssj=&jssj= HTTP/1.1" 200 264
+[2020-09-28 14:44:29,117] [INFO] "OPTIONS /warning/v1/xwgjjzgmx/?zgh=02852&kssj=2020-09-25&jssj=2020-09-28 HTTP/1.1" 200 0
+[2020-09-28 14:44:30,339] [INFO] "GET /warning/v1/xwgjjzgmx/?zgh=02852&kssj=2020-09-25&jssj=2020-09-28 HTTP/1.1" 200 105
+[2020-09-28 14:47:24,190] [ERROR] dading
+[2020-09-28 14:47:24,192] [ERROR] 192.168.3.243
+[2020-09-28 14:47:24,194] [ERROR] ('’%(value)s‘ 必须为合法的日期时间格式，请使用 YYYY-MM-DD HH:MM[:ss[.uuuuuu]][TZ] 格式。', 'invalid', {'value': ''})
+[2020-09-28 14:47:24,205] [INFO] "GET /warning/v1/xwgjjzgmx/?zgh=02852&kssj=&jssj= HTTP/1.1" 200 264
+[2020-09-28 14:49:32,217] [INFO] "OPTIONS /portrait/v1/bqwd/ HTTP/1.1" 200 0
+[2020-09-28 14:49:32,484] [INFO] "POST /portrait/v1/bqwd/ HTTP/1.1" 200 107
+[2020-09-28 14:49:32,534] [INFO] "OPTIONS /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601275773039 HTTP/1.1" 200 0
+[2020-09-28 14:49:32,939] [INFO] "GET /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601275773039 HTTP/1.1" 200 1461
+[2020-09-28 15:11:32,156] [INFO] "OPTIONS /portrait/v1/tzjm/?zbxmc=&zbfl=&page=1&page_size=10&random=1601277092644 HTTP/1.1" 200 0
+[2020-09-28 15:11:32,340] [INFO] "GET /portrait/v1/tzjm/?zbxmc=&zbfl=&page=1&page_size=10&random=1601277092644 HTTP/1.1" 200 967
+[2020-09-28 15:11:34,775] [INFO] "OPTIONS /portrait/v1/bqwd/?kqzt=1&random=1601277095252 HTTP/1.1" 200 0
+[2020-09-28 15:11:34,965] [INFO] "GET /portrait/v1/bqwd/?kqzt=1&random=1601277095252 HTTP/1.1" 200 1397
+[2020-09-28 15:11:55,172] [INFO] "OPTIONS /portrait/v1/bqwd/?kqzt=1&random=1601277115629 HTTP/1.1" 200 0
+[2020-09-28 15:11:55,481] [INFO] "GET /portrait/v1/bqwd/?kqzt=1&random=1601277115629 HTTP/1.1" 200 1397
+[2020-09-28 15:14:16,759] [INFO] "OPTIONS /portrait/v1/bqwd/?kqzt=1&random=1601277257156 HTTP/1.1" 200 0
+[2020-09-28 15:14:16,940] [INFO] "GET /portrait/v1/bqwd/?kqzt=1&random=1601277257156 HTTP/1.1" 200 1397
+[2020-09-28 15:14:27,159] [INFO] "OPTIONS /portrait/v1/sjbxz/?zywbm=&page=1&random=1601277267659 HTTP/1.1" 200 0
+[2020-09-28 15:14:27,317] [INFO] "GET /portrait/v1/sjbxz/?zywbm=&page=1&random=1601277267659 HTTP/1.1" 200 593
+[2020-09-28 15:14:33,406] [INFO] "OPTIONS /portrait/v1/sjbxzzd/?id=3&zwzdmc=&page=1&zbfl=1&random=1601277273875 HTTP/1.1" 200 0
+[2020-09-28 15:14:33,606] [INFO] "GET /portrait/v1/sjbxzzd/?id=3&zwzdmc=&page=1&zbfl=1&random=1601277273875 HTTP/1.1" 200 940
+[2020-09-28 15:14:51,622] [INFO] "OPTIONS /portrait/v1/bqwd/?kqzt=1&random=1601277292099 HTTP/1.1" 200 0
+[2020-09-28 15:14:51,834] [INFO] "GET /portrait/v1/bqwd/?kqzt=1&random=1601277292099 HTTP/1.1" 200 1397
+[2020-09-28 15:14:56,841] [INFO] "OPTIONS /portrait/v1/sjbxz/?zywbm=&page=1&random=1601277297314 HTTP/1.1" 200 0
+[2020-09-28 15:14:57,068] [INFO] "GET /portrait/v1/sjbxz/?zywbm=&page=1&random=1601277297314 HTTP/1.1" 200 593
+[2020-09-28 15:15:02,656] [INFO] "OPTIONS /portrait/v1/sjbxzzd/?id=3&zwzdmc=&page=1&zbfl=0&random=1601277303114 HTTP/1.1" 200 0
+[2020-09-28 15:15:02,834] [INFO] "GET /portrait/v1/sjbxzzd/?id=3&zwzdmc=&page=1&zbfl=0&random=1601277303114 HTTP/1.1" 200 1351
+[2020-09-28 15:15:24,324] [INFO] "OPTIONS /portrait/v1/tzjm/ HTTP/1.1" 200 0
+[2020-09-28 15:15:24,452] [ERROR] admin
+[2020-09-28 15:15:24,454] [ERROR] 192.168.3.220
+[2020-09-28 15:15:24,455] [ERROR] ({'zdxz': [ErrorDetail(string='请确保这个字段不能超过 128 个字符。', code='max_length')]},)
+[2020-09-28 15:15:24,461] [INFO] "POST /portrait/v1/tzjm/ HTTP/1.1" 200 173
+[2020-09-28 15:19:07,131] [INFO] "OPTIONS /portrait/v1/tzjm/ HTTP/1.1" 200 0
+[2020-09-28 15:19:07,268] [ERROR] admin
+[2020-09-28 15:19:07,270] [ERROR] 192.168.3.220
+[2020-09-28 15:19:07,271] [ERROR] ({'zdxz': [ErrorDetail(string='请确保这个字段不能超过 128 个字符。', code='max_length')]},)
+[2020-09-28 15:19:07,277] [INFO] "POST /portrait/v1/tzjm/ HTTP/1.1" 200 173
+[2020-09-28 15:19:13,459] [INFO] "OPTIONS /portrait/v1/tzjm/ HTTP/1.1" 200 0
+[2020-09-28 15:19:13,584] [ERROR] admin
+[2020-09-28 15:19:13,585] [ERROR] 192.168.3.220
+[2020-09-28 15:19:13,587] [ERROR] ({'zdxz': [ErrorDetail(string='请确保这个字段不能超过 128 个字符。', code='max_length')]},)
+[2020-09-28 15:19:13,594] [INFO] "POST /portrait/v1/tzjm/ HTTP/1.1" 200 173
+[2020-09-28 15:19:19,237] [INFO] "OPTIONS /portrait/v1/bqwd/?kqzt=1&random=1601277559712 HTTP/1.1" 200 0
+[2020-09-28 15:19:19,441] [INFO] "GET /portrait/v1/bqwd/?kqzt=1&random=1601277559712 HTTP/1.1" 200 1397
+[2020-09-28 15:19:27,255] [INFO] "OPTIONS /portrait/v1/sjbxz/?zywbm=&page=1&random=1601277567727 HTTP/1.1" 200 0
+[2020-09-28 15:19:27,399] [INFO] "GET /portrait/v1/sjbxz/?zywbm=&page=1&random=1601277567727 HTTP/1.1" 200 593
+[2020-09-28 15:19:30,100] [INFO] "OPTIONS /portrait/v1/sjbxzzd/?id=3&zwzdmc=&page=1&zbfl=0&random=1601277570551 HTTP/1.1" 200 0
+[2020-09-28 15:19:30,331] [INFO] "GET /portrait/v1/sjbxzzd/?id=3&zwzdmc=&page=1&zbfl=0&random=1601277570551 HTTP/1.1" 200 1351
+[2020-09-28 15:19:39,452] [INFO] "OPTIONS /portrait/v1/tzjm/ HTTP/1.1" 200 0
+[2020-09-28 15:19:39,595] [ERROR] admin
+[2020-09-28 15:19:39,596] [ERROR] 192.168.3.220
+[2020-09-28 15:19:39,598] [ERROR] ({'zbxmc': [ErrorDetail(string='请确保这个字段不能超过 32 个字符。', code='max_length')], 'zdxz': [ErrorDetail(string='请确保这个字段不能超过 128 个字符。', code='max_length')]},)
+[2020-09-28 15:19:39,604] [INFO] "POST /portrait/v1/tzjm/ HTTP/1.1" 200 282
+[2020-09-28 15:33:17,909] [ERROR] dading
+[2020-09-28 15:33:17,912] [ERROR] 192.168.3.243
+[2020-09-28 15:33:17,915] [ERROR] ('’%(value)s‘ 必须为合法的日期时间格式，请使用 YYYY-MM-DD HH:MM[:ss[.uuuuuu]][TZ] 格式。', 'invalid', {'value': ''})
+[2020-09-28 15:33:17,933] [INFO] "GET /warning/v1/xwgjjzgmx/?zgh=02852&kssj=&jssj= HTTP/1.1" 200 264
+[2020-09-28 15:39:44,288] [INFO] "OPTIONS /warning/v1/xwgjjzgmx/?zgh=02852&kssj=2020-09-22&jssj=2020-09-28 HTTP/1.1" 200 0
+[2020-09-28 15:51:21,251] [ERROR] dading
+[2020-09-28 15:51:21,253] [ERROR] 192.168.3.243
+[2020-09-28 15:51:21,254] [ERROR] ('’%(value)s‘ 必须为合法的日期时间格式，请使用 YYYY-MM-DD HH:MM[:ss[.uuuuuu]][TZ] 格式。', 'invalid', {'value': ''})
+[2020-09-28 15:51:21,258] [INFO] "GET /warning/v1/xwgjjzgmx/?zgh=02852&kssj=&jssj= HTTP/1.1" 200 264
+[2020-09-28 15:51:22,119] [INFO] "GET /warning/v1/xwgjjzgmx/?zgh=02852&kssj=2020-09-22&jssj=2020-09-28 HTTP/1.1" 200 105
+[2020-09-28 15:58:48,803] [INFO] "GET /portrait/v1/bm/ HTTP/1.1" 200 3493
+[2020-09-28 15:58:49,760] [INFO] "GET /warning/v1/jzgxwgj/?xm=&zgh=&bm=&kssj=2020-09-21&jssj=2020-09-28&page=1&page_size=10 HTTP/1.1" 200 1175
+[2020-09-28 15:58:52,589] [INFO] "GET /warning/v1/jzgxwgj/?xm=%E8%A7%A3&zgh=&bm=&kssj=2020-09-21&jssj=2020-09-28&page=1&page_size=10 HTTP/1.1" 200 314
+[2020-09-28 15:58:55,495] [ERROR] dading
+[2020-09-28 15:58:55,507] [ERROR] 192.168.3.243
+[2020-09-28 15:58:55,512] [ERROR] ("'Request' object has no attribute 'G'",)
+[2020-09-28 15:58:55,560] [INFO] "GET /warning/v1/xwgjjzgmx/?zgh=02852&kssj=&jssj= HTTP/1.1" 200 103
+[2020-09-28 15:59:13,199] [ERROR] dading
+[2020-09-28 15:59:13,203] [ERROR] 192.168.3.243
+[2020-09-28 15:59:13,208] [ERROR] ("'Request' object has no attribute 'G'",)
+[2020-09-28 15:59:13,237] [INFO] "GET /warning/v1/xwgjjzgmx/?zgh=02852&kssj=&jssj= HTTP/1.1" 200 103
+[2020-09-28 16:07:37,707] [ERROR] dading
+[2020-09-28 16:07:37,711] [ERROR] 192.168.3.243
+[2020-09-28 16:07:37,715] [ERROR] ('’%(value)s‘ 必须为合法的日期时间格式，请使用 YYYY-MM-DD HH:MM[:ss[.uuuuuu]][TZ] 格式。', 'invalid', {'value': ''})
+[2020-09-28 16:07:37,727] [INFO] "GET /warning/v1/xwgjjzgmx/?zgh=02852&kssj=&jssj= HTTP/1.1" 200 264
+[2020-09-28 16:07:56,535] [INFO] "OPTIONS /warning/v1/xwgjjzgmx/?zgh=02852&kssj=2020-09-26&jssj=2020-09-28 HTTP/1.1" 200 0
+[2020-09-28 16:07:57,344] [INFO] "GET /warning/v1/xwgjjzgmx/?zgh=02852&kssj=2020-09-26&jssj=2020-09-28 HTTP/1.1" 200 105
+[2020-09-28 16:31:45,737] [ERROR] dading
+[2020-09-28 16:31:45,744] [ERROR] 192.168.3.243
+[2020-09-28 16:31:45,760] [ERROR] ('’%(value)s‘ 必须为合法的日期时间格式，请使用 YYYY-MM-DD HH:MM[:ss[.uuuuuu]][TZ] 格式。', 'invalid', {'value': ''})
+[2020-09-28 16:31:45,807] [INFO] "GET /warning/v1/xwgjjzgmx/?zgh=02852&kssj=&jssj= HTTP/1.1" 200 264
+[2020-09-28 16:37:50,504] [ERROR] dading
+[2020-09-28 16:37:50,514] [ERROR] 192.168.3.243
+[2020-09-28 16:37:50,523] [ERROR] ('’%(value)s‘ 必须为合法的日期时间格式，请使用 YYYY-MM-DD HH:MM[:ss[.uuuuuu]][TZ] 格式。', 'invalid', {'value': ''})
+[2020-09-28 16:37:50,562] [INFO] "GET /warning/v1/xwgjjzgmx/?zgh=02852&kssj=&jssj= HTTP/1.1" 200 264
+[2020-09-28 16:42:08,295] [ERROR] dading
+[2020-09-28 16:42:08,298] [ERROR] 192.168.3.243
+[2020-09-28 16:42:08,300] [ERROR] ('’%(value)s‘ 必须为合法的日期时间格式，请使用 YYYY-MM-DD HH:MM[:ss[.uuuuuu]][TZ] 格式。', 'invalid', {'value': ''})
+[2020-09-28 16:42:08,364] [INFO] "GET /warning/v1/xwgjjzgmx/?zgh=02852&kssj=&jssj= HTTP/1.1" 200 264
+[2020-09-28 16:44:37,518] [INFO] "OPTIONS /warning/v1/grade/?yx= HTTP/1.1" 200 0
+[2020-09-28 16:44:37,552] [INFO] "OPTIONS /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-09-21&jssj=2020-09-28&page=1&page_size=10&random=1601282677046 HTTP/1.1" 200 0
+[2020-09-28 16:44:37,566] [INFO] "OPTIONS /warning/v1/college HTTP/1.1" 200 0
+[2020-09-28 16:44:38,135] [INFO] "OPTIONS /warning/v1/college/ HTTP/1.1" 200 0
+[2020-09-28 16:44:38,547] [INFO] "GET /warning/v1/grade/?yx= HTTP/1.1" 200 175
+[2020-09-28 16:44:38,632] [INFO] "GET /warning/v1/college/ HTTP/1.1" 200 637
+[2020-09-28 16:44:55,286] [INFO] "POST /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-09-21&jssj=2020-09-28&page=1&page_size=10&random=1601282677046 HTTP/1.1" 200 1835
+[2020-09-28 16:45:14,334] [INFO] "OPTIONS /warning/v1/xwgjmx/?xh=201501267&kssj=&jssj= HTTP/1.1" 200 0
+[2020-09-28 16:45:18,092] [INFO] "GET /warning/v1/xwgjmx/?xh=201501267&kssj=&jssj= HTTP/1.1" 200 20646
+[2020-09-28 16:53:32,057] [ERROR] dading
+[2020-09-28 16:53:32,065] [ERROR] 192.168.3.243
+[2020-09-28 16:53:32,076] [ERROR] ("Cannot resolve keyword 'grgj' into field. Choices are: create_time, id, jd, update_time, user, user_id, wd, xh, xwdd, xwsj",)
+[2020-09-28 16:53:32,117] [INFO] "GET /warning/v1/xwgjmx/?xh=201501267&kssj=&jssj= HTTP/1.1" 200 188
+[2020-09-28 16:56:00,144] [ERROR] dading
+[2020-09-28 16:56:00,177] [ERROR] 192.168.3.243
+[2020-09-28 16:56:00,179] [ERROR] ('’%(value)s‘ 必须为合法的日期时间格式，请使用 YYYY-MM-DD HH:MM[:ss[.uuuuuu]][TZ] 格式。', 'invalid', {'value': ''})
+[2020-09-28 16:56:00,208] [INFO] "GET /warning/v1/xwgjmx/?xh=201501267&kssj=&jssj= HTTP/1.1" 200 264
+[2020-09-28 17:10:57,928] [INFO] "OPTIONS /warning/v1/warningtable/ HTTP/1.1" 200 0
+[2020-09-28 17:10:58,949] [INFO] "OPTIONS /warning/v1/swxw/?xhxm=&xznj=&yx=&bj=&page=1&page_size=10 HTTP/1.1" 200 0
+[2020-09-28 17:10:59,812] [INFO] "GET /warning/v1/grade/?yx= HTTP/1.1" 200 175
+[2020-09-28 17:10:59,971] [INFO] "GET /warning/v1/college/ HTTP/1.1" 200 637
+[2020-09-28 17:11:00,885] [INFO] "GET /warning/v1/warningtable/ HTTP/1.1" 200 1031
+[2020-09-28 17:11:07,043] [INFO] "POST /warning/v1/swxw/?xhxm=&xznj=&yx=&bj=&page=1&page_size=10 HTTP/1.1" 200 2074
+[2020-09-28 17:11:11,193] [INFO] "OPTIONS /warning/v1/swxwmx/?xh=201501267&kssj=0001-01-01&jssj=2020-09-28&random=1601284271031 HTTP/1.1" 200 0
+[2020-09-28 17:11:12,696] [INFO] "GET /warning/v1/swxwmx/?xh=201501267&kssj=0001-01-01&jssj=2020-09-28&random=1601284271031 HTTP/1.1" 200 710
+[2020-09-28 17:11:54,040] [INFO] "OPTIONS /warning/v1/wg/?xhxm=&xznj=&yx=&bj=&page=1&page_size=10 HTTP/1.1" 200 0
+[2020-09-28 17:11:54,334] [INFO] "GET /warning/v1/grade/?yx= HTTP/1.1" 200 175
+[2020-09-28 17:11:54,583] [INFO] "GET /warning/v1/college/ HTTP/1.1" 200 637
+[2020-09-28 17:11:56,903] [INFO] "POST /warning/v1/wg/?xhxm=&xznj=&yx=&bj=&page=1&page_size=10 HTTP/1.1" 200 2139
+[2020-09-28 17:11:59,388] [INFO] "OPTIONS /warning/v1/wgmx/?xh=201501331&clzt=&ycqk=&yjdj=&kssj=&jssj=&page=1&page_size=10&random=1601284319072 HTTP/1.1" 200 0
+[2020-09-28 17:12:00,574] [INFO] "GET /warning/v1/wgmx/?xh=201501331&clzt=&ycqk=&yjdj=&kssj=&jssj=&page=1&page_size=10&random=1601284319072 HTTP/1.1" 200 718
+[2020-09-28 17:12:06,717] [INFO] "GET /warning/v1/grade/?yx= HTTP/1.1" 200 175
+[2020-09-28 17:12:06,920] [INFO] "GET /warning/v1/college/ HTTP/1.1" 200 637
+[2020-09-28 17:12:11,203] [INFO] "POST /warning/v1/swxw/?xhxm=&xznj=&yx=&bj=&page=1&page_size=10 HTTP/1.1" 200 2074
+[2020-09-28 17:14:58,350] [INFO] "OPTIONS /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-09-21&jssj=2020-09-28&page=1&page_size=10&random=1601284498103 HTTP/1.1" 200 0
+[2020-09-28 17:14:59,680] [INFO] "GET /warning/v1/grade/?yx= HTTP/1.1" 200 175
+[2020-09-28 17:14:59,886] [INFO] "GET /warning/v1/college/ HTTP/1.1" 200 637
+[2020-09-28 17:15:11,903] [INFO] "POST /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-09-21&jssj=2020-09-28&page=1&page_size=10&random=1601284498103 HTTP/1.1" 200 1835
+[2020-09-28 17:15:26,753] [INFO] "OPTIONS /portrait/v1/bm/ HTTP/1.1" 200 0
+[2020-09-28 17:15:26,864] [INFO] "OPTIONS /warning/v1/jzgxwgj/?xm=&zgh=&bm=&kssj=2020-09-21&jssj=2020-09-28&page=1&page_size=10 HTTP/1.1" 200 0
+[2020-09-28 17:15:27,684] [INFO] "GET /portrait/v1/bm/ HTTP/1.1" 200 3493
+[2020-09-28 17:15:28,780] [INFO] "GET /warning/v1/jzgxwgj/?xm=&zgh=&bm=&kssj=2020-09-21&jssj=2020-09-28&page=1&page_size=10 HTTP/1.1" 200 1175
+[2020-09-28 17:15:33,086] [INFO] "OPTIONS /warning/v1/jzgxwgj/?xm=%E8%A7%A3&zgh=&bm=&kssj=2020-09-21&jssj=2020-09-28&page=1&page_size=10 HTTP/1.1" 200 0
+[2020-09-28 17:15:33,418] [INFO] "GET /warning/v1/jzgxwgj/?xm=%E8%A7%A3&zgh=&bm=&kssj=2020-09-21&jssj=2020-09-28&page=1&page_size=10 HTTP/1.1" 200 314
+[2020-09-28 17:15:35,713] [INFO] "OPTIONS /warning/v1/xwgjjzgmx/?zgh=02852&kssj=&jssj= HTTP/1.1" 200 0
+[2020-09-28 17:15:38,509] [INFO] "GET /warning/v1/xwgjjzgmx/?zgh=02852&kssj=&jssj= HTTP/1.1" 200 79640
+[2020-09-28 17:17:53,567] [INFO] "OPTIONS /portrait/v1/xshxjsd/?xm=&xh=&xznj=&yx=&bj=&page=1&page_size=10 HTTP/1.1" 200 0
+[2020-09-28 17:17:53,972] [INFO] "GET /warning/v1/grade/?yx= HTTP/1.1" 200 175
+[2020-09-28 17:17:54,952] [INFO] "GET /portrait/v1/xshxjsd/?xm=&xh=&xznj=&yx=&bj=&page=1&page_size=10 HTTP/1.1" 200 1915
+[2020-09-28 17:17:55,534] [INFO] "GET /warning/v1/college/ HTTP/1.1" 200 637
+[2020-09-28 17:17:59,892] [INFO] "OPTIONS /portrait/v1/xshxjstxq/?xh=201404051 HTTP/1.1" 200 0
+[2020-09-28 17:18:00,353] [INFO] "GET /portrait/v1/xshxjstxq/?xh=201404051 HTTP/1.1" 200 173
+[2020-09-28 17:18:02,651] [INFO] "GET /portrait/v1/xshxjsd/?xm=&xh=&xznj=&yx=&bj=&page=1&page_size=10 HTTP/1.1" 200 1915
+[2020-09-28 17:18:02,669] [INFO] "GET /warning/v1/grade/?yx= HTTP/1.1" 200 175
+[2020-09-28 17:18:02,861] [INFO] "GET /warning/v1/college/ HTTP/1.1" 200 637
+[2020-09-28 17:18:07,245] [INFO] "OPTIONS /warning/v1/yjyzsz/?yjmc= HTTP/1.1" 200 0
+[2020-09-28 17:18:07,800] [INFO] "GET /warning/v1/yjyzsz/?yjmc= HTTP/1.1" 200 1420
+[2020-09-28 17:18:09,677] [INFO] "OPTIONS /portrait/v1/hxbqsz/?bqmc=&page=1&page_size=10&random=1601284689432 HTTP/1.1" 200 0
+[2020-09-28 17:18:11,027] [INFO] "GET /portrait/v1/hxbqsz/?bqmc=&page=1&page_size=10&random=1601284689432 HTTP/1.1" 200 5893
+[2020-09-28 17:18:14,368] [INFO] "OPTIONS /portrait/v1/hxbqsz/?id=222&random=1601284694245 HTTP/1.1" 200 0
+[2020-09-28 17:18:14,913] [INFO] "DELETE /portrait/v1/hxbqsz/?id=222&random=1601284694245 HTTP/1.1" 200 107
+[2020-09-28 17:18:15,069] [INFO] "OPTIONS /portrait/v1/hxbqsz/?bqmc=&page=1&page_size=10&random=1601284694918 HTTP/1.1" 200 0
+[2020-09-28 17:18:16,247] [INFO] "GET /portrait/v1/hxbqsz/?bqmc=&page=1&page_size=10&random=1601284694918 HTTP/1.1" 200 6025
+[2020-09-28 17:18:20,359] [INFO] "OPTIONS /portrait/v1/hxbqsz/?id=220&random=1601284700269 HTTP/1.1" 200 0
+[2020-09-28 17:18:20,677] [INFO] "DELETE /portrait/v1/hxbqsz/?id=220&random=1601284700269 HTTP/1.1" 200 107
+[2020-09-28 17:18:20,781] [INFO] "OPTIONS /portrait/v1/hxbqsz/?bqmc=&page=1&page_size=10&random=1601284700683 HTTP/1.1" 200 0
+[2020-09-28 17:18:21,413] [INFO] "GET /portrait/v1/hxbqsz/?bqmc=&page=1&page_size=10&random=1601284700683 HTTP/1.1" 200 6052
+[2020-09-28 17:18:26,064] [INFO] "OPTIONS /portrait/v1/hxbqsz/?id=219,218&random=1601284706009 HTTP/1.1" 200 0
+[2020-09-28 17:18:26,584] [INFO] "DELETE /portrait/v1/hxbqsz/?id=219,218&random=1601284706009 HTTP/1.1" 200 107
+[2020-09-28 17:18:26,713] [INFO] "OPTIONS /portrait/v1/hxbqsz/?bqmc=&page=1&page_size=10&random=1601284706590 HTTP/1.1" 200 0
+[2020-09-28 17:18:27,146] [INFO] "GET /portrait/v1/hxbqsz/?bqmc=&page=1&page_size=10&random=1601284706590 HTTP/1.1" 200 6094
+[2020-09-28 17:18:51,189] [INFO] "GET /portrait/v1/bm/ HTTP/1.1" 200 3493
+[2020-09-28 17:18:52,883] [INFO] "GET /warning/v1/jzgxwgj/?xm=&zgh=&bm=&kssj=2020-09-21&jssj=2020-09-28&page=1&page_size=10 HTTP/1.1" 200 1175
+[2020-09-28 17:18:56,001] [INFO] "OPTIONS /warning/v1/xwgjjzgmx/?zgh=02655&kssj=&jssj= HTTP/1.1" 200 0
+[2020-09-28 17:18:58,726] [INFO] "GET /warning/v1/xwgjjzgmx/?zgh=02655&kssj=&jssj= HTTP/1.1" 200 37215
+[2020-09-28 17:20:06,225] [INFO] "GET /warning/v1/warningtable/ HTTP/1.1" 200 1031
+[2020-09-28 17:20:08,753] [INFO] "GET /warning/v1/grade/?yx= HTTP/1.1" 200 175
+[2020-09-28 17:20:09,328] [INFO] "GET /warning/v1/college/ HTTP/1.1" 200 637
+[2020-09-28 17:20:16,188] [INFO] "POST /warning/v1/swxw/?xhxm=&xznj=&yx=&bj=&page=1&page_size=10 HTTP/1.1" 200 2074
+[2020-09-28 17:20:19,307] [INFO] "OPTIONS /warning/v1/swxwmx/?xh=201501267&kssj=0001-01-01&jssj=2020-09-28&random=1601284818961 HTTP/1.1" 200 0
+[2020-09-28 17:20:21,501] [INFO] "GET /warning/v1/swxwmx/?xh=201501267&kssj=0001-01-01&jssj=2020-09-28&random=1601284818961 HTTP/1.1" 200 710
+[2020-09-28 17:24:31,859] [INFO] "GET /warning/v1/grade/?yx= HTTP/1.1" 200 175
+[2020-09-28 17:24:32,089] [INFO] "GET /portrait/v1/xshxjsd/?xm=&xh=&xznj=&yx=&bj=&page=1&page_size=10 HTTP/1.1" 200 1915
+[2020-09-28 17:24:32,680] [INFO] "GET /warning/v1/college/ HTTP/1.1" 200 637
+[2020-09-28 17:24:36,562] [INFO] "OPTIONS /portrait/v1/hxbqsz/?bqmc=&page=1&page_size=10&random=1601285074246 HTTP/1.1" 200 0
+[2020-09-28 17:24:36,953] [INFO] "GET /portrait/v1/hxbqsz/?bqmc=&page=1&page_size=10&random=1601285074246 HTTP/1.1" 200 6094
+[2020-09-28 17:28:13,178] [INFO] "OPTIONS /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601285293051 HTTP/1.1" 200 0
+[2020-09-28 17:28:13,593] [INFO] "GET /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601285293051 HTTP/1.1" 200 1461
+[2020-09-28 17:28:26,247] [INFO] "OPTIONS /portrait/v1/tzjm/?zbxmc=&zbfl=&page=1&page_size=10&random=1601285306128 HTTP/1.1" 200 0
+[2020-09-28 17:28:26,658] [INFO] "GET /portrait/v1/tzjm/?zbxmc=&zbfl=&page=1&page_size=10&random=1601285306128 HTTP/1.1" 200 967
+[2020-09-28 17:28:31,076] [INFO] "OPTIONS /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601285310908 HTTP/1.1" 200 0
+[2020-09-28 17:28:31,432] [INFO] "GET /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601285310908 HTTP/1.1" 200 1461
+[2020-09-28 17:28:37,863] [INFO] "GET /warning/v1/grade/?yx= HTTP/1.1" 200 175
+[2020-09-28 17:28:37,960] [INFO] "GET /portrait/v1/xshxjsd/?xm=&xh=&xznj=&yx=&bj=&page=1&page_size=10 HTTP/1.1" 200 1915
+[2020-09-28 17:28:38,537] [INFO] "GET /warning/v1/college/ HTTP/1.1" 200 637
+[2020-09-28 17:29:12,546] [INFO] "GET /warning/v1/grade/?yx= HTTP/1.1" 200 175
+[2020-09-28 17:29:13,308] [INFO] "GET /warning/v1/college/ HTTP/1.1" 200 637
+[2020-09-28 17:29:15,062] [INFO] "POST /warning/v1/wg/?xhxm=&xznj=&yx=&bj=&page=1&page_size=10 HTTP/1.1" 200 2139
+[2020-09-28 17:29:18,945] [INFO] "OPTIONS /warning/v1/wgmx/?xh=201509073&clzt=&ycqk=&yjdj=&kssj=&jssj=&page=1&page_size=10&random=1601285358838 HTTP/1.1" 200 0
+[2020-09-28 17:29:20,011] [INFO] "GET /warning/v1/wgmx/?xh=201509073&clzt=&ycqk=&yjdj=&kssj=&jssj=&page=1&page_size=10&random=1601285358838 HTTP/1.1" 200 2459
+[2020-09-28 17:29:27,728] [INFO] "GET /warning/v1/grade/?yx= HTTP/1.1" 200 175
+[2020-09-28 17:29:28,102] [INFO] "GET /warning/v1/college/ HTTP/1.1" 200 637
+[2020-09-28 17:29:29,919] [INFO] "POST /warning/v1/wg/?xhxm=&xznj=&yx=&bj=&page=1&page_size=10 HTTP/1.1" 200 2139
+[2020-09-28 17:29:37,805] [INFO] "OPTIONS /warning/v1/wgmx/?xh=201509073&clzt=&ycqk=&yjdj=&kssj=&jssj=&page=1&page_size=10&random=1601285377414 HTTP/1.1" 200 0
+[2020-09-28 17:29:39,223] [INFO] "GET /warning/v1/wgmx/?xh=201509073&clzt=&ycqk=&yjdj=&kssj=&jssj=&page=1&page_size=10&random=1601285377414 HTTP/1.1" 200 2459
+[2020-09-28 17:31:51,503] [INFO] "OPTIONS /warning/v1/wgmx/?xh=201509073&clzt=&ycqk=&yjdj=&kssj=&jssj=&page=1&page_size=10&random=1601285511273 HTTP/1.1" 200 0
+[2020-09-28 17:31:52,584] [INFO] "GET /warning/v1/wgmx/?xh=201509073&clzt=&ycqk=&yjdj=&kssj=&jssj=&page=1&page_size=10&random=1601285511273 HTTP/1.1" 200 2459
+[2020-09-28 17:33:14,013] [INFO] "GET /warning/v1/college/ HTTP/1.1" 200 637
+[2020-09-28 17:33:14,017] [INFO] "GET /warning/v1/grade/?yx= HTTP/1.1" 200 175
+[2020-09-28 17:33:15,805] [INFO] "POST /warning/v1/wg/?xhxm=&xznj=&yx=&bj=&page=1&page_size=10 HTTP/1.1" 200 2139
+[2020-09-28 18:47:39,751] [INFO] "OPTIONS /portrait/v1/hxbqsz/?bqmc=&page=1&page_size=10&random=1601290059372 HTTP/1.1" 200 0
+[2020-09-28 18:47:40,754] [INFO] "GET /portrait/v1/hxbqsz/?bqmc=&page=1&page_size=10&random=1601290059372 HTTP/1.1" 200 6094
+[2020-09-28 18:47:45,730] [INFO] "OPTIONS /portrait/v1/hxbqszzbx/?id=49&random=1601290064724 HTTP/1.1" 200 0
+[2020-09-28 18:47:45,957] [INFO] "OPTIONS /portrait/v1/bqwd/?kqzt=1&page=1&random=1601290064719 HTTP/1.1" 200 0
+[2020-09-28 18:47:47,292] [INFO] "GET /portrait/v1/hxbqszzbx/?id=49&random=1601290064724 HTTP/1.1" 200 275
+[2020-09-28 18:47:47,552] [INFO] "GET /portrait/v1/bqwd/?kqzt=1&page=1&random=1601290064719 HTTP/1.1" 200 1397
+[2020-09-28 18:52:02,010] [INFO] "OPTIONS /portrait/v1/hxbqsz/ HTTP/1.1" 200 0
+[2020-09-28 18:54:23,065] [INFO] "PUT /portrait/v1/hxbqsz/ HTTP/1.1" 200 107
+[2020-09-28 18:54:23,200] [INFO] "OPTIONS /portrait/v1/hxbqsz/?bqmc=&page=1&page_size=10&random=1601290463089 HTTP/1.1" 200 0
+[2020-09-28 18:54:24,096] [INFO] "GET /portrait/v1/hxbqsz/?bqmc=&page=1&page_size=10&random=1601290463089 HTTP/1.1" 200 6094
+[2020-09-28 19:47:12,187] [INFO] "OPTIONS /portrait/v1/bqwd/?kqzt=1&page=1&random=1601293631590 HTTP/1.1" 200 0
+[2020-09-28 19:47:12,260] [INFO] "OPTIONS /portrait/v1/hxbqszzbx/?id=49&random=1601293631595 HTTP/1.1" 200 0
+[2020-09-28 19:47:13,167] [INFO] "GET /portrait/v1/hxbqszzbx/?id=49&random=1601293631595 HTTP/1.1" 200 275
+[2020-09-28 19:47:13,250] [INFO] "GET /portrait/v1/bqwd/?kqzt=1&page=1&random=1601293631590 HTTP/1.1" 200 1397
+[2020-09-28 19:47:49,958] [ERROR] dading
+[2020-09-28 19:47:49,960] [ERROR] 192.168.3.243
+[2020-09-28 19:47:54,287] [ERROR] ('You must call `.is_valid()` before calling `.save()`.',)
+[2020-09-28 19:47:55,772] [INFO] "PUT /portrait/v1/hxbqsz/ HTTP/1.1" 200 119
+[2020-09-28 19:51:30,693] [INFO] "OPTIONS /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601293890381 HTTP/1.1" 200 0
+[2020-09-28 19:51:31,140] [INFO] "GET /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601293890381 HTTP/1.1" 200 1461
+[2020-09-28 19:51:37,751] [INFO] "OPTIONS /portrait/v1/bqwd/ HTTP/1.1" 200 0
+[2020-09-28 19:51:38,013] [INFO] "PUT /portrait/v1/bqwd/ HTTP/1.1" 200 107
+[2020-09-28 19:51:38,330] [INFO] "OPTIONS /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601293898111 HTTP/1.1" 200 0
+[2020-09-28 19:51:39,562] [INFO] "GET /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601293898111 HTTP/1.1" 200 1479
+[2020-09-29 10:19:03,028] [INFO] "OPTIONS /warning/v1/grade/?yx= HTTP/1.1" 200 0
+[2020-09-29 10:19:03,031] [INFO] "OPTIONS /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-09-22&jssj=2020-09-29&page=1&page_size=10&random=1601345942405 HTTP/1.1" 200 0
+[2020-09-29 10:19:03,034] [INFO] "OPTIONS /warning/v1/college HTTP/1.1" 200 0
+[2020-09-29 10:19:03,114] [INFO] "OPTIONS /warning/v1/college/ HTTP/1.1" 200 0
+[2020-09-29 10:19:03,415] [WARNING] "GET /warning/v1/grade/?yx= HTTP/1.1" 403 94
+[2020-09-29 10:19:03,430] [WARNING] "GET /warning/v1/college/ HTTP/1.1" 403 94
+[2020-09-29 10:19:03,487] [WARNING] "POST /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-09-22&jssj=2020-09-29&page=1&page_size=10&random=1601345942405 HTTP/1.1" 403 94
+[2020-09-29 10:19:04,551] [INFO] "OPTIONS /portrait/v1/bm/ HTTP/1.1" 200 0
+[2020-09-29 10:19:04,554] [INFO] "OPTIONS /warning/v1/jzgxwgj/?xm=&zgh=&bm=&kssj=2020-09-22&jssj=2020-09-29&page=1&page_size=10 HTTP/1.1" 200 0
+[2020-09-29 10:19:04,688] [WARNING] "GET /warning/v1/jzgxwgj/?xm=&zgh=&bm=&kssj=2020-09-22&jssj=2020-09-29&page=1&page_size=10 HTTP/1.1" 403 94
+[2020-09-29 10:19:04,711] [WARNING] "GET /portrait/v1/bm/ HTTP/1.1" 403 94
+[2020-09-29 10:19:05,373] [INFO] "OPTIONS /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-09-22&jssj=2020-09-29&page=1&page_size=10&random=1601345944829 HTTP/1.1" 200 0
+[2020-09-29 10:19:05,530] [WARNING] "GET /warning/v1/grade/?yx= HTTP/1.1" 403 94
+[2020-09-29 10:19:05,570] [WARNING] "GET /warning/v1/college/ HTTP/1.1" 403 94
+[2020-09-29 10:19:05,575] [WARNING] "POST /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-09-22&jssj=2020-09-29&page=1&page_size=10&random=1601345944829 HTTP/1.1" 403 94
+[2020-09-29 10:20:13,210] [INFO] "OPTIONS /portrait/v1/bqwd/?kqzt=1&page=1&random=1601346012630 HTTP/1.1" 200 0
+[2020-09-29 10:20:13,312] [WARNING] "GET /portrait/v1/bqwd/?kqzt=1&page=1&random=1601346012630 HTTP/1.1" 403 94
+[2020-09-29 10:20:24,005] [INFO] "OPTIONS /portrait/v1/tzjm/?zbxmc=&zbfl=&page=1&page_size=10&random=1601346023457 HTTP/1.1" 200 0
+[2020-09-29 10:20:24,088] [WARNING] "GET /portrait/v1/tzjm/?zbxmc=&zbfl=&page=1&page_size=10&random=1601346023457 HTTP/1.1" 403 94
+[2020-09-29 10:20:29,570] [INFO] "OPTIONS /portrait/v1/bqwd/?kqzt=1&random=1601346029013 HTTP/1.1" 200 0
+[2020-09-29 10:20:29,644] [WARNING] "GET /portrait/v1/bqwd/?kqzt=1&random=1601346029013 HTTP/1.1" 403 94
+[2020-09-29 10:20:48,860] [INFO] "OPTIONS /portrait/v1/sjbxz/?zywbm=&page=1&random=1601346048284 HTTP/1.1" 200 0
+[2020-09-29 10:20:48,933] [WARNING] "GET /portrait/v1/sjbxz/?zywbm=&page=1&random=1601346048284 HTTP/1.1" 403 94
+[2020-09-29 10:21:47,083] [INFO] "OPTIONS /portrait/v1/sjbxz/?zywbm=&page=1&random=1601346106195 HTTP/1.1" 200 0
+[2020-09-29 10:21:47,543] [WARNING] "GET /portrait/v1/sjbxz/?zywbm=&page=1&random=1601346106195 HTTP/1.1" 403 94
+[2020-09-29 10:21:54,760] [INFO] "OPTIONS /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601346114130 HTTP/1.1" 200 0
+[2020-09-29 10:21:55,246] [WARNING] "GET /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601346114130 HTTP/1.1" 403 94
+[2020-09-29 10:22:04,199] [INFO] "OPTIONS /login/ HTTP/1.1" 200 0
+[2020-09-29 10:22:05,017] [INFO] "POST /login/ HTTP/1.1" 200 179
+[2020-09-29 10:22:05,149] [INFO] "OPTIONS /warning/v1/warningtable/ HTTP/1.1" 200 0
+[2020-09-29 10:22:06,621] [INFO] "GET /warning/v1/warningtable/ HTTP/1.1" 200 1031
+[2020-09-29 10:22:07,079] [INFO] "OPTIONS /portrait/v1/hxbqsz/?bqmc=&page=1&page_size=10&random=1601346126520 HTTP/1.1" 200 0
+[2020-09-29 10:22:07,326] [INFO] "GET /portrait/v1/hxbqsz/?bqmc=&page=1&page_size=10&random=1601346126520 HTTP/1.1" 200 6094
+[2020-09-29 10:22:09,392] [INFO] "OPTIONS /portrait/v1/tzjm/?zbxmc=&zbfl=&page=1&page_size=10&random=1601346128836 HTTP/1.1" 200 0
+[2020-09-29 10:22:09,573] [INFO] "GET /portrait/v1/tzjm/?zbxmc=&zbfl=&page=1&page_size=10&random=1601346128836 HTTP/1.1" 200 967
+[2020-09-29 10:22:12,801] [INFO] "OPTIONS /portrait/v1/bqwd/?kqzt=1&random=1601346132243 HTTP/1.1" 200 0
+[2020-09-29 10:22:13,108] [INFO] "GET /portrait/v1/bqwd/?kqzt=1&random=1601346132243 HTTP/1.1" 200 1415
+[2020-09-29 10:22:25,092] [INFO] "OPTIONS /portrait/v1/sjbxz/?zywbm=&page=1&random=1601346144523 HTTP/1.1" 200 0
+[2020-09-29 10:22:25,252] [INFO] "GET /portrait/v1/sjbxz/?zywbm=&page=1&random=1601346144523 HTTP/1.1" 200 593
+[2020-09-29 10:22:29,499] [INFO] "OPTIONS /portrait/v1/sjbxzzd/?id=3&zwzdmc=&page=1&zbfl=0&random=1601346148931 HTTP/1.1" 200 0
+[2020-09-29 10:22:29,771] [INFO] "GET /portrait/v1/sjbxzzd/?id=3&zwzdmc=&page=1&zbfl=0&random=1601346148931 HTTP/1.1" 200 1351
+[2020-09-29 10:22:42,363] [INFO] "OPTIONS /portrait/v1/tzjm/ HTTP/1.1" 200 0
+[2020-09-29 10:22:42,480] [ERROR] admin
+[2020-09-29 10:22:42,484] [ERROR] 192.168.3.220
+[2020-09-29 10:22:42,485] [ERROR] ({'zbwd': [ErrorDetail(string='该字段不能为空。', code='blank')]},)
+[2020-09-29 10:22:42,498] [INFO] "POST /portrait/v1/tzjm/ HTTP/1.1" 200 126
+[2020-09-29 10:22:47,431] [INFO] "POST /portrait/v1/tzjm/ HTTP/1.1" 200 107
+[2020-09-29 10:22:47,475] [INFO] "OPTIONS /portrait/v1/tzjm/?zbxmc=&zbfl=&page=1&page_size=10&random=1601346166937 HTTP/1.1" 200 0
+[2020-09-29 10:22:47,674] [INFO] "GET /portrait/v1/tzjm/?zbxmc=&zbfl=&page=1&page_size=10&random=1601346166937 HTTP/1.1" 200 1315
+[2020-09-29 10:23:02,154] [INFO] "OPTIONS /portrait/v1/bqwd/?kqzt=1&random=1601346181594 HTTP/1.1" 200 0
+[2020-09-29 10:23:02,356] [INFO] "GET /portrait/v1/bqwd/?kqzt=1&random=1601346181594 HTTP/1.1" 200 1415
+[2020-09-29 10:23:05,850] [INFO] "OPTIONS /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601346185310 HTTP/1.1" 200 0
+[2020-09-29 10:23:06,047] [INFO] "GET /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601346185310 HTTP/1.1" 200 1479
+[2020-09-29 10:23:11,719] [INFO] "OPTIONS /portrait/v1/bqwd/ HTTP/1.1" 200 0
+[2020-09-29 10:23:11,871] [INFO] "POST /portrait/v1/bqwd/ HTTP/1.1" 200 107
+[2020-09-29 10:23:11,947] [INFO] "OPTIONS /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601346191381 HTTP/1.1" 200 0
+[2020-09-29 10:23:12,123] [INFO] "GET /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601346191381 HTTP/1.1" 200 1476
+[2020-09-29 10:25:36,768] [INFO] "OPTIONS /portrait/v1/bqwd/ HTTP/1.1" 200 0
+[2020-09-29 10:25:37,062] [INFO] "PUT /portrait/v1/bqwd/ HTTP/1.1" 200 107
+[2020-09-29 10:25:37,104] [INFO] "OPTIONS /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601346336569 HTTP/1.1" 200 0
+[2020-09-29 10:25:37,347] [INFO] "GET /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601346336569 HTTP/1.1" 200 1476
+[2020-09-29 10:26:58,087] [INFO] "OPTIONS /portrait/v1/bqwd/ HTTP/1.1" 200 0
+[2020-09-29 10:26:58,225] [ERROR] admin
+[2020-09-29 10:26:58,228] [ERROR] 192.168.3.220
+[2020-09-29 10:26:58,231] [ERROR] ({'wdmc': [ErrorDetail(string='请确保这个字段不能超过 32 个字符。', code='max_length')]},)
+[2020-09-29 10:26:58,239] [INFO] "POST /portrait/v1/bqwd/ HTTP/1.1" 200 172
+[2020-09-29 10:27:08,445] [INFO] "OPTIONS /portrait/v1/bqwd/ HTTP/1.1" 200 0
+[2020-09-29 10:27:08,599] [ERROR] admin
+[2020-09-29 10:27:08,601] [ERROR] 192.168.3.220
+[2020-09-29 10:27:08,602] [ERROR] ({'wdmc': [ErrorDetail(string='请确保这个字段不能超过 32 个字符。', code='max_length')]},)
+[2020-09-29 10:27:08,607] [INFO] "POST /portrait/v1/bqwd/ HTTP/1.1" 200 172
+[2020-09-29 10:30:01,986] [INFO] "OPTIONS /portrait/v1/tzjm/?zbxmc=&zbfl=&page=1&page_size=10&random=1601346601440 HTTP/1.1" 200 0
+[2020-09-29 10:30:02,773] [INFO] "GET /portrait/v1/tzjm/?zbxmc=&zbfl=&page=1&page_size=10&random=1601346601440 HTTP/1.1" 200 1315
+[2020-09-29 10:30:02,855] [INFO] "OPTIONS /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601346602302 HTTP/1.1" 200 0
+[2020-09-29 10:30:03,257] [INFO] "GET /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601346602302 HTTP/1.1" 200 1476
+[2020-09-29 10:30:11,141] [INFO] "OPTIONS /portrait/v1/bqwd/ HTTP/1.1" 200 0
+[2020-09-29 10:30:11,604] [INFO] "POST /portrait/v1/bqwd/ HTTP/1.1" 200 107
+[2020-09-29 10:30:11,711] [INFO] "OPTIONS /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601346611117 HTTP/1.1" 200 0
+[2020-09-29 10:30:11,919] [INFO] "GET /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601346611117 HTTP/1.1" 200 1506
+[2020-09-29 10:30:52,746] [INFO] "OPTIONS /portrait/v1/bqwd/ HTTP/1.1" 200 0
+[2020-09-29 10:30:52,873] [INFO] "POST /portrait/v1/bqwd/ HTTP/1.1" 200 90
+[2020-09-29 10:30:59,309] [INFO] "OPTIONS /portrait/v1/bqwd/ HTTP/1.1" 200 0
+[2020-09-29 10:30:59,426] [ERROR] admin
+[2020-09-29 10:30:59,427] [ERROR] 192.168.3.220
+[2020-09-29 10:30:59,428] [ERROR] ({'wdmc': [ErrorDetail(string='请确保这个字段不能超过 32 个字符。', code='max_length')]},)
+[2020-09-29 10:30:59,434] [INFO] "POST /portrait/v1/bqwd/ HTTP/1.1" 200 172
+[2020-09-29 10:32:33,382] [INFO] "OPTIONS /portrait/v1/tzjm/?zbxmc=&zbfl=&page=1&page_size=10&random=1601346752705 HTTP/1.1" 200 0
+[2020-09-29 10:32:33,675] [INFO] "GET /portrait/v1/tzjm/?zbxmc=&zbfl=&page=1&page_size=10&random=1601346752705 HTTP/1.1" 200 1315
+[2020-09-29 10:32:35,364] [INFO] "OPTIONS /portrait/v1/hxbqsz/?bqmc=&page=1&page_size=10&random=1601346754760 HTTP/1.1" 200 0
+[2020-09-29 10:32:35,671] [INFO] "GET /portrait/v1/hxbqsz/?bqmc=&page=1&page_size=10&random=1601346754760 HTTP/1.1" 200 6094
+[2020-09-29 10:32:37,103] [INFO] "OPTIONS /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601346756555 HTTP/1.1" 200 0
+[2020-09-29 10:32:37,384] [INFO] "GET /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601346756555 HTTP/1.1" 200 1506
+[2020-09-29 10:32:38,369] [INFO] "OPTIONS /portrait/v1/tzjm/?zbxmc=&zbfl=&page=1&page_size=10&random=1601346757797 HTTP/1.1" 200 0
+[2020-09-29 10:32:38,612] [INFO] "GET /portrait/v1/tzjm/?zbxmc=&zbfl=&page=1&page_size=10&random=1601346757797 HTTP/1.1" 200 1315
+[2020-09-29 10:32:41,413] [INFO] "OPTIONS /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601346760825 HTTP/1.1" 200 0
+[2020-09-29 10:32:41,630] [INFO] "GET /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601346760825 HTTP/1.1" 200 1506
+[2020-09-29 10:32:42,630] [INFO] "OPTIONS /portrait/v1/hxbqsz/?bqmc=&page=1&page_size=10&random=1601346762085 HTTP/1.1" 200 0
+[2020-09-29 10:32:42,886] [INFO] "GET /portrait/v1/hxbqsz/?bqmc=&page=1&page_size=10&random=1601346762085 HTTP/1.1" 200 6094
+[2020-09-29 10:32:44,185] [INFO] "OPTIONS /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601346763646 HTTP/1.1" 200 0
+[2020-09-29 10:32:44,381] [INFO] "GET /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601346763646 HTTP/1.1" 200 1506
+[2020-09-29 10:32:45,019] [INFO] "OPTIONS /portrait/v1/tzjm/?zbxmc=&zbfl=&page=1&page_size=10&random=1601346764471 HTTP/1.1" 200 0
+[2020-09-29 10:32:45,268] [INFO] "GET /portrait/v1/tzjm/?zbxmc=&zbfl=&page=1&page_size=10&random=1601346764471 HTTP/1.1" 200 1315
+[2020-09-29 10:32:54,672] [INFO] "OPTIONS /portrait/v1/hxbqsz/?bqmc=&page=1&page_size=10&random=1601346774117 HTTP/1.1" 200 0
+[2020-09-29 10:32:55,271] [INFO] "GET /portrait/v1/hxbqsz/?bqmc=&page=1&page_size=10&random=1601346774117 HTTP/1.1" 200 6094
+[2020-09-29 10:32:56,990] [INFO] "OPTIONS /portrait/v1/hxbqsz/?bqmc=&page=1&page_size=10&random=1601346776446 HTTP/1.1" 200 0
+[2020-09-29 10:32:57,320] [INFO] "GET /portrait/v1/hxbqsz/?bqmc=&page=1&page_size=10&random=1601346776446 HTTP/1.1" 200 6094
+[2020-09-29 10:32:58,158] [INFO] "OPTIONS /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601346777612 HTTP/1.1" 200 0
+[2020-09-29 10:32:58,638] [INFO] "GET /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601346777612 HTTP/1.1" 200 1506
+[2020-09-29 10:32:59,034] [INFO] "OPTIONS /portrait/v1/tzjm/?zbxmc=&zbfl=&page=1&page_size=10&random=1601346778456 HTTP/1.1" 200 0
+[2020-09-29 10:32:59,575] [INFO] "GET /portrait/v1/tzjm/?zbxmc=&zbfl=&page=1&page_size=10&random=1601346778456 HTTP/1.1" 200 1315
+[2020-09-29 10:33:28,192] [INFO] "OPTIONS /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601346807446 HTTP/1.1" 200 0
+[2020-09-29 10:33:28,521] [INFO] "GET /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601346807446 HTTP/1.1" 200 1506
+[2020-09-29 10:33:31,435] [INFO] "OPTIONS /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601346810850 HTTP/1.1" 200 0
+[2020-09-29 10:33:31,682] [INFO] "GET /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601346810850 HTTP/1.1" 200 1506
+[2020-09-29 10:33:52,061] [INFO] "OPTIONS /portrait/v1/bqwd/ HTTP/1.1" 200 0
+[2020-09-29 10:33:52,226] [INFO] "POST /portrait/v1/bqwd/ HTTP/1.1" 200 107
+[2020-09-29 10:33:52,296] [INFO] "OPTIONS /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601346831733 HTTP/1.1" 200 0
+[2020-09-29 10:33:52,521] [INFO] "GET /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601346831733 HTTP/1.1" 200 1524
+[2020-09-29 10:35:22,787] [INFO] "OPTIONS /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601346922233 HTTP/1.1" 200 0
+[2020-09-29 10:35:22,988] [INFO] "GET /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601346922233 HTTP/1.1" 200 1524
+[2020-09-29 10:35:25,101] [INFO] "OPTIONS /portrait/v1/tzjm/?zbxmc=&zbfl=&page=1&page_size=10&random=1601346924538 HTTP/1.1" 200 0
+[2020-09-29 10:35:25,380] [INFO] "GET /portrait/v1/tzjm/?zbxmc=&zbfl=&page=1&page_size=10&random=1601346924538 HTTP/1.1" 200 1315
+[2020-09-29 10:35:26,274] [INFO] "OPTIONS /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601346925716 HTTP/1.1" 200 0
+[2020-09-29 10:35:26,577] [INFO] "GET /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601346925716 HTTP/1.1" 200 1524
+[2020-09-29 10:35:27,032] [INFO] "OPTIONS /portrait/v1/hxbqsz/?bqmc=&page=1&page_size=10&random=1601346926482 HTTP/1.1" 200 0
+[2020-09-29 10:35:27,327] [INFO] "GET /portrait/v1/hxbqsz/?bqmc=&page=1&page_size=10&random=1601346926482 HTTP/1.1" 200 6094
+[2020-09-29 10:35:28,122] [INFO] "OPTIONS /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601346927561 HTTP/1.1" 200 0
+[2020-09-29 10:35:28,464] [INFO] "GET /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601346927561 HTTP/1.1" 200 1524
+[2020-09-29 10:36:11,349] [INFO] "OPTIONS /portrait/v1/hxbqsz/?bqmc=&page=1&page_size=10&random=1601346970802 HTTP/1.1" 200 0
+[2020-09-29 10:36:11,640] [INFO] "GET /portrait/v1/hxbqsz/?bqmc=&page=1&page_size=10&random=1601346970802 HTTP/1.1" 200 6094
+[2020-09-29 10:36:14,245] [INFO] "OPTIONS /portrait/v1/tzjm/?zbxmc=&zbfl=&page=1&page_size=10&random=1601346973691 HTTP/1.1" 200 0
+[2020-09-29 10:36:14,454] [INFO] "GET /portrait/v1/tzjm/?zbxmc=&zbfl=&page=1&page_size=10&random=1601346973691 HTTP/1.1" 200 1315
+[2020-09-29 10:36:16,689] [INFO] "OPTIONS /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601346976147 HTTP/1.1" 200 0
+[2020-09-29 10:36:16,883] [INFO] "GET /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601346976147 HTTP/1.1" 200 1524
+[2020-09-29 10:42:05,431] [INFO] "OPTIONS /login/ HTTP/1.1" 200 0
+[2020-09-29 10:42:06,365] [INFO] "POST /login/ HTTP/1.1" 200 179
+[2020-09-29 10:42:06,677] [INFO] "OPTIONS /warning/v1/warningtable/ HTTP/1.1" 200 0
+[2020-09-29 10:42:07,811] [INFO] "GET /warning/v1/warningtable/ HTTP/1.1" 200 1031
+[2020-09-29 10:42:11,453] [INFO] "OPTIONS /portrait/v1/hxbqsz/?bqmc=&page=1&page_size=10&random=1601347331394 HTTP/1.1" 200 0
+[2020-09-29 10:42:12,016] [INFO] "GET /portrait/v1/hxbqsz/?bqmc=&page=1&page_size=10&random=1601347331394 HTTP/1.1" 200 6094
+[2020-09-29 10:42:14,119] [INFO] "OPTIONS /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601347334037 HTTP/1.1" 200 0
+[2020-09-29 10:42:14,473] [INFO] "GET /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601347334037 HTTP/1.1" 200 1524
+[2020-09-29 10:43:00,681] [INFO] "OPTIONS /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601347380539 HTTP/1.1" 200 0
+[2020-09-29 10:43:01,114] [INFO] "GET /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601347380539 HTTP/1.1" 200 1524
+[2020-09-29 10:43:07,933] [INFO] "OPTIONS /portrait/v1/hxbqsz/?bqmc=&page=1&page_size=10&random=1601347387637 HTTP/1.1" 200 0
+[2020-09-29 10:43:08,600] [INFO] "GET /portrait/v1/hxbqsz/?bqmc=&page=1&page_size=10&random=1601347387637 HTTP/1.1" 200 6094
+[2020-09-29 10:43:08,603] [INFO] "OPTIONS /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601347388413 HTTP/1.1" 200 0
+[2020-09-29 10:43:09,049] [INFO] "GET /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601347388413 HTTP/1.1" 200 1524
+[2020-09-29 10:43:10,208] [INFO] "OPTIONS /portrait/v1/hxbqsz/?bqmc=&page=1&page_size=10&random=1601347390114 HTTP/1.1" 200 0
+[2020-09-29 10:43:10,706] [INFO] "GET /portrait/v1/hxbqsz/?bqmc=&page=1&page_size=10&random=1601347390114 HTTP/1.1" 200 6094
+[2020-09-29 10:43:12,120] [INFO] "OPTIONS /portrait/v1/tzjm/?zbxmc=&zbfl=&page=1&page_size=10&random=1601347392007 HTTP/1.1" 200 0
+[2020-09-29 10:43:12,461] [INFO] "GET /portrait/v1/tzjm/?zbxmc=&zbfl=&page=1&page_size=10&random=1601347392007 HTTP/1.1" 200 1315
+[2020-09-29 10:43:13,888] [INFO] "OPTIONS /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601347393800 HTTP/1.1" 200 0
+[2020-09-29 10:43:14,533] [INFO] "GET /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601347393800 HTTP/1.1" 200 1524
+[2020-09-29 10:44:30,403] [INFO] "OPTIONS /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601347470191 HTTP/1.1" 200 0
+[2020-09-29 10:44:30,809] [INFO] "GET /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601347470191 HTTP/1.1" 200 1454
+[2020-09-29 10:44:34,302] [INFO] "OPTIONS /portrait/v1/hxbqsz/?bqmc=&page=1&page_size=10&random=1601347473776 HTTP/1.1" 200 0
+[2020-09-29 10:44:34,639] [INFO] "GET /portrait/v1/hxbqsz/?bqmc=&page=1&page_size=10&random=1601347473776 HTTP/1.1" 200 6094
+[2020-09-29 10:44:34,833] [INFO] "OPTIONS /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601347474650 HTTP/1.1" 200 0
+[2020-09-29 10:44:35,192] [INFO] "GET /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601347474650 HTTP/1.1" 200 1454
+[2020-09-29 10:45:47,909] [INFO] "OPTIONS /portrait/v1/tzjm/?zbxmc=&zbfl=&page=1&page_size=10&random=1601347547784 HTTP/1.1" 200 0
+[2020-09-29 10:45:48,117] [INFO] "GET /portrait/v1/tzjm/?zbxmc=&zbfl=&page=1&page_size=10&random=1601347547784 HTTP/1.1" 200 1315
+[2020-09-29 10:50:19,015] [INFO] "OPTIONS /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601347818400 HTTP/1.1" 200 0
+[2020-09-29 10:50:19,129] [INFO] "GET /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601347818400 HTTP/1.1" 200 1454
+[2020-09-29 10:51:35,237] [INFO] "OPTIONS /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601347894673 HTTP/1.1" 200 0
+[2020-09-29 10:51:35,407] [INFO] "GET /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601347894673 HTTP/1.1" 200 1454
+[2020-09-29 10:51:38,906] [INFO] "OPTIONS /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601347898298 HTTP/1.1" 200 0
+[2020-09-29 10:51:39,092] [INFO] "GET /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601347898298 HTTP/1.1" 200 1454
+[2020-09-29 10:51:50,735] [INFO] "OPTIONS /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601347910160 HTTP/1.1" 200 0
+[2020-09-29 10:51:50,876] [INFO] "GET /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601347910160 HTTP/1.1" 200 1454
+[2020-09-29 10:52:01,278] [INFO] "OPTIONS /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601347920721 HTTP/1.1" 200 0
+[2020-09-29 10:52:01,388] [INFO] "GET /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601347920721 HTTP/1.1" 200 1454
+[2020-09-29 10:52:25,159] [INFO] "OPTIONS /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601347944534 HTTP/1.1" 200 0
+[2020-09-29 10:52:25,303] [INFO] "GET /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601347944534 HTTP/1.1" 200 1454
+[2020-09-29 10:52:36,070] [INFO] "OPTIONS /portrait/v1/bqwd/ HTTP/1.1" 200 0
+[2020-09-29 10:52:36,171] [ERROR] admin
+[2020-09-29 10:52:36,172] [ERROR] 192.168.3.220
+[2020-09-29 10:52:36,173] [ERROR] ({'create_time': [ErrorDetail(string='该字段是必填项。', code='required')]},)
+[2020-09-29 10:52:36,179] [INFO] "POST /portrait/v1/bqwd/ HTTP/1.1" 200 133
+[2020-09-29 10:56:31,979] [INFO] "OPTIONS /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601348191390 HTTP/1.1" 200 0
+[2020-09-29 10:56:32,487] [INFO] "GET /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601348191390 HTTP/1.1" 200 1524
+[2020-09-29 10:56:38,029] [INFO] "POST /login/ HTTP/1.1" 200 179
+[2020-09-29 10:56:38,912] [INFO] "OPTIONS /portrait/v1/tzjm/?zbxmc=&zbfl=&page=1&page_size=10&random=1601348198596 HTTP/1.1" 200 0
+[2020-09-29 10:56:39,808] [INFO] "GET /portrait/v1/tzjm/?zbxmc=&zbfl=&page=1&page_size=10&random=1601348198596 HTTP/1.1" 200 1315
+[2020-09-29 10:56:40,522] [INFO] "GET /warning/v1/warningtable/ HTTP/1.1" 200 1031
+[2020-09-29 10:56:40,968] [INFO] "OPTIONS /portrait/v1/hxbqsz/?bqmc=&page=1&page_size=10&random=1601348200376 HTTP/1.1" 200 0
+[2020-09-29 10:56:41,595] [INFO] "GET /portrait/v1/hxbqsz/?bqmc=&page=1&page_size=10&random=1601348200376 HTTP/1.1" 200 6094
+[2020-09-29 10:56:41,850] [INFO] "OPTIONS /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601348201221 HTTP/1.1" 200 0
+[2020-09-29 10:56:41,913] [INFO] "OPTIONS /portrait/v1/hxbqsz/?bqmc=&page=1&page_size=10&random=1601348201584 HTTP/1.1" 200 0
+[2020-09-29 10:56:42,957] [INFO] "OPTIONS /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601348202661 HTTP/1.1" 200 0
+[2020-09-29 10:56:43,081] [INFO] "GET /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601348201221 HTTP/1.1" 200 1524
+[2020-09-29 10:56:43,329] [INFO] "GET /portrait/v1/hxbqsz/?bqmc=&page=1&page_size=10&random=1601348201584 HTTP/1.1" 200 6094
+[2020-09-29 10:56:43,616] [INFO] "GET /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601348202661 HTTP/1.1" 200 1524
+[2020-09-29 10:56:57,736] [INFO] "OPTIONS /portrait/v1/bqwd/ HTTP/1.1" 200 0
+[2020-09-29 10:56:57,987] [INFO] "POST /portrait/v1/bqwd/ HTTP/1.1" 200 107
+[2020-09-29 10:56:58,209] [INFO] "OPTIONS /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601348218011 HTTP/1.1" 200 0
+[2020-09-29 10:56:58,861] [INFO] "GET /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601348218011 HTTP/1.1" 200 1552
+[2020-09-29 10:57:12,921] [INFO] "POST /portrait/v1/bqwd/ HTTP/1.1" 200 107
+[2020-09-29 10:57:13,001] [INFO] "OPTIONS /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601348232404 HTTP/1.1" 200 0
+[2020-09-29 10:57:13,272] [INFO] "GET /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601348232404 HTTP/1.1" 200 1631
+[2020-09-29 10:57:33,873] [INFO] "POST /portrait/v1/bqwd/ HTTP/1.1" 200 107
+[2020-09-29 10:57:33,943] [INFO] "OPTIONS /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601348253358 HTTP/1.1" 200 0
+[2020-09-29 10:57:34,169] [INFO] "GET /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601348253358 HTTP/1.1" 200 1697
+[2020-09-29 10:57:52,188] [INFO] "OPTIONS /portrait/v1/tzjm/?zbxmc=&zbfl=&page=1&page_size=10&random=1601348271615 HTTP/1.1" 200 0
+[2020-09-29 10:57:52,401] [INFO] "GET /portrait/v1/tzjm/?zbxmc=&zbfl=&page=1&page_size=10&random=1601348271615 HTTP/1.1" 200 1315
+[2020-09-29 10:57:56,237] [INFO] "OPTIONS /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601348275674 HTTP/1.1" 200 0
+[2020-09-29 10:57:56,446] [INFO] "GET /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601348275674 HTTP/1.1" 200 1697
+[2020-09-29 10:58:22,317] [INFO] "OPTIONS /portrait/v1/bqwd/ HTTP/1.1" 200 0
+[2020-09-29 10:58:22,531] [INFO] "POST /portrait/v1/bqwd/ HTTP/1.1" 200 107
+[2020-09-29 10:58:22,625] [INFO] "OPTIONS /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601348302016 HTTP/1.1" 200 0
+[2020-09-29 10:58:22,976] [INFO] "GET /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601348302016 HTTP/1.1" 200 1691
+[2020-09-29 11:01:44,581] [INFO] "OPTIONS /portrait/v1/xshxjsd/?xm=&xh=&xznj=&yx=&bj=&page=1&page_size=10 HTTP/1.1" 200 0
+[2020-09-29 11:01:44,600] [INFO] "OPTIONS /warning/v1/college HTTP/1.1" 200 0
+[2020-09-29 11:01:44,616] [INFO] "OPTIONS /warning/v1/grade/?yx= HTTP/1.1" 200 0
+[2020-09-29 11:01:44,731] [INFO] "GET /warning/v1/college HTTP/1.1" 301 0
+[2020-09-29 11:01:44,820] [INFO] "OPTIONS /warning/v1/college/ HTTP/1.1" 200 0
+[2020-09-29 11:01:45,361] [INFO] "GET /warning/v1/grade/?yx= HTTP/1.1" 200 175
+[2020-09-29 11:01:45,486] [INFO] "GET /portrait/v1/xshxjsd/?xm=&xh=&xznj=&yx=&bj=&page=1&page_size=10 HTTP/1.1" 200 1915
+[2020-09-29 11:01:45,614] [INFO] "GET /warning/v1/college/ HTTP/1.1" 200 637
+[2020-09-29 11:01:48,162] [INFO] "OPTIONS /portrait/v1/bm/ HTTP/1.1" 200 0
+[2020-09-29 11:01:48,168] [INFO] "OPTIONS /portrait/v1/jshx/?xm=&zgh=&bm=&page=1&page_size=10 HTTP/1.1" 200 0
+[2020-09-29 11:01:48,578] [INFO] "GET /portrait/v1/bm/ HTTP/1.1" 200 3493
+[2020-09-29 11:01:48,831] [INFO] "GET /portrait/v1/jshx/?xm=&zgh=&bm=&page=1&page_size=10 HTTP/1.1" 200 1247
+[2020-09-29 11:01:51,180] [INFO] "OPTIONS /portrait/v1/jshxxq/?zgh=00018 HTTP/1.1" 200 0
+[2020-09-29 11:01:51,517] [INFO] "GET /portrait/v1/jshxxq/?zgh=00018 HTTP/1.1" 200 1132
+[2020-09-29 11:03:08,778] [INFO] "OPTIONS /warning/v1/college HTTP/1.1" 200 0
+[2020-09-29 11:03:08,787] [INFO] "OPTIONS /warning/v1/grade/?yx= HTTP/1.1" 200 0
+[2020-09-29 11:03:08,788] [INFO] "OPTIONS /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-09-22&jssj=2020-09-29&page=1&page_size=10&random=1601348588144 HTTP/1.1" 200 0
+[2020-09-29 11:03:08,901] [INFO] "GET /warning/v1/college HTTP/1.1" 301 0
+[2020-09-29 11:03:08,968] [INFO] "OPTIONS /warning/v1/college/ HTTP/1.1" 200 0
+[2020-09-29 11:03:09,190] [INFO] "GET /warning/v1/grade/?yx= HTTP/1.1" 200 175
+[2020-09-29 11:03:09,301] [INFO] "GET /warning/v1/college/ HTTP/1.1" 200 637
+[2020-09-29 11:03:15,255] [INFO] "OPTIONS /portrait/v1/xshxjsd/?xm=&xh=&xznj=&yx=&bj=&page=1&page_size=10 HTTP/1.1" 200 0
+[2020-09-29 11:03:15,274] [INFO] "OPTIONS /warning/v1/college HTTP/1.1" 200 0
+[2020-09-29 11:03:15,282] [INFO] "OPTIONS /warning/v1/grade/?yx= HTTP/1.1" 200 0
+[2020-09-29 11:03:15,411] [INFO] "GET /warning/v1/college HTTP/1.1" 301 0
+[2020-09-29 11:03:15,479] [INFO] "OPTIONS /warning/v1/college/ HTTP/1.1" 200 0
+[2020-09-29 11:03:15,896] [INFO] "GET /warning/v1/grade/?yx= HTTP/1.1" 200 175
+[2020-09-29 11:03:16,158] [INFO] "GET /portrait/v1/xshxjsd/?xm=&xh=&xznj=&yx=&bj=&page=1&page_size=10 HTTP/1.1" 200 1915
+[2020-09-29 11:03:16,161] [INFO] "GET /warning/v1/college/ HTTP/1.1" 200 637
+[2020-09-29 11:03:16,346] [INFO] "OPTIONS /portrait/v1/jshx/?xm=&zgh=&bm=&page=1&page_size=10 HTTP/1.1" 200 0
+[2020-09-29 11:03:16,368] [INFO] "OPTIONS /portrait/v1/bm/ HTTP/1.1" 200 0
+[2020-09-29 11:03:16,935] [INFO] "GET /portrait/v1/bm/ HTTP/1.1" 200 3493
+[2020-09-29 11:03:17,089] [INFO] "GET /portrait/v1/jshx/?xm=&zgh=&bm=&page=1&page_size=10 HTTP/1.1" 200 1247
+[2020-09-29 11:03:18,407] [INFO] "OPTIONS /portrait/v1/jshxxq/?zgh=00018 HTTP/1.1" 200 0
+[2020-09-29 11:03:18,971] [INFO] "GET /portrait/v1/jshxxq/?zgh=00018 HTTP/1.1" 200 1132
+[2020-09-29 11:04:01,779] [INFO] "POST /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-09-22&jssj=2020-09-29&page=1&page_size=10&random=1601348588144 HTTP/1.1" 200 1835
+[2020-09-29 11:04:31,959] [INFO] "OPTIONS /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&page=1&page_size=10&random=1601348671381 HTTP/1.1" 200 0
+[2020-09-29 11:04:42,516] [INFO] "POST /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&page=1&page_size=10&random=1601348671381 HTTP/1.1" 200 1803
+[2020-09-29 11:05:03,023] [INFO] "OPTIONS /portrait/v1/jshxxq/?zgh=00018 HTTP/1.1" 200 0
+[2020-09-29 11:05:03,306] [INFO] "GET /portrait/v1/jshxxq/?zgh=00018 HTTP/1.1" 200 1132
+[2020-09-29 11:05:04,808] [INFO] "OPTIONS /warning/v1/college HTTP/1.1" 200 0
+[2020-09-29 11:05:04,819] [INFO] "OPTIONS /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-09-22&jssj=2020-09-29&page=1&page_size=10&random=1601348704161 HTTP/1.1" 200 0
+[2020-09-29 11:05:04,826] [INFO] "OPTIONS /warning/v1/grade/?yx= HTTP/1.1" 200 0
+[2020-09-29 11:05:05,001] [INFO] "GET /warning/v1/college HTTP/1.1" 301 0
+[2020-09-29 11:05:05,269] [INFO] "GET /warning/v1/grade/?yx= HTTP/1.1" 200 175
+[2020-09-29 11:05:05,326] [INFO] "OPTIONS /warning/v1/college/ HTTP/1.1" 200 0
+[2020-09-29 11:05:05,670] [INFO] "GET /warning/v1/college/ HTTP/1.1" 200 637
+[2020-09-29 11:05:10,494] [INFO] "POST /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-09-22&jssj=2020-09-29&page=1&page_size=10&random=1601348704161 HTTP/1.1" 200 1835
+[2020-09-29 11:05:45,343] [INFO] "OPTIONS /warning/v1/xwgjmx/?xh=201501267&kssj=&jssj= HTTP/1.1" 200 0
+[2020-09-29 11:05:45,479] [ERROR] admin
+[2020-09-29 11:05:45,480] [ERROR] 192.168.3.220
+[2020-09-29 11:05:45,482] [ERROR] ('’%(value)s‘ 必须为合法的日期时间格式，请使用 YYYY-MM-DD HH:MM[:ss[.uuuuuu]][TZ] 格式。', 'invalid', {'value': ''})
+[2020-09-29 11:05:45,491] [INFO] "GET /warning/v1/xwgjmx/?xh=201501267&kssj=&jssj= HTTP/1.1" 200 264
+[2020-09-29 11:06:02,145] [INFO] "OPTIONS /warning/v1/xwgjmx/?xh=201501267&kssj=2020-09-01&jssj=2020-10-29 HTTP/1.1" 200 0
+[2020-09-29 11:06:04,421] [INFO] "GET /warning/v1/xwgjmx/?xh=201501267&kssj=2020-09-01&jssj=2020-10-29 HTTP/1.1" 200 20646
+[2020-09-29 11:06:49,581] [INFO] "OPTIONS /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-09-22&jssj=2020-09-29&page=1&page_size=10&random=1601348808987 HTTP/1.1" 200 0
+[2020-09-29 11:06:49,598] [INFO] "OPTIONS /warning/v1/college HTTP/1.1" 200 0
+[2020-09-29 11:06:49,603] [INFO] "OPTIONS /warning/v1/grade/?yx= HTTP/1.1" 200 0
+[2020-09-29 11:06:49,666] [INFO] "GET /warning/v1/college HTTP/1.1" 301 0
+[2020-09-29 11:06:49,719] [INFO] "OPTIONS /warning/v1/college/ HTTP/1.1" 200 0
+[2020-09-29 11:06:50,138] [INFO] "GET /warning/v1/grade/?yx= HTTP/1.1" 200 175
+[2020-09-29 11:06:50,307] [INFO] "GET /warning/v1/college/ HTTP/1.1" 200 637
+[2020-09-29 11:06:55,661] [INFO] "POST /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-09-22&jssj=2020-09-29&page=1&page_size=10&random=1601348808987 HTTP/1.1" 200 1835
+[2020-09-29 11:07:00,015] [INFO] "OPTIONS /warning/v1/xwgjmx/?xh=201501267&kssj=&jssj= HTTP/1.1" 200 0
+[2020-09-29 11:07:00,157] [ERROR] admin
+[2020-09-29 11:07:00,159] [ERROR] 192.168.3.220
+[2020-09-29 11:07:00,160] [ERROR] ('’%(value)s‘ 必须为合法的日期时间格式，请使用 YYYY-MM-DD HH:MM[:ss[.uuuuuu]][TZ] 格式。', 'invalid', {'value': ''})
+[2020-09-29 11:07:00,168] [INFO] "GET /warning/v1/xwgjmx/?xh=201501267&kssj=&jssj= HTTP/1.1" 200 264
+[2020-09-29 11:07:14,015] [INFO] "OPTIONS /warning/v1/college HTTP/1.1" 200 0
+[2020-09-29 11:07:14,057] [INFO] "OPTIONS /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-09-22&jssj=2020-09-29&page=1&page_size=10&random=1601348833437 HTTP/1.1" 200 0
+[2020-09-29 11:07:14,060] [INFO] "OPTIONS /warning/v1/grade/?yx= HTTP/1.1" 200 0
+[2020-09-29 11:07:14,077] [INFO] "GET /warning/v1/college HTTP/1.1" 301 0
+[2020-09-29 11:07:14,174] [INFO] "OPTIONS /warning/v1/college/ HTTP/1.1" 200 0
+[2020-09-29 11:07:14,519] [INFO] "GET /warning/v1/grade/?yx= HTTP/1.1" 200 175
+[2020-09-29 11:07:14,674] [INFO] "GET /warning/v1/college/ HTTP/1.1" 200 637
+[2020-09-29 11:07:19,819] [INFO] "POST /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-09-22&jssj=2020-09-29&page=1&page_size=10&random=1601348833437 HTTP/1.1" 200 1835
+[2020-09-29 11:07:34,440] [INFO] "OPTIONS /warning/v1/xwgjmx/?xh=201501331&kssj=&jssj= HTTP/1.1" 200 0
+[2020-09-29 11:07:34,584] [ERROR] admin
+[2020-09-29 11:07:34,587] [ERROR] 192.168.3.220
+[2020-09-29 11:07:34,590] [ERROR] ('’%(value)s‘ 必须为合法的日期时间格式，请使用 YYYY-MM-DD HH:MM[:ss[.uuuuuu]][TZ] 格式。', 'invalid', {'value': ''})
+[2020-09-29 11:07:34,598] [INFO] "GET /warning/v1/xwgjmx/?xh=201501331&kssj=&jssj= HTTP/1.1" 200 264
+[2020-09-29 11:11:49,112] [INFO] "OPTIONS /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601349108864 HTTP/1.1" 200 0
+[2020-09-29 11:11:49,749] [INFO] "GET /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601349108864 HTTP/1.1" 200 1691
+[2020-09-29 11:12:03,158] [INFO] "OPTIONS /portrait/v1/bqwd/?id=56,55,54,53,49,52,51&random=1601349123101 HTTP/1.1" 200 0
+[2020-09-29 11:12:04,115] [INFO] "DELETE /portrait/v1/bqwd/?id=56,55,54,53,49,52,51&random=1601349123101 HTTP/1.1" 200 107
+[2020-09-29 11:12:04,232] [INFO] "OPTIONS /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601349124124 HTTP/1.1" 200 0
+[2020-09-29 11:12:04,894] [INFO] "GET /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601349124124 HTTP/1.1" 200 1611
+[2020-09-29 11:23:21,904] [INFO] "OPTIONS /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-09-22&jssj=2020-09-29&page=1&page_size=10&random=1601349801334 HTTP/1.1" 200 0
+[2020-09-29 11:23:21,911] [INFO] "OPTIONS /warning/v1/grade/?yx= HTTP/1.1" 200 0
+[2020-09-29 11:23:21,917] [INFO] "OPTIONS /warning/v1/college HTTP/1.1" 200 0
+[2020-09-29 11:23:22,001] [INFO] "OPTIONS /warning/v1/college/ HTTP/1.1" 200 0
+[2020-09-29 11:23:22,401] [INFO] "GET /warning/v1/college/ HTTP/1.1" 200 637
+[2020-09-29 11:23:22,420] [INFO] "GET /warning/v1/grade/?yx= HTTP/1.1" 200 175
+[2020-09-29 11:24:43,093] [INFO] "POST /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-09-22&jssj=2020-09-29&page=1&page_size=10&random=1601349801334 HTTP/1.1" 200 1835
+[2020-09-29 11:28:25,489] [INFO] "OPTIONS /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-09-22&jssj=2020-09-29&page=1&page_size=10&random=1601350105163 HTTP/1.1" 200 0
+[2020-09-29 11:28:26,190] [INFO] "GET /warning/v1/grade/?yx= HTTP/1.1" 200 175
+[2020-09-29 11:28:26,202] [INFO] "GET /warning/v1/college/ HTTP/1.1" 200 637
+[2020-09-29 11:28:40,386] [INFO] "POST /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-09-22&jssj=2020-09-29&page=1&page_size=10&random=1601350105163 HTTP/1.1" 200 1835
+[2020-09-29 11:30:09,592] [INFO] "OPTIONS /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-09-22&jssj=2020-09-29&page=1&page_size=10&random=1601350209457 HTTP/1.1" 200 0
+[2020-09-29 11:30:10,301] [INFO] "GET /warning/v1/grade/?yx= HTTP/1.1" 200 175
+[2020-09-29 11:30:10,306] [INFO] "GET /warning/v1/college/ HTTP/1.1" 200 637
+[2020-09-29 11:30:25,734] [INFO] "POST /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-09-22&jssj=2020-09-29&page=1&page_size=10&random=1601350209457 HTTP/1.1" 200 1835
+[2020-09-29 11:30:32,193] [INFO] "OPTIONS /warning/v1/xwgj/?xhxm=%E5%88%98&xznj=&yx=&bj=&kssj=2020-09-22&jssj=2020-09-29&page=1&page_size=10&random=1601350232121 HTTP/1.1" 200 0
+[2020-09-29 11:31:08,118] [INFO] "POST /warning/v1/xwgj/?xhxm=%E5%88%98&xznj=&yx=&bj=&kssj=2020-09-22&jssj=2020-09-29&page=1&page_size=10&random=1601350232121 HTTP/1.1" 200 1923
+[2020-09-29 11:31:17,189] [INFO] "OPTIONS /warning/v1/xwgjmx/?xh=201530057&kssj=&jssj= HTTP/1.1" 200 0
+[2020-09-29 11:31:17,297] [ERROR] dading
+[2020-09-29 11:31:17,302] [ERROR] 192.168.3.243
+[2020-09-29 11:31:17,303] [ERROR] ('’%(value)s‘ 必须为合法的日期时间格式，请使用 YYYY-MM-DD HH:MM[:ss[.uuuuuu]][TZ] 格式。', 'invalid', {'value': ''})
+[2020-09-29 11:31:17,309] [INFO] "GET /warning/v1/xwgjmx/?xh=201530057&kssj=&jssj= HTTP/1.1" 200 264
+[2020-09-29 11:31:19,886] [INFO] "OPTIONS /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-09-22&jssj=2020-09-29&page=1&page_size=10&random=1601350279671 HTTP/1.1" 200 0
+[2020-09-29 11:31:20,438] [INFO] "GET /warning/v1/college/ HTTP/1.1" 200 637
+[2020-09-29 11:31:20,499] [INFO] "GET /warning/v1/grade/?yx= HTTP/1.1" 200 175
+[2020-09-29 11:31:50,970] [INFO] "POST /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-09-22&jssj=2020-09-29&page=1&page_size=10&random=1601350279671 HTTP/1.1" 200 1835
+[2020-09-29 11:32:02,111] [INFO] "OPTIONS /warning/v1/college HTTP/1.1" 200 0
+[2020-09-29 11:32:04,374] [INFO] "OPTIONS /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-09-22&jssj=2020-09-29&page=1&page_size=10&random=1601350307895 HTTP/1.1" 200 0
+[2020-09-29 11:32:04,397] [INFO] "OPTIONS /warning/v1/grade/?yx= HTTP/1.1" 200 0
+[2020-09-29 11:32:04,404] [INFO] "OPTIONS /portrait/v1/bm/ HTTP/1.1" 200 0
+[2020-09-29 11:32:08,366] [INFO] "OPTIONS /portrait/v1/yjsyx/ HTTP/1.1" 200 0
+[2020-09-29 11:32:08,368] [INFO] "OPTIONS /warning/v1/jzgxwgj/?xm=&zgh=&bm=&kssj=2020-09-22&jssj=2020-09-29&page=1&page_size=10 HTTP/1.1" 200 0
+[2020-09-29 11:32:17,197] [INFO] "OPTIONS /portrait/v1/yjsxwgj/?xm=&xh=&yx=&xn=&kssj=2020-09-22&jssj=2020-09-29&page=1&page_size=10 HTTP/1.1" 200 0
+[2020-09-29 11:32:19,451] [INFO] "OPTIONS /portrait/v1/yjsnj/?yx= HTTP/1.1" 200 0
+[2020-09-29 11:32:21,476] [INFO] "OPTIONS /warning/v1/college HTTP/1.1" 200 0
+[2020-09-29 11:32:21,497] [INFO] "OPTIONS /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-09-22&jssj=2020-09-29&page=1&page_size=10&random=1601350319624 HTTP/1.1" 200 0
+[2020-09-29 11:32:25,865] [INFO] "OPTIONS /warning/v1/grade/?yx= HTTP/1.1" 200 0
+[2020-09-29 11:32:32,188] [INFO] "GET /warning/v1/college HTTP/1.1" 301 0
+[2020-09-29 11:32:35,925] [INFO] "GET /warning/v1/grade/?yx= HTTP/1.1" 200 175
+[2020-09-29 11:32:39,404] [INFO] "GET /portrait/v1/yjsyx/ HTTP/1.1" 200 1059
+[2020-09-29 11:32:41,245] [INFO] "POST /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-09-22&jssj=2020-09-29&page=1&page_size=10&random=1601350307895 HTTP/1.1" 200 1835
+[2020-09-29 11:32:47,044] [INFO] "GET /warning/v1/jzgxwgj/?xm=&zgh=&bm=&kssj=2020-09-22&jssj=2020-09-29&page=1&page_size=10 HTTP/1.1" 200 1199
+[2020-09-29 11:32:52,467] [INFO] "GET /warning/v1/college HTTP/1.1" 301 0
+[2020-09-29 11:32:54,517] [INFO] "GET /warning/v1/grade/?yx= HTTP/1.1" 200 175
+[2020-09-29 11:33:02,587] [INFO] "POST /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-09-22&jssj=2020-09-29&page=1&page_size=10&random=1601350319624 HTTP/1.1" 200 1835
+[2020-09-29 11:33:04,551] [INFO] "OPTIONS /warning/v1/college/ HTTP/1.1" 200 0
+[2020-09-29 11:33:05,491] [INFO] "OPTIONS /warning/v1/college/ HTTP/1.1" 200 0
+[2020-09-29 11:33:14,106] [INFO] "GET /warning/v1/college/ HTTP/1.1" 200 637
+[2020-09-29 11:33:14,838] [INFO] "POST /portrait/v1/yjsxwgj/?xm=&xh=&yx=&xn=&kssj=2020-09-22&jssj=2020-09-29&page=1&page_size=10 HTTP/1.1" 200 1588
+[2020-09-29 11:33:26,130] [INFO] "GET /warning/v1/college/ HTTP/1.1" 200 637
+[2020-09-29 11:33:35,606] [INFO] "OPTIONS /warning/v1/xwgjmx/?xh=201501331&kssj=&jssj= HTTP/1.1" 200 0
+[2020-09-29 11:33:57,287] [INFO] "OPTIONS /portrait/v1/yjsyx/ HTTP/1.1" 200 0
+[2020-09-29 11:33:57,288] [INFO] "OPTIONS /portrait/v1/yjsxwgj/?xm=&xh=&yx=&xn=&kssj=2020-09-22&jssj=2020-09-29&page=1&page_size=10 HTTP/1.1" 200 0
+[2020-09-29 11:33:57,291] [INFO] "OPTIONS /portrait/v1/yjsnj/?yx= HTTP/1.1" 200 0
+[2020-09-29 11:34:00,616] [ERROR] admin
+[2020-09-29 11:34:00,618] [ERROR] 192.168.3.220
+[2020-09-29 11:34:00,618] [ERROR] ('’%(value)s‘ 必须为合法的日期时间格式，请使用 YYYY-MM-DD HH:MM[:ss[.uuuuuu]][TZ] 格式。', 'invalid', {'value': ''})
+[2020-09-29 11:34:00,622] [INFO] "GET /warning/v1/xwgjmx/?xh=201501331&kssj=&jssj= HTTP/1.1" 200 264
+[2020-09-29 11:34:12,716] [INFO] "OPTIONS /warning/v1/grade/?yx= HTTP/1.1" 200 0
+[2020-09-29 11:34:15,424] [INFO] "OPTIONS /portrait/v1/bm/ HTTP/1.1" 200 0
+[2020-09-29 11:34:15,440] [INFO] "OPTIONS /warning/v1/jzgxwgj/?xm=&zgh=&bm=&kssj=2020-09-22&jssj=2020-09-29&page=1&page_size=10 HTTP/1.1" 200 0
+[2020-09-29 11:34:22,582] [INFO] "OPTIONS /warning/v1/college HTTP/1.1" 200 0
+[2020-09-29 11:34:28,454] [INFO] "OPTIONS /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-09-22&jssj=2020-09-29&page=1&page_size=10&random=1601350428344 HTTP/1.1" 200 0
+[2020-09-29 11:34:30,118] [INFO] "OPTIONS /warning/v1/college HTTP/1.1" 200 0
+[2020-09-29 11:34:32,550] [INFO] "GET /portrait/v1/yjsnj/?yx= HTTP/1.1" 200 279
+[2020-09-29 11:34:38,528] [INFO] "GET /portrait/v1/yjsyx/ HTTP/1.1" 200 1059
+[2020-09-29 11:34:38,558] [INFO] "OPTIONS /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-09-22&jssj=2020-09-29&page=1&page_size=10&random=1601350442320 HTTP/1.1" 200 0
+[2020-09-29 11:34:49,403] [INFO] "POST /portrait/v1/yjsxwgj/?xm=&xh=&yx=&xn=&kssj=2020-09-22&jssj=2020-09-29&page=1&page_size=10 HTTP/1.1" 200 1588
+[2020-09-29 11:34:49,872] [INFO] "GET /warning/v1/grade/?yx= HTTP/1.1" 200 175
+[2020-09-29 11:34:49,875] [INFO] "GET /portrait/v1/bm/ HTTP/1.1" 200 3493
+[2020-09-29 11:35:06,585] [INFO] "GET /warning/v1/college HTTP/1.1" 301 0
+[2020-09-29 11:35:08,565] [INFO] "GET /warning/v1/college HTTP/1.1" 301 0
+[2020-09-29 11:35:09,443] [INFO] "GET /warning/v1/jzgxwgj/?xm=&zgh=&bm=&kssj=2020-09-22&jssj=2020-09-29&page=1&page_size=10 HTTP/1.1" 200 1199
+[2020-09-29 11:35:19,626] [INFO] "OPTIONS /warning/v1/college/ HTTP/1.1" 200 0
+[2020-09-29 11:35:32,575] [INFO] "OPTIONS /warning/v1/college/ HTTP/1.1" 200 0
+[2020-09-29 11:35:35,205] [INFO] "GET /warning/v1/college/ HTTP/1.1" 200 637
+[2020-09-29 11:35:59,956] [INFO] "GET /warning/v1/college/ HTTP/1.1" 200 637
+[2020-09-29 11:36:02,921] [INFO] "POST /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-09-22&jssj=2020-09-29&page=1&page_size=10&random=1601350442320 HTTP/1.1" 200 1835
+[2020-09-29 11:36:14,048] [INFO] "POST /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-09-22&jssj=2020-09-29&page=1&page_size=10&random=1601350428344 HTTP/1.1" 200 1835
+[2020-09-29 11:36:34,749] [INFO] "OPTIONS /warning/v1/xwgjmx/?xh=201501267&kssj=&jssj= HTTP/1.1" 200 0
+[2020-09-29 11:36:49,445] [ERROR] admin
+[2020-09-29 11:36:49,446] [ERROR] 192.168.3.220
+[2020-09-29 11:36:49,447] [ERROR] ('’%(value)s‘ 必须为合法的日期时间格式，请使用 YYYY-MM-DD HH:MM[:ss[.uuuuuu]][TZ] 格式。', 'invalid', {'value': ''})
+[2020-09-29 11:36:49,453] [INFO] "GET /warning/v1/xwgjmx/?xh=201501267&kssj=&jssj= HTTP/1.1" 200 264
+[2020-09-29 11:40:49,422] [INFO] "OPTIONS /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-09-22&jssj=2020-09-29&page=1&page_size=10&random=1601350842803 HTTP/1.1" 200 0
+[2020-09-29 11:40:49,430] [INFO] "OPTIONS /warning/v1/college HTTP/1.1" 200 0
+[2020-09-29 11:40:49,436] [INFO] "OPTIONS /warning/v1/grade/?yx= HTTP/1.1" 200 0
+[2020-09-29 11:40:57,466] [INFO] "GET /warning/v1/college HTTP/1.1" 301 0
+[2020-09-29 11:40:57,569] [INFO] "GET /warning/v1/grade/?yx= HTTP/1.1" 200 175
+[2020-09-29 11:41:00,208] [INFO] "POST /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-09-22&jssj=2020-09-29&page=1&page_size=10&random=1601350842803 HTTP/1.1" 200 1835
+[2020-09-29 11:41:04,469] [INFO] "OPTIONS /portrait/v1/yjsnj/?yx= HTTP/1.1" 200 0
+[2020-09-29 11:41:04,482] [INFO] "OPTIONS /portrait/v1/yjsxwgj/?xm=&xh=&yx=&xn=&kssj=2020-09-22&jssj=2020-09-29&page=1&page_size=10 HTTP/1.1" 200 0
+[2020-09-29 11:41:04,487] [INFO] "OPTIONS /portrait/v1/yjsyx/ HTTP/1.1" 200 0
+[2020-09-29 11:41:07,092] [INFO] "OPTIONS /warning/v1/college HTTP/1.1" 200 0
+[2020-09-29 11:41:07,104] [INFO] "OPTIONS /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-09-22&jssj=2020-09-29&page=1&page_size=10&random=1601350856335 HTTP/1.1" 200 0
+[2020-09-29 11:41:07,112] [INFO] "OPTIONS /warning/v1/grade/?yx= HTTP/1.1" 200 0
+[2020-09-29 11:41:14,383] [INFO] "OPTIONS /warning/v1/college/ HTTP/1.1" 200 0
+[2020-09-29 11:41:14,562] [INFO] "GET /portrait/v1/yjsnj/?yx= HTTP/1.1" 200 279
+[2020-09-29 11:41:21,108] [INFO] "GET /portrait/v1/yjsyx/ HTTP/1.1" 200 1059
+[2020-09-29 11:41:21,835] [INFO] "GET /warning/v1/college HTTP/1.1" 301 0
+[2020-09-29 11:41:21,991] [INFO] "GET /warning/v1/grade/?yx= HTTP/1.1" 200 175
+[2020-09-29 11:41:22,137] [INFO] "GET /warning/v1/college/ HTTP/1.1" 200 637
+[2020-09-29 11:41:22,808] [INFO] "POST /portrait/v1/yjsxwgj/?xm=&xh=&yx=&xn=&kssj=2020-09-22&jssj=2020-09-29&page=1&page_size=10 HTTP/1.1" 200 1588
+[2020-09-29 11:41:33,555] [INFO] "POST /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-09-22&jssj=2020-09-29&page=1&page_size=10&random=1601350856335 HTTP/1.1" 200 1835
+[2020-09-29 11:41:34,766] [INFO] "OPTIONS /warning/v1/college/ HTTP/1.1" 200 0
+[2020-09-29 11:41:39,323] [INFO] "GET /warning/v1/college/ HTTP/1.1" 200 637
+[2020-09-29 11:42:23,043] [INFO] "OPTIONS /warning/v1/xwgjmx/?xh=201501267&kssj=&jssj= HTTP/1.1" 200 0
+[2020-09-29 11:42:31,756] [ERROR] admin
+[2020-09-29 11:42:31,757] [ERROR] 192.168.3.220
+[2020-09-29 11:42:31,758] [ERROR] ('’%(value)s‘ 必须为合法的日期时间格式，请使用 YYYY-MM-DD HH:MM[:ss[.uuuuuu]][TZ] 格式。', 'invalid', {'value': ''})
+[2020-09-29 11:42:31,762] [INFO] "GET /warning/v1/xwgjmx/?xh=201501267&kssj=&jssj= HTTP/1.1" 200 264
+[2020-09-29 11:51:30,566] [INFO] "OPTIONS /warning/v1/college HTTP/1.1" 200 0
+[2020-09-29 11:51:30,581] [INFO] "OPTIONS /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-09-22&jssj=2020-09-29&page=1&page_size=10&random=1601351489949 HTTP/1.1" 200 0
+[2020-09-29 11:51:30,596] [INFO] "OPTIONS /warning/v1/grade/?yx= HTTP/1.1" 200 0
+[2020-09-29 11:51:30,685] [INFO] "GET /warning/v1/college HTTP/1.1" 301 0
+[2020-09-29 11:51:30,733] [INFO] "OPTIONS /warning/v1/college/ HTTP/1.1" 200 0
+[2020-09-29 11:51:31,021] [INFO] "GET /warning/v1/college/ HTTP/1.1" 200 637
+[2020-09-29 11:51:31,106] [INFO] "GET /warning/v1/grade/?yx= HTTP/1.1" 200 175
+[2020-09-29 11:51:35,164] [INFO] "POST /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-09-22&jssj=2020-09-29&page=1&page_size=10&random=1601351489949 HTTP/1.1" 200 1835
+[2020-09-29 11:51:43,676] [INFO] "OPTIONS /warning/v1/xwgjmx/?xh=201501267&kssj=&jssj= HTTP/1.1" 200 0
+[2020-09-29 11:51:44,163] [ERROR] admin
+[2020-09-29 11:51:44,167] [ERROR] 192.168.3.220
+[2020-09-29 11:51:44,170] [ERROR] ('’%(value)s‘ 必须为合法的日期时间格式，请使用 YYYY-MM-DD HH:MM[:ss[.uuuuuu]][TZ] 格式。', 'invalid', {'value': ''})
+[2020-09-29 11:51:44,176] [INFO] "GET /warning/v1/xwgjmx/?xh=201501267&kssj=&jssj= HTTP/1.1" 200 264
+[2020-09-29 11:51:45,536] [INFO] "OPTIONS /warning/v1/college HTTP/1.1" 200 0
+[2020-09-29 11:51:45,538] [INFO] "OPTIONS /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-09-22&jssj=2020-09-29&page=1&page_size=10&random=1601351504904 HTTP/1.1" 200 0
+[2020-09-29 11:51:45,550] [INFO] "OPTIONS /warning/v1/grade/?yx= HTTP/1.1" 200 0
+[2020-09-29 11:51:45,628] [INFO] "GET /warning/v1/college HTTP/1.1" 301 0
+[2020-09-29 11:51:45,700] [INFO] "OPTIONS /warning/v1/college/ HTTP/1.1" 200 0
+[2020-09-29 11:51:45,955] [INFO] "GET /warning/v1/grade/?yx= HTTP/1.1" 200 175
+[2020-09-29 11:51:46,048] [INFO] "GET /warning/v1/college/ HTTP/1.1" 200 637
+[2020-09-29 11:51:50,627] [INFO] "POST /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-09-22&jssj=2020-09-29&page=1&page_size=10&random=1601351504904 HTTP/1.1" 200 1835
+[2020-09-29 11:55:01,239] [INFO] "OPTIONS /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-09-22&jssj=2020-09-29&page=1&page_size=10&random=1601351700592 HTTP/1.1" 200 0
+[2020-09-29 11:55:01,244] [INFO] "OPTIONS /warning/v1/college HTTP/1.1" 200 0
+[2020-09-29 11:55:01,321] [INFO] "OPTIONS /warning/v1/grade/?yx= HTTP/1.1" 200 0
+[2020-09-29 11:55:01,388] [INFO] "GET /warning/v1/college HTTP/1.1" 301 0
+[2020-09-29 11:55:01,428] [INFO] "OPTIONS /warning/v1/college/ HTTP/1.1" 200 0
+[2020-09-29 11:55:01,623] [INFO] "GET /warning/v1/grade/?yx= HTTP/1.1" 200 175
+[2020-09-29 11:55:01,655] [INFO] "GET /warning/v1/college/ HTTP/1.1" 200 637
+[2020-09-29 11:55:06,579] [INFO] "POST /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-09-22&jssj=2020-09-29&page=1&page_size=10&random=1601351700592 HTTP/1.1" 200 1835
+[2020-09-29 11:55:49,472] [INFO] "OPTIONS /warning/v1/xwgjmx/?xh=201501267&kssj=2020-09-22&jssj=2020-09-29 HTTP/1.1" 200 0
+[2020-09-29 11:55:50,318] [INFO] "GET /warning/v1/xwgjmx/?xh=201501267&kssj=2020-09-22&jssj=2020-09-29 HTTP/1.1" 200 105
+[2020-09-29 11:55:58,480] [INFO] "OPTIONS /warning/v1/college HTTP/1.1" 200 0
+[2020-09-29 11:55:58,489] [INFO] "OPTIONS /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-09-22&jssj=2020-09-29&page=1&page_size=10&random=1601351757847 HTTP/1.1" 200 0
+[2020-09-29 11:55:58,492] [INFO] "OPTIONS /warning/v1/grade/?yx= HTTP/1.1" 200 0
+[2020-09-29 11:55:58,573] [INFO] "GET /warning/v1/college HTTP/1.1" 301 0
+[2020-09-29 11:55:58,642] [INFO] "OPTIONS /warning/v1/college/ HTTP/1.1" 200 0
+[2020-09-29 11:55:58,808] [INFO] "GET /warning/v1/grade/?yx= HTTP/1.1" 200 175
+[2020-09-29 11:55:58,955] [INFO] "GET /warning/v1/college/ HTTP/1.1" 200 637
+[2020-09-29 11:56:03,932] [INFO] "POST /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-09-22&jssj=2020-09-29&page=1&page_size=10&random=1601351757847 HTTP/1.1" 200 1835
+[2020-09-29 11:56:07,351] [INFO] "OPTIONS /warning/v1/xwgjmx/?xh=201501331&kssj=2020-09-22&jssj=2020-09-29 HTTP/1.1" 200 0
+[2020-09-29 11:56:08,522] [INFO] "GET /warning/v1/xwgjmx/?xh=201501331&kssj=2020-09-22&jssj=2020-09-29 HTTP/1.1" 200 105
+[2020-09-29 11:56:20,415] [INFO] "OPTIONS /warning/v1/xwgjmx/?xh=201501331&kssj=&jssj= HTTP/1.1" 200 0
+[2020-09-29 11:56:20,543] [ERROR] admin
+[2020-09-29 11:56:20,544] [ERROR] 192.168.3.220
+[2020-09-29 11:56:20,545] [ERROR] ('’%(value)s‘ 必须为合法的日期时间格式，请使用 YYYY-MM-DD HH:MM[:ss[.uuuuuu]][TZ] 格式。', 'invalid', {'value': ''})
+[2020-09-29 11:56:20,549] [INFO] "GET /warning/v1/xwgjmx/?xh=201501331&kssj=&jssj= HTTP/1.1" 200 264
+[2020-09-29 11:56:23,172] [INFO] "OPTIONS /warning/v1/xwgjmx/?xh=201501331&kssj=&jssj= HTTP/1.1" 200 0
+[2020-09-29 11:56:23,265] [ERROR] admin
+[2020-09-29 11:56:23,267] [ERROR] 192.168.3.220
+[2020-09-29 11:56:23,268] [ERROR] ('’%(value)s‘ 必须为合法的日期时间格式，请使用 YYYY-MM-DD HH:MM[:ss[.uuuuuu]][TZ] 格式。', 'invalid', {'value': ''})
+[2020-09-29 11:56:23,275] [INFO] "GET /warning/v1/xwgjmx/?xh=201501331&kssj=&jssj= HTTP/1.1" 200 264
+[2020-09-29 11:56:32,347] [INFO] "OPTIONS /warning/v1/college HTTP/1.1" 200 0
+[2020-09-29 11:56:32,366] [INFO] "OPTIONS /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-09-22&jssj=2020-09-29&page=1&page_size=10&random=1601351791737 HTTP/1.1" 200 0
+[2020-09-29 11:56:32,369] [INFO] "OPTIONS /warning/v1/grade/?yx= HTTP/1.1" 200 0
+[2020-09-29 11:56:32,429] [INFO] "GET /warning/v1/college HTTP/1.1" 301 0
+[2020-09-29 11:56:32,478] [INFO] "OPTIONS /warning/v1/college/ HTTP/1.1" 200 0
+[2020-09-29 11:56:32,767] [INFO] "GET /warning/v1/grade/?yx= HTTP/1.1" 200 175
+[2020-09-29 11:56:32,786] [INFO] "GET /warning/v1/college/ HTTP/1.1" 200 637
+[2020-09-29 11:56:37,590] [INFO] "POST /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-09-22&jssj=2020-09-29&page=1&page_size=10&random=1601351791737 HTTP/1.1" 200 1835
+[2020-09-29 11:56:48,913] [INFO] "OPTIONS /warning/v1/xwgjmx/?xh=201565004&kssj=2020-09-22&jssj=2020-09-29 HTTP/1.1" 200 0
+[2020-09-29 11:56:50,046] [INFO] "GET /warning/v1/xwgjmx/?xh=201565004&kssj=2020-09-22&jssj=2020-09-29 HTTP/1.1" 200 105
+[2020-09-29 11:56:56,406] [INFO] "OPTIONS /portrait/v1/bm/ HTTP/1.1" 200 0
+[2020-09-29 11:56:56,411] [INFO] "OPTIONS /warning/v1/jzgxwgj/?xm=&zgh=&bm=&kssj=2020-09-22&jssj=2020-09-29&page=1&page_size=10 HTTP/1.1" 200 0
+[2020-09-29 11:56:56,602] [INFO] "GET /portrait/v1/bm/ HTTP/1.1" 200 3493
+[2020-09-29 11:56:57,159] [INFO] "GET /warning/v1/jzgxwgj/?xm=&zgh=&bm=&kssj=2020-09-22&jssj=2020-09-29&page=1&page_size=10 HTTP/1.1" 200 1199
+[2020-09-29 11:56:59,264] [INFO] "OPTIONS /warning/v1/xwgjjzgmx/?zgh=01928&kssj=&jssj= HTTP/1.1" 200 0
+[2020-09-29 11:57:00,508] [INFO] "GET /warning/v1/xwgjjzgmx/?zgh=01928&kssj=&jssj= HTTP/1.1" 200 89381
+[2020-09-29 13:00:23,215] [INFO] "OPTIONS /warning/v1/xwgjmx/?xh=201501267&kssj=2020-09-22&jssj=2020-09-29 HTTP/1.1" 200 0
+[2020-09-29 13:00:24,097] [INFO] "GET /warning/v1/xwgjmx/?xh=201501267&kssj=2020-09-22&jssj=2020-09-29 HTTP/1.1" 200 105
+[2020-09-29 13:00:26,032] [INFO] "OPTIONS /portrait/v1/yjsyx/ HTTP/1.1" 200 0
+[2020-09-29 13:00:26,033] [INFO] "OPTIONS /portrait/v1/yjsxwgj/?xm=&xh=&yx=&xn=&kssj=2020-09-22&jssj=2020-09-29&page=1&page_size=10 HTTP/1.1" 200 0
+[2020-09-29 13:00:26,044] [INFO] "OPTIONS /portrait/v1/yjsnj/?yx= HTTP/1.1" 200 0
+[2020-09-29 13:00:26,274] [INFO] "GET /portrait/v1/yjsyx/ HTTP/1.1" 200 1059
+[2020-09-29 13:00:26,319] [INFO] "GET /portrait/v1/yjsnj/?yx= HTTP/1.1" 200 279
+[2020-09-29 13:00:30,887] [INFO] "OPTIONS /portrait/v1/bm/ HTTP/1.1" 200 0
+[2020-09-29 13:00:30,890] [INFO] "OPTIONS /warning/v1/jzgxwgj/?xm=&zgh=&bm=&kssj=2020-09-22&jssj=2020-09-29&page=1&page_size=10 HTTP/1.1" 200 0
+[2020-09-29 13:00:31,091] [INFO] "GET /portrait/v1/bm/ HTTP/1.1" 200 3493
+[2020-09-29 13:00:31,703] [INFO] "GET /warning/v1/jzgxwgj/?xm=&zgh=&bm=&kssj=2020-09-22&jssj=2020-09-29&page=1&page_size=10 HTTP/1.1" 200 1199
+[2020-09-29 13:00:32,410] [INFO] "OPTIONS /portrait/v1/jshxxq/?zgh=00018 HTTP/1.1" 200 0
+[2020-09-29 13:00:32,551] [INFO] "GET /portrait/v1/jshxxq/?zgh=00018 HTTP/1.1" 200 1132
+[2020-09-29 13:00:41,666] [INFO] "OPTIONS /warning/v1/college HTTP/1.1" 200 0
+[2020-09-29 13:00:41,669] [INFO] "OPTIONS /portrait/v1/xshxjsd/?xm=&xh=&xznj=&yx=&bj=&page=1&page_size=10 HTTP/1.1" 200 0
+[2020-09-29 13:00:41,672] [INFO] "OPTIONS /warning/v1/grade/?yx= HTTP/1.1" 200 0
+[2020-09-29 13:00:41,739] [INFO] "GET /warning/v1/college HTTP/1.1" 301 0
+[2020-09-29 13:00:41,789] [INFO] "OPTIONS /warning/v1/college/ HTTP/1.1" 200 0
+[2020-09-29 13:00:41,915] [INFO] "GET /warning/v1/grade/?yx= HTTP/1.1" 200 175
+[2020-09-29 13:00:41,998] [INFO] "GET /warning/v1/college/ HTTP/1.1" 200 637
+[2020-09-29 13:00:41,999] [INFO] "GET /portrait/v1/xshxjsd/?xm=&xh=&xznj=&yx=&bj=&page=1&page_size=10 HTTP/1.1" 200 1915
+[2020-09-29 13:00:42,585] [INFO] "OPTIONS /warning/v1/college HTTP/1.1" 200 0
+[2020-09-29 13:00:42,598] [INFO] "OPTIONS /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-09-22&jssj=2020-09-29&page=1&page_size=10&random=1601355641914 HTTP/1.1" 200 0
+[2020-09-29 13:00:42,621] [INFO] "OPTIONS /warning/v1/grade/?yx= HTTP/1.1" 200 0
+[2020-09-29 13:00:42,643] [INFO] "GET /warning/v1/college HTTP/1.1" 301 0
+[2020-09-29 13:00:42,711] [INFO] "OPTIONS /warning/v1/college/ HTTP/1.1" 200 0
+[2020-09-29 13:00:42,887] [INFO] "GET /warning/v1/grade/?yx= HTTP/1.1" 200 175
+[2020-09-29 13:00:43,060] [INFO] "GET /warning/v1/college/ HTTP/1.1" 200 637
+[2020-09-29 13:00:51,803] [INFO] "POST /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-09-22&jssj=2020-09-29&page=1&page_size=10&random=1601355641914 HTTP/1.1" 200 1835
+[2020-09-29 13:00:55,898] [INFO] "POST /portrait/v1/yjsxwgj/?xm=&xh=&yx=&xn=&kssj=2020-09-22&jssj=2020-09-29&page=1&page_size=10 HTTP/1.1" 200 1588
+[2020-09-29 13:01:00,368] [INFO] "OPTIONS /warning/v1/xwgjmx/?xh=201519019&kssj=2020-09-22&jssj=2020-09-29 HTTP/1.1" 200 0
+[2020-09-29 13:01:01,651] [INFO] "GET /warning/v1/xwgjmx/?xh=201519019&kssj=2020-09-22&jssj=2020-09-29 HTTP/1.1" 200 105
+[2020-09-29 13:01:10,095] [INFO] "OPTIONS /portrait/v1/bm/ HTTP/1.1" 200 0
+[2020-09-29 13:01:10,105] [INFO] "OPTIONS /warning/v1/jzgxwgj/?xm=&zgh=&bm=&kssj=2020-09-22&jssj=2020-09-29&page=1&page_size=10 HTTP/1.1" 200 0
+[2020-09-29 13:01:10,274] [INFO] "GET /portrait/v1/bm/ HTTP/1.1" 200 3493
+[2020-09-29 13:01:10,832] [INFO] "GET /warning/v1/jzgxwgj/?xm=&zgh=&bm=&kssj=2020-09-22&jssj=2020-09-29&page=1&page_size=10 HTTP/1.1" 200 1199
+[2020-09-29 13:01:12,939] [INFO] "OPTIONS /warning/v1/xwgjjzgmx/?zgh=01928&kssj=&jssj= HTTP/1.1" 200 0
+[2020-09-29 13:01:13,694] [INFO] "GET /warning/v1/xwgjjzgmx/?zgh=01928&kssj=&jssj= HTTP/1.1" 200 89381
+[2020-09-29 13:01:25,747] [INFO] "OPTIONS /portrait/v1/yjsyx/ HTTP/1.1" 200 0
+[2020-09-29 13:01:25,750] [INFO] "OPTIONS /portrait/v1/yjsxwgj/?xm=&xh=&yx=&xn=&kssj=2020-09-22&jssj=2020-09-29&page=1&page_size=10 HTTP/1.1" 200 0
+[2020-09-29 13:01:25,767] [INFO] "OPTIONS /portrait/v1/yjsnj/?yx= HTTP/1.1" 200 0
+[2020-09-29 13:01:25,933] [INFO] "GET /portrait/v1/yjsyx/ HTTP/1.1" 200 1059
+[2020-09-29 13:01:26,022] [INFO] "GET /portrait/v1/yjsnj/?yx= HTTP/1.1" 200 279
+[2020-09-29 13:01:29,149] [INFO] "OPTIONS /warning/v1/college HTTP/1.1" 200 0
+[2020-09-29 13:01:29,152] [INFO] "OPTIONS /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-09-22&jssj=2020-09-29&page=1&page_size=10&random=1601355688415 HTTP/1.1" 200 0
+[2020-09-29 13:01:29,153] [INFO] "OPTIONS /warning/v1/grade/?yx= HTTP/1.1" 200 0
+[2020-09-29 13:01:29,268] [INFO] "GET /warning/v1/college HTTP/1.1" 301 0
+[2020-09-29 13:01:29,396] [INFO] "OPTIONS /warning/v1/college/ HTTP/1.1" 200 0
+[2020-09-29 13:01:29,465] [INFO] "GET /warning/v1/grade/?yx= HTTP/1.1" 200 175
+[2020-09-29 13:01:29,800] [INFO] "GET /warning/v1/college/ HTTP/1.1" 200 637
+[2020-09-29 13:01:36,784] [INFO] "POST /portrait/v1/yjsxwgj/?xm=&xh=&yx=&xn=&kssj=2020-09-22&jssj=2020-09-29&page=1&page_size=10 HTTP/1.1" 200 1588
+[2020-09-29 13:02:27,761] [INFO] "POST /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-09-22&jssj=2020-09-29&page=1&page_size=10&random=1601355688415 HTTP/1.1" 200 1835
+[2020-09-29 15:25:00,233] [INFO] "OPTIONS /portrait/v1/hxbqsz/?bqmc=&page=1&page_size=10&random=1601364299954 HTTP/1.1" 200 0
+[2020-09-29 15:25:00,353] [INFO] "GET /portrait/v1/hxbqsz/?bqmc=&page=1&page_size=10&random=1601364299954 HTTP/1.1" 200 6094
+[2020-09-29 15:25:06,224] [INFO] "OPTIONS /portrait/v1/tzjm/?zbxmc=&zbfl=&page=1&page_size=10&random=1601364306141 HTTP/1.1" 200 0
+[2020-09-29 15:25:06,328] [INFO] "GET /portrait/v1/tzjm/?zbxmc=&zbfl=&page=1&page_size=10&random=1601364306141 HTTP/1.1" 200 1315
+[2020-09-29 15:25:09,380] [INFO] "OPTIONS /portrait/v1/bqwd/?kqzt=1&random=1601364309169 HTTP/1.1" 200 0
+[2020-09-29 15:25:09,530] [INFO] "GET /portrait/v1/bqwd/?kqzt=1&random=1601364309169 HTTP/1.1" 200 1463
+[2020-09-29 15:25:27,963] [INFO] "OPTIONS /portrait/v1/sjbxz/?zywbm=&page=1&random=1601364327899 HTTP/1.1" 200 0
+[2020-09-29 15:25:28,100] [INFO] "GET /portrait/v1/sjbxz/?zywbm=&page=1&random=1601364327899 HTTP/1.1" 200 593
+[2020-09-29 15:25:31,364] [INFO] "OPTIONS /portrait/v1/sjbxzzd/?id=1&zwzdmc=&page=1&zbfl=1&random=1601364331111 HTTP/1.1" 200 0
+[2020-09-29 15:25:31,485] [INFO] "GET /portrait/v1/sjbxzzd/?id=1&zwzdmc=&page=1&zbfl=1&random=1601364331111 HTTP/1.1" 200 1693
+[2020-09-29 15:25:37,071] [INFO] "OPTIONS /portrait/v1/sjbxzzd/?id=1&zwzdmc=&page=2&zbfl=1&random=1601364337018 HTTP/1.1" 200 0
+[2020-09-29 15:25:37,133] [INFO] "GET /portrait/v1/sjbxzzd/?id=1&zwzdmc=&page=2&zbfl=1&random=1601364337018 HTTP/1.1" 200 1603
+[2020-09-29 15:26:13,922] [INFO] "OPTIONS /portrait/v1/sjbxzzd/?id=1&zwzdmc=&page=2&zbfl=1&random=1601364373783 HTTP/1.1" 200 0
+[2020-09-29 15:26:13,975] [INFO] "GET /portrait/v1/sjbxzzd/?id=1&zwzdmc=&page=2&zbfl=1&random=1601364373783 HTTP/1.1" 200 1603
+[2020-09-29 15:26:48,956] [INFO] "OPTIONS /portrait/v1/bqwd/?kqzt=1&random=1601364408798 HTTP/1.1" 200 0
+[2020-09-29 15:26:49,070] [INFO] "GET /portrait/v1/bqwd/?kqzt=1&random=1601364408798 HTTP/1.1" 200 1463
+[2020-09-29 15:27:20,000] [INFO] "OPTIONS /portrait/v1/sjbxz/?zywbm=&page=1&random=1601364439962 HTTP/1.1" 200 0
+[2020-09-29 15:27:20,036] [INFO] "GET /portrait/v1/sjbxz/?zywbm=&page=1&random=1601364439962 HTTP/1.1" 200 593
+[2020-09-29 15:27:29,476] [INFO] "OPTIONS /portrait/v1/sjbxzzd/?id=1&zwzdmc=&page=2&zbfl=1&random=1601364449354 HTTP/1.1" 200 0
+[2020-09-29 15:27:29,517] [INFO] "GET /portrait/v1/sjbxzzd/?id=1&zwzdmc=&page=2&zbfl=1&random=1601364449354 HTTP/1.1" 200 1603
+[2020-09-29 15:29:32,399] [INFO] "OPTIONS /portrait/v1/sjbxzzd/?id=1&zwzdmc=&page=1&zbfl=1&random=1601364572339 HTTP/1.1" 200 0
+[2020-09-29 15:29:32,448] [INFO] "GET /portrait/v1/sjbxzzd/?id=1&zwzdmc=&page=1&zbfl=1&random=1601364572339 HTTP/1.1" 200 1693
+[2020-09-29 15:29:48,877] [INFO] "OPTIONS /portrait/v1/sjbxzzd/?id=1&zwzdmc=&page=2&zbfl=1&random=1601364588729 HTTP/1.1" 200 0
+[2020-09-29 15:29:48,997] [INFO] "GET /portrait/v1/sjbxzzd/?id=1&zwzdmc=&page=2&zbfl=1&random=1601364588729 HTTP/1.1" 200 1603
+[2020-09-29 15:29:52,867] [INFO] "OPTIONS /portrait/v1/sjbxzzd/?id=1&zwzdmc=&page=1&zbfl=1&random=1601364592792 HTTP/1.1" 200 0
+[2020-09-29 15:29:52,918] [INFO] "GET /portrait/v1/sjbxzzd/?id=1&zwzdmc=&page=1&zbfl=1&random=1601364592792 HTTP/1.1" 200 1693
+[2020-09-29 17:39:30,612] [INFO] "OPTIONS /login/ HTTP/1.1" 200 0
+[2020-09-29 17:39:31,490] [INFO] "POST /login/ HTTP/1.1" 200 179
+[2020-09-29 17:39:31,880] [INFO] "OPTIONS /warning/v1/warningtable/ HTTP/1.1" 200 0
+[2020-09-29 17:39:33,361] [INFO] "GET /warning/v1/warningtable/ HTTP/1.1" 200 1031
+[2020-09-29 17:39:36,178] [INFO] "OPTIONS /portrait/v1/hxbqsz/?bqmc=&page=1&page_size=10&random=1601372375666 HTTP/1.1" 200 0
+[2020-09-29 17:39:36,216] [INFO] "GET /portrait/v1/hxbqsz/?bqmc=&page=1&page_size=10&random=1601372375666 HTTP/1.1" 200 6094
+[2020-09-29 17:39:39,919] [INFO] "OPTIONS /portrait/v1/tzjm/?zbxmc=&zbfl=&page=1&page_size=10&random=1601372379865 HTTP/1.1" 200 0
+[2020-09-29 17:39:39,965] [INFO] "GET /portrait/v1/tzjm/?zbxmc=&zbfl=&page=1&page_size=10&random=1601372379865 HTTP/1.1" 200 1315
+[2020-09-29 17:39:43,508] [INFO] "OPTIONS /portrait/v1/bqwd/?kqzt=1&random=1601372383416 HTTP/1.1" 200 0
+[2020-09-29 17:39:43,556] [INFO] "GET /portrait/v1/bqwd/?kqzt=1&random=1601372383416 HTTP/1.1" 200 1463
+[2020-09-29 18:09:47,491] [INFO] "OPTIONS /portrait/v1/tzjm/?zbxmc=&zbfl=&page=1&page_size=10&random=1601374187424 HTTP/1.1" 200 0
+[2020-09-29 18:09:47,548] [INFO] "GET /portrait/v1/tzjm/?zbxmc=&zbfl=&page=1&page_size=10&random=1601374187424 HTTP/1.1" 200 1315
+[2020-09-29 18:09:48,640] [INFO] "OPTIONS /portrait/v1/hxbqsz/?bqmc=&page=1&page_size=10&random=1601374188600 HTTP/1.1" 200 0
+[2020-09-29 18:09:48,687] [INFO] "GET /portrait/v1/hxbqsz/?bqmc=&page=1&page_size=10&random=1601374188600 HTTP/1.1" 200 6094
+[2020-09-29 18:09:50,958] [INFO] "OPTIONS /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601374190923 HTTP/1.1" 200 0
+[2020-09-29 18:09:51,013] [INFO] "GET /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601374190923 HTTP/1.1" 200 1611
+[2020-09-29 18:10:00,300] [INFO] "OPTIONS /portrait/v1/bqwd/?id=59,58,57&random=1601374200288 HTTP/1.1" 200 0
+[2020-09-29 18:10:00,389] [INFO] "DELETE /portrait/v1/bqwd/?id=59,58,57&random=1601374200288 HTTP/1.1" 200 107
+[2020-09-29 18:10:00,411] [INFO] "OPTIONS /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601374200395 HTTP/1.1" 200 0
+[2020-09-29 18:10:00,468] [INFO] "GET /portrait/v1/bqwd/?wdmc=&page=1&page_size=10&random=1601374200395 HTTP/1.1" 200 1488
+[2020-09-30 14:33:50,329] [INFO] "OPTIONS /portrait/v1/jqsz/?jqmc=&kssj=&jssj=&page=1&page_size=10 HTTP/1.1" 200 0
+[2020-09-30 14:33:50,974] [INFO] "GET /portrait/v1/jqsz/?jqmc=&kssj=&jssj=&page=1&page_size=10 HTTP/1.1" 200 49
+[2020-09-30 14:33:52,938] [INFO] "OPTIONS /warning/v1/yjyzsz/?yjmc= HTTP/1.1" 200 0
+[2020-09-30 14:33:53,172] [WARNING] "GET /warning/v1/yjyzsz/?yjmc= HTTP/1.1" 403 94
+[2020-09-30 14:33:54,197] [WARNING] "GET /portrait/v1/jqsz/?jqmc=&kssj=&jssj=&page=1&page_size=10 HTTP/1.1" 403 94
+[2020-09-30 14:34:09,115] [WARNING] "GET /portrait/v1/jqsz/?jqmc=&kssj=&jssj=&page=1&page_size=10 HTTP/1.1" 403 94
+[2020-09-30 14:34:32,739] [INFO] "OPTIONS /login/ HTTP/1.1" 200 0
+[2020-09-30 14:34:33,569] [INFO] "POST /login/ HTTP/1.1" 200 179
+[2020-09-30 14:34:33,775] [INFO] "OPTIONS /warning/v1/warningtable/ HTTP/1.1" 200 0
+[2020-09-30 14:34:34,752] [INFO] "GET /warning/v1/warningtable/ HTTP/1.1" 200 1031
+[2020-09-30 14:34:37,222] [INFO] "GET /warning/v1/yjyzsz/?yjmc= HTTP/1.1" 200 1420
+[2020-09-30 14:34:38,052] [INFO] "GET /portrait/v1/jqsz/?jqmc=&kssj=&jssj=&page=1&page_size=10 HTTP/1.1" 200 1252
+[2020-09-30 14:34:57,031] [INFO] "OPTIONS /portrait/v1/jqsz/ HTTP/1.1" 200 0
+[2020-09-30 14:34:57,245] [INFO] "POST /portrait/v1/jqsz/ HTTP/1.1" 200 97
+[2020-09-30 14:38:37,863] [INFO] "POST /login/ HTTP/1.1" 200 179
+[2020-09-30 14:43:00,331] [WARNING] Not Found: //portrait/v1/jqsz/
+[2020-09-30 14:43:00,334] [WARNING] "POST //portrait/v1/jqsz/ HTTP/1.1" 404 92
+[2020-09-30 14:43:18,289] [WARNING] Not Found: //portrait/v1/jqsz/
+[2020-09-30 14:43:18,295] [WARNING] "POST //portrait/v1/jqsz/ HTTP/1.1" 404 92
+[2020-09-30 14:43:41,917] [INFO] "POST /portrait/v1/jqsz/ HTTP/1.1" 200 107
+[2020-09-30 15:05:00,235] [INFO] "OPTIONS /login/ HTTP/1.1" 200 0
+[2020-09-30 15:05:00,768] [INFO] "POST /login/ HTTP/1.1" 200 179
+[2020-09-30 15:05:00,947] [INFO] "OPTIONS /warning/v1/warningtable/ HTTP/1.1" 200 0
+[2020-09-30 15:05:01,580] [INFO] "GET /warning/v1/warningtable/ HTTP/1.1" 200 1031
+[2020-09-30 15:05:03,065] [INFO] "OPTIONS /warning/v1/yjyzsz/?yjmc= HTTP/1.1" 200 0
+[2020-09-30 15:05:03,128] [INFO] "GET /warning/v1/yjyzsz/?yjmc= HTTP/1.1" 200 1420
+[2020-09-30 15:05:04,183] [INFO] "OPTIONS /portrait/v1/jqsz/?jqmc=&kssj=&jssj=&page=1&page_size=10 HTTP/1.1" 200 0
+[2020-09-30 15:05:04,236] [INFO] "GET /portrait/v1/jqsz/?jqmc=&kssj=&jssj=&page=1&page_size=10 HTTP/1.1" 200 1374
+[2020-09-30 15:06:12,465] [INFO] "OPTIONS /portrait/v1/jqsz/ HTTP/1.1" 200 0
+[2020-09-30 15:06:12,531] [INFO] "POST /portrait/v1/jqsz/ HTTP/1.1" 200 97
+[2020-09-30 15:07:32,971] [INFO] "OPTIONS /portrait/v1/jqsz/ HTTP/1.1" 200 0
+[2020-09-30 15:07:33,025] [INFO] "POST /portrait/v1/jqsz/ HTTP/1.1" 200 97
+[2020-09-30 15:11:33,929] [INFO] "OPTIONS /portrait/v1/jqsz/?jqmc=&kssj=&jssj=&page=1&page_size=10 HTTP/1.1" 200 0
+[2020-09-30 15:11:34,006] [INFO] "GET /portrait/v1/jqsz/?jqmc=&kssj=&jssj=&page=1&page_size=10 HTTP/1.1" 200 1374
+[2020-09-30 15:11:34,103] [INFO] "OPTIONS /sys/menu/nav HTTP/1.1" 200 0
+[2020-09-30 15:11:34,264] [WARNING] Not Found: /sys/menu/nav
+[2020-09-30 15:11:34,267] [WARNING] "POST /sys/menu/nav HTTP/1.1" 404 86
+[2020-09-30 15:11:43,413] [INFO] "OPTIONS /portrait/v1/jqsz/?jqmc=&kssj=&jssj=&page=1&page_size=10 HTTP/1.1" 200 0
+[2020-09-30 15:11:43,456] [INFO] "GET /portrait/v1/jqsz/?jqmc=&kssj=&jssj=&page=1&page_size=10 HTTP/1.1" 200 1374
+[2020-09-30 15:11:43,655] [INFO] "OPTIONS /sys/menu/nav HTTP/1.1" 200 0
+[2020-09-30 15:11:43,677] [WARNING] Not Found: /sys/menu/nav
+[2020-09-30 15:11:43,678] [WARNING] "POST /sys/menu/nav HTTP/1.1" 404 86
+[2020-09-30 15:11:48,802] [INFO] "OPTIONS /warning/v1/yjyzsz/?yjmc= HTTP/1.1" 200 0
+[2020-09-30 15:11:48,883] [INFO] "GET /warning/v1/yjyzsz/?yjmc= HTTP/1.1" 200 1420
+[2020-09-30 15:11:50,367] [INFO] "OPTIONS /portrait/v1/jqsz/?jqmc=&kssj=&jssj=&page=1&page_size=10 HTTP/1.1" 200 0
+[2020-09-30 15:11:50,485] [INFO] "GET /portrait/v1/jqsz/?jqmc=&kssj=&jssj=&page=1&page_size=10 HTTP/1.1" 200 1374
+[2020-09-30 15:12:18,807] [INFO] "OPTIONS /portrait/v1/jqsz/ HTTP/1.1" 200 0
+[2020-09-30 15:12:18,848] [INFO] "POST /portrait/v1/jqsz/ HTTP/1.1" 200 97
+[2020-09-30 15:12:35,572] [INFO] "OPTIONS /portrait/v1/jqsz/ HTTP/1.1" 200 0
+[2020-09-30 15:12:35,623] [INFO] "POST /portrait/v1/jqsz/ HTTP/1.1" 200 97
+[2020-09-30 15:13:27,524] [INFO] "OPTIONS /portrait/v1/jqsz/ HTTP/1.1" 200 0
+[2020-09-30 15:13:27,595] [INFO] "POST /portrait/v1/jqsz/ HTTP/1.1" 200 97
+[2020-09-30 17:07:20,453] [INFO] "OPTIONS /portrait/v1/jqsz/?jqmc=&kssj=&jssj=&page=1&page_size=10 HTTP/1.1" 200 0
+[2020-09-30 17:07:21,067] [INFO] "GET /portrait/v1/jqsz/?jqmc=&kssj=&jssj=&page=1&page_size=10 HTTP/1.1" 200 1374
+[2020-09-30 17:07:34,651] [INFO] "OPTIONS /login/ HTTP/1.1" 200 0
+[2020-09-30 17:07:35,464] [INFO] "POST /login/ HTTP/1.1" 200 179
+[2020-09-30 17:07:35,797] [INFO] "OPTIONS /warning/v1/warningtable/ HTTP/1.1" 200 0
+[2020-09-30 17:07:37,266] [INFO] "GET /warning/v1/warningtable/ HTTP/1.1" 200 1031
+[2020-09-30 17:07:41,360] [INFO] "OPTIONS /warning/v1/yjyzsz/?yjmc= HTTP/1.1" 200 0
+[2020-09-30 17:07:41,883] [INFO] "GET /warning/v1/yjyzsz/?yjmc= HTTP/1.1" 200 1420
+[2020-09-30 17:07:42,662] [INFO] "GET /portrait/v1/jqsz/?jqmc=&kssj=&jssj=&page=1&page_size=10 HTTP/1.1" 200 1374
+[2020-09-30 17:08:02,688] [INFO] "OPTIONS /portrait/v1/jqsz/ HTTP/1.1" 200 0
+[2020-09-30 17:08:02,961] [INFO] "POST /portrait/v1/jqsz/ HTTP/1.1" 200 97
+[2020-09-30 19:04:14,041] [INFO] "POST /login/ HTTP/1.1" 200 179
+[2020-09-30 19:04:15,551] [INFO] "GET /warning/v1/warningtable/ HTTP/1.1" 200 1031
+[2020-09-30 19:04:16,535] [INFO] "GET /warning/v1/yjyzsz/?yjmc= HTTP/1.1" 200 1420
+[2020-09-30 19:04:17,741] [INFO] "GET /portrait/v1/jqsz/?jqmc=&kssj=&jssj=&page=1&page_size=10 HTTP/1.1" 200 1374
+[2020-09-30 19:04:31,264] [INFO] "OPTIONS /portrait/v1/jqsz/?id=74 HTTP/1.1" 200 0
+[2020-09-30 19:04:31,373] [INFO] "DELETE /portrait/v1/jqsz/?id=74 HTTP/1.1" 200 107
+[2020-09-30 19:04:31,493] [INFO] "GET /portrait/v1/jqsz/?jqmc=&kssj=&jssj=&page=1&page_size=10 HTTP/1.1" 200 1252
+[2020-09-30 19:06:58,427] [INFO] "POST /portrait/v1/jqsz/ HTTP/1.1" 200 97
+[2020-09-30 19:09:22,268] [INFO] "OPTIONS /portrait/v1/jqsz/ HTTP/1.1" 200 0
+[2020-09-30 19:15:39,857] [INFO] "POST /portrait/v1/jqsz/ HTTP/1.1" 200 49
+[2020-09-30 19:21:07,113] [INFO] "OPTIONS /warning/v1/college HTTP/1.1" 200 0
+[2020-09-30 19:21:07,141] [INFO] "OPTIONS /warning/v1/xwzs/?xhxm=&xznj=&yx=&bj=&syd=&sfxx=&sftx=&page=1&page_size=10 HTTP/1.1" 200 0
+[2020-09-30 19:21:07,221] [INFO] "OPTIONS /warning/v1/grade/?yx= HTTP/1.1" 200 0
+[2020-09-30 19:21:07,375] [INFO] "GET /warning/v1/college HTTP/1.1" 301 0
+[2020-09-30 19:21:07,506] [INFO] "OPTIONS /warning/v1/college/ HTTP/1.1" 200 0
+[2020-09-30 19:21:08,239] [INFO] "GET /warning/v1/grade/?yx= HTTP/1.1" 200 175
+[2020-09-30 19:21:08,451] [INFO] "GET /warning/v1/college/ HTTP/1.1" 200 637
+[2020-09-30 19:21:08,571] [INFO] "POST /warning/v1/xwzs/?xhxm=&xznj=&yx=&bj=&syd=&sfxx=&sftx=&page=1&page_size=10 HTTP/1.1" 200 2290
+[2020-09-30 19:21:11,554] [INFO] "OPTIONS /warning/v1/xwzsmx/?xh=201404157&clzt=&yjdj=&kssj=&jssj=&page=1&page_size=10random1601464871391 HTTP/1.1" 200 0
+[2020-09-30 19:21:11,862] [INFO] "GET /warning/v1/xwzsmx/?xh=201404157&clzt=&yjdj=&kssj=&jssj=&page=1&page_size=10random1601464871391 HTTP/1.1" 200 377
+[2020-09-30 19:21:13,968] [INFO] "GET /warning/v1/grade/?yx= HTTP/1.1" 200 175
+[2020-09-30 19:21:13,990] [INFO] "GET /warning/v1/college/ HTTP/1.1" 200 637
+[2020-09-30 19:21:14,673] [INFO] "POST /warning/v1/xwzs/?xhxm=&xznj=&yx=&bj=&syd=&sfxx=&sftx=&page=1&page_size=10 HTTP/1.1" 200 2290
+[2020-09-30 19:21:19,031] [INFO] "OPTIONS /warning/v1/xwzs/?xhxm=&xznj=&yx=&bj=&syd=&sfxx=&sftx=&page=2&page_size=10 HTTP/1.1" 200 0
+[2020-09-30 19:21:19,560] [INFO] "POST /warning/v1/xwzs/?xhxm=&xznj=&yx=&bj=&syd=&sfxx=&sftx=&page=2&page_size=10 HTTP/1.1" 200 2400
+[2020-09-30 19:27:41,919] [INFO] "OPTIONS /warning/v1/swxw/?xhxm=&xznj=&yx=&bj=&page=1&page_size=10 HTTP/1.1" 200 0
+[2020-09-30 19:27:42,317] [INFO] "GET /warning/v1/college/ HTTP/1.1" 200 637
+[2020-09-30 19:27:42,585] [INFO] "GET /warning/v1/grade/?yx= HTTP/1.1" 200 175
+[2020-09-30 19:27:45,929] [INFO] "POST /warning/v1/swxw/?xhxm=&xznj=&yx=&bj=&page=1&page_size=10 HTTP/1.1" 200 2074
+[2020-09-30 19:36:27,447] [ERROR] dading
+[2020-09-30 19:36:27,448] [ERROR] 192.168.3.243
+[2020-09-30 19:36:27,449] [ERROR] ("name 'obj' is not defined",)
+[2020-09-30 19:36:27,484] [INFO] "POST /warning/v1/swxw/?xhxm=&xznj=&yx=&bj=&page=1&page_size=10 HTTP/1.1" 200 91
+[2020-09-30 19:36:27,572] [INFO] "GET /warning/v1/college/ HTTP/1.1" 200 637
+[2020-09-30 19:36:27,596] [INFO] "GET /warning/v1/grade/?yx= HTTP/1.1" 200 175
+[2020-09-30 19:37:56,391] [INFO] "GET /warning/v1/grade/?yx= HTTP/1.1" 200 175
+[2020-09-30 19:37:56,441] [ERROR] dading
+[2020-09-30 19:37:56,442] [ERROR] 192.168.3.243
+[2020-09-30 19:37:56,457] [ERROR] ('must be real number, not CombinedExpression',)
+[2020-09-30 19:37:56,475] [INFO] "POST /warning/v1/swxw/?xhxm=&xznj=&yx=&bj=&page=1&page_size=10 HTTP/1.1" 200 109
+[2020-09-30 19:37:56,590] [INFO] "GET /warning/v1/college/ HTTP/1.1" 200 637
+[2020-10-09 10:12:22,795] [INFO] "OPTIONS /login/ HTTP/1.1" 200 0
+[2020-10-09 10:12:23,565] [INFO] "POST /login/ HTTP/1.1" 200 179
+[2020-10-09 10:12:23,948] [INFO] "OPTIONS /warning/v1/warningtable/ HTTP/1.1" 200 0
+[2020-10-09 10:12:25,344] [INFO] "GET /warning/v1/warningtable/ HTTP/1.1" 200 1031
+[2020-10-09 10:12:26,139] [INFO] "OPTIONS /warning/v1/yjyzsz/?yjmc= HTTP/1.1" 200 0
+[2020-10-09 10:12:26,541] [INFO] "GET /warning/v1/yjyzsz/?yjmc= HTTP/1.1" 200 1420
+[2020-10-09 10:12:26,938] [INFO] "OPTIONS /portrait/v1/jqsz/?jqmc=&kssj=&jssj=&page=1&page_size=10 HTTP/1.1" 200 0
+[2020-10-09 10:12:27,102] [INFO] "GET /portrait/v1/jqsz/?jqmc=&kssj=&jssj=&page=1&page_size=10 HTTP/1.1" 200 1252
+[2020-10-09 10:18:52,536] [INFO] "OPTIONS /login/ HTTP/1.1" 200 0
+[2020-10-09 10:18:52,967] [INFO] "POST /login/ HTTP/1.1" 200 179
+[2020-10-09 10:18:53,239] [INFO] "OPTIONS /warning/v1/warningtable/ HTTP/1.1" 200 0
+[2020-10-09 10:18:53,444] [INFO] "OPTIONS /sys/menu/nav HTTP/1.1" 200 0
+[2020-10-09 10:18:53,649] [WARNING] Not Found: /sys/menu/nav
+[2020-10-09 10:18:53,655] [WARNING] "POST /sys/menu/nav HTTP/1.1" 404 86
+[2020-10-09 10:18:53,842] [INFO] "GET /warning/v1/warningtable/ HTTP/1.1" 200 1031
+[2020-10-09 10:19:54,324] [INFO] "OPTIONS /warning/v1/yjyzsz/?yjmc= HTTP/1.1" 200 0
+[2020-10-09 10:19:54,594] [INFO] "GET /warning/v1/yjyzsz/?yjmc= HTTP/1.1" 200 1420
+[2020-10-09 10:19:56,672] [INFO] "OPTIONS /portrait/v1/jqsz/?jqmc=&kssj=&jssj=&page=1&page_size=10 HTTP/1.1" 200 0
+[2020-10-09 10:19:56,840] [INFO] "GET /portrait/v1/jqsz/?jqmc=&kssj=&jssj=&page=1&page_size=10 HTTP/1.1" 200 1252
+[2020-10-09 10:20:31,411] [INFO] "OPTIONS /portrait/v1/jqsz/ HTTP/1.1" 200 0
+[2020-10-09 10:20:31,594] [INFO] "POST /portrait/v1/jqsz/ HTTP/1.1" 200 97
+[2020-10-09 10:21:05,082] [INFO] "OPTIONS /portrait/v1/jqsz/ HTTP/1.1" 200 0
+[2020-10-09 10:21:05,608] [INFO] "POST /portrait/v1/jqsz/ HTTP/1.1" 200 97
+[2020-10-09 10:21:43,801] [INFO] "OPTIONS /portrait/v1/jqsz/ HTTP/1.1" 200 0
+[2020-10-09 10:21:43,965] [INFO] "POST /portrait/v1/jqsz/ HTTP/1.1" 200 97
+[2020-10-09 10:24:49,345] [INFO] "OPTIONS /portrait/v1/jqsz/ HTTP/1.1" 200 0
+[2020-10-09 10:24:49,546] [INFO] "POST /portrait/v1/jqsz/ HTTP/1.1" 200 97
+[2020-10-09 10:25:08,262] [INFO] "OPTIONS /portrait/v1/jqsz/?jqmc=&kssj=&jssj=&page=1&page_size=10 HTTP/1.1" 200 0
+[2020-10-09 10:25:08,446] [INFO] "GET /portrait/v1/jqsz/?jqmc=&kssj=&jssj=&page=1&page_size=10 HTTP/1.1" 200 1252
+[2020-10-09 10:29:01,563] [INFO] "OPTIONS /portrait/v1/jqsz/ HTTP/1.1" 200 0
+[2020-10-09 10:29:01,678] [INFO] "POST /portrait/v1/jqsz/ HTTP/1.1" 200 97
+[2020-10-09 10:29:32,824] [INFO] "OPTIONS /portrait/v1/jqsz/ HTTP/1.1" 200 0
+[2020-10-09 10:29:32,949] [INFO] "POST /portrait/v1/jqsz/ HTTP/1.1" 200 97
+[2020-10-09 10:29:54,373] [INFO] "OPTIONS /portrait/v1/jqsz/ HTTP/1.1" 200 0
+[2020-10-09 10:29:54,487] [INFO] "POST /portrait/v1/jqsz/ HTTP/1.1" 200 97
+[2020-10-09 10:30:15,894] [INFO] "OPTIONS /portrait/v1/jqsz/?jqmc=&kssj=&jssj=&page=1&page_size=10 HTTP/1.1" 200 0
+[2020-10-09 10:30:16,056] [INFO] "GET /portrait/v1/jqsz/?jqmc=&kssj=&jssj=&page=1&page_size=10 HTTP/1.1" 200 1252
+[2020-10-09 10:33:58,728] [INFO] "OPTIONS /portrait/v1/jqsz/ HTTP/1.1" 200 0
+[2020-10-09 10:33:58,841] [INFO] "POST /portrait/v1/jqsz/ HTTP/1.1" 200 49
+[2020-10-09 10:33:59,190] [INFO] "OPTIONS /portrait/v1/jqsz/?jqmc=&kssj=&jssj=&page=1&page_size=10 HTTP/1.1" 200 0
+[2020-10-09 10:33:59,378] [INFO] "GET /portrait/v1/jqsz/?jqmc=&kssj=&jssj=&page=1&page_size=10 HTTP/1.1" 200 1252
+[2020-10-09 10:34:31,724] [INFO] "OPTIONS /portrait/v1/jqsz/ HTTP/1.1" 200 0
+[2020-10-09 10:34:31,942] [INFO] "POST /portrait/v1/jqsz/ HTTP/1.1" 200 107
+[2020-10-09 10:34:58,086] [INFO] "OPTIONS /portrait/v1/jqsz/?jqmc=&kssj=&jssj=&page=1&page_size=10 HTTP/1.1" 200 0
+[2020-10-09 10:34:58,294] [INFO] "GET /portrait/v1/jqsz/?jqmc=&kssj=&jssj=&page=1&page_size=10 HTTP/1.1" 200 1372
+[2020-10-09 10:35:29,688] [INFO] "OPTIONS /portrait/v1/jqsz/ HTTP/1.1" 200 0
+[2020-10-09 10:35:29,856] [INFO] "POST /portrait/v1/jqsz/ HTTP/1.1" 200 107
+[2020-10-09 10:35:31,414] [INFO] "OPTIONS /portrait/v1/jqsz/?jqmc=&kssj=&jssj=&page=1&page_size=10 HTTP/1.1" 200 0
+[2020-10-09 10:35:31,631] [INFO] "GET /portrait/v1/jqsz/?jqmc=&kssj=&jssj=&page=1&page_size=10 HTTP/1.1" 200 1450
+[2020-10-09 10:35:46,400] [INFO] "GET /portrait/v1/jqsz/?jqmc=&kssj=&jssj=&page=1&page_size=10 HTTP/1.1" 200 1450
+[2020-10-09 10:36:00,648] [INFO] "GET /portrait/v1/jqsz/?jqmc=&kssj=&jssj=&page=1&page_size=10 HTTP/1.1" 200 1450
+[2020-10-09 10:36:05,449] [INFO] "GET /portrait/v1/jqsz/?jqmc=&kssj=&jssj=&page=1&page_size=10 HTTP/1.1" 200 1450
+[2020-10-09 10:36:13,937] [WARNING] Not Found: /sys/menu/nav
+[2020-10-09 10:36:13,951] [WARNING] "POST /sys/menu/nav HTTP/1.1" 404 86
+[2020-10-09 10:36:13,953] [INFO] "GET /portrait/v1/jqsz/?jqmc=&kssj=&jssj=&page=1&page_size=10 HTTP/1.1" 200 1450
+[2020-10-09 10:36:16,144] [INFO] "GET /warning/v1/yjyzsz/?yjmc= HTTP/1.1" 200 1420
+[2020-10-09 10:36:17,135] [INFO] "GET /portrait/v1/jqsz/?jqmc=&kssj=&jssj=&page=1&page_size=10 HTTP/1.1" 200 1450
+[2020-10-09 10:36:32,994] [INFO] "POST /portrait/v1/jqsz/ HTTP/1.1" 200 97
+[2020-10-09 10:36:46,214] [INFO] "GET /portrait/v1/jqsz/?jqmc=&kssj=&jssj=&page=1&page_size=10 HTTP/1.1" 200 1450
+[2020-10-09 10:36:50,376] [INFO] "GET /portrait/v1/jqsz/?jqmc=&kssj=&jssj=&page=1&page_size=10 HTTP/1.1" 200 1450
+[2020-10-09 10:37:06,032] [INFO] "POST /portrait/v1/jqsz/ HTTP/1.1" 200 90
+[2020-10-09 10:37:09,375] [INFO] "POST /portrait/v1/jqsz/ HTTP/1.1" 200 90
+[2020-10-09 10:37:14,324] [INFO] "POST /portrait/v1/jqsz/ HTTP/1.1" 200 107
+[2020-10-09 10:37:14,592] [INFO] "GET /portrait/v1/jqsz/?jqmc=&kssj=&jssj=&page=1&page_size=10 HTTP/1.1" 200 1457
+[2020-10-09 10:37:24,575] [INFO] "OPTIONS /portrait/v1/jqsz/?jqmc=&kssj=&jssj=&page=2&page_size=10 HTTP/1.1" 200 0
+[2020-10-09 10:37:24,801] [INFO] "GET /portrait/v1/jqsz/?jqmc=&kssj=&jssj=&page=2&page_size=10 HTTP/1.1" 200 467
+[2020-10-09 10:37:28,557] [INFO] "GET /portrait/v1/jqsz/?jqmc=&kssj=&jssj=&page=1&page_size=10 HTTP/1.1" 200 1457
+[2020-10-09 10:37:32,016] [INFO] "OPTIONS /portrait/v1/jqsz/?id=77 HTTP/1.1" 200 0
+[2020-10-09 10:37:32,202] [INFO] "DELETE /portrait/v1/jqsz/?id=77 HTTP/1.1" 200 107
+[2020-10-09 10:37:32,427] [INFO] "GET /portrait/v1/jqsz/?jqmc=&kssj=&jssj=&page=1&page_size=10 HTTP/1.1" 200 1450
+[2020-10-09 10:37:35,725] [INFO] "OPTIONS /portrait/v1/jqsz/?id=76 HTTP/1.1" 200 0
+[2020-10-09 10:37:35,879] [INFO] "DELETE /portrait/v1/jqsz/?id=76 HTTP/1.1" 200 107
+[2020-10-09 10:37:36,136] [INFO] "GET /portrait/v1/jqsz/?jqmc=&kssj=&jssj=&page=1&page_size=10 HTTP/1.1" 200 1372
+[2020-10-09 10:49:10,287] [INFO] "OPTIONS /portrait/v1/jqsz/ HTTP/1.1" 200 0
+[2020-10-09 10:49:10,416] [INFO] "POST /portrait/v1/jqsz/ HTTP/1.1" 200 97
+[2020-10-09 10:49:15,899] [INFO] "POST /portrait/v1/jqsz/ HTTP/1.1" 200 97
+[2020-10-09 10:49:22,065] [INFO] "POST /portrait/v1/jqsz/ HTTP/1.1" 200 97
+[2020-10-09 10:49:26,732] [INFO] "POST /portrait/v1/jqsz/ HTTP/1.1" 200 97
+[2020-10-09 10:49:32,153] [INFO] "POST /portrait/v1/jqsz/ HTTP/1.1" 200 97
+[2020-10-09 11:00:58,403] [INFO] "OPTIONS /base/user/?page=1&username=&page_size=10 HTTP/1.1" 200 0
+[2020-10-09 11:00:59,545] [INFO] "GET /base/user/?page=1&username=&page_size=10 HTTP/1.1" 200 1512
+[2020-10-09 11:01:04,102] [INFO] "OPTIONS /base/role/ HTTP/1.1" 200 0
+[2020-10-09 11:01:04,994] [INFO] "GET /base/role/ HTTP/1.1" 200 449
+[2020-10-09 11:01:36,546] [INFO] "OPTIONS /base/menu/ HTTP/1.1" 200 0
+[2020-10-09 11:01:36,797] [INFO] "GET /base/menu/ HTTP/1.1" 200 1376
+[2020-10-09 11:01:59,597] [INFO] "OPTIONS /portrait/v1/hxbqsz/?bqmc=&page=1&page_size=10&random=1602212523789 HTTP/1.1" 200 0
+[2020-10-09 11:01:59,836] [INFO] "GET /portrait/v1/hxbqsz/?bqmc=&page=1&page_size=10&random=1602212523789 HTTP/1.1" 200 6094
+[2020-10-09 11:02:06,606] [INFO] "OPTIONS /portrait/v1/bqwd/?kqzt=1&page=1&random=1602212530673 HTTP/1.1" 200 0
+[2020-10-09 11:02:06,633] [INFO] "OPTIONS /portrait/v1/hxbqszzbx/?id=49&random=1602212530674 HTTP/1.1" 200 0
+[2020-10-09 11:02:07,159] [INFO] "GET /portrait/v1/hxbqszzbx/?id=49&random=1602212530674 HTTP/1.1" 200 275
+[2020-10-09 11:02:07,161] [INFO] "GET /portrait/v1/bqwd/?kqzt=1&page=1&random=1602212530673 HTTP/1.1" 200 1152
+[2020-10-09 11:02:13,497] [INFO] "OPTIONS /portrait/v1/hxbqsz/?bqmc=&page=1&page_size=10&random=1602212537697 HTTP/1.1" 200 0
+[2020-10-09 11:02:13,715] [INFO] "GET /portrait/v1/hxbqsz/?bqmc=&page=1&page_size=10&random=1602212537697 HTTP/1.1" 200 6094
+[2020-10-09 11:02:15,534] [INFO] "OPTIONS /portrait/v1/hxbqsz/?bqmc=&page=1&page_size=10&random=1602212539545 HTTP/1.1" 200 0
+[2020-10-09 11:02:15,940] [INFO] "GET /portrait/v1/hxbqsz/?bqmc=&page=1&page_size=10&random=1602212539545 HTTP/1.1" 200 6094
+[2020-10-09 11:02:17,073] [INFO] "GET /warning/v1/yjyzsz/?yjmc= HTTP/1.1" 200 1420
+[2020-10-09 11:02:18,441] [INFO] "GET /portrait/v1/jqsz/?jqmc=&kssj=&jssj=&page=1&page_size=10 HTTP/1.1" 200 1372
+[2020-10-09 11:02:19,539] [INFO] "GET /warning/v1/yjyzsz/?yjmc= HTTP/1.1" 200 1420
+[2020-10-09 11:02:25,710] [INFO] "GET /portrait/v1/jqsz/?jqmc=&kssj=&jssj=&page=1&page_size=10 HTTP/1.1" 200 1372
+[2020-10-09 11:05:08,563] [INFO] "OPTIONS /portrait/v1/jqsz/ HTTP/1.1" 200 0
+[2020-10-09 11:05:08,801] [INFO] "PUT /portrait/v1/jqsz/ HTTP/1.1" 200 107
+[2020-10-09 11:05:08,880] [INFO] "OPTIONS /portrait/v1/jqsz/?jqmc=&kssj=&jssj=&page=1&page_size=10 HTTP/1.1" 200 0
+[2020-10-09 11:05:09,078] [INFO] "GET /portrait/v1/jqsz/?jqmc=&kssj=&jssj=&page=1&page_size=10 HTTP/1.1" 200 1372
+[2020-10-09 11:10:28,428] [INFO] "OPTIONS /portrait/v1/jqsz/?jqmc=&kssj=&jssj=&page=1&page_size=10 HTTP/1.1" 200 0
+[2020-10-09 11:10:28,615] [INFO] "GET /portrait/v1/jqsz/?jqmc=&kssj=&jssj=&page=1&page_size=10 HTTP/1.1" 200 1372
+[2020-10-09 11:11:17,669] [INFO] "OPTIONS /portrait/v1/jqsz/?jqmc=&kssj=&jssj=&page=1&page_size=10 HTTP/1.1" 200 0
+[2020-10-09 11:11:18,252] [INFO] "GET /portrait/v1/jqsz/?jqmc=&kssj=&jssj=&page=1&page_size=10 HTTP/1.1" 200 1372
+[2020-10-09 11:11:19,886] [INFO] "OPTIONS /portrait/v1/jqsz/?jqmc=&kssj=&jssj=&page=1&page_size=10 HTTP/1.1" 200 0
+[2020-10-09 11:11:20,264] [INFO] "GET /portrait/v1/jqsz/?jqmc=&kssj=&jssj=&page=1&page_size=10 HTTP/1.1" 200 1372
+[2020-10-09 16:34:39,059] [DEBUG] CREATE TABLE `djcelery_crontabschedule` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `minute` varchar(64) NOT NULL, `hour` varchar(64) NOT NULL, `day_of_week` varchar(64) NOT NULL, `day_of_month` varchar(64) NOT NULL, `month_of_year` varchar(64) NOT NULL); (params None)
+[2020-10-09 16:34:39,059] [DEBUG] CREATE TABLE `djcelery_crontabschedule` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `minute` varchar(64) NOT NULL, `hour` varchar(64) NOT NULL, `day_of_week` varchar(64) NOT NULL, `day_of_month` varchar(64) NOT NULL, `month_of_year` varchar(64) NOT NULL); (params None)
+[2020-10-09 16:34:39,197] [DEBUG] CREATE TABLE `djcelery_intervalschedule` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `every` integer NOT NULL, `period` varchar(24) NOT NULL); (params None)
+[2020-10-09 16:34:39,197] [DEBUG] CREATE TABLE `djcelery_intervalschedule` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `every` integer NOT NULL, `period` varchar(24) NOT NULL); (params None)
+[2020-10-09 16:34:39,311] [DEBUG] CREATE TABLE `djcelery_periodictask` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `name` varchar(200) NOT NULL UNIQUE, `task` varchar(200) NOT NULL, `args` longtext NOT NULL, `kwargs` longtext NOT NULL, `queue` varchar(200) NULL, `exchange` varchar(200) NULL, `routing_key` varchar(200) NULL, `expires` datetime(6) NULL, `enabled` bool NOT NULL, `last_run_at` datetime(6) NULL, `total_run_count` integer UNSIGNED NOT NULL, `date_changed` datetime(6) NOT NULL, `description` longtext NOT NULL, `crontab_id` integer NULL, `interval_id` integer NULL); (params None)
+[2020-10-09 16:34:39,311] [DEBUG] CREATE TABLE `djcelery_periodictask` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `name` varchar(200) NOT NULL UNIQUE, `task` varchar(200) NOT NULL, `args` longtext NOT NULL, `kwargs` longtext NOT NULL, `queue` varchar(200) NULL, `exchange` varchar(200) NULL, `routing_key` varchar(200) NULL, `expires` datetime(6) NULL, `enabled` bool NOT NULL, `last_run_at` datetime(6) NULL, `total_run_count` integer UNSIGNED NOT NULL, `date_changed` datetime(6) NOT NULL, `description` longtext NOT NULL, `crontab_id` integer NULL, `interval_id` integer NULL); (params None)
+[2020-10-09 16:34:39,455] [DEBUG] CREATE TABLE `djcelery_periodictasks` (`ident` smallint NOT NULL PRIMARY KEY, `last_update` datetime(6) NOT NULL); (params None)
+[2020-10-09 16:34:39,455] [DEBUG] CREATE TABLE `djcelery_periodictasks` (`ident` smallint NOT NULL PRIMARY KEY, `last_update` datetime(6) NOT NULL); (params None)
+[2020-10-09 16:34:39,572] [DEBUG] CREATE TABLE `celery_taskmeta` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `task_id` varchar(255) NOT NULL UNIQUE, `status` varchar(50) NOT NULL, `result` longtext NULL, `date_done` datetime(6) NOT NULL, `traceback` longtext NULL, `hidden` bool NOT NULL, `meta` longtext NULL); (params None)
+[2020-10-09 16:34:39,572] [DEBUG] CREATE TABLE `celery_taskmeta` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `task_id` varchar(255) NOT NULL UNIQUE, `status` varchar(50) NOT NULL, `result` longtext NULL, `date_done` datetime(6) NOT NULL, `traceback` longtext NULL, `hidden` bool NOT NULL, `meta` longtext NULL); (params None)
+[2020-10-09 16:34:39,698] [DEBUG] CREATE TABLE `celery_tasksetmeta` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `taskset_id` varchar(255) NOT NULL UNIQUE, `result` longtext NOT NULL, `date_done` datetime(6) NOT NULL, `hidden` bool NOT NULL); (params None)
+[2020-10-09 16:34:39,698] [DEBUG] CREATE TABLE `celery_tasksetmeta` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `taskset_id` varchar(255) NOT NULL UNIQUE, `result` longtext NOT NULL, `date_done` datetime(6) NOT NULL, `hidden` bool NOT NULL); (params None)
+[2020-10-09 16:34:39,829] [DEBUG] CREATE TABLE `djcelery_taskstate` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `state` varchar(64) NOT NULL, `task_id` varchar(36) NOT NULL UNIQUE, `name` varchar(200) NULL, `tstamp` datetime(6) NOT NULL, `args` longtext NULL, `kwargs` longtext NULL, `eta` datetime(6) NULL, `expires` datetime(6) NULL, `result` longtext NULL, `traceback` longtext NULL, `runtime` double precision NULL, `retries` integer NOT NULL, `hidden` bool NOT NULL); (params None)
+[2020-10-09 16:34:39,829] [DEBUG] CREATE TABLE `djcelery_taskstate` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `state` varchar(64) NOT NULL, `task_id` varchar(36) NOT NULL UNIQUE, `name` varchar(200) NULL, `tstamp` datetime(6) NOT NULL, `args` longtext NULL, `kwargs` longtext NULL, `eta` datetime(6) NULL, `expires` datetime(6) NULL, `result` longtext NULL, `traceback` longtext NULL, `runtime` double precision NULL, `retries` integer NOT NULL, `hidden` bool NOT NULL); (params None)
+[2020-10-09 16:34:39,980] [DEBUG] CREATE TABLE `djcelery_workerstate` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `hostname` varchar(255) NOT NULL UNIQUE, `last_heartbeat` datetime(6) NULL); (params None)
+[2020-10-09 16:34:39,980] [DEBUG] CREATE TABLE `djcelery_workerstate` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `hostname` varchar(255) NOT NULL UNIQUE, `last_heartbeat` datetime(6) NULL); (params None)
+[2020-10-09 16:34:40,128] [DEBUG] ALTER TABLE `djcelery_taskstate` ADD COLUMN `worker_id` integer NULL; (params [])
+[2020-10-09 16:34:40,128] [DEBUG] ALTER TABLE `djcelery_taskstate` ADD COLUMN `worker_id` integer NULL; (params [])
+[2020-10-09 16:34:40,352] [DEBUG] ALTER TABLE `djcelery_periodictask` ADD CONSTRAINT `djcelery_periodictas_crontab_id_75609bab_fk_djcelery_` FOREIGN KEY (`crontab_id`) REFERENCES `djcelery_crontabschedule` (`id`); (params ())
+[2020-10-09 16:34:40,352] [DEBUG] ALTER TABLE `djcelery_periodictask` ADD CONSTRAINT `djcelery_periodictas_crontab_id_75609bab_fk_djcelery_` FOREIGN KEY (`crontab_id`) REFERENCES `djcelery_crontabschedule` (`id`); (params ())
+[2020-10-09 16:34:40,627] [DEBUG] ALTER TABLE `djcelery_periodictask` ADD CONSTRAINT `djcelery_periodictas_interval_id_b426ab02_fk_djcelery_` FOREIGN KEY (`interval_id`) REFERENCES `djcelery_intervalschedule` (`id`); (params ())
+[2020-10-09 16:34:40,627] [DEBUG] ALTER TABLE `djcelery_periodictask` ADD CONSTRAINT `djcelery_periodictas_interval_id_b426ab02_fk_djcelery_` FOREIGN KEY (`interval_id`) REFERENCES `djcelery_intervalschedule` (`id`); (params ())
+[2020-10-09 16:34:40,902] [DEBUG] CREATE INDEX `celery_taskmeta_hidden_23fd02dc` ON `celery_taskmeta` (`hidden`); (params ())
+[2020-10-09 16:34:40,902] [DEBUG] CREATE INDEX `celery_taskmeta_hidden_23fd02dc` ON `celery_taskmeta` (`hidden`); (params ())
+[2020-10-09 16:34:40,982] [DEBUG] CREATE INDEX `celery_tasksetmeta_hidden_593cfc24` ON `celery_tasksetmeta` (`hidden`); (params ())
+[2020-10-09 16:34:40,982] [DEBUG] CREATE INDEX `celery_tasksetmeta_hidden_593cfc24` ON `celery_tasksetmeta` (`hidden`); (params ())
+[2020-10-09 16:34:41,069] [DEBUG] CREATE INDEX `djcelery_taskstate_state_53543be4` ON `djcelery_taskstate` (`state`); (params ())
+[2020-10-09 16:34:41,069] [DEBUG] CREATE INDEX `djcelery_taskstate_state_53543be4` ON `djcelery_taskstate` (`state`); (params ())
+[2020-10-09 16:34:41,150] [DEBUG] CREATE INDEX `djcelery_taskstate_name_8af9eded` ON `djcelery_taskstate` (`name`); (params ())
+[2020-10-09 16:34:41,150] [DEBUG] CREATE INDEX `djcelery_taskstate_name_8af9eded` ON `djcelery_taskstate` (`name`); (params ())
+[2020-10-09 16:34:41,228] [DEBUG] CREATE INDEX `djcelery_taskstate_tstamp_4c3f93a1` ON `djcelery_taskstate` (`tstamp`); (params ())
+[2020-10-09 16:34:41,228] [DEBUG] CREATE INDEX `djcelery_taskstate_tstamp_4c3f93a1` ON `djcelery_taskstate` (`tstamp`); (params ())
+[2020-10-09 16:34:41,319] [DEBUG] CREATE INDEX `djcelery_taskstate_hidden_c3905e57` ON `djcelery_taskstate` (`hidden`); (params ())
+[2020-10-09 16:34:41,319] [DEBUG] CREATE INDEX `djcelery_taskstate_hidden_c3905e57` ON `djcelery_taskstate` (`hidden`); (params ())
+[2020-10-09 16:34:41,401] [DEBUG] CREATE INDEX `djcelery_workerstate_last_heartbeat_4539b544` ON `djcelery_workerstate` (`last_heartbeat`); (params ())
+[2020-10-09 16:34:41,401] [DEBUG] CREATE INDEX `djcelery_workerstate_last_heartbeat_4539b544` ON `djcelery_workerstate` (`last_heartbeat`); (params ())
+[2020-10-09 16:34:41,488] [DEBUG] ALTER TABLE `djcelery_taskstate` ADD CONSTRAINT `djcelery_taskstate_worker_id_f7f57a05_fk_djcelery_workerstate_id` FOREIGN KEY (`worker_id`) REFERENCES `djcelery_workerstate` (`id`); (params ())
+[2020-10-09 16:34:41,488] [DEBUG] ALTER TABLE `djcelery_taskstate` ADD CONSTRAINT `djcelery_taskstate_worker_id_f7f57a05_fk_djcelery_workerstate_id` FOREIGN KEY (`worker_id`) REFERENCES `djcelery_workerstate` (`id`); (params ())
+[2020-10-10 11:22:43,154] [DEBUG] CREATE TABLE `djkombu_message` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `visible` bool NOT NULL, `sent_at` datetime(6) NULL, `payload` longtext NOT NULL); (params None)
+[2020-10-10 11:22:43,154] [DEBUG] CREATE TABLE `djkombu_message` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `visible` bool NOT NULL, `sent_at` datetime(6) NULL, `payload` longtext NOT NULL); (params None)
+[2020-10-10 11:22:43,316] [DEBUG] CREATE TABLE `djkombu_queue` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `name` varchar(200) NOT NULL UNIQUE); (params None)
+[2020-10-10 11:22:43,316] [DEBUG] CREATE TABLE `djkombu_queue` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `name` varchar(200) NOT NULL UNIQUE); (params None)
+[2020-10-10 11:22:43,431] [DEBUG] ALTER TABLE `djkombu_message` ADD COLUMN `queue_id` integer NOT NULL; (params [])
+[2020-10-10 11:22:43,431] [DEBUG] ALTER TABLE `djkombu_message` ADD COLUMN `queue_id` integer NOT NULL; (params [])
+[2020-10-10 11:22:43,612] [DEBUG] CREATE INDEX `djkombu_message_visible_3ca5f33e` ON `djkombu_message` (`visible`); (params ())
+[2020-10-10 11:22:43,612] [DEBUG] CREATE INDEX `djkombu_message_visible_3ca5f33e` ON `djkombu_message` (`visible`); (params ())
+[2020-10-10 11:22:43,693] [DEBUG] CREATE INDEX `djkombu_message_sent_at_680ecd55` ON `djkombu_message` (`sent_at`); (params ())
+[2020-10-10 11:22:43,693] [DEBUG] CREATE INDEX `djkombu_message_sent_at_680ecd55` ON `djkombu_message` (`sent_at`); (params ())
+[2020-10-10 11:22:43,786] [DEBUG] ALTER TABLE `djkombu_message` ADD CONSTRAINT `djkombu_message_queue_id_38d205a7_fk_djkombu_queue_id` FOREIGN KEY (`queue_id`) REFERENCES `djkombu_queue` (`id`); (params ())
+[2020-10-10 11:22:43,786] [DEBUG] ALTER TABLE `djkombu_message` ADD CONSTRAINT `djkombu_message_queue_id_38d205a7_fk_djkombu_queue_id` FOREIGN KEY (`queue_id`) REFERENCES `djkombu_queue` (`id`); (params ())
+[2020-10-12 10:14:26,034] [INFO] "OPTIONS /login/ HTTP/1.1" 200 0
+[2020-10-12 10:14:26,974] [INFO] "POST /login/ HTTP/1.1" 200 179
+[2020-10-12 10:14:27,451] [INFO] "OPTIONS /warning/v1/warningtable/ HTTP/1.1" 200 0
+[2020-10-12 10:14:27,766] [INFO] "OPTIONS /sys/menu/nav HTTP/1.1" 200 0
+[2020-10-12 10:14:28,056] [WARNING] Not Found: /sys/menu/nav
+[2020-10-12 10:14:28,057] [WARNING] "POST /sys/menu/nav HTTP/1.1" 404 86
+[2020-10-12 10:14:28,480] [INFO] "POST /login/ HTTP/1.1" 200 179
+[2020-10-12 10:14:29,150] [INFO] "GET /warning/v1/warningtable/ HTTP/1.1" 200 1031
+[2020-10-12 10:14:32,759] [INFO] "OPTIONS /warning/v1/college HTTP/1.1" 200 0
+[2020-10-12 10:14:32,764] [INFO] "OPTIONS /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-10-05&jssj=2020-10-12&page=1&page_size=10&random=1602468876688 HTTP/1.1" 200 0
+[2020-10-12 10:14:32,766] [INFO] "OPTIONS /warning/v1/grade/?yx= HTTP/1.1" 200 0
+[2020-10-12 10:14:32,814] [INFO] "GET /warning/v1/college HTTP/1.1" 301 0
+[2020-10-12 10:14:32,845] [INFO] "OPTIONS /warning/v1/college/ HTTP/1.1" 200 0
+[2020-10-12 10:14:32,908] [INFO] "GET /warning/v1/grade/?yx= HTTP/1.1" 200 175
+[2020-10-12 10:14:32,945] [INFO] "GET /warning/v1/college/ HTTP/1.1" 200 637
+[2020-10-12 10:14:36,429] [INFO] "OPTIONS /portrait/v1/bm/ HTTP/1.1" 200 0
+[2020-10-12 10:14:36,430] [INFO] "OPTIONS /warning/v1/jzgxwgj/?xm=&zgh=&bm=&kssj=2020-10-05&jssj=2020-10-12&page=1&page_size=10 HTTP/1.1" 200 0
+[2020-10-12 10:14:36,547] [INFO] "GET /portrait/v1/bm/ HTTP/1.1" 200 3493
+[2020-10-12 10:14:37,234] [INFO] "GET /warning/v1/jzgxwgj/?xm=&zgh=&bm=&kssj=2020-10-05&jssj=2020-10-12&page=1&page_size=10 HTTP/1.1" 200 206
+[2020-10-12 10:14:38,514] [INFO] "OPTIONS /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-10-05&jssj=2020-10-12&page=1&page_size=10&random=1602468882467 HTTP/1.1" 200 0
+[2020-10-12 10:14:38,630] [INFO] "GET /warning/v1/grade/?yx= HTTP/1.1" 200 175
+[2020-10-12 10:14:38,666] [INFO] "GET /warning/v1/college/ HTTP/1.1" 200 637
+[2020-10-12 10:14:45,919] [INFO] "POST /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-10-05&jssj=2020-10-12&page=1&page_size=10&random=1602468876688 HTTP/1.1" 200 206
+[2020-10-12 10:14:46,286] [INFO] "POST /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-10-05&jssj=2020-10-12&page=1&page_size=10&random=1602468882467 HTTP/1.1" 200 206
+[2020-10-12 10:14:51,592] [INFO] "OPTIONS /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-09-01&jssj=2020-11-27&page=1&page_size=10&random=1602468895562 HTTP/1.1" 200 0
+[2020-10-12 10:14:56,824] [INFO] "OPTIONS /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-09-01&jssj=2020-11-27&page=1&page_size=10&random=1602468900793 HTTP/1.1" 200 0
+[2020-10-12 10:14:58,257] [INFO] "POST /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-09-01&jssj=2020-11-27&page=1&page_size=10&random=1602468895562 HTTP/1.1" 200 1835
+[2020-10-12 10:15:03,795] [INFO] "POST /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-09-01&jssj=2020-11-27&page=1&page_size=10&random=1602468900793 HTTP/1.1" 200 1835
+[2020-10-12 10:15:04,621] [INFO] "GET /portrait/v1/bm/ HTTP/1.1" 200 3493
+[2020-10-12 10:15:04,915] [INFO] "GET /warning/v1/jzgxwgj/?xm=&zgh=&bm=&kssj=2020-10-05&jssj=2020-10-12&page=1&page_size=10 HTTP/1.1" 200 206
+[2020-10-12 10:15:07,802] [INFO] "OPTIONS /portrait/v1/yjsyx/ HTTP/1.1" 200 0
+[2020-10-12 10:15:07,804] [INFO] "OPTIONS /portrait/v1/yjsxwgj/?xm=&xh=&yx=&xn=&kssj=2020-10-05&jssj=2020-10-12&page=1&page_size=10 HTTP/1.1" 200 0
+[2020-10-12 10:15:07,806] [INFO] "OPTIONS /portrait/v1/yjsnj/?yx= HTTP/1.1" 200 0
+[2020-10-12 10:15:08,055] [INFO] "GET /portrait/v1/yjsnj/?yx= HTTP/1.1" 200 279
+[2020-10-12 10:15:08,088] [INFO] "GET /portrait/v1/yjsyx/ HTTP/1.1" 200 1059
+[2020-10-12 10:15:09,808] [INFO] "GET /portrait/v1/bm/ HTTP/1.1" 200 3493
+[2020-10-12 10:15:10,635] [INFO] "GET /warning/v1/jzgxwgj/?xm=&zgh=&bm=&kssj=2020-10-05&jssj=2020-10-12&page=1&page_size=10 HTTP/1.1" 200 206
+[2020-10-12 10:15:10,904] [INFO] "OPTIONS /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-10-05&jssj=2020-10-12&page=1&page_size=10&random=1602468914839 HTTP/1.1" 200 0
+[2020-10-12 10:15:11,000] [INFO] "GET /warning/v1/grade/?yx= HTTP/1.1" 200 175
+[2020-10-12 10:15:11,008] [INFO] "GET /warning/v1/college/ HTTP/1.1" 200 637
+[2020-10-12 10:15:17,080] [INFO] "OPTIONS /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-09-01&jssj=2020-11-25&page=1&page_size=10&random=1602468921025 HTTP/1.1" 200 0
+[2020-10-12 10:15:24,113] [INFO] "POST /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-10-05&jssj=2020-10-12&page=1&page_size=10&random=1602468914839 HTTP/1.1" 200 206
+[2020-10-12 10:15:24,979] [INFO] "OPTIONS /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-09-01&jssj=2020-11-25&page=1&page_size=10&random=1602468928921 HTTP/1.1" 200 0
+[2020-10-12 10:15:30,735] [INFO] "POST /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-09-01&jssj=2020-11-25&page=1&page_size=10&random=1602468921025 HTTP/1.1" 200 1835
+[2020-10-12 10:15:32,576] [INFO] "OPTIONS /warning/v1/xwgjmx/?xh=201501267&kssj=2020-09-01&jssj=2020-11-25 HTTP/1.1" 200 0
+[2020-10-12 10:15:35,555] [INFO] "GET /warning/v1/xwgjmx/?xh=201501267&kssj=2020-09-01&jssj=2020-11-25 HTTP/1.1" 200 20646
+[2020-10-12 10:15:36,760] [INFO] "POST /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-09-01&jssj=2020-11-25&page=1&page_size=10&random=1602468928921 HTTP/1.1" 200 1835
+[2020-10-12 10:15:43,704] [INFO] "POST /portrait/v1/yjsxwgj/?xm=&xh=&yx=&xn=&kssj=2020-10-05&jssj=2020-10-12&page=1&page_size=10 HTTP/1.1" 200 206
+[2020-10-12 10:15:48,719] [INFO] "OPTIONS /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-10-05&jssj=2020-10-12&page=1&page_size=10&random=1602468952650 HTTP/1.1" 200 0
+[2020-10-12 10:15:49,007] [INFO] "GET /warning/v1/grade/?yx= HTTP/1.1" 200 175
+[2020-10-12 10:15:49,030] [INFO] "GET /warning/v1/college/ HTTP/1.1" 200 637
+[2020-10-12 10:15:59,612] [INFO] "POST /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-10-05&jssj=2020-10-12&page=1&page_size=10&random=1602468952650 HTTP/1.1" 200 206
+[2020-10-12 10:16:35,822] [INFO] "OPTIONS /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-10-01&jssj=2020-10-31&page=1&page_size=10&random=1602468999771 HTTP/1.1" 200 0
+[2020-10-12 10:16:41,166] [INFO] "POST /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-10-01&jssj=2020-10-31&page=1&page_size=10&random=1602468999771 HTTP/1.1" 200 206
+[2020-10-12 10:16:51,975] [INFO] "OPTIONS /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-09-12&jssj=2020-11-12&page=1&page_size=10&random=1602469015922 HTTP/1.1" 200 0
+[2020-10-12 10:16:58,425] [INFO] "POST /warning/v1/xwgj/?xhxm=&xznj=&yx=&bj=&kssj=2020-09-12&jssj=2020-11-12&page=1&page_size=10&random=1602469015922 HTTP/1.1" 200 1835
+[2020-10-12 10:17:03,711] [INFO] "OPTIONS /warning/v1/xwgjmx/?xh=201501267&kssj=2020-09-12&jssj=2020-11-12 HTTP/1.1" 200 0
+[2020-10-12 10:17:05,024] [INFO] "GET /warning/v1/xwgjmx/?xh=201501267&kssj=2020-09-12&jssj=2020-11-12 HTTP/1.1" 200 20646
+[2020-10-12 10:17:19,567] [INFO] "GET /portrait/v1/yjsnj/?yx= HTTP/1.1" 200 279
+[2020-10-12 10:17:19,574] [INFO] "GET /portrait/v1/yjsyx/ HTTP/1.1" 200 1059
+[2020-10-12 10:17:27,265] [INFO] "POST /portrait/v1/yjsxwgj/?xm=&xh=&yx=&xn=&kssj=2020-10-05&jssj=2020-10-12&page=1&page_size=10 HTTP/1.1" 200 206
+[2020-10-12 10:17:56,735] [INFO] "OPTIONS /portrait/v1/yjsxwgj/?xm=&xh=&yx=&xn=&page=1&page_size=10 HTTP/1.1" 200 0
+[2020-10-12 10:18:00,953] [INFO] "POST /portrait/v1/yjsxwgj/?xm=&xh=&yx=&xn=&page=1&page_size=10 HTTP/1.1" 200 1574

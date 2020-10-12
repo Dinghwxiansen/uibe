@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import os
 import sys
+import djcelery
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -49,6 +50,8 @@ INSTALLED_APPS = [
     'coreschema',
     'corsheaders',  # 跨域
     'django_cas_ng',  # 单点登录
+    'djcelery',  # 定时任务
+    # 'kombu.transport.django',  # celery基于django的broker
 ]
 
 MIDDLEWARE = [
@@ -323,5 +326,27 @@ LOGGING = {
 }
 
 # 定时任务
+
 CELERY_ACCEPT_CONTENT = ['pickle', 'json', 'msgpack', 'yaml']  # 接受的文件类型
 CELERYD_MAX_TASKS_PER_CHILD = 10  # 每个worker执行多少次任务后死亡，防止内存泄漏用的
+
+# Celery
+
+
+# djcelery.setup_loader()  # 加载djcelery
+
+# BROKER_URL = 'django://'
+
+# CELERY_TIMEZONE = TIME_ZONE
+# CELERY_ENABLE_UTC = True
+#
+# # 允许的格式
+# CELERY_ACCEPT_CONTENT = ['pickle', 'json', 'yaml']
+#
+# BROKER_URL = 'redis://127.0.0.1:6379/0'  # redis作为中间件
+# BROKER_TRANSPORT = 'redis'
+# CELERYBEAT_SCHEDULER = 'djcelery.schedulers.DatabaseScheduler'  # Backend数据库
+# broker_transport_options = {'visibility_timeout': 3600}  # 1 hour.
+
+# CELERYD_LOG_FILE = BASE_DIR + "/logs/celery/celery.log"         # log路径
+# CELERYBEAT_LOG_FILE = BASE_DIR + "/logs/celery/beat.log"     # beat log路径

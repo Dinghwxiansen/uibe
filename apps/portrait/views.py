@@ -72,6 +72,7 @@ class JqszView(mixins.ListModelMixin, mixins.CreateModelMixin,
     """添加数据"""
 
     def post(self, request, *args, **kwargs):
+        print(request.data['jqkssj'], request.data['jqjssj'])
 
         if time_cmp(request.data['jqkssj'], request.data['jqjssj']) > 0:
             return restful.result2(message="假期开始时间不能大于结束时间")
@@ -1161,4 +1162,9 @@ class YjsXwgjXqView(mixins.ListModelMixin, generics.GenericAPIView, ):
 
 
 '''************************定时任务************************'''
-from .tasks import test1
+from .tasks import test1, test2
+
+
+def post(request):
+    result1 = test1(1, 2)  # 加上delay()表示开启异步执行
+    result2 = test2(2)  # 不开启异步执行，

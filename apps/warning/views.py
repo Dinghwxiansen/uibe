@@ -652,7 +652,7 @@ class WgmxView(viewsets.ModelViewSet):
     # permission_classes = []
     """分页"""
     pagination_class = Pagination
-    queryset = wm.ZnyjWgyj.objects.all()
+    queryset = wm.ZnyjWgyj.objects.all().order_by("wgsj")
     # 序列化
     serializer_class = serialiser.WgMxSerialiser
     filter_backends = (DjangoFilterBackend, filters.SearchFilter)
@@ -821,6 +821,7 @@ class XwgjView(mixins.ListModelMixin, mixins.CreateModelMixin,
         jssj = self.request.query_params.get("jssj", date.today() + timedelta(days=1))
         xhxm = self.request.query_params.get('xhxm', None)
         print(xhxm)
+        print(kssj,jssj)
 
         myfilter = Q(grgj__create_time__gt=kssj) & Q(grgj__create_time__lte=jssj)
 
@@ -836,6 +837,7 @@ class XwgjView(mixins.ListModelMixin, mixins.CreateModelMixin,
                 ret = pm.UibeBzks.objects.filter(xm__icontains=xhxm).annotate(
                     gjcs=Count("grgj", filter=myfilter)).filter(
                     gjcs__gte=1)
+
         return ret
 
     # 序列化
@@ -862,8 +864,19 @@ class XwgjmxView(mixins.ListModelMixin, generics.GenericAPIView, ):
     # authentication_classes = []
     # permission_classes = []
     """分页"""
+
     # pagination_class = Pagination
-    queryset = wm.XwgjGrgj.objects.all().order_by('-xwsj')
+    # queryset = wm.XwgjGrgj.objects.all().order_by('-xwsj')
+
+    def get_queryset(self):
+        import datetime
+        from dateutil.relativedelta import relativedelta
+        kssj = self.request.query_params.get("kssj", str(datetime.date.today() - relativedelta(days=+7)))
+        jssj = self.request.query_params.get("jssj", str(date.today() + timedelta(days=1)))
+        print(kssj, jssj)
+        ret = wm.XwgjGrgj.objects.filter(Q(xwsj__gt=kssj) & Q(xwsj__lte=jssj)).order_by('xwsj')
+        return ret
+
     # 序列化
     serializer_class = serialiser.XwgjMxSerialiser
 
@@ -922,20 +935,53 @@ class JzgXwgjView(mixins.ListModelMixin, generics.GenericAPIView, ):
 """******************************教职工行为轨迹个人明细-**************************"""
 
 
-class XwgjJzgMxView(mixins.ListModelMixin, generics.GenericAPIView, ):
+#
+# class XwgjJzgMxView(mixins.ListModelMixin, generics.GenericAPIView, ):
+#     # authentication_classes = []
+#     # permission_classes = []
+#     """分页"""
+#
+#     # pagination_class = Pagination
+#
+#     # queryset = wm.JzgXwgjGrgj.objects.all().order_by('-xwsj')
+#
+#     def get_queryset(self):
+#         # kssj = self.request.query_params.get("kssj", default=date.min)
+#         # jssj = self.request.query_params.get("jssj",default= date.today() + timedelta(days=1))
+#         kssj = self.request.query_params.get("kssj", 1)
+#         jssj = self.request.query_params.get("jssj", 1)
+#         print(kssj, jssj)
+#         print(date.min)
+#         # ret = pm.UibeJzg.objects.annotate(gjcs=Count("grgj", filter=myfilter)).filter( gjcs__gte=1)
+#         ret = wm.JzgXwgjGrgj.objects.filter(Q(create_time__gt=kssj) & Q(create_time__lte=jssj)).distinct()
+#         return ret
+#
+#     # 序列化
+#     serializer_class = serialiser.XwgjJzgMxSerialiser
+#     filter_class = filter.XwgjJzgMxFilter
+#     # 搜索，前端通过search关键字传值，？search=''
+#     search_fields = ('xm', 'xh', 'yx', 'xznj', 'bj', '=kssj', '=jssj')  # 在这里添加可以搜索的字段，=表示等， 还可使用正则
+#
+#     def get(self, request, *args, **kwargs):
+#         try:
+#             ret = self.list(request, *args, **kwargs)
+#
+#             return restful.result(message="操作成功", data=ret.data)
+#
+#         except Exception as e:
+#             ip_username(request)
+#             return restful.result2(message="操作失败", kwargs=logger.error(e.args), data=e.args)
+
+
+class XwgjJzgMxView(mixins.ListModelMixin,
+                    generics.GenericAPIView):
     # authentication_classes = []
     # permission_classes = []
     """分页"""
     # pagination_class = Pagination
 
-    # queryset = wm.JzgXwgjGrgj.objects.all().order_by('-xwsj')
+    queryset = wm.JzgXwgjGrgj.objects.all().order_by('-xwsj')
 
-    def get_queryset(self):
-        kssj = self.request.query_params.get("kssj", date.min)
-        jssj = self.request.query_params.get("jssj", date.today() + timedelta(days=1))
-        # ret = pm.UibeJzg.objects.annotate(gjcs=Count("grgj", filter=myfilter)).filter( gjcs__gte=1)
-        ret = wm.JzgXwgjGrgj.objects.filter(Q(create_time__gt=kssj) & Q(create_time__lte=jssj)).distinct()
-        return ret
     # 序列化
     serializer_class = serialiser.XwgjJzgMxSerialiser
     filter_class = filter.XwgjJzgMxFilter
