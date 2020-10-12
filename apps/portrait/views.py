@@ -1162,9 +1162,9 @@ class YjsXwgjXqView(mixins.ListModelMixin, generics.GenericAPIView, ):
 
 
 '''************************定时任务************************'''
-from .tasks import test1, test2
-
-
-def post(request):
-    result1 = test1(1, 2)  # 加上delay()表示开启异步执行
-    result2 = test2(2)  # 不开启异步执行，
+# from .tasks import test1, test2
+#
+#
+# def post(request):
+#     result1 = test1(1, 2)  # 加上delay()表示开启异步执行
+#     result2 = test2(2)  # 不开启异步执行，

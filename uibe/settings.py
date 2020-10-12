@@ -50,7 +50,7 @@ INSTALLED_APPS = [
     'coreschema',
     'corsheaders',  # 跨域
     'django_cas_ng',  # 单点登录
-    'djcelery',  # 定时任务
+    # 'djcelery',  # 定时任务
     # 'kombu.transport.django',  # celery基于django的broker
 ]
 
@@ -327,8 +327,8 @@ LOGGING = {
 
 # 定时任务
 
-CELERY_ACCEPT_CONTENT = ['pickle', 'json', 'msgpack', 'yaml']  # 接受的文件类型
-CELERYD_MAX_TASKS_PER_CHILD = 10  # 每个worker执行多少次任务后死亡，防止内存泄漏用的
+# CELERY_ACCEPT_CONTENT = ['pickle', 'json', 'msgpack', 'yaml']  # 接受的文件类型
+# CELERYD_MAX_TASKS_PER_CHILD = 10  # 每个worker执行多少次任务后死亡，防止内存泄漏用的
 
 # Celery
 
